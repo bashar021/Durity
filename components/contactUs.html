@@ -1,0 +1,184 @@
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+        .contact-form {
+            flex: 1;
+            padding: 50px;
+        }
+        .contact-form h1 {
+            font-size: 48px;
+            color: #d9534f;
+            font-weight: 700;
+        }
+        .contact-form p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+        .contact-form label {
+            font-size: 18px;
+            color: #999999;
+            font-weight: 300;
+        }
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #000000;
+            font-size: 18px;
+            color: #666666;
+        }
+        .contact-form input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .contact-form .btn {
+            background-color: #d9534f;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form .btn i {
+            margin-left: 10px;
+        }
+        .contact-form .newsletter {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-form .follow {
+            margin-top: 20px;
+        }
+        .contact-form .follow a {
+            color: #d9534f;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .contact-image {
+            flex: 1;
+            background: url('/public/contact us/Ampere-Shower-Power-01.gif') no-repeat center center;
+            background-size: cover;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 5%;
+        }
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+            }
+            .contact-image {
+                display: none;
+            }
+        }
+
+
+        .social-icons {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .social-icons i {
+            font-size: 40px;
+        }
+        .social-icons span {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .social-icons div{
+            display: flex;
+            gap: 5%;
+        }
+        .underline {
+            width: 50px;
+            height: 2px;
+            background-color: black;
+            margin: 10px auto 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-section">
+        <div class="contact-form">
+            <h1>Contact us</h1>
+            <p>Get in touch and let us know how we can help</p>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div>
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                    <option value="">Select a topic</option>
+                </select>
+                <label for="message">Your message</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <div class="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Please sign me up for the Physica newsletter</label>
+                </div>
+                <button type="submit" class="btn">Send Message <i class="fas fa-arrow-right"></i></button>
+            </form>
+            <!-- <div class="follow">
+                <p>Follow Physica</p>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div> -->
+        </div>
+        <div style="width: 100px; height: 600px;" class="contact-image d-none d-md-block"></div>
+    </div>
+
+
+    <div style="padding: 50px;">
+        <h2 style="text-align: center;">Our Social</h2>
+        <p style="text-align: center;">Join our community to keep pace with the trends in home and lifestyle.</p>
+        <div class="social-icons">
+            <div class="">
+                <i class="fab fa-facebook" style="color: #1877F2;"></i>
+                <span>Facebook</span>
+                <!-- <div class="underline"></div> -->
+            </div>
+            <div>
+                <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                <span>Youtube</span>
+            </div>
+            <div>
+                <i class="fab fa-instagram" style="color: #E1306C;"></i>
+                <span>Instagram</span>
+            </div>
+            <div>
+                <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
+                <span>Twitter</span>
+            </div>
+        </div>
+
+    </div>
+
+  
+</body>
+</html>

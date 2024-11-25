@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <title>Products</title>
+    <script  src="/data/products.js"></script>
+
+    <script>
+        $(function () {
+            $("#navbar").load("/components/navbar.html");
+        });
+        $(function(){
+      $("#footer").load("./footer.html"); 
+    });
+    </script>
+    <style>
+        .category-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* background-color: aqua; */
+            /* gap: 25px; */
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .category-item {
+            text-align: center;
+            margin: 0 10px;
+            flex: 0 0 auto;
+            width: 300px;
+            margin-bottom: 2.5%;
+            margin-left: 1%;
+            margin-right: 1%;
+            background-color: rgba(239, 239, 239, 0.736);
+            padding-bottom: 0.5%
+        }
+
+        .category-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .category-item h5 {
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+
+        .category-item a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .category-item a i {
+            margin-left: 5px;
+        }
+
+        .rencentProductsBox {
+            /* background:red; */
+            width: 95%;
+            background-color: white;
+            margin: auto;
+            padding-left: 2%;
+            padding-right: 2%;
+
+        }
+
+        /* .detailsPopup {
+            width: 100vh;
+            height: 100vh;
+            position: fixed;
+            background-color: black;
+            z-index: 20;
+        } */
+
+        .detailsPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgba(0, 0, 0, 0.8); */
+            background-color: rgba(255, 255, 255, 0.79);
+            /* Dark semi-transparent background */
+            color: rgb(0, 0, 0);
+            /* display: none; */
+            /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+            /* Ensure it appears on top */
+            padding: 20px;
+        }
+
+        .detailsPopup h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .detailsPopup p {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .category-item {
+                width: 150px;
+            }
+        }
+
+
+        .detailsPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Dark semi-transparent background */
+            color: white;
+            display: none;
+            z-index: 1050;
+            /* Ensure it appears on top */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+            height: 95%;
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: #004e9d; */
+            border-radius: 8px;
+            overflow: hidden;
+            /* height: 100%; */
+
+        }
+
+        .carousel-inner {
+            /* background-color: blanchedalmond; */
+            /* height: 90%; */
+            /* background-color: red; */
+           
+
+        }
+
+        .carousel-item {
+            /* background-color: aqua; */
+            /* height: 90%; */
+        }
+
+        .row {
+            height: 100%;
+        }
+
+        .product-details {
+            padding: 20px;
+            color: black;
+        }
+
+        .product-details h2 {
+            margin-top: 0;
+        }
+
+        .product-details button {
+            margin-top: 20px;
+        }
+        .img-container{
+            /* background-color: red; */
+            min-height: 200px;
+            border-style: solid;
+            /* border-width: 0px; */
+            border-width: 1px;
+            border-color: rgb(237, 236, 236);
+            /* border: solid; */
+        }
+        #detail-img-container{
+            
+
+            height: 500px;
+            width: 600px;
+            min-height: 500px;
+            border-style: solid;
+            border: solid;
+            border-width: 1px;
+            border-color: gray;
+            /* background-color: aqua; */
+            object-fit: cover;
+        }
+        .d-block{
+            width: 600px;
+            height: 500px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="productsBox" class="category-container">
+        <!-- <div class="category-item">
+            <img style="width: 200px;height: 200px;" width="200" height="200" alt="Soap dish and dispenser on a wall"
+                src="/public/515lDt3ygFL._AC_UF1000,1000_QL80_.jpg" />
+            <h5>
+                Soap Dishes &amp; Dispensers
+            </h5>
+            <span onclick="openPopup()"> View collection <i class="fas fa-arrow-right"></i></span>
+        </div> -->
+    </div>
+
+    <div id="detailsPopup" class="detailsPopup">
+        <div class="modal-content container-fluid">
+            <div class="row">
+                <!-- Left Side - Image Carousel -->
+                <div class="col-md-6 carousel-container">
+                    <div id="productCarousel" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <!-- class="carousel-item active" -->
+                            <div id="detail-img-container">
+                                <!-- image container this is  -->
+                            </div>
+                            <!-- <div class="carousel-item">
+                                <img src="https://via.placeholder.com/600x600" class="d-block w-100"
+                                    alt="Product Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://via.placeholder.com/600x600" class="d-block w-100"
+                                    alt="Product Image 3">
+                            </div> -->
+                        </div>
+                        <!-- Carousel Controls -->
+                        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Details -->
+                <div id="details_box" class="col-md-6 product-details">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+  
+    <script >
+        // const durityProducts = window.durityProducts
+        // import {durityProducts} from './products.js';
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const category = params.get('category')
+        const index = params.get('index')
+        const products = durityProducts[name].products[index]?.products
+
+        function createProductCards() {
+            const productContainer = document.getElementById('productsBox')
+            products.forEach((product, index) => {
+                const cardHTML = `
+                 <div class="category-item">
+                    <div class='img-container' >
+                        <img style={{width:"200px",height='200px'}} width="200px" height="200px" alt="  ${product?.name}"
+                src="${product?.imageSrc}${product?.code}.jpg" />
+                    </div>
+            
+            <h5>
+            ${product?.name}
+            </h5>
+            <p>${product?.code}</p>
+            <span onclick="openPopup(${index})"> View Details <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+                `
+
+                productContainer.innerHTML += cardHTML;
+            })
+        }
+        createProductCards()
+        function openPopup(path) {
+            const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
+            console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
+            let product_details = products[path]
+            // console.log(product_details)
+            product_details['openPath'] = productUrl
+            const now = new Date();
+            const prevItems = localStorage.getItem('items')
+            let allViewItems = [product_details]
+            if(prevItems){
+                let value = JSON.parse(prevItems)
+                value = value?.value
+                const exists = value.some(item => item.code === product_details.code);
+                allViewItems = exists ? value : [...value, product_details];
+                // console.log(JSON.parse(prevItems))
+            }
+            const item = {
+                    value: allViewItems,
+                    expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
+                };
+            localStorage.setItem('items',JSON.stringify(item))
+            document.getElementById('detailsPopup').style.display = 'flex';
+            const details_box = document.getElementById('details_box')
+            details_box.innerHTML += `
+                     <div class="modal-header">
+                        <button type="button" class="btn-close" aria-label="Close" onclick="closePopup()"></button>
+                    </div>
+                    <h4>${product_details?.name}</h4>
+                    <p> Product Code :<span> ${product_details?.code}</span></p>
+                    <p>Range :<span> ${product_details?.brand}</span></p>
+                    <p>Color Finish :<span> ${product_details?.finish}</span></p>
+                    <p>Instalation Area :<span> ${product_details?.area}</span></p>
+                    <p>Type Of Mounting :<span> ${product_details?.mounting}</span></p>
+                    <p>Catridge MM :<span> ${product_details?.size}</span></p>
+                    <p>Flow Rate :<span> ${product_details?.quantity}</span></p>
+                    <p>Flow Type :<span> ${product_details?.flow}</span></p>
+                    <p>State :<span> ${product_details?.state}</span></p>
+            `
+            const detailImgContainer = document.getElementById('detail-img-container')
+            detailImgContainer.innerHTML = `
+            <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='600px' height='500px' class="d-block w-100" alt="Product Image 1">
+            `
+        }
+        function closePopup() {
+            document.getElementById('detailsPopup').style.display = 'none';
+            const details_box = document.getElementById('details_box')
+            details_box.innerHTML =``
+        }
+        const code = params.get('code')
+        if(code){
+            openPopup(code)
+        }
+
+    </script>
+</body>
+
+</html>

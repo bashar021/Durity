@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Slider</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/si2t+Fb4fu4X1p6l5gCZbqEhQLT50qhlpS/3rx"
+    crossorigin="anonymous"
+  />
+  <style>
+    .banner-container {
+      position: relative;
+      width: 100%;
+      /* max-width: 1200px; */
+      margin: auto;
+      height:600px;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    .banner-slide {
+      position: absolute;
+      inset: 0;
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .active-slide {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .inactive-slide {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .banner-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+    }
+
+    .banner-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e0e0e0;
+      height: 100%;
+      color: #666;
+    }
+    .dots{
+        /* width: 100px; */
+        /* height: 100px; */
+        background-color: blue;
+    }
+    .videoBanner{
+        width: 100% ;
+        /* height: 600px; */
+        /* background-size: cover; */
+        
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <div class="banner-container">
+    <div id="banner-slides">
+    </div>
+    <button id="prev" class="btn position-absolute start-0 top-50 translate-middle-y">
+      &#10094;
+    </button>
+    <button id="next" class="btn position-absolute end-0 top-50 translate-middle-y">
+      &#10095;
+    </button>
+    <div id="dots" class="position-absolute bottom-0 start-50 translate-middle-x">
+    </div>
+  </div> -->
+  <video class="videoBanner"  autoplay loop muted>
+    <source src="/public/banner/WhatsApp Video 2024-09-22 at 23.58.11.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+  <script>
+    const banners = [
+      {
+        image: 'path/to/Cover2.jpg', // Replace with correct path
+        heading: "Welcome to Our Website",
+        description: "Best place to find amazing products."
+      },
+      {
+        image: 'path/to/slider-3 (2).jpg', // Replace with correct path
+        heading: "Special Offers",
+        description: "Check out our latest deals and discounts."
+      },
+      {
+        image: "", // Missing image
+        heading: "New Arrivals",
+        description: "Discover our brand new collection."
+      }
+    ];
+
+    let currentIndex = 0;
+
+    // Select elements
+    const bannerSlides = document.getElementById('banner-slides');
+    const dotsContainer = document.getElementById('dots');
+
+    // Create banner slides
+    function renderSlides() {
+      bannerSlides.innerHTML = '';
+      banners.forEach((banner, index) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.classList.add('banner-slide', index === currentIndex ? 'active-slide' : 'inactive-slide');
+
+        if (banner.image) {
+          const img = document.createElement('img');
+          img.src = banner.image;
+          img.alt = banner.heading;
+          img.classList.add('w-100', 'h-100', 'object-cover');
+          img.onerror = function () {
+            slideDiv.innerHTML = `<div class="banner-placeholder"><span>Image size: 1024x768</span></div>`;
+          };
+          slideDiv.appendChild(img);
+        } else {
+          slideDiv.innerHTML = `<div class="banner-placeholder"><span>Image size: 1024x768</span></div>`;
+        }
+
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('banner-text', 'px-4');
+        textDiv.innerHTML = `
+          <h2 class="display-4 mb-2">${banner.heading}</h2>
+          <p class="lead">${banner.description}</p>
+        `;
+
+        slideDiv.appendChild(textDiv);
+        bannerSlides.appendChild(slideDiv);
+      });
+    }
+
+    // Create dots
+    function renderDots() {
+      dotsContainer.innerHTML = '';
+      banners.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('btn', 'rounded-circle', 'me-2');
+        dot.style.width = '10px';
+        dot.style.height = '10px';
+        dot.style.backgroundColor = index === currentIndex ? 'white' : 'gray';
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    // Change to the next slide
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % banners.length;
+      updateSlide();
+    }
+
+    // Change to the previous slide
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + banners.length) % banners.length;
+      updateSlide();
+    }
+
+    // Go to a specific slide
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlide();
+    }
+
+    // Update the slide and dots
+    function updateSlide() {
+      renderSlides();
+      renderDots();
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Event listeners for navigation buttons
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('prev').addEventListener('click', prevSlide);
+
+    // Initial render
+    updateSlide();
+  </script>
+</body>
+</html>

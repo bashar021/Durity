@@ -1,0 +1,173 @@
+<html>
+<head>
+    <title>Career Openings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero-section {
+            background: url('https://placehold.co/1920x600') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-section .btn {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .content-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        .content-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 0;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            color: red;
+        }
+
+        .job-listing {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-listing h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .job-listing .details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+        .toggle-btn{
+            border: none;
+            outline: none;
+            box-shadow: none;
+            background-color: transparent;
+        }
+        .toggle-btn i {
+          
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .toggle-btn[aria-expanded="true"] i {
+            transform: rotate(180deg);
+            /* Rotates the arrow */
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#navbar").load("/components/navbar.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="hero-section">
+        <h1>JOIN US</h1>
+        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
+            form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a
+            placeholder before final copy is available.</p>
+        <button class="btn btn-danger">Join the team</button>
+        <button class="btn btn-outline-light">Quit</button>
+    </div>
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 sidebar">
+                    <a href="#" class="active">HT & ADMIN</a>
+                    <a href="#">ENGINEERING (20)</a>
+                    <a href="#">SUPPORT</a>
+                    <a href="#">DESIGN</a>
+                    <a href="#">DIGITAL MARKETING</a>
+                </div>
+                <div class="col-md-9">
+                    <h2>COME JOIN US</h2>
+                    <p>We're always looking for creative, talented self-starters to join the JNC family. Check out our
+                        open roles below and fill out an application.</p>
+                        
+                    <div class="container py-2 px-0 job-listing">
+                        <div class="">
+                            <h3 class="mb-0 px-2" style="text-align: right;margin: 0px; padding: 0px;">
+                                <button class="toggle-btn" data-toggle="collapse" data-target="#jobDetails"
+                                    aria-expanded="false" aria-controls="jobDetails">
+                                    <i style="color: black;" class="fas fa-chevron-down"></i> <!-- Arrow icon -->
+                                </button>
+                            </h3>
+                            <div style="margin-left: 0; margin-right: 0px;" class="card-body">
+                                <h3>Node JS Developer</h3>
+                                <div class="details">
+                                    <span>Experience: 3 Years</span>
+                                    <span>Deadline: 2021-05-08</span>
+                                </div>
+                                <div id="jobDetails" class="collapse mt-5">
+                                    <p><strong>Job Description:</strong> The Node JS Developer will be responsible for managing the
+                                        interchange of data between the server and the users. The primary focus will be on the development
+                                        of all server-side logic, definition, and maintenance of the central database.</p>
+                                    <p><strong>Requirements:</strong></p>
+                                    <ul>
+                                        <li>Proficiency in Node.js and frameworks like Express.</li>
+                                        <li>Understanding of front-end technologies like HTML, CSS, and JavaScript.</li>
+                                        <li>Experience with RESTful APIs and WebSocket.</li>
+                                    </ul>
+                                    <p><strong>Location:</strong> Remote or On-site options available.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
