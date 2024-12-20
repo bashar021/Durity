@@ -114,6 +114,20 @@
             background-color: black;
             margin: 10px auto 0;
         }
+        @media (max-width: 768px) {
+            .social-icons {
+                flex-direction:column;
+                /* margin-top: 120px; */
+                align-items: center;
+                justify-content: space-around;
+            }
+            .contact-image {
+                display: none;
+            }
+            .social-media-connect{
+                margin-top: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -140,7 +154,7 @@
                 <textarea id="message" name="message" rows="4"></textarea>
                 <div class="newsletter">
                     <input type="checkbox" id="newsletter" name="newsletter">
-                    <label for="newsletter">Please sign me up for the Physica newsletter</label>
+                    <label for="newsletter">Please sign me up for the Physical newsletter</label>
                 </div>
                 <button type="submit" class="btn">Send Message <i class="fas fa-arrow-right"></i></button>
             </form>
@@ -154,7 +168,7 @@
     </div>
 
 
-    <div style="padding: 50px;">
+    <div class="social-media-connect" style="padding: 30px;">
         <h2 style="text-align: center;">Our Social</h2>
         <p style="text-align: center;">Join our community to keep pace with the trends in home and lifestyle.</p>
         <div class="social-icons">
