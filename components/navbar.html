@@ -194,7 +194,7 @@
             <a class="navbar-brand " href="/">
                 <img alt="Company Logo" class="logo" height="40" src="" width="40" />
             </a>
-            <form class="d-flex position-relative mx-auto my-auto d-none d-lg-block" style="width: 20%;">
+            <form class="d-flex position-relative mx-auto my-auto d-none d-lg-block" style="width: 30%;">
                 <input autocomplete="off" aria-label="Search" class="form-control me-2" placeholder="search here" type="search"
                     id="searchInput" />
                 <span class="search-icon">
@@ -215,12 +215,9 @@
                             <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
                             <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
                             <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
-                                    Faucet</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
-                                    Accessories</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
-                                    Parts</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health Faucet</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath Accessories</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -273,20 +270,23 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Products
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="offcanvasDropdownProducts">
-                        <li><a class="dropdown-item" href="#">Product 1</a></li>
-                        <li><a class="dropdown-item" href="#">Product 2</a></li>
-                        <li><a class="dropdown-item" href="#">Product 3</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health Faucets</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath Accessories</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/components/about.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Careers</a>
+                    <a class="nav-link" href="/components/carrerspage.html">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
+                    <a class="nav-link" href="/components/events.html">Events</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Registration</a>
@@ -296,14 +296,14 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         E-catalogue
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="offcanvasDropdownECatalogue">
-                        <li><a class="dropdown-item" href="#">Catalogue 1</a></li>
-                        <li><a class="dropdown-item" href="#">Catalogue 2</a></li>
-                        <li><a class="dropdown-item" href="#">Catalogue 3</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
+                        <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
+                        <li onclick="openCatalogueForm()" class="dropdown-item">Ptmt</li>
+                        <!-- <li><a class="dropdown-item" href="#">Catalogue 3</a></li> -->
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-register" href="#">Register</a>
+                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
                 </li>
             </ul>
         </div>
