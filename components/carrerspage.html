@@ -5,6 +5,15 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/data/career.js"></script>
+    <script>
+        $(function () {
+            $("#navbar").load("/components/navbar.html");
+        });
+        $(function(){
+      $("#footer").load("./footer.html"); 
+    });
+    </script>
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
     <style>
         body {
@@ -99,12 +108,15 @@
             transform: rotate(180deg);
             /* Rotates the arrow */
         }
+
+
+        @media (max-width:768px){
+            .hero-section {
+                background-position: center center;
+                padding: 50px 0;
+            }
+        }
     </style>
-    <script>
-        $(function () {
-            $("#navbar").load("/components/navbar.html");
-        });
-    </script>
 </head>
 
 <body>
@@ -132,42 +144,51 @@
                     <p>We're always looking for creative, talented self-starters to join the JNC family. Check out our
                         open roles below and fill out an application.</p>
                         
-                    <div class="container py-2 px-0 job-listing">
-                        <div class="">
-                            <h3 class="mb-0 px-2" style="text-align: right;margin: 0px; padding: 0px;">
+                        <div class="container py-2 px-0 job-listing" id="job-listing"></div>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const generateJobListing = () => {
+            const jobListing = document.getElementById("job-listing")
+            career.forEach((element,index) => {
+                const career_detail = `
+                    <h3 class="mb-0 px-2" style="text-align: right;margin: 0px; padding: 0px;">
                                 <button class="toggle-btn" data-toggle="collapse" data-target="#jobDetails"
                                     aria-expanded="false" aria-controls="jobDetails">
                                     <i style="color: black;" class="fas fa-chevron-down"></i> <!-- Arrow icon -->
                                 </button>
                             </h3>
-                            <div style="margin-left: 0; margin-right: 0px;" class="card-body">
-                                <h3>Node JS Developer</h3>
+                    <div style="margin-left: 0; margin-right: 0px;" class="card-body">
+                                <h3>${element.designation}</h3>
                                 <div class="details">
-                                    <span>Experience: 3 Years</span>
-                                    <span>Deadline: 2021-05-08</span>
+                                    <span>Experience: ${element.experience}</span>
+                                    <span>Deadline: ${element.deadline}</span>
                                 </div>
                                 <div id="jobDetails" class="collapse mt-5">
-                                    <p><strong>Job Description:</strong> The Node JS Developer will be responsible for managing the
-                                        interchange of data between the server and the users. The primary focus will be on the development
-                                        of all server-side logic, definition, and maintenance of the central database.</p>
+                                    <p><strong>Job Description:</strong> ${element.job_description}</p>
                                     <p><strong>Requirements:</strong></p>
                                     <ul>
-                                        <li>Proficiency in Node.js and frameworks like Express.</li>
-                                        <li>Understanding of front-end technologies like HTML, CSS, and JavaScript.</li>
-                                        <li>Experience with RESTful APIs and WebSocket.</li>
+                                        <li>${element.requirement1}</li>
+                                        <li>${element.requirement2}</li>
+                                        <li>${element.requirement3}</li>
                                     </ul>
-                                    <p><strong>Location:</strong> Remote or On-site options available.</p>
+                                    <p><strong>Location:</strong> ${element.location}</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    </div>
+                `
+                
+                jobListing.innerHTML += career_detail
+            });
+        }
+        window.onload = generateJobListing;
+    </script>
 </body>
 
 </html>

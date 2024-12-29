@@ -122,12 +122,22 @@
             left: 50%;
             width: 100%;
             height: 100vh;
-            z-index: 20;
+            z-index: 1050;
             transform: translate(-50%);
             display: none;
         }
 
+        .input-form{
+            width: 30%;
+        }
+
         .form-control {
+            border-radius: 25px;
+            padding: 10px 20px;
+            transition: border-color 0.3s;
+        }
+
+        .catalogue-form-control{
             border-radius: 25px;
             padding: 10px 20px;
             transition: border-color 0.3s;
@@ -139,6 +149,12 @@
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
 
+        .catalogue-form-control{
+            border-color: #007bff;
+            /* Change to your desired focus color */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        
         .search-icon {
             position: absolute;
             right: 10px;
@@ -174,10 +190,33 @@
         }
 
         @media (max-width: 768px) {
-            .form-control {
-                width: 100%;
+            .input-form {
+                width: 50%;
                 /* Full width on smaller screens */
             }
+
+            .catalogueForm{
+                width: 100%;
+                height: 80vh;
+            }
+
+            .modalContent{
+                width: 90%;
+            }
+
+            .modal-title{
+                font-size: 18px;
+            }
+            .form-label{
+                font-size: 12px;
+            }
+            .catalogue-form-control{
+                height: 18px;
+            }
+            #message{
+                height: 36px;
+            }
+            
         }
     </style>
 </head>
@@ -185,16 +224,15 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid py-2">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon">
+            <button onclick="hideSearch()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon" id="navbar-toggler-icon">
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
             <a class="navbar-brand " href="/">
-                <img alt="Company Logo" class="logo" height="40" src="" width="40" />
+                <img alt="Logo" class="logo" height="40" src="" width="40" />
             </a>
-            <form class="d-flex position-relative mx-auto my-auto d-none d-lg-block" style="width: 30%;">
+            <form class="input-form d-flex position-relative mx-auto my-auto d-none d-lg-block">
                 <input autocomplete="off" aria-label="Search" class="form-control me-2" placeholder="search here" type="search"
                     id="searchInput" />
                 <span class="search-icon">
@@ -258,9 +296,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <form class="d-flex position-relative mb-3">
-                <input aria-label="Search" class="form-control me-2" placeholder="search here" type="search" />
-                <span class="search-icon">
+            <form class="d-flex position-relative mb-3" >
+                <input aria-label="Search" id="responsive-form" class="form-control me-2" placeholder="search here" type="search" />
+                <span class="search-icon" id="responsive-form1">
                     <i class="fas fa-search"></i>
                 </span>
             </form>
@@ -325,25 +363,25 @@
                 <form>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name*</label>
-                        <input type="text" class="form-control" id="name" placeholder="Please enter your name">
+                        <input type="text" class="catalogue-form-control" id="name" placeholder="Please enter your name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email*</label>
-                        <input type="email" class="form-control" id="email" placeholder="Please enter your email">
+                        <input type="email" class="catalogue-form-control" id="email" placeholder="Please enter your email">
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label">Mobile*</label>
-                        <input type="text" class="form-control" id="mobile"
+                        <input type="text" class="catalogue-form-control" id="mobile"
                             placeholder="Please enter your mobile number">
                     </div>
                     <div class="mb-3">
                         <label for="business-name" class="form-label">Business Name</label>
-                        <input type="text" class="form-control" id="business-name"
+                        <input type="text" class="catalogue-form-control" id="business-name"
                             placeholder="Please enter your business name">
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="3"
+                        <textarea class="catalogue-form-control" id="message" rows="2"
                             placeholder="Please write your query"></textarea>
                     </div>
                     <button type="submit" class="btn btn-submit">Submit</button>
@@ -360,10 +398,27 @@
         crossorigin="anonymous"></script>
 
     <script>
+
+        let responsiveForm = document.getElementById('responsive-form') // for hiding search bar in responsive navbar
+        let responsiveForm1 = document.getElementById('responsive-form1')
+        const hideSearch = (type) => {
+            responsiveForm.style.display = 'none'
+            responsiveForm1.style.display = 'none'
+            console.log('done');
+        }
+
+        let offCanvasNavbarrr = document.getElementById('offcanvasNavbar')
+        const closeNavbar = () => {
+            // offCanvasNavbarrr.style.display = 'none'
+            // catalogueForm.style.display = ``
+        }
+ 
         let catalogueForm = document.getElementById('catalogueForm')
         const openCatalogueForm = (type) => {
+            closeNavbar()
             catalogueForm.style.display = 'block'
             console.log('hi')
+            
         }
         const closeCatalogueForm = () => {
             catalogueForm.style.display = 'none'
