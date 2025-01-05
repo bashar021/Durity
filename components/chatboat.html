@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -194,6 +194,291 @@
             <span class="close-btn" id="close-btn">✖</span>
         </div>
         <div class="chat-body" id="chat-body">
+            Chat messages will be displayed here 
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button> Blue arrow button 
+        </div>
+    </div>
+
+    <script>
+        // // JavaScript Code
+        // // Define chatbot responses
+        // const responses = {
+        //     'hello': 'Hello! How can I assist you today?',
+        //     'hi': 'Hi! What brings you here today?',
+        //     'how are you': 'I\'m doing great, thanks for asking! How about you?',
+        //     'what is your purpose': 'I\'m here to assist you with any questions or concerns you may have about our business.',
+        //     'default': 'Sorry, I didn\'t understand that. Can you please rephrase your question?'
+        // };
+
+        // // Get chat body, user input, chat icon, chat container, and close button elements
+        // const chatBody = document.getElementById('chat-body');
+        // const userInput = document.getElementById('user-input');
+        // const sendBtn = document.getElementById('send-btn');
+        // const chatIcon = document.getElementById('chat-icon');
+        // const chatContainer = document.getElementById('chat-container');
+        // const closeBtn = document.getElementById('close-btn');
+
+        // // Add event listener to chat icon
+        // chatIcon.addEventListener('click', () => {
+        //     chatContainer.style.display = 'block'; // Show chat container
+        // });
+
+        // // Add event listener to close button
+        // closeBtn.addEventListener('click', () => {
+        //     chatContainer.style.display = 'none'; // Hide chat container
+        // });
+
+        // // Add event listener to send button
+        // sendBtn.addEventListener('click', () => {
+        //     const userMessage = userInput.value.trim();
+        //     if (userMessage !== '') {
+        //         // Display user message
+        //         const userMessageElement = document.createElement('p');
+        //         userMessageElement.textContent = `${userMessage}`;
+        //         userMessageElement.classList.add('you');
+        //         chatBody.appendChild(userMessageElement);
+
+        //         // Get chatbot response
+        //         let response = responses[userMessage.toLowerCase()];
+        //         if (!response) {
+        //             response = responses['default'];
+        //         }
+
+        //         // Display chatbot response
+        //         const chatbotResponseElement = document.createElement('p');
+        //         chatbotResponseElement.textContent = `Chatbot: ${response}`;
+        //         chatbotResponseElement.classList.add('me');
+        //         chatBody.appendChild(chatbotResponseElement);
+
+        //         // Clear user input
+        //         userInput.value = '';
+        //     }
+        // });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <style>
+        /* CSS Styles */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 30px;
+            color: #4CAF50;
+        }
+        @media (max-width: 768px) {
+            .chat-icon {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        .chat-container {
+            width: 350px;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 0px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            display: none;
+            /* Initially hidden */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-style: none;
+            z-index: 25;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            padding: 10px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .online-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: green;
+            /* Green dot for online */
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .chat-body {
+            padding: 20px;
+            overflow-y: auto;
+            height: 80%;
+        }
+
+        .chat-footer {
+            /* padding: 10px; */
+            background-color: transparent;
+            /* background-color: #0521f4; */
+            border-top: 1px solid #ccc;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-bottom: 2%;
+            border-style: none;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        #user-input {
+            width: 60%;
+            height: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            background: #f8f9fa;
+
+        }
+
+        #send-btn {
+            width: 20%;
+            height: 30px;
+            background-color: #0521f4;
+            /* color: #0252f1; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            /* font-size: 30px; */
+            padding: 0px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 15px;
+            color: #000000;
+        }
+
+        .you {
+            /* max-width: 60%; */
+            width: fit-content;
+            min-width: 20%;
+            background-color: #0000FF;
+            /* WhatsApp-like green bubble */
+            color: #000;
+            /* Text color */
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            word-wrap: break-word;
+            align-self: flex-end;
+            /* Align to the right like sent messages */
+            /* float: right; */
+            /* position: absolute; */
+            /* right: 1; */
+        }
+
+        .you::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            /* Adjust this to position the tail */
+            bottom: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #dcf8c6;
+            /* Color of the tail */
+        }
+
+        .me {
+            /* max-width: 60%; */
+            width: fit-content;
+            min-width: 10%;
+            background-color: #f8f9fa;
+            /* WhatsApp-like green bubble */
+            color: #000;
+            /* Text color */
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            word-wrap: break-word;
+            align-self: flex-end;
+            /* Align to the right like sent messages */
+            /* float: right; */
+            /* position: absolute; */
+            /* right: 1; */
+        }
+
+        .me::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            /* Adjust this to position the tail */
+            bottom: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #dcf8c6;
+            /* Color of the tail */
+        }
+
+        .option-btn {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <i class="chat-icon" id="chat-icon">💬</i>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <div style="display: flex; align-items: center;">
+                <img src="https://via.placeholder.com/30" alt="Avatar" class="avatar">
+                <span>Chatbot</span>
+                <span class="online-status"></span>
+            </div>
+            <span class="close-btn" id="close-btn">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
             <!-- Chat messages will be displayed here -->
         </div>
         <div class="chat-footer">
@@ -204,16 +489,6 @@
 
     <script>
         // JavaScript Code
-        // Define chatbot responses
-        const responses = {
-            'hello': 'Hello! How can I assist you today?',
-            'hi': 'Hi! What brings you here today?',
-            'how are you': 'I\'m doing great, thanks for asking! How about you?',
-            'what is your purpose': 'I\'m here to assist you with any questions or concerns you may have about our business.',
-            'default': 'Sorry, I didn\'t understand that. Can you please rephrase your question?'
-        };
-
-        // Get chat body, user input, chat icon, chat container, and close button elements
         const chatBody = document.getElementById('chat-body');
         const userInput = document.getElementById('user-input');
         const sendBtn = document.getElementById('send-btn');
@@ -221,10 +496,46 @@
         const chatContainer = document.getElementById('chat-container');
         const closeBtn = document.getElementById('close-btn');
 
+        // Function to display messages
+        function displayMessage(content, className) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = content;
+            messageElement.classList.add(className);
+            chatBody.appendChild(messageElement);
+        }
+
         // Add event listener to chat icon
         chatIcon.addEventListener('click', () => {
             chatContainer.style.display = 'block'; // Show chat container
+
+            // Display welcome message and options
+            setTimeout(() => {
+                displayMessage("Hello! How can I assist you today?", "me");
+
+                const options = document.createElement('div');
+                options.innerHTML = `
+                    <button class="option-btn" onclick="selectOption('Option 1')">Option 1</button>
+                    <button class="option-btn" onclick="selectOption('Option 2')">Option 2</button>
+                `;
+                chatBody.appendChild(options);
+            }, 500);
         });
+
+        // Handle option selection
+        function selectOption(option) {
+            displayMessage(`You selected: ${option}`, "you");
+
+            // Respond based on the option selected
+            setTimeout(() => {
+                let response = '';
+                if (option === 'Option 1') {
+                    response = 'You chose Option 1. How can I help further?';
+                } else if (option === 'Option 2') {
+                    response = 'You chose Option 2. Let me know if you need help!';
+                }
+                displayMessage(response, "me");
+            }, 500);
+        }
 
         // Add event listener to close button
         closeBtn.addEventListener('click', () => {
@@ -236,22 +547,10 @@
             const userMessage = userInput.value.trim();
             if (userMessage !== '') {
                 // Display user message
-                const userMessageElement = document.createElement('p');
-                userMessageElement.textContent = `${userMessage}`;
-                userMessageElement.classList.add('you');
-                chatBody.appendChild(userMessageElement);
+                displayMessage(userMessage, "you");
 
-                // Get chatbot response
-                let response = responses[userMessage.toLowerCase()];
-                if (!response) {
-                    response = responses['default'];
-                }
-
-                // Display chatbot response
-                const chatbotResponseElement = document.createElement('p');
-                chatbotResponseElement.textContent = `Chatbot: ${response}`;
-                chatbotResponseElement.classList.add('me');
-                chatBody.appendChild(chatbotResponseElement);
+                // Default response
+                displayMessage('Chatbot: I\'m here to help!', "me");
 
                 // Clear user input
                 userInput.value = '';
