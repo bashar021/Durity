@@ -15,14 +15,15 @@
         /* margin-top: 5%; */
         padding-top: 5%;
         padding-bottom: 5%;
+        flex-wrap: wrap;
 
         /* width: 100%; */
 
     }
     .whoweare-box{
         /* background-color: aqua; */
-        width: fit-content;
-        max-width: 250px;
+        /* width: fit-content; */
+        width: 250px;
         text-align: center;
 
     }
@@ -31,6 +32,50 @@
         margin: auto;
         text-align: center;
     }
+  /* Extra Small Devices (Phones, less than 576px) */
+@media (max-width: 575.98px) {
+    /* Styles for extra small devices */
+    .whoweare-box{
+        width: 400px;
+        margin-bottom: 2%;
+    }
+}
+
+/* Small Devices (Tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* Styles for small devices */
+    .whoweare-box{
+        width: 600px;
+        margin-bottom: 2%;
+    }
+}
+
+/* Medium Devices (Desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Styles for medium devices */
+    .whoweare-box{
+        width: 400px;
+        margin-bottom: 2%;
+    }
+}
+
+/* Large Devices (Large Desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* Styles for large devices */
+    .whoweare-box{
+        width: 300px;
+        margin-bottom: 2%;
+    }
+}
+
+/* Extra Large Devices (Extra Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Styles for extra large devices */
+    .whoweare-box{
+        width: 22vw;
+        /* margin-bottom: 2%; */
+    }
+}
    </style>
 </head>
 <body>
