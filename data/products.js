@@ -1,6 +1,7 @@
 // import {futrix} from './faucets/futrix.js'
 const durityProducts = {
   faucets: {
+    coverPageUrl:'/public/banner/products/faucets/bathroom-banner-new.jpg',
     products: [
       {
         name: "Futurix",
@@ -7894,6 +7895,7 @@ const durityProducts = {
     ],
   },
   ptmt: {
+    coverPageUrl:'/public/banner/products/ptmt/bathroom_accessary_banner.jpeg',
     products: [
       {   name: "Superb Collection Blue",
           imageSrc: "/public/topproducts/PTMT/BLUE SUPERB.png",
@@ -9868,6 +9870,7 @@ const durityProducts = {
     ],
   },
   showers: {
+    coverPageUrl:'/public/banner/products/showers/banner_products.jpg',
     products: [
       { name: "Waterfall" ,
           imageSrc: "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
@@ -10864,6 +10867,7 @@ const durityProducts = {
     ],
   },
   "health faucet": {
+    coverPageUrl:'/public/banner/products/healthFaucets/Banner-10_3911-1184x480.jpg',
      products:[
           {name: "Furtix" ,
                imageSrc: "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
@@ -11352,6 +11356,7 @@ const durityProducts = {
 
   },
   "bath accessories": {
+    coverPageUrl:'/public/banner/products/bathAccerssories/Bathroom-Accessories-Banner_3.jpg',
     products:[
         {name: "Flexiable Faucet" ,
             imageSrc: "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
