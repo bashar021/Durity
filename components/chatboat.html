@@ -302,21 +302,32 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #ffffff;
+            background-color: #0c0c0c22;
+            /* background-color: transparent; */
+            /* filter: blur(5px); */
             display: none;
             /* Initially hidden */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-style: none;
             z-index: 25;
+            display: none;
+            flex-direction: column;
+            justify-content:space-between;
+            /* align-items: center; */
+            
         }
-
+        .chat-container::after{
+              filter: blur(50px);
+        }
         .chat-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: transparent;
-            padding: 10px;
+            /* background-color: transparent; */
+            background-color:rgb(8,94,84);
+            padding: 15px;
             border-bottom: 1px solid #e8e8e8;
+            color: white;
         }
 
         .avatar {
@@ -344,17 +355,19 @@
 
         .chat-footer {
             /* padding: 10px; */
-            background-color: transparent;
+            /* background-color: transparent; */
+            background-color: white;
             /* background-color: #0521f4; */
             border-top: 1px solid #ccc;
-            padding-bottom: 100px;
+            /* padding-bottom: 100px; */
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            padding-bottom: 2%;
+            /* padding-bottom: 2%; */
             border-style: none;
-            margin-left: 2%;
-            margin-right: 2%;
+            /* margin-left: 2%; */
+            /* margin-right: 2%; */
+            padding: 10px;
         }
 
         #user-input {
@@ -368,21 +381,32 @@
         }
 
         #send-btn {
-            width: 20%;
-            height: 30px;
-            background-color: #0521f4;
+            /* width: 20%; */
+            /* height: 30px; */
+            background-color:rgb(0,103,178);
             /* color: #0252f1; */
             border: none;
             border-radius: 5px;
             cursor: pointer;
             /* font-size: 30px; */
-            padding: 0px;
+            padding: 5px;
+            width: 80%;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            align-items: center;
+            row-gap: 5px;
+            column-gap: 5px;
         }
 
-        .close-btn {
+        .closeBtn {
             cursor: pointer;
             font-size: 15px;
-            color: #000000;
+            color: rgb(217, 216, 216);
         }
 
         .you {
@@ -463,27 +487,91 @@
             cursor: pointer;
             margin: 5px;
         }
+        .message-container{
+            /* background-color: white; */
+            height: 100%;
+        }
+        .message{
+            /* background-color: white;
+            width: fit-content;
+            padding: 5%;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            margin-top: 10%;
+            margin-left: 5%; */
+            background-color: white;
+  width: fit-content;
+  padding: 5%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-top: 10%;
+  margin-left: 5%;
+  position: relative;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .message::before {
+  content: "";
+  position: absolute;
+  top: 4.5px; /* Positions the triangle above the bubble */
+  left: -15px; /* Adjust this to align horizontally */
+  width: 0;
+  height: 0;
+  transform: rotate(-90deg);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white; /* The triangle color matches the bubble */
+}
+        .message-p1{
+            padding: 0px;
+            margin: 0px;
+            margin-left: 5%;
+            color: gray;
+        }
+        .message-p2{
+            margin-left: 5%;
+            margin-top: 3%;
+        }
+        .message-p3{
+            text-align: right;
+            margin: 0px;
+            padding: 0px;
+            color: gray;
+            font-size: 12px;
+        }
 
     </style>
 </head>
 
 <body>
-    <i class="chat-icon" id="chat-icon">💬</i>
+    <!-- <i class="chat-icon" id="chat-icon">💬</i> -->
+     <img onclick="openChat()" class="chat-icon" id="chat-icon" src="/public//icons//whatsapp.svg" alt=""  width="40" height="40">
     <div class="chat-container" id="chat-container">
         <div class="chat-header">
             <div style="display: flex; align-items: center;">
-                <img src="https://via.placeholder.com/30" alt="Avatar" class="avatar">
-                <span>Chatbot</span>
+                <!-- <img src="https://via.placeholder.com/30" alt="Avatar" class="avatar"> -->
+                <span>Durity Responsible Luxury</span>
                 <span class="online-status"></span>
             </div>
-            <span class="close-btn" id="close-btn">✖</span>
+            <span onclick="closeChat()" class="closeBtn" id="close-btn">X</span>
         </div>
-        <div class="chat-body" id="chat-body">
-            <!-- Chat messages will be displayed here -->
+        <!-- <div class="chat-body" id="chat-body">
+           
+        </div> -->
+        <div class="message-container">
+            <div class="message">
+                <p class="message-p1">Durity Responsible Luxury</p>
+                <p class="message-p2">Welcome to Durity Responsible Luxury.</p>
+                <p class="message-p3">16:31</p>
+            </div>
         </div>
         <div class="chat-footer">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button id="send-btn">Send</button> <!-- Blue arrow button -->
+            <!-- <input type="text" id="user-input" placeholder="Type your message..."> -->
+            <!-- <button >Start Chat</button> Blue arrow button -->
+            <a id="send-btn" href="https://wa.me/8755021206?text=Hello" target="_blank" rel="noopener noreferrer">
+                <img src="/public//icons//whatsapp.svg" alt="" width="20" height="20">
+                Start Chat</a>
         </div>
     </div>
 
@@ -495,67 +583,16 @@
         const chatIcon = document.getElementById('chat-icon');
         const chatContainer = document.getElementById('chat-container');
         const closeBtn = document.getElementById('close-btn');
-
-        // Function to display messages
-        function displayMessage(content, className) {
-            const messageElement = document.createElement('p');
-            messageElement.textContent = content;
-            messageElement.classList.add(className);
-            chatBody.appendChild(messageElement);
+        const openChat = ()=>{
+             chatContainer.style.display = 'flex'
         }
-
-        // Add event listener to chat icon
-        chatIcon.addEventListener('click', () => {
-            chatContainer.style.display = 'block'; // Show chat container
-
-            // Display welcome message and options
-            setTimeout(() => {
-                displayMessage("Hello! How can I assist you today?", "me");
-
-                const options = document.createElement('div');
-                options.innerHTML = `
-                    <button class="option-btn" onclick="selectOption('Option 1')">Option 1</button>
-                    <button class="option-btn" onclick="selectOption('Option 2')">Option 2</button>
-                `;
-                chatBody.appendChild(options);
-            }, 500);
-        });
-
-        // Handle option selection
-        function selectOption(option) {
-            displayMessage(`You selected: ${option}`, "you");
-
-            // Respond based on the option selected
-            setTimeout(() => {
-                let response = '';
-                if (option === 'Option 1') {
-                    response = 'You chose Option 1. How can I help further?';
-                } else if (option === 'Option 2') {
-                    response = 'You chose Option 2. Let me know if you need help!';
-                }
-                displayMessage(response, "me");
-            }, 500);
+        const closeChat = ()=>{
+            chatContainer.style.display = 'none'
         }
+       
+       
 
-        // Add event listener to close button
-        closeBtn.addEventListener('click', () => {
-            chatContainer.style.display = 'none'; // Hide chat container
-        });
-
-        // Add event listener to send button
-        sendBtn.addEventListener('click', () => {
-            const userMessage = userInput.value.trim();
-            if (userMessage !== '') {
-                // Display user message
-                displayMessage(userMessage, "you");
-
-                // Default response
-                displayMessage('Chatbot: I\'m here to help!', "me");
-
-                // Clear user input
-                userInput.value = '';
-            }
-        });
+        
     </script>
 </body>
 
