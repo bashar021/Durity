@@ -29,12 +29,21 @@
             overflow-x: auto;
             padding: 20px;
         }
-
+        .category-href{
+            text-decoration: none;
+            color: black;
+            
+        }
+        .category-href:hover{
+            color: black;
+            text-decoration: none;
+        }
         .category-item {
             text-align: center;
             margin: 0 10px;
             flex: 0 0 auto;
             width: 200px;
+            cursor: pointer;
         }
 
         .category-item img {
@@ -42,9 +51,10 @@
             height: auto;
         }
 
-        .category-item h5 {
+        .category-item h6 {
             margin-top: 15px;
-            font-size: 1.2rem;
+            font-size: 15px;
+            font-weight:normal;
         }
 
         .category-item a {
@@ -76,11 +86,11 @@
 </head>
 
 <body>
-    <div id="recentProductsBox" class="rencentProductsBox">
+    <div id="recentProductsBox" class="rencentProductsBox ">
         <h1 class="category-title">
             Recent View Products 
         </h1>
-        <div id='category-container' class="category-container">
+        <div id='category-container' class="category-container invisible-scrollbar">
             <!-- <div class="category-item">
                 <img style="width: 200px;height: 200px;" width="200" height="200" alt="Soap dish and dispenser on a wall"
                     src="/public/515lDt3ygFL._AC_UF1000,1000_QL80_.jpg" />
@@ -109,20 +119,34 @@
                 console.log(localStorageValue)
                 let box = document.getElementById('category-container')
                 localStorageValue.map((item,index)=>{
-                    box.innerHTML +=`
-                     <div class="category-item">
-                <img style="width: 200px;height: 200px;" width="200" height="200" alt="Soap dish and dispenser on a wall"
-                    src="${item.imageSrc}${item.code}.jpg" />
-                <h5>
-                ${item.name}
-                </h5>
-                <a href="${item?.openPath}">
-                    View collection
-                    <i class="fas fa-arrow-right">
-                    </i>
-                </a>
-            </div>
+                    let src = `${item.imageSrc}${item.code}.jpg`
+                    const img = new Image();
+                    let newSrc = '/public/icons/brokenImage.svg'
+                    img.src = src;
+                    img.onload = () => {
+                        box.innerHTML +=`
+                        <a class='category-href' href="${item?.openPath}"><div  class="category-item">
+                            <img style="width: 200px;height: 200px;" width="200" height="200" alt="Soap dish and dispenser on a wall"
+                                src="${src}" />
+                            <h6>
+                            ${item.name}
+                            </h6>
+                        </div></a>
                     `
+                    }
+                    img.onerror = () => {
+                        box.innerHTML +=`
+                        <a class='category-href' href="${item?.openPath}"><div  class="category-item">
+                            <img style="width: 200px;height: 200px;" width="200" height="200" alt="Soap dish and dispenser on a wall"
+                                src="${newSrc}" />
+                            <h6>
+                            ${item.name}
+                            </h6>
+                        </div></a>
+                    `
+                    }
+                   
+                   
                 })
             }else{
                 recentProductsBox.style.display = 'none'
