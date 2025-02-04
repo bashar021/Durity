@@ -16,10 +16,110 @@
 
         .navbar-custom {
             /* background-color: #ffffff; */
-            background-color: #f8f9fa;
+            /* background-color: #f8f9fa; */
+            background-color: black;
             /* padding: 10px 20px; */
             padding: 0px;
+            display: none;
         }
+
+        #md-navbarCustom {
+
+            background-color: rgb(248, 249, 250);
+            height: fit-content;
+            display: none;
+        }
+        .navbarCustom-box1{
+            /* background-color: green; */
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 10%;
+        }
+        .navbarCustom-box2{
+            width: fit-content;
+            display: flex;
+        }
+        .nav-content{
+            display: flex;
+        }
+        
+
+        #navbarCustom1 {
+            background-color:rgb(238, 240, 241);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed; 
+            width: 100%;
+            z-index: 1;
+            padding-left: 3%;
+            display: none;
+        }
+        #md-navbarCustom1{
+            display: none;
+        }
+        .searchBar-container{
+            /* height: 18px; */
+            /* background-color: red; */
+            width: fit-content;
+        }
+        .searchBar-container input{
+            background-color:transparent;
+            border: solid;
+            border-radius: 20px;
+            font-size: 14px;
+            padding: 5px;
+            padding-left: 10px;
+            outline: none;
+            border-color: rgb(45, 45, 45);
+            border-width: 1px;
+        }
+
+        .md-navbarCustom1 {
+            background-color: transparent;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+
+        .md-navbarCustom1 input {
+            height: 18px;
+            border-radius: 20px;
+            width: 80%;
+            margin-right: 5%;
+            border-style: solid;
+            border: solid;
+            outline: none;
+            padding: 5px;
+            font-size: 10px;
+            
+
+        }
+
+        .md-navbarCustom2-ul {
+            /* display: flex; */
+            /* background-color: red; */
+            list-style-type: none;
+            /* Remove bullet points */
+            padding: 0;
+            /* Remove default padding */
+            margin: 0;
+            /* Remove default margin */
+            display: flex;
+            /* Align items in a row */
+            flex-wrap: wrap;
+            gap: 10px;
+            /* Optional: Add spacing between items */
+        }
+
+        /* .md-navbarCustom2-ul li{
+            display: inline-block;
+        } */
 
         .navbar-custom .navbar-nav .nav-link {
             color: #000;
@@ -127,7 +227,7 @@
             display: none;
         }
 
-        .input-form{
+        .input-form {
             width: 30%;
         }
 
@@ -137,7 +237,7 @@
             transition: border-color 0.3s;
         }
 
-        .catalogue-form-control{
+        .catalogue-form-control {
             border-radius: 25px;
             padding: 10px 20px;
             transition: border-color 0.3s;
@@ -149,12 +249,12 @@
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
 
-        .catalogue-form-control{
+        .catalogue-form-control {
             border-color: #007bff;
             /* Change to your desired focus color */
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
-        
+
         .search-icon {
             position: absolute;
             right: 10px;
@@ -195,54 +295,195 @@
                 /* Full width on smaller screens */
             }
 
-            .catalogueForm{
+            .catalogueForm {
                 width: 100%;
                 height: 80vh;
             }
 
-            .modalContent{
+            .modalContent {
                 width: 90%;
             }
 
-            .modal-title{
+            .modal-title {
                 font-size: 18px;
             }
-            .form-label{
+
+            .form-label {
                 font-size: 12px;
             }
-            .catalogue-form-control{
+
+            .catalogue-form-control {
                 height: 18px;
             }
-            #message{
+            #navbarCustom1 {
+                display: none;
+            }
+            #message {
                 height: 36px;
             }
-            
+            #md-products-ul{
+                /* background-color: red; */
+                padding: 0px;
+                display: none;
+                transition: all 0.5s;
+            }
+            #md-products-ul li{
+                /* background-color: blue; */
+                margin-top: 5px;
+                /* color: black; */
+
+            }
+            #md-products-ul li a{
+                color: rgb(142, 141, 141);
+                
+            }
+
+        }
+
+        /* Extra Small Devices (Phones, less than 576px) */
+        @media (max-width: 575.98px) {
+            .navbarCustom {
+                display: none;
+            }
+
+            #md-navbarCustom {
+                display: block;
+            }
+            #navbarCustom1 {
+                display: none;
+            }
+            #md-navbarCustom1{
+                display: block;
+            }
+        }
+
+        /* Small Devices (Tablets, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .navbarCustom {
+                display: none;
+            }
+
+            #md-navbarCustom {
+                display: block;
+            }
+            #navbarCustom1 {
+                display: none;
+            }
+            #md-navbarCustom1{
+                display: block;
+            }
+
+        }
+
+        /* Medium Devices (Desktops, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .navbarCustom {
+                display: none;
+            }
+            #navbarCustom1 {
+                display: none;
+            }
+            #md-navbarCustom {
+                display: block;
+            }
+
+        }
+
+        /* Large Devices (Large Desktops, 992px and up) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            #navbarCustom1 {
+                display: flex;
+            }
+        }
+
+        /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            #navbarCustom1 {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid py-2">
-            <button onclick="hideSearch()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <!-- navbar  -->
+    <!-- <div id="navbarCustom1">
+        <div class="navbarCustom-box1">
+            <a href="/"><img src="" alt="">Logo</a>
+            <form class="searchBar-container">
+                <input autocomplete="off" aria-label="Search" class=""
+                    placeholder="search here" type="search" id="searchInput" />
+                <div class="suggestions" id="suggestions">
+                </div>
+            </form>
+        </div>
+        <div class="navbarCustom-box2">
+            <ul class="ms-auto mb-2 mb-lg-0 nav-content">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
+                                Faucet</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
+                                Accessories</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
+                                Parts</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/carrerspage.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/events.html">Events</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownECatalogue" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        E-catalogue
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
+                        <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
+                        <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+        
+
+    </div> -->
+
+    <nav class="" id="md-navbarCustom1">
+        <div class="container-fluid py-2 ">
+            <button onclick="hideSearch()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon" id="navbar-toggler-icon">
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
             <a class="navbar-brand " href="/">
-                <!-- <img alt="Logo" class="logo" height="50" src="/public//icons//durity logo.svg" width="50" /> -->
             </a>
-            <form class="input-form d-flex position-relative mx-auto my-auto d-none d-lg-block">
-                <input autocomplete="off" aria-label="Search" class="form-control me-2" placeholder="search here" type="search"
-                    id="searchInput" />
+            <!-- <form class="input-form d-flex position-relative mx-auto my-auto d-none d-lg-block">
+                <input autocomplete="off" aria-label="Search" class="form-control me-2 searchInput"
+                    placeholder="search here" type="search" id="searchInput" />
                 <span class="search-icon">
                     <i class="fas fa-search"></i>
                 </span>
                 <div class="suggestions" id="suggestions">
-                    <!-- <div class="suggestion-item">Suggestion 1</div> -->
                 </div>
-            </form>
-            <div class="collapse navbar-collapse d-none d-lg-block">
+            </form> -->
+            <!-- <div class="collapse navbar-collapse d-none d-lg-block ">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
@@ -253,9 +494,23 @@
                             <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
                             <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
                             <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health Faucet</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath Accessories</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
+                                    Faucet</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
+                                    Accessories</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
+                                    Parts</a></li>
+                        </ul>
+                        <ul class="" aria-labelledby="">
+                            <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
+                                    Faucet</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
+                                    Accessories</a></li>
+                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
+                                    Parts</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -267,9 +522,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/components/events.html">Events</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Registration</a>
-                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownECatalogue" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -278,16 +530,72 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
                             <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
                             <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
-                            <!-- <li><a class="dropdown-item" href="#">Catalogue 3</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-register my-auto mt-1" href="#">Register</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
+    
+
+    <!-- <div 
+   
+    class="hidden"
+    >
+        <div class="md-navbarCustom1">
+            <button>
+                <img src="/public//icons//hamburger.svg" alt="">
+            </button>
+            <input type="text" placeholder="Search here" />
+        </div>
+        <div class="md-navbarCustom2">
+            <ul class=" md-navbarCustom2-ul">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
+                                Faucet</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
+                                Accessories</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/carrerspage.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/components/events.html">Events</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownECatalogue" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        E-catalogue
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
+                        <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
+                        <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+
+    </div> -->
 
     <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
@@ -296,25 +604,37 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <form class="d-flex position-relative mb-3" >
-                <input aria-label="Search" id="responsive-form" class="form-control me-2" placeholder="search here" type="search" />
+            <form class="d-flex position-relative mb-3">
+                <input aria-label="Search" id="responsive-form" class="form-control me-2" placeholder="search here"
+                    type="search" />
                 <span class="search-icon" id="responsive-form1">
                     <i class="fas fa-search"></i>
                 </span>
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasDropdownProducts" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                    <li onclick="showProductOptions()" class="nav-link dropdown-toggle" id="md-product-option">Products</li>
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
                         <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
                         <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
                         <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health Faucets</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath Accessories</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
+                                Faucets</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
+                                Accessories</a></li>
+                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a>
+                        </li>
+                    </ul> -->
+                    <ul class="" aria-labelledby="" id="md-products-ul">
+                        <li><a class="" href="/components/products.html?name=faucets">Faucets</a></li>
+                        <li><a class="" href="/components/products.html?name=ptmt">Ptmt</a></li>
+                        <li><a class="" href="/components/products.html?name=showers">Showers</a></li>
+                        <li><a class="" href="/components/products.html?name=health faucet">Health
+                                Faucets</a></li>
+                        <li><a class="" href="/components/products.html?name=bath accessories">Bath
+                                Accessories</a></li>
+                        <li><a class="" href="/components/products.html?name=faucet parts">Faucet Parts</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -330,11 +650,8 @@
                     <a class="nav-link" href="#">Registration</a>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasDropdownECatalogue" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        E-catalogue
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
+                    <li onclick="showProductOptions()" class="nav-link dropdown-toggle" id="md-catalogue-option">E-catalogue</li>
+                    <ul class="" id="md-catalogue-ul">
                         <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
                         <li onclick="openCatalogueForm()" class="dropdown-item">Ptmt</li>
                         <!-- <li><a class="dropdown-item" href="#">Catalogue 3</a></li> -->
@@ -363,11 +680,13 @@
                 <form>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name*</label>
-                        <input type="text" class="catalogue-form-control" id="name" placeholder="Please enter your name">
+                        <input type="text" class="catalogue-form-control" id="name"
+                            placeholder="Please enter your name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email*</label>
-                        <input type="email" class="catalogue-form-control" id="email" placeholder="Please enter your email">
+                        <input type="email" class="catalogue-form-control" id="email"
+                            placeholder="Please enter your email">
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label">Mobile*</label>
@@ -401,6 +720,8 @@
 
         let responsiveForm = document.getElementById('responsive-form') // for hiding search bar in responsive navbar
         let responsiveForm1 = document.getElementById('responsive-form1')
+        let mdProductOption = document.getElementById('md-product-option')
+        let mdProductOptionUl = document.getElementById('md-products-ul')
         const hideSearch = (type) => {
             responsiveForm.style.display = 'none'
             responsiveForm1.style.display = 'none'
@@ -412,13 +733,13 @@
             // offCanvasNavbarrr.style.display = 'none'
             // catalogueForm.style.display = ``
         }
- 
+
         let catalogueForm = document.getElementById('catalogueForm')
         const openCatalogueForm = (type) => {
             closeNavbar()
             catalogueForm.style.display = 'block'
             console.log('hi')
-            
+
         }
         const closeCatalogueForm = () => {
             catalogueForm.style.display = 'none'
@@ -438,7 +759,7 @@
         //     "Honeydew"
         // ];
         const suggestionList = itemNames
-       
+
         // Function to filter suggestions
         function filterSuggestions(query) {
             suggestions.innerHTML = ''; // Clear previous suggestions
@@ -473,6 +794,13 @@
                 suggestions.style.display = 'none';
             }
         });
+        function showProductOptions(e){
+            if(mdProductOptionUl.style.display === 'none' || mdProductOptionUl.style.display === ''){
+                mdProductOptionUl.style.display = 'block'
+            }else{
+                mdProductOptionUl.style.display = 'none'
+            }
+        }
     </script>
 </body>
 
