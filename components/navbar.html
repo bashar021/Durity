@@ -288,6 +288,21 @@
             background-color: #f0f0f0;
             /* Change to your desired hover color */
         }
+        #md-catalogue-ul{
+                
+            /* background-color: red; */
+            padding: 0px;
+            display: none;
+        }
+        #md-catalogue-ul li{
+            /* background-color: blue; */
+            padding: 0px;
+            margin-top: 5px;
+            color: rgb(142, 141, 141);
+        }
+        #md-catalogue-ul li a{
+            color: rgb(142, 141, 141);
+        }
 
         @media (max-width: 768px) {
             .input-form {
@@ -337,6 +352,7 @@
                 color: rgb(142, 141, 141);
                 
             }
+           
 
         }
 
@@ -407,7 +423,7 @@
 
 <body>
     <!-- navbar  -->
-    <!-- <div id="navbarCustom1">
+    <div id="navbarCustom1">
         <div class="navbarCustom-box1">
             <a href="/"><img src="" alt="">Logo</a>
             <form class="searchBar-container">
@@ -462,7 +478,7 @@
         </div>
         
 
-    </div> -->
+    </div>
 
     <nav class="" id="md-navbarCustom1">
         <div class="container-fluid py-2 ">
@@ -650,7 +666,7 @@
                     <a class="nav-link" href="#">Registration</a>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <li onclick="showProductOptions()" class="nav-link dropdown-toggle" id="md-catalogue-option">E-catalogue</li>
+                    <li onclick="showCatalogueOptions()" class="nav-link dropdown-toggle" id="md-catalogue-option">E-catalogue</li>
                     <ul class="" id="md-catalogue-ul">
                         <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
                         <li onclick="openCatalogueForm()" class="dropdown-item">Ptmt</li>
@@ -658,7 +674,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
+                    Register
                 </li>
             </ul>
         </div>
@@ -799,6 +815,14 @@
                 mdProductOptionUl.style.display = 'block'
             }else{
                 mdProductOptionUl.style.display = 'none'
+            }
+        }
+        function showCatalogueOptions(e){
+            let catalogue = document.getElementById('md-catalogue-ul')
+            if(catalogue.style.display === '' || catalogue.style.display ==='none'){
+                catalogue.style.display = 'block'
+            }else{
+                catalogue.style.display = 'none'
             }
         }
     </script>
