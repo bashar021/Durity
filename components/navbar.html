@@ -59,6 +59,7 @@
         }
         #md-navbarCustom1{
             display: none;
+            /* background-color: white; */
         }
         .searchBar-container{
             /* height: 18px; */
@@ -278,6 +279,19 @@
             overflow-y: auto;
             border-style: none;
         }
+        .md-suggestions{
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 0 0 25px 25px;
+            z-index: 10;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+            border-style: none;
+        }
 
         .suggestion-item {
             padding: 10px 15px;
@@ -303,6 +317,22 @@
         #md-catalogue-ul li a{
             color: rgb(142, 141, 141);
         }
+        #md-products-ul{
+                /* background-color: red; */
+                padding: 0px;
+                display: none;
+                transition: all 0.5s;
+            }
+            #md-products-ul li{
+                /* background-color: blue; */
+                margin-top: 5px;
+                /* color: black; */
+
+            }
+            #md-products-ul li a{
+                color: rgb(142, 141, 141);
+                
+            }
 
         @media (max-width: 768px) {
             .input-form {
@@ -336,22 +366,7 @@
             #message {
                 height: 36px;
             }
-            #md-products-ul{
-                /* background-color: red; */
-                padding: 0px;
-                display: none;
-                transition: all 0.5s;
-            }
-            #md-products-ul li{
-                /* background-color: blue; */
-                margin-top: 5px;
-                /* color: black; */
-
-            }
-            #md-products-ul li a{
-                color: rgb(142, 141, 141);
-                
-            }
+           
            
 
         }
@@ -399,9 +414,10 @@
             #navbarCustom1 {
                 display: none;
             }
-            #md-navbarCustom {
+            #md-navbarCustom1 {
                 display: block;
             }
+            
 
         }
 
@@ -423,7 +439,7 @@
 
 <body>
     <!-- navbar  -->
-    <div id="navbarCustom1">
+    <div id="navbarCustom1" >
         <div class="navbarCustom-box1">
             <a href="/"><img src="" alt="">Logo</a>
             <form class="searchBar-container">
@@ -481,7 +497,7 @@
     </div>
 
     <nav class="" id="md-navbarCustom1">
-        <div class="container-fluid py-2 ">
+        <div class="container-fluid py-2 flex">
             <button onclick="hideSearch()" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon" id="navbar-toggler-icon">
@@ -490,130 +506,16 @@
             </button>
             <a class="navbar-brand " href="/">
             </a>
-            <!-- <form class="input-form d-flex position-relative mx-auto my-auto d-none d-lg-block">
+            <form class="searchBar-container">
                 <input autocomplete="off" aria-label="Search" class="form-control me-2 searchInput"
-                    placeholder="search here" type="search" id="searchInput" />
-                <span class="search-icon">
-                    <i class="fas fa-search"></i>
-                </span>
-                <div class="suggestions" id="suggestions">
+                    placeholder="search here" type="search" id="md-searchInput" />
+                <div class="md-suggestions" id="md-suggestions">
                 </div>
-            </form> -->
-            <!-- <div class="collapse navbar-collapse d-none d-lg-block ">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
-                                    Faucet</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
-                                    Accessories</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
-                                    Parts</a></li>
-                        </ul>
-                        <ul class="" aria-labelledby="">
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
-                                    Faucet</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
-                                    Accessories</a></li>
-                            <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet
-                                    Parts</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/components/about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/components/carrerspage.html">Careers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/components/events.html">Events</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownECatalogue" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            E-catalogue
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
-                            <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
-                            <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-register my-auto mt-1" href="#">Register</a>
-                    </li>
-                </ul>
-            </div> -->
+            </form>
         </div>
     </nav>
     
-
-    <!-- <div 
-   
-    class="hidden"
-    >
-        <div class="md-navbarCustom1">
-            <button>
-                <img src="/public//icons//hamburger.svg" alt="">
-            </button>
-            <input type="text" placeholder="Search here" />
-        </div>
-        <div class="md-navbarCustom2">
-            <ul class=" md-navbarCustom2-ul">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
-                        <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
-                                Faucet</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
-                                Accessories</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/components/about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/components/carrerspage.html">Careers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/components/events.html">Events</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownECatalogue" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        E-catalogue
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
-                        <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
-                        <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
-                </li>
-            </ul>
-        </div>
-
-    </div> -->
-
-    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="offcanvasNavbar"
+    <div class="offcanvas offcanvas-start "  id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
@@ -630,17 +532,6 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <li onclick="showProductOptions()" class="nav-link dropdown-toggle" id="md-product-option">Products</li>
-                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
-                        <li><a class="dropdown-item" href="/components/products.html?name=faucets">Faucets</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=ptmt">Ptmt</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=showers">Showers</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=health faucet">Health
-                                Faucets</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=bath accessories">Bath
-                                Accessories</a></li>
-                        <li><a class="dropdown-item" href="/components/products.html?name=faucet parts">Faucet Parts</a>
-                        </li>
-                    </ul> -->
                     <ul class="" aria-labelledby="" id="md-products-ul">
                         <li><a class="" href="/components/products.html?name=faucets">Faucets</a></li>
                         <li><a class="" href="/components/products.html?name=ptmt">Ptmt</a></li>
@@ -662,15 +553,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/components/events.html">Events</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Registration</a>
-                </li> -->
                 <li class="nav-item dropdown">
                     <li onclick="showCatalogueOptions()" class="nav-link dropdown-toggle" id="md-catalogue-option">E-catalogue</li>
                     <ul class="" id="md-catalogue-ul">
                         <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
                         <li onclick="openCatalogueForm()" class="dropdown-item">Ptmt</li>
-                        <!-- <li><a class="dropdown-item" href="#">Catalogue 3</a></li> -->
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -761,7 +648,9 @@
             catalogueForm.style.display = 'none'
         }
         const searchInput = document.getElementById('searchInput');
+        const md_searchInput = document.getElementById('md-searchInput');
         const suggestions = document.getElementById('suggestions');
+        const md_suggestions = document.getElementById('md-suggestions');
 
         // Sample suggestions (you can replace this with dynamic data)
         // const suggestionList = [
@@ -798,16 +687,43 @@
             }
         }
 
+        function filterMdSuggestions(query){
+            md_suggestions.innerHTML = ''; // Clear previous suggestions
+            const filtered = itemNames?.filter(item => item?.toLowerCase().includes(query.toLowerCase()));
+            if (filtered.length > 0) {
+                md_suggestions.style.display = 'block'; // Show suggestions
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = item;
+                    div.onclick = () => {
+                        searchInput.value = item; // Set input value to clicked suggestion
+                        window.open(`/components/product.html?${itemsMapping[item]}`, '_self');
+                        md_suggestions.style.display = 'none'; // Hide suggestions
+                    };
+                    md_suggestions.appendChild(div);
+                    console.log(div)
+                });
+            } else {
+                md_suggestions.style.display = 'none'; // Hide if no suggestions
+            }
+        }
         // Event listener for input
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value;
             filterSuggestions(query);
         });
+        md_searchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            filterMdSuggestions(query)
+        });
+
 
         // Hide suggestions when clicking outside
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
                 suggestions.style.display = 'none';
+                md_suggestions.style.display = 'none';
             }
         });
         function showProductOptions(e){
