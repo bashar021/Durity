@@ -2,439 +2,13 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" /> -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <script src="/data/products.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar-custom {
-            /* background-color: #ffffff; */
-            /* background-color: #f8f9fa; */
-            background-color: black;
-            /* padding: 10px 20px; */
-            padding: 0px;
-            display: none;
-        }
-
-        #md-navbarCustom {
-
-            background-color: rgb(248, 249, 250);
-            height: fit-content;
-            display: none;
-        }
-        .navbarCustom-box1{
-            /* background-color: green; */
-            width: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            gap: 10%;
-        }
-        .navbarCustom-box2{
-            width: fit-content;
-            display: flex;
-        }
-        .nav-content{
-            display: flex;
-        }
-        
-
-        #navbarCustom1 {
-            background-color:rgb(238, 240, 241);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed; 
-            width: 100%;
-            z-index: 1;
-            padding-left: 3%;
-            display: none;
-        }
-        #md-navbarCustom1{
-            display: none;
-            /* background-color: white; */
-        }
-        .searchBar-container{
-            /* height: 18px; */
-            /* background-color: red; */
-            width: fit-content;
-        }
-        .searchBar-container input{
-            background-color:transparent;
-            border: solid;
-            border-radius: 20px;
-            font-size: 14px;
-            padding: 5px;
-            padding-left: 10px;
-            outline: none;
-            border-color: rgb(45, 45, 45);
-            border-width: 1px;
-        }
-
-        .md-navbarCustom1 {
-            background-color: transparent;
-            height: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 1%;
-            padding-bottom: 1%;
-        }
-
-        .md-navbarCustom1 input {
-            height: 18px;
-            border-radius: 20px;
-            width: 80%;
-            margin-right: 5%;
-            border-style: solid;
-            border: solid;
-            outline: none;
-            padding: 5px;
-            font-size: 10px;
-            
-
-        }
-
-        .md-navbarCustom2-ul {
-            /* display: flex; */
-            /* background-color: red; */
-            list-style-type: none;
-            /* Remove bullet points */
-            padding: 0;
-            /* Remove default padding */
-            margin: 0;
-            /* Remove default margin */
-            display: flex;
-            /* Align items in a row */
-            flex-wrap: wrap;
-            gap: 10px;
-            /* Optional: Add spacing between items */
-        }
-
-        /* .md-navbarCustom2-ul li{
-            display: inline-block;
-        } */
-
-        .navbar-custom .navbar-nav .nav-link {
-            color: #000;
-            margin-right: 20px;
-        }
-
-        .navbar-custom .navbar-nav .nav-link:hover {
-            color: #000;
-        }
-
-        .navbar-custom .form-control {
-            border-radius: 50px;
-        }
-
-        .navbar-custom .btn-register {
-            background-color: #000;
-            color: #fff;
-            border-radius: 20px;
-            padding: 5px 20px;
-        }
-
-        .navbar-custom .btn-register:hover {
-            background-color: #333;
-        }
-
-        .navbar-custom .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .navbar-custom .logo {
-            width: 60px;
-            height: 60px;
-        }
-
-        .navbar-custom .navbar-toggler {
-            border: none;
-        }
-
-        .offcanvas-custom {
-            width: 250px;
-        }
-
-        /* catagloue download popup form css  */
-        .modalContent {
-            padding: 20px;
-            border-radius: 8px;
-            border: none;
-            width: 50%;
-            background-color: white;
-            margin: auto;
-            height: 95vh;
-            margin-top: 2.5vh;
-
-        }
-
-        .modal-header {
-            border-bottom: none;
-        }
-
-        .modal-title {
-            font-size: 24px;
-            font-family: 'Arial', sans-serif;
-            color: #4a4a4a;
-        }
-
-        .form-label {
-            font-size: 16px;
-            font-family: 'Arial', sans-serif;
-            color: #4a4a4a;
-        }
-
-        .form-control::placeholder {
-            color: #b0b0b0;
-        }
-
-        .btn-submit {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .btn-close {
-            background-color: #4a4a4a;
-            border: none;
-            color: #fff;
-            font-size: 20px;
-        }
-
-        .catalogueForm {
-            background-color: rgba(0, 0, 0, 0.286);
-            position: fixed;
-            top: 0px;
-            margin: auto;
-            left: 50%;
-            width: 100%;
-            height: 100vh;
-            z-index: 1050;
-            transform: translate(-50%);
-            display: none;
-        }
-
-        .input-form {
-            width: 30%;
-        }
-
-        .form-control {
-            border-radius: 25px;
-            padding: 10px 20px;
-            transition: border-color 0.3s;
-        }
-
-        .catalogue-form-control {
-            border-radius: 25px;
-            padding: 10px 20px;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: #007bff;
-            /* Change to your desired focus color */
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        .catalogue-form-control {
-            border-color: #007bff;
-            /* Change to your desired focus color */
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        .suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 0 0 25px 25px;
-            z-index: 1000;
-            display: none;
-            /* Hidden by default */
-            max-height: 300px;
-            overflow-y: auto;
-            border-style: none;
-        }
-        .md-suggestions{
-            position: absolute;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 0 0 25px 25px;
-            z-index: 10;
-            display: none;
-            max-height: 300px;
-            overflow-y: auto;
-            border-style: none;
-        }
-
-        .suggestion-item {
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-
-        .suggestion-item:hover {
-            background-color: #f0f0f0;
-            /* Change to your desired hover color */
-        }
-        #md-catalogue-ul{
-                
-            /* background-color: red; */
-            padding: 0px;
-            display: none;
-        }
-        #md-catalogue-ul li{
-            /* background-color: blue; */
-            padding: 0px;
-            margin-top: 5px;
-            color: rgb(142, 141, 141);
-        }
-        #md-catalogue-ul li a{
-            color: rgb(142, 141, 141);
-        }
-        #md-products-ul{
-                /* background-color: red; */
-                padding: 0px;
-                display: none;
-                transition: all 0.5s;
-            }
-            #md-products-ul li{
-                /* background-color: blue; */
-                margin-top: 5px;
-                /* color: black; */
-
-            }
-            #md-products-ul li a{
-                color: rgb(142, 141, 141);
-                
-            }
-
-        @media (max-width: 768px) {
-            .input-form {
-                width: 50%;
-                /* Full width on smaller screens */
-            }
-
-            .catalogueForm {
-                width: 100%;
-                height: 80vh;
-            }
-
-            .modalContent {
-                width: 90%;
-            }
-
-            .modal-title {
-                font-size: 18px;
-            }
-
-            .form-label {
-                font-size: 12px;
-            }
-
-            .catalogue-form-control {
-                height: 18px;
-            }
-            #navbarCustom1 {
-                display: none;
-            }
-            #message {
-                height: 36px;
-            }
-           
-           
-
-        }
-
-        /* Extra Small Devices (Phones, less than 576px) */
-        @media (max-width: 575.98px) {
-            .navbarCustom {
-                display: none;
-            }
-
-            #md-navbarCustom {
-                display: block;
-            }
-            #navbarCustom1 {
-                display: none;
-            }
-            #md-navbarCustom1{
-                display: block;
-            }
-        }
-
-        /* Small Devices (Tablets, 576px and up) */
-        @media (min-width: 576px) and (max-width: 767.98px) {
-            .navbarCustom {
-                display: none;
-            }
-
-            #md-navbarCustom {
-                display: block;
-            }
-            #navbarCustom1 {
-                display: none;
-            }
-            #md-navbarCustom1{
-                display: block;
-            }
-
-        }
-
-        /* Medium Devices (Desktops, 768px and up) */
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            .navbarCustom {
-                display: none;
-            }
-            #navbarCustom1 {
-                display: none;
-            }
-            #md-navbarCustom1 {
-                display: block;
-            }
-            
-
-        }
-
-        /* Large Devices (Large Desktops, 992px and up) */
-        @media (min-width: 992px) and (max-width: 1199.98px) {
-            #navbarCustom1 {
-                display: flex;
-            }
-        }
-
-        /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
-        @media (min-width: 1200px) {
-            #navbarCustom1 {
-                display: flex;
-            }
-        }
-    </style>
+   <link rel="stylesheet" href="/components//styles//navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -483,12 +57,12 @@
                         E-catalogue
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownECatalogue">
-                        <li onclick="openCatalogueForm()" class="dropdown-item">Faucets</li>
-                        <li onclick="openCatalogueForm()" class="dropdown-item">PTMT</li>
+                        <li onclick="openCatalogueF()" class="dropdown-item">Faucets</li>
+                        <li onclick="openCatalogueF()" class="dropdown-item">PTMT</li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-register my-auto mt-1" href="#">Register</a>
+                    <a class="btn btn-register my-auto mt-1" href="/components/register.html">Register</a>
                 </li>
             </ul>
         </div>
@@ -572,11 +146,11 @@
 
     <!-- catalogue download popup form -->
 
-    <div id="catalogueForm" class="catalogueForm">
+    <!-- <div id="catalogueForm" class="catalogueForm">
         <div class="modalContent">
             <div class="modal-header">
                 <h5 class="modal-title">Download Catalogue</h5>
-                <!-- &times; -->
+               
                 <button onclick="closeCatalogueForm()" type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -610,16 +184,54 @@
                 </form>
             </div>
         </div>
+    </div> -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-form">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <div class="form-header">
+                <p>Please fill out the form below to download our catalog</p>
+            </div>
+            <form id="downloadForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error" id="nameError">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                    <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">Business Name</label>
+                    <input type="text" id="business" name="business" required>
+                    <div class="error" id="businessError">Please enter your business name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Download Now</button>
+            </form>
+        </div>
     </div>
 
 
-
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+e2i5Gq5K5p5Y5F5D5F5D5F5D5F5D" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+   
 
     <script>
+
 
         let responsiveForm = document.getElementById('responsive-form') // for hiding search bar in responsive navbar
         let responsiveForm1 = document.getElementById('responsive-form1')
@@ -741,6 +353,91 @@
                 catalogue.style.display = 'none'
             }
         }
+    </script>
+    <script>
+          function openCatalogueF() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById('downloadForm').reset();
+            hideAllErrors();
+        }
+
+        function hideAllErrors() {
+            var errors = document.querySelectorAll('.error');
+            for (var i = 0; i < errors.length; i++) {
+                errors[i].style.display = 'none';
+            }
+        }
+
+        function validateEmail(email) {
+            return /\S+@\S+\.\S+/.test(email);
+        }
+
+        function validateMobile(mobile) {
+            return /^\d{10}$/.test(mobile);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            hideAllErrors();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var business = document.getElementById('business').value;
+            var message = document.getElementById('message').value;
+
+            var isValid = true;
+
+            if (!name.trim()) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!validateEmail(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!validateMobile(mobile)) {
+                document.getElementById('mobileError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!business.trim()) {
+                document.getElementById('businessError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Here you would typically send the form data to your server
+                console.log('Form submitted:', { 
+                    name: name, 
+                    email: email, 
+                    mobile: mobile, 
+                    business: business, 
+                    message: message 
+                });
+                
+                // Simulate PDF download
+                alert('Thank you! Your download will begin shortly.');
+                closePopup();
+            }
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('popupOverlay').onclick = function(event) {
+            if (event.target === this) {
+                closePopup();
+            }
+        };
     </script>
 </body>
 

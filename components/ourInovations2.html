@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Innovations</title>
+    <style>
+        .innovation-section {
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .innovation-section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Arial', sans-serif;
+            padding: 0 1rem;
+            /* background-color: red; */
+        }
+
+        .innovation-section-title h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .innovation-section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+        .innovation-product-carousel-container {
+            position: relative;
+            padding: 0 0;
+            margin: 0 auto;
+            max-width: 100%;
+            overflow: hidden;
+            /* background-color: red; */
+
+        }
+
+        .innovation-product-carousel {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 3rem 25%;
+        }
+
+        .innovation-product-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .innovativeProductCard {
+            min-width: 200px;
+            height: 280px;
+            margin: 0 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0.7;
+            /* padding: 2px; */
+        }
+
+        .innovativeProductCard.active {
+            min-width: 300px;
+            height: 400px;
+            transform: scale(1);
+            opacity: 1;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .innovation-product-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.4s ease;
+            border-radius: 15px 15px 0 0;
+            /* background-size: cover; */
+            
+        }
+
+        .innovation-product-info {
+            /* padding: 1.5rem; */
+            text-align: center;
+            /* display: none; */
+            position: absolute;
+            top: 90%;
+            /* background-color: red; */
+            width: 100%;
+            /* padding-right: 12%; */
+            border-bottom: solid;
+        }
+
+        .innovation-product-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .innovativeProductCard.active .innovation-product-name {
+            opacity: 1;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <section class="innovation-section">
+        <div class="innovation-section-title">
+            <h2>Our Innovations</h2>
+            <p>Discover our latest bathroom accessories designed for modern living</p>
+        </div>
+        
+        <div class="innovation-product-carousel-container">
+            <div class="innovation-product-carousel" id="productCarousel">
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public/products images/faucets/CHERISH/CHE2WACC01.jpg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">Faucets</h3>
+                    </div>
+                </div>
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public//products images/showers/OVERHEAD SHOWER/BELL-SHO2C01.jpg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">Shower</h3>
+                    </div>
+                </div>
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public/inovations/WhatsApp Image 2024-08-30 at 13.15.40.jpeg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">Accessories</h3>
+                    </div>
+                </div>
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public/products images/HEALTH FAUCETS/COLOUR/HFCO15C01.jpg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">Health Faucets</h3>
+                    </div>
+                </div>
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public/inovations/WhatsApp Image 2024-08-30 at 13.15.40.jpeg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">Faucet Parts</h3>
+                    </div>
+                </div>
+                <div class="innovativeProductCard inovative-product">
+                    <div class="innovation-product-image" style="background-image: url('/public/products images/ptmt/ALFA BLUE COLLECTION/ALF2WACBLC01.jpg')"></div>
+                    <div class="innovation-product-info">
+                        <h3 class="innovation-product-name">PTMT</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const carousel = document.getElementById('productCarousel');
+        const cards = document.querySelectorAll('.inovative-product');
+        let activeIndex = Math.floor(cards.length / 2); // Start with the center card
+
+        // Function to center a card
+        function centerCard(index) {
+            const card = cards[index];
+            const rect = card.getBoundingClientRect();
+            const centerPosition = rect.left + (rect.width / 2);
+            const offset = window.innerWidth / 2 - centerPosition;
+            carousel.scrollBy({ left: -offset, behavior: 'smooth' });
+        }
+
+        // Function to set active card
+        function setActiveCard(index) {
+            cards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+            centerCard(index);
+        }
+
+        // Add click event listeners to cards
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                activeIndex = index;
+                setActiveCard(activeIndex);
+            });
+        });
+        setActiveCard(activeIndex);
+
+        // Scroll buttons functionality
+        function scrollCarousel(direction) {
+            if (direction === 'left' && activeIndex > 0) {
+                activeIndex--;
+            } else if (direction === 'right' && activeIndex < cards.length - 1) {
+                activeIndex++;
+            }
+            setActiveCard(activeIndex);
+        }
+    </script>
+</body>
+</html>
