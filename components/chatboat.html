@@ -15,6 +15,7 @@
             cursor: pointer;
             font-size: 30px;
             color: #4CAF50;
+            z-index: 5;
         }
         @media (max-width: 768px) {
             .chat-icon {
@@ -44,6 +45,7 @@
             display: none;
             flex-direction: column;
             justify-content:space-between;
+            z-index: 6;
             /* align-items: center; */
             
         }
@@ -301,22 +303,13 @@
 
     <script>
         // JavaScript Code
-        const chatBody = document.getElementById('chat-body');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-        const chatIcon = document.getElementById('chat-icon');
         const chatContainer = document.getElementById('chat-container');
-        const closeBtn = document.getElementById('close-btn');
         const openChat = ()=>{
              chatContainer.style.display = 'flex'
         }
         const closeChat = ()=>{
             chatContainer.style.display = 'none'
         }
-       
-       
-
-        
     </script>
 </body>
 

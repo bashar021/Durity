@@ -58,6 +58,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
     overflow: hidden;
 }
 
@@ -106,16 +107,24 @@
     font-size: 2.5em;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
+    /* color: red; */
+    color: black;
 }
 
 .social-item:hover .social-icon {
     transform: scale(1.1);
+    color:white;
 }
 
 .social-name {
     font-size: 1.2em;
     font-weight: 500;
     margin-bottom: 10px;
+    color: #636e72;
+    /* text-decoration: none; */
+    /* text-transform: none; */
+    /* color:rgb(99,110,113); */
+    /* text-decoration: none; */
 }
 
 .social-followers {
@@ -124,6 +133,9 @@
     transition: color 0.3s ease;
 }
 
+.social-item:hover .social-name {
+    color: rgba(255,255,255,0.8);
+}
 .social-item:hover .social-followers {
     color: rgba(255,255,255,0.8);
 }

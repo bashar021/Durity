@@ -32,6 +32,7 @@
     max-width: 100%;
     overflow: hidden;
     /* background-color: red; */
+    /* width: fit-content; */
 
 }
 
@@ -42,7 +43,11 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding: 3rem 25%;
+    padding: 3rem 0px;
+    /* background-color: red; */
+    /* width: fit-content; */
+    /* width: 500px; */
+    width: 100%;
 }
 
 .innovation-product-carousel::-webkit-scrollbar {

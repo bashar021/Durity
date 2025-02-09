@@ -14,13 +14,12 @@
   <link rel="stylesheet" href="/components//styles/social.css">
   <link rel="stylesheet" href="/components//styles/footer.css">
   <link rel="stylesheet" href="/components//styles/navbar2.css">
+  <link rel="stylesheet" href="/components//styles/topproducts2.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <script src="/data/products.js"></script>
   <script>
     $(function () {
       $("#ourTopProducts").load("../components/topProducts.html");
-    });
-    $(function () {
-      $("#footer").load("../components/footer.html");
     });
     $(function () {
       $("#banner").load("../components/homepagebanner.html");
@@ -32,10 +31,23 @@
 
   </script>
   <style>
-    #my-nav{
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      color: black;
+    }
+
+    #section-title {
+      text-align: center;
+      font-size: 28px;
+      color: black;
+    }
+
+    #my-nav {
       width: 96%;
       /* background-color: red; */
     }
+
     #searchInput {
       /* background-color: red; */
       height: 40px;
@@ -163,9 +175,7 @@
   </div>
   <div id="banner"></div>
   <div id="recentProducts">
-    <h1 class="category-title mt-5 text-center">
-      Recent View Products
-    </h1>
+    <p class="section-title">Recent View Products</p>
     <div class="product-container invisible-scrollbar">
 
       <div class="product-list invisible-scrollbar" id="productList">
@@ -174,7 +184,7 @@
     </div>
   </div>
   <div id="whoweare">
-    <h2 class="whoweare-heading">Who We Are</h2>
+    <p class="section-title">Who We Are</p>
     <div id="whoweare-container">
 
       <div class="whoweare-box">
@@ -221,9 +231,7 @@
     </div>
   </div>
   <div id="trending">
-    <h1 class="category-title mt-5 text-center">
-      Trending Accessories
-    </h1>
+    <p class="section-title">Trending Accessories</p>
     <div class="product-container invisible-scrollbar">
 
       <div class="product-list invisible-scrollbar" id="productList">
@@ -261,7 +269,8 @@
   </div>
   <div class="innovation-section">
     <div class="innovation-section-title">
-      <h2>Our Innovations</h2>
+      <!-- <h2>Our Innovations</h2> -->
+      <p id="section-title" class="section-title">Our Innovations</p>
       <p>Discover our latest bathroom accessories designed for modern living</p>
     </div>
 
@@ -312,7 +321,123 @@
       </div>
     </div>
   </div>
-  <div id="ourTopProducts"></div>
+  <div class="top-products-section">
+    <p class="section-title">Top Collection</p>
+    <div class="background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+    <div class="section-content">
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg"
+              alt="Smart Shower System" class="product-image">
+            <span class="product-label">NEW</span>
+          </div>
+          <h3 class="product-title">Smart Shower System</h3>
+          <p class="product-description">Voice-controlled digital shower system with personalized temperature settings
+            and rainfall modes.</p>
+          <div class="product-rating">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+          </div>
+          <!-- <div class="product-price">
+                      <span class="price-currency">$</span>
+                      <span class="price-amount">499</span>
+                  </div> -->
+          <button class="cta-button">
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            Explore More
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img
+              src="/public/topproducts/Joerger-Valencia-Rosegold-Naturstein-Labradorit-Wand-Waschtisch-1-Hand-Armatur2.jpg"
+              alt="Luxury Bathtub" class="product-image">
+            <span class="product-label">PREMIUM</span>
+          </div>
+          <h3 class="product-title">Heated Towel Rack</h3>
+          <p class="product-description">Smart temperature-controlled towel warmer with built-in timer and energy-saving
+            mode.</p>
+          <div class="product-rating">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star-half-alt star"></i>
+          </div>
+          <!-- <div class="product-price">
+                      <span class="price-currency">$</span>
+                      <span class="price-amount">299</span>
+                  </div> -->
+          <button class="cta-button">
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            Explore More
+          </button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="/public/topproducts/s-l1200.webp" alt="Smart Mirror" class="product-image">
+            <span class="product-label">BESTSELLER</span>
+          </div>
+          <h3 class="product-title">Smart LED Mirror</h3>
+          <p class="product-description">Touch-sensitive mirror with integrated LED lighting and anti-fog technology.
+          </p>
+          <div class="product-rating">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="far fa-star star"></i>
+          </div>
+          <!-- <div class="product-price">
+                      <span class="price-currency">$</span>
+                      <span class="price-amount">399</span>
+                  </div> -->
+          <button class="cta-button">
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            Explore More
+          </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img
+              src="/public/topproducts/shopitech-plastic-unbreakable-tooth-brush-paste-holder-home-acrylic-bathroom-faucets-accessories-2-in-1-plastic-wall-shelf-product-images-orvfbehvccu-p607349610-0-202401151546.jpg"
+              alt="Storage Solution" class="product-image">
+            <span class="product-label">TRENDING</span>
+          </div>
+          <h3 class="product-title">Smart Storage Unit</h3>
+          <p class="product-description">Motion-sensor cabinet with LED lighting and soft-close technology.</p>
+          <div class="product-rating">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star-half-alt star"></i>
+          </div>
+          <!-- <div class="product-price">
+                      <span class="price-currency">$</span>
+                      <span class="price-amount">349</span>
+                  </div> -->
+          <button class="cta-button">
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            Explore More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="cf-section">
     <div class="cf-container">
       <div class="cf-info">
@@ -435,8 +560,8 @@
           <p>Transform your bathroom into a sanctuary of luxury and comfort with our premium collection of bathroom
             accessories. We pride ourselves on combining elegant design with exceptional functionality.</p>
           <!-- <div class="newsletter-form"> -->
-            <!-- <input type="email" placeholder="Enter your email"> -->
-            <!-- <button type="button">Subscribe</button> -->
+          <!-- <input type="email" placeholder="Enter your email"> -->
+          <!-- <button type="button">Subscribe</button> -->
           <!-- </div> -->
           <div id="durity-short-links">
             <a href="">About Us</a><a href="">Careers</a><a href="">Events</a><a href="">Register</a>
@@ -481,7 +606,7 @@
           </div>
         </div>
       </div>
-     
+
       <div class="footer-bottom">
         <p>&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
       </div>

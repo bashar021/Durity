@@ -30,7 +30,7 @@ cards.forEach((card, index) => {
         setActiveCard(activeIndex);
     });
 });
-setActiveCard(activeIndex);
+setActiveCard(activeIndex-1);
 
 // Scroll buttons functionality
 function scrollCarousel(direction) {
