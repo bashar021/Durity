@@ -1,57 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Durity</title>
-    <script>
-        $(function(){
-      $("#navbar").load("../components/navbar.html"); 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durity</title>
+
+  <link rel="stylesheet" href="/components//styles//recent2.css">
+  <link rel="stylesheet" href="/components//styles//whoweare.css">
+  <link rel="stylesheet" href="/components//styles/trending2.css">
+  <link rel="stylesheet" href="/components//styles/ourinnovations2.css">
+  <link rel="stylesheet" href="/components//styles/contactform.css">
+  <link rel="stylesheet" href="/components//styles/social.css">
+  <link rel="stylesheet" href="/components//styles/footer.css">
+  <link rel="stylesheet" href="/components//styles/navbar2.css">
+  <script src="/data/products.js"></script>
+  <script>
+    $(function () {
+      $("#ourTopProducts").load("../components/topProducts.html");
     });
-    $(function(){
-      $("#contactUs").load("../components/contactUs.html"); 
+    $(function () {
+      $("#footer").load("../components/footer.html");
     });
-    $(function(){
-      $("#ourTopProducts").load("../components/topProducts.html"); 
+    $(function () {
+      $("#banner").load("../components/homepagebanner.html");
     });
-    $(function(){
-      $("#recentProducts").load("../components/recent2.html"); 
-    });
-    $(function(){
-      $("#ourInovations").load("../components/ourInovations2.html"); 
-    });
-    $(function(){
-      $("#footer").load("../components/footer.html"); 
-    });
-    $(function(){
-      $("#banner").load("../components/homepagebanner.html"); 
-    });
-    $(function(){
-      $("#trending").load("../components/trending2.html"); 
-    });
-    $(function(){
-      $("#chat").load("../components/chatboat.html"); 
-    });
-    $(function(){
-      $("#whoweare").load("../components/whoAreWe.html"); 
+    $(function () {
+      $("#chat").load("../components/chatboat.html");
     });
 
-      </script>
+
+  </script>
+  <style>
+    #my-nav{
+      width: 96%;
+      /* background-color: red; */
+    }
+    #searchInput {
+      /* background-color: red; */
+      height: 40px;
+      max-height: 40px;
+      padding: 0px;
+      margin: 0px;
+      padding-left: 10px;
+      /* padding: 10px; */
+    }
+  </style>
 </head>
+
 <body>
-    <div id="navbar"></div>
-    <div id="banner"></div>
-    <div id="recentProducts"></div>
-    <div id="whoweare"></div>
-    <div id="trending"></div>
-    <div id="ourInovations"></div>
-    <div id="ourTopProducts"></div>
-    <div id="contactUs"></div>
-    <div id="footer"></div>
-    <div id="chat"></div>
-    <!-- <div id="navbar2"></div> -->
+  <div id="navbar">
+    <nav id="my-nav">
+      <div class="hamburger">☰</div>
+      <div class="logo">
+        <img src="/api/placeholder/150/50" alt="Company Logo">
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+        <div class="search-dropdown" id="suggestions">
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <div class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="/components/products.html?name=faucets">Faucets</a>
+            <a href="/components/products.html?name=ptmt">Ptmt</a>
+            <a href="/components/products.html?name=showers">Showers</a>
+            <a href="/components/products.html?name=health faucet">Health
+              Faucet</a>
+            <a href="/components/products.html?name=bath accessories">Bath
+              Accessories</a>
+            <a href="/components/products.html?name=faucet parts">Faucet
+              Parts</a>
+          </div>
+        </div>
+        <a href="/components/about.html">About Us</a>
+        <a href="/components/carrerspage.html">Careers</a>
+        <a href="/components/events.html">Events</a>
+        <div class="dropdown">
+          <a>E-Catalogue</a>
+          <div class="dropdown-content">
+            <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+            <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+          </div>
+        </div>
+        <a href="/components/register.html">Register</a>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <div class="close-btn">×</div>
+      <div class="nav-links">
+        <div class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="/components/products.html?name=faucets">Faucets</a>
+            <a href="/components/products.html?name=ptmt">Ptmt</a>
+            <a href="/components/products.html?name=showers">Showers</a>
+            <a href="/components/products.html?name=health faucet">Health
+              Faucet</a>
+            <a href="/components/products.html?name=bath accessories">Bath
+              Accessories</a>
+            <a href="/components/products.html?name=faucet parts">Faucet
+              Parts</a>
+          </div>
+        </div>
+        <a href="/components/about.html">About Us</a>
+        <a href="/components/carrerspage.html">Careers</a>
+        <a href="/components/events.html">Events</a>
+        <div class="dropdown">
+          <a href="#">E-Catalogue</a>
+          <div class="dropdown-content">
+            <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+            <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+          </div>
+        </div>
+        <a href="/components/register.html">Register</a>
+      </div>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-form">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="form-header">
+          <p>Please fill out the form below to download our catalog</p>
+        </div>
+        <form id="downloadForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError">Please enter your name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <div class="error" id="mobileError">Please enter a valid mobile number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name</label>
+            <input type="text" id="business" name="business" required>
+            <div class="error" id="businessError">Please enter your business name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Download Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="banner"></div>
+  <div id="recentProducts">
+    <h1 class="category-title mt-5 text-center">
+      Recent View Products
+    </h1>
+    <div class="product-container invisible-scrollbar">
+
+      <div class="product-list invisible-scrollbar" id="productList">
+        <!-- Products will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </div>
+  <div id="whoweare">
+    <h2 class="whoweare-heading">Who We Are</h2>
+    <div id="whoweare-container">
+
+      <div class="whoweare-box">
+        <div class="whoweare-svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M10 11c-5.92 0-8 3-8 5v3h16v-3c0-2-2.08-5-8-5" />
+            <circle cx="10" cy="5.5" r="4.5" fill="currentColor" />
+          </svg>
+        </div>
+        <h5>About Us</h5>
+        <p>Durity is one of the India's leading names in holistic bathroom solution</p>
+      </div>
+      <div class="whoweare-box">
+        <div class="whoweare-svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M10.11 17H7.5l-4.91-5L7.5 7h2.61l1.31-2.26L18.21 3l1.87 6.74L18.77 12l1.31 2.26L18.21 21l-6.79-1.74zm.14-.25l5.13 1.38L12.42 13H6.5zm6.87.38L18.5 12l-1.38-5.13L14.15 12zm-6.87-9.88L6.5 11h5.92l2.96-5.13z" />
+          </svg>
+        </div>
+        <h5>Vision And Mission</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis, turpis vel </p>
+      </div>
+      <div class="whoweare-box">
+        <div class="whoweare-svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 384 512">
+            <path fill="currentColor"
+              d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85c-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58c-19.5 0-37.82-7.59-51.61-21.37M382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32c-21.07 5.64-16.45 3.18-25.12 11.85c-13.79 13.78-32.12 21.37-51.62 21.37c-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28l52.69 2.01c11.62.44 19.82-11.27 15.43-22.03M263 340c15.28-15.55 17.03-14.21 38.79-20.14c13.89-3.79 24.75-14.84 28.47-28.98c7.48-28.4 5.54-24.97 25.95-45.75c10.17-10.35 14.14-25.44 10.42-39.58c-7.47-28.38-7.48-24.42 0-52.83c3.72-14.14-.25-29.23-10.42-39.58c-20.41-20.78-18.47-17.36-25.95-45.75c-3.72-14.14-14.58-25.19-28.47-28.98c-27.88-7.61-24.52-5.62-44.95-26.41c-10.17-10.35-25-14.4-38.89-10.61c-27.87 7.6-23.98 7.61-51.9 0c-13.89-3.79-28.72.25-38.89 10.61c-20.41 20.78-17.05 18.8-44.94 26.41c-13.89 3.79-24.75 14.84-28.47 28.98c-7.47 28.39-5.54 24.97-25.95 45.75c-10.17 10.35-14.15 25.44-10.42 39.58c7.47 28.36 7.48 24.4 0 52.82c-3.72 14.14.25 29.23 10.42 39.59c20.41 20.78 18.47 17.35 25.95 45.75c3.72 14.14 14.58 25.19 28.47 28.98C104.6 325.96 106.27 325 121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.68 39.68 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82M97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02s-42.24 96.02-94.34 96.02s-94.34-42.99-94.34-96.02" />
+          </svg>
+        </div>
+        <h5>Awards & Recognition </h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis, turpis vel </p>
+      </div>
+
+      <div class="whoweare-box">
+        <div class="whoweare-svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 10.5h.01m-4.01 0h.01M8 10.5h.01M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.6a1 1 0 0 0-.69.275l-2.866 2.723A.5.5 0 0 1 8 18.635V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1" />
+          </svg>
+        </div>
+        <h5>Chairman's Message</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis, turpis vel volutpat </p>
+      </div>
+    </div>
+  </div>
+  <div id="trending">
+    <h1 class="category-title mt-5 text-center">
+      Trending Accessories
+    </h1>
+    <div class="product-container invisible-scrollbar">
+
+      <div class="product-list invisible-scrollbar" id="productList">
+        <!-- Products will be inserted here by JavaScript -->
+        <a href="${product.url}" class="productCard">
+          <img src="/public/515lDt3ygFL._AC_UF1000,1000_QL80_.jpg" alt="" class="product-image">
+          <div class="product-name">Soap Dishes &amp; Dispensers</div>
+          <!-- <div class="product-code">Code: </div> -->
+        </a>
+        <a href="${product.url}" class="productCard">
+          <img src="/public/GPID_1100659228_00.jpeg" alt="" class="product-image">
+          <div class="product-name">Towel Holders &amp; Racks</div>
+
+        </a>
+        <a href="${product.url}" class="productCard">
+          <img src="/public/icons/brokenImage.svg" alt="" class="product-image">
+          <div class="product-name"> Toilet Paper Holders</div>
+        </a>
+        <a href="${product.url}" class="productCard">
+          <img src="/public/plastic-bathroom-accessories-isolated-white-background_185193-57596.avif" alt=""
+            class="product-image">
+          <div class="product-name">Toilet Paper Holders</div>
+        </a>
+        <a href="${product.url}" class="productCard">
+          <img src="/public/plastic-bathroom-accessories-isolated-white-background_185193-57596.avif" alt=""
+            class="product-image">
+          <div class="product-name">Multi-purpose Organisers</div>
+        </a>
+        <a href="${product.url}" class="productCard">
+          <img src="/public/s-l1600.jpg" alt="" class="product-image">
+          <div class="product-name"> Organiser Shelves</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="innovation-section">
+    <div class="innovation-section-title">
+      <h2>Our Innovations</h2>
+      <p>Discover our latest bathroom accessories designed for modern living</p>
+    </div>
+
+    <div class="innovation-product-carousel-container">
+      <div class="innovation-product-carousel" id="productCarousel">
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public/products images/faucets/CHERISH/CHE2WACC01.jpg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">Faucets</h3>
+          </div>
+        </div>
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public//products images/showers/OVERHEAD SHOWER/BELL-SHO2C01.jpg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">Shower</h3>
+          </div>
+        </div>
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public/inovations/WhatsApp Image 2024-08-30 at 13.15.40.jpeg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">Accessories</h3>
+          </div>
+        </div>
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public/products images/HEALTH FAUCETS/COLOUR/HFCO15C01.jpg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">Health Faucets</h3>
+          </div>
+        </div>
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public/inovations/WhatsApp Image 2024-08-30 at 13.15.40.jpeg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">Faucet Parts</h3>
+          </div>
+        </div>
+        <div class="innovativeProductCard inovative-product">
+          <div class="innovation-product-image"
+            style="background-image: url('/public/products images/ptmt/ALFA BLUE COLLECTION/ALF2WACBLC01.jpg')"></div>
+          <div class="innovation-product-info">
+            <h3 class="innovation-product-name">PTMT</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ourTopProducts"></div>
+  <div class="cf-section">
+    <div class="cf-container">
+      <div class="cf-info">
+        <h2>Let's Connect</h2>
+        <div class="cf-card">
+          <h3>Premium Bathroom Solutions</h3>
+          <p>Discover our exclusive collection of luxury bathroom accessories. Each piece is carefully selected to
+            enhance both the aesthetics and functionality of your space.</p>
+        </div>
+        <div class="cf-card">
+          <h3>Experience Center</h3>
+          <p>123 Design Avenue<br>
+            Luxury District<br>
+            New York, NY 10001</p>
+        </div>
+        <div class="cf-card">
+          <h3>Visit Us</h3>
+          <p>Monday - Friday: 9:00 AM - 7:00 PM<br>
+            Saturday: 10:00 AM - 5:00 PM<br>
+            Sunday: By Appointment</p>
+        </div>
+      </div>
+
+      <div class="cf-form">
+        <h2>Send Message</h2>
+        <form id="contactForm">
+          <div class="cf-form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="cf-error" id="nameError">Please enter your name</div>
+          </div>
+
+          <div class="cf-form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <div class="cf-error" id="emailError">Please enter a valid email address</div>
+          </div>
+
+          <div class="cf-form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="cf-error" id="messageError">Please enter your message</div>
+          </div>
+
+          <div class="cf-whatsapp">
+            <input type="checkbox" id="whatsapp" name="whatsapp">
+            <label for="whatsapp">Get exclusive updates on WhatsApp</label>
+          </div>
+
+          <button type="submit" class="cf-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="cf-success" id="successMessage">
+      Message sent successfully! We'll get back to you soon.
+    </div>
+
+  </div>
+  <div class="social-section">
+    <div class="social-container">
+      <div class="social-heading">
+        <h2>Connect With Us</h2>
+        <p>Follow us on social media for the latest trends, design inspiration, and exclusive offers on luxury bathroom
+          accessories.</p>
+      </div>
+
+      <div class="social-grid">
+        <a href="https://facebook.com/yourbrand" target="_blank" rel="noopener" class="social-item facebook">
+          <div class="social-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </div>
+          <div class="social-name">Facebook</div>
+          <div class="social-followers">50K+ Followers</div>
+        </a>
+
+        <a href="https://youtube.com/yourbrand" target="_blank" rel="noopener" class="social-item youtube">
+          <div class="social-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.892l4.917 2.917-4.917 2.917v-5.834z" />
+            </svg>
+          </div>
+          <div class="social-name">YouTube</div>
+          <div class="social-followers">100K+ Subscribers</div>
+        </a>
+
+        <a href="https://instagram.com/yourbrand" target="_blank" rel="noopener" class="social-item instagram">
+          <div class="social-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+          </div>
+          <div class="social-name">Instagram</div>
+          <div class="social-followers">75K+ Followers</div>
+        </a>
+
+        <a href="https://linkedin.com/company/yourbrand" target="_blank" rel="noopener" class="social-item linkedin">
+          <div class="social-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+            </svg>
+          </div>
+          <div class="social-name">LinkedIn</div>
+          <div class="social-followers">25K+ Connections</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>LuxBath</h3>
+          <p>Transform your bathroom into a sanctuary of luxury and comfort with our premium collection of bathroom
+            accessories. We pride ourselves on combining elegant design with exceptional functionality.</p>
+          <!-- <div class="newsletter-form"> -->
+            <!-- <input type="email" placeholder="Enter your email"> -->
+            <!-- <button type="button">Subscribe</button> -->
+          <!-- </div> -->
+          <div id="durity-short-links">
+            <a href="">About Us</a><a href="">Careers</a><a href="">Events</a><a href="">Register</a>
+          </div>
+          <div class="success-message">Thank you for subscribing!</div>
+        </div>
+
+        <div class="l-products-section">
+          <!-- Product categories will be dynamically populated -->
+
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+            </svg>
+            123 Luxury Lane, Design District
+          </div>
+          <div class="contact-info">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4h-16c-1.105 0-2 .895-2 2v12c0 1.105.895 2 2 2h16c1.105 0 2-.895 2-2v-12c0-1.105-.895-2-2-2zm0 4.236l-8 4.882-8-4.882v-2.236l8 4.882 8-4.882v2.236z" />
+            </svg>
+            info@luxbath.com
+          </div>
+          <div class="contact-info">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
+            </svg>
+            +1 (555) 123-4567
+          </div>
+          <div class="contact-info">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14h-4v4h-4v-4h-4v-4h4v-4h4v4h4v4z" />
+            </svg>
+            Mon - Sat: 9AM - 7PM
+          </div>
+        </div>
+      </div>
+     
+      <div class="footer-bottom">
+        <p>&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="chat"></div>
+  <script defer src="/components//scripts//navbar2.js"></script>
+  <script src="/components//scripts//catalogue.js"></script>
+  <script src="/components//scripts//recent2.js"></script>
+  <script src="/components//scripts//trending2.js"></script>
+  <script src="/components//scripts//ourinovations2.js"></script>
+  <script src="/components//scripts//footer2.js"></script>
+  <script src="/components//scripts//contactform.js"></script>
+
+  <script>
+    // Add hover sound effect (optional)
+    const socialItems = document.querySelectorAll('.social-item');
+
+    socialItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        // You can add hover sound effect here if needed
+        item.style.transition = 'all 0.3s ease';
+      });
+    });
+  </script>
+
 </body>
+
 </html>
-
-<!-- git remote add origin https://github.com/bashar021/Durity.git -->
-

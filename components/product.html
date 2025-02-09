@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <title>Products</title>
     <link rel="stylesheet" href="/components//styles/productPopUp.css">
-    <script  src="/data/products.js"></script>
+    <link rel="stylesheet" href="/components//styles//navbar2.css">
+    <script src="/data/products.js"></script>
+    <link rel="stylesheet" href="/components//styles/recent2.css">
 
     <script>
         $(function () {
             $("#navbar").load("/components/navbar.html");
         });
-        $(function(){
-      $("#footer").load("./footer.html"); 
-    });
+        $(function () {
+            $("#footer").load("./footer.html");
+        });
     </script>
     <style>
-        .hero-section{
+        .hero-section {
             background: url('https://placehold.co/1920x600') no-repeat center center;
             background-size: cover;
             color: white;
@@ -36,6 +35,8 @@
             padding: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            row-gap: 20px;
+            /* background-color: red; */
         }
 
         .category-title {
@@ -96,19 +97,23 @@
             z-index: 20;
         } */
 
-        
+
 
 
 
         @media (max-width: 768px) {
-            body{
+            body {
                 overflow-x: hidden;
                 flex-wrap: wrap;
             }
+
             .hero-section {
-        background-position: center center;  /* Adjust positioning */
-        padding: 90px 0;  /* Adjust padding for smaller screens */
-    }
+                background-position: center center;
+                /* Adjust positioning */
+                padding: 90px 0;
+                /* Adjust padding for smaller screens */
+            }
+
             .category-item {
                 width: 60%;
                 margin-bottom: 10%;
@@ -116,9 +121,9 @@
         }
 
 
-        
 
-      
+
+
 
         .carousel-container {
             display: flex;
@@ -135,7 +140,7 @@
             /* background-color: blanchedalmond; */
             /* height: 90%; */
             /* background-color: red; */
-           
+
 
         }
 
@@ -148,19 +153,164 @@
             height: 75%;
         }
 
-      
-        .d-block{
+
+        .d-block {
             /* width: 600px;
             height: 500px; */
             object-fit: cover;
         }
 
 
+
+
+        /* Extra Small Devices (Phones, less than 576px) */
+        @media (max-width: 575.98px) {
+            .category-container {
+                /* display: block; */
+                /* background-color: blue; */
+                padding: 0px;
+                padding-top: 5%;
+            }
+
+            #md-productCard {
+                /* background-color: red; */
+                /* width: 80%; */
+                width: 500px;
+            }
+
+            .productCard {
+                /* width: 80%; */
+            }
+
+        }
+
+        /* Small Devices (Tablets, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {}
+
+        /* Medium Devices (Desktops, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {}
+
+        /* Large Devices (Large Desktops, 992px and up) */
+        @media (min-width: 992px) and (max-width: 1199.98px) {}
+
+        /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
+        @media (min-width: 1200px) {}
     </style>
 </head>
 
 <body>
-    <div id="navbar"></div>
+    <!-- <div id="navbar"></div> -->
+    <nav id="my-nav">
+        <div class="hamburger">☰</div>
+        <div class="logo">
+            <img src="/api/placeholder/150/50" alt="Company Logo">
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+            <div class="search-dropdown" id="suggestions">
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#">Products</a>
+                <div class="dropdown-content">
+                    <a href="/components/products.html?name=faucets">Faucets</a>
+                    <a href="/components/products.html?name=ptmt">Ptmt</a>
+                    <a href="/components/products.html?name=showers">Showers</a>
+                    <a href="/components/products.html?name=health faucet">Health
+                        Faucet</a>
+                    <a href="/components/products.html?name=bath accessories">Bath
+                        Accessories</a>
+                    <a href="/components/products.html?name=faucet parts">Faucet
+                        Parts</a>
+                </div>
+            </div>
+            <a href="/components/about.html">About Us</a>
+            <a href="/components/carrerspage.html">Careers</a>
+            <a href="/components/events.html">Events</a>
+            <div class="dropdown">
+                <a>E-Catalogue</a>
+                <div class="dropdown-content">
+                    <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                    <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                </div>
+            </div>
+            <a href="/components/register.html">Register</a>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <div class="close-btn">×</div>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#">Products</a>
+                <div class="dropdown-content">
+                    <a href="/components/products.html?name=faucets">Faucets</a>
+                    <a href="/components/products.html?name=ptmt">Ptmt</a>
+                    <a href="/components/products.html?name=showers">Showers</a>
+                    <a href="/components/products.html?name=health faucet">Health
+                        Faucet</a>
+                    <a href="/components/products.html?name=bath accessories">Bath
+                        Accessories</a>
+                    <a href="/components/products.html?name=faucet parts">Faucet
+                        Parts</a>
+                </div>
+            </div>
+            <a href="/components/about.html">About Us</a>
+            <a href="/components/carrerspage.html">Careers</a>
+            <a href="/components/events.html">Events</a>
+            <div class="dropdown">
+                <a href="#">E-Catalogue</a>
+                <div class="dropdown-content">
+                    <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                    <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                </div>
+            </div>
+            <a href="/components/register.html">Register</a>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-form">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <div class="form-header">
+                <p>Please fill out the form below to download our catalog</p>
+            </div>
+            <form id="downloadForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error" id="nameError">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                    <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">Business Name</label>
+                    <input type="text" id="business" name="business" required>
+                    <div class="error" id="businessError">Please enter your business name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Download Now</button>
+            </form>
+        </div>
+    </div>
+
     <div class="hero-section"></div>
     <div id="productsBox" class="category-container">
     </div>
@@ -185,7 +335,7 @@
 
                 <!-- Right Side - Product Details -->
                 <div id="details_box" class="product-details">
-                   
+
                 </div>
             </div>
         </div>
@@ -194,10 +344,10 @@
 
 
 
-   
+
     <!-- <div id="footer"></div> -->
-  
-    <script >
+
+    <script>
         // const durityProducts = window.durityProducts
         // import {durityProducts} from './products.js';
         const params = new URLSearchParams(window.location.search);
@@ -209,23 +359,31 @@
         function createProductCards() {
             const productContainer = document.getElementById('productsBox')
             products.forEach((product, index) => {
-                const cardHTML = `
-                 <div class="category-item">
-                    <div class='img-container' >
-                        <img style={{width:"200px",height='200px'}} width="200px" height="200px" alt="  ${product?.name}"
-                src="${product?.imageSrc}${product?.code}.jpg" />
-                    </div>
-            
-            <h5>
-            ${product?.name}
-            </h5>
-            <p>${product?.code}</p>
-            <span onclick="openPopup(${index})"> View Details <i class="fas fa-arrow-right"></i></span>
-            </a>
-        </div>
-                `
+                let src = `${product?.imageSrc}${product?.code}.jpg`
+                const img = new Image();
+                img.src = src
+                let cardHTML = `
+                <div onclick="openPopup(${index})"  class="productCard " id='md-productCard'>
+                    <img src="${product?.imageSrc}${product?.code}.jpg" alt="${product.name}" class="product-image">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-code">Code: ${product.code}</div>
+                </div>
+            `
+                img.onload = () => {
+                    productContainer.innerHTML += cardHTML;
+                }
+                img.onerror = () => {
+                    productContainer.innerHTML += `
+                <div onclick="openPopup(${index})"  class="productCard">
+                    <img src="/public/icons/brokenimage.svg" alt="${product.name}" class="product-image">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-code">Code: ${product.code}</div>
+                </div>
+            `
+                }
 
-                productContainer.innerHTML += cardHTML;
+
+
             })
         }
         createProductCards()
@@ -238,7 +396,7 @@
             const now = new Date();
             const prevItems = localStorage.getItem('items')
             let allViewItems = [product_details]
-            if(prevItems){
+            if (prevItems) {
                 let value = JSON.parse(prevItems)
                 value = value?.value
                 const exists = value.some(item => item.code === product_details.code);
@@ -246,10 +404,10 @@
                 // console.log(JSON.parse(prevItems))
             }
             const item = {
-                    value: allViewItems,
-                    expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
-                };
-            localStorage.setItem('items',JSON.stringify(item))
+                value: allViewItems,
+                expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
+            };
+            localStorage.setItem('items', JSON.stringify(item))
             document.getElementById('detailsPopup').style.display = 'flex';
             const details_box = document.getElementById('details_box')
             details_box.innerHTML += `
@@ -270,18 +428,20 @@
             <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='60%' height='70%' class="d-block w-100" alt="Product Image 1">
             `
         }
-        const closePopup =()=> {
+        const closePopup = () => {
             console.log('hii')
             document.getElementById('detailsPopup').style.display = 'none';
             const details_box = document.getElementById('details_box')
-            details_box.innerHTML =``
+            details_box.innerHTML = ``
         }
         const code = params.get('code')
-        if(code){
+        if (code) {
             openPopup(code)
         }
 
     </script>
+    <script defer src="/components//scripts//navbar2.js"></script>
+    <script src="/components//scripts//catalogue.js"></script>
 </body>
 
 </html>
