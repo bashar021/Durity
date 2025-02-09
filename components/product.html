@@ -7,19 +7,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Products</title>
     <link rel="stylesheet" href="/components//styles/productPopUp.css">
-    <link rel="stylesheet" href="/components//styles//navbar2.css">
     <script src="/data/products.js"></script>
-    <link rel="stylesheet" href="/components//styles/recent2.css">
 
+    <link rel="stylesheet" href="/components//styles//navbar2.css">
+    <link rel="stylesheet" href="/components//styles/recent2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
-        $(function () {
-            $("#navbar").load("/components/navbar.html");
-        });
-        $(function () {
-            $("#footer").load("./footer.html");
-        });
     </script>
     <style>
+        #my-nav {
+            width: 96%;
+            /* background-color: red; */
+        }
+
+        #searchInput {
+            /* background-color: red; */
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+            /* padding: 10px; */
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
         .hero-section {
             background: url('https://placehold.co/1920x600') no-repeat center center;
             background-size: cover;
@@ -125,16 +140,6 @@
 
 
 
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* background-color: #004e9d; */
-            border-radius: 8px;
-            overflow: hidden;
-            /* height: 100%; */
-
-        }
 
         .carousel-inner {
             /* background-color: blanchedalmond; */
@@ -318,19 +323,14 @@
     <div id="detailsPopup" class="productDetailsPopup">
         <div class="modalContainer">
             <div class="modalHeader">
-                <button type="button" class="btn-close" aria-label="Close" onclick="closePopup()"></button>
+                <button type="button" class="product-popup-close-btn" aria-label="Close"
+                    onclick="closePopup()">X</button>
             </div>
             <div class="product-popup-box">
                 <!-- Left Side - Image Carousel -->
-                <div class="col-md-6 carousel-container">
-                    <div id="productCarousel" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-inner">
-                            <!-- class="carousel-item active" -->
-                            <div id="detail-img-container">
-                                <!-- image container this is  -->
-                            </div>
-                        </div>
-                    </div>
+                <div  id="detail-img-container" class="carousel-container">
+                   
+                   
                 </div>
 
                 <!-- Right Side - Product Details -->
