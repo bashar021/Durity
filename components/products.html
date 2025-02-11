@@ -148,12 +148,19 @@
     </div>
     <!-- <div class="herosection" id="herosection">
     </div> -->
-    <div  id="herosection" class="cover">
+    <!-- <div  id="herosection" class="cover">
         <div class="cover-content">
           <h1>Explore Our Categories</h1>
           <p>Discover the best products curated just for you.</p>
         </div>
-      </div>
+      </div> -->
+      <div class="animated-background"></div>
+      <section id="herosection" class="cover parallax" >
+        <div class="cover-content">
+          <h1>Explore Our Categories</h1>
+          <p>Discover the best products curated just for you.</p>
+        </div>
+      </section>
     <div class="category-grid">
         <h2>Shop by Category</h2>
         <div id="productContainer" class="grid">
@@ -173,10 +180,10 @@
             if (durityProducts[name].coverPageUrl) {
                 coverPageConainer.style.backgroundImage = `url('${durityProducts[name].coverPageUrl}')`
             } else {
-                coverPageConainer.innerHTML =  `url('/public/banner/products/faucets/bathroom-banner-new.jpg')`
+                coverPageConainer.innerHTML = `url('/public/banner/products/faucets/bathroom-banner-new.jpg')`
             }
 
-           
+
             const productContainer = document.getElementById('productContainer');
             products.forEach((product, index) => {
                 const cardHTML = `
@@ -214,6 +221,16 @@
                 alert(`You clicked on ${card.querySelector('h3').textContent}`);
             });
         });
+
+
+       // Parallax Scrolling Effect
+    window.addEventListener('scroll', () => {
+      const cover = document.querySelector('.cover');
+      const scrollPosition = window.scrollY;
+      cover.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+    });
+
+       
     </script>
 </body>
 
