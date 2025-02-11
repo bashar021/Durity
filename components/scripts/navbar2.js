@@ -11,6 +11,7 @@
       } else {
           searchDropdown.classList.remove('active');
           suggestions.innerHTML = ''; // Clear previous suggestions
+          searchDropdown.style.display = 'none'
       }
 
   });
