@@ -1,0 +1,136 @@
+
+.cover {
+    position: relative;
+    height: 400px;
+    /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+    /* background-color: ; */
+    /* background-image: url('/public/banner/products/faucets/bathroom-banner-new.jpg'); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .cover p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+.category-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  .category-grid {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .category-grid h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .category-card-details-box{
+    /* background-color: red; */
+    /* background-color: blue; */
+    text-align: center;
+    padding: 0px;
+    padding-bottom: 5%;
+  }
+  .category-card-details-box h5{
+    font-size: 18px;
+    text-align: center;
+    /* background-color: red; */
+    margin: 0px;
+  }
+  .category-card-details-box a{
+    text-decoration: none;
+    text-align: center;
+    color: rgba(154, 154, 154, 0.75);
+    /* background-color: red; */
+    margin: 0px;
+    /* margin-bottom: 5%; */
+  }
+  .category-card-details-box a:hover{
+    color: rgba(77, 76, 76, 0.89);
+    /* color: blue; */
+    /* color: green; */
+  }
+
+
+  @media (max-width: 768px) {
+    .cover h1 {
+      font-size: 2.5rem;
+    }
+
+    .cover p {
+      font-size: 1rem;
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  @media (max-width: 480px) {
+    .cover h1 {
+      font-size: 2rem;
+    }
+
+    .cover p {
+      font-size: 0.9rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }

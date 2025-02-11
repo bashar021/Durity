@@ -4,96 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Products</title>
+    <link rel="stylesheet" href="/components//styles/productspage.css">
     <script src="/data/products.js"></script>
     <link rel="stylesheet" href="/components//styles//navbar2.css">
     <script>
-        $(function () {
-            $("#navbar").load("../components/navbar2.html");
-        });
-        $(function(){
-      $("#footer").load("./footer.html"); 
-    });
     </script>
     <style>
-        /* body {
-            font-family: Arial, sans-serif;
-        } */
-
-        .herosection{
-            background-size: cover;
-            color: white;
-            text-align: center;
-            height: 400px;
-        }
-        .herosection img{
-            width: 100%;
-            height: 100%;
-        }
-        .product-title {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 24px;
+        body {
+            /* font-family: Arial, sans-serif; */
+            padding: 0px;
+            margin: 0px;
         }
 
-        .product-card {
-            position: relative;
-            margin: 10px;
-            border: 2px solid #007bff;
-            overflow: hidden;
+        #my-nav {
+            width: 96%;
+            /* background-color: red; */
         }
 
-        .product-card img {
-            width: 100%;
-            height: auto;
-            transition: all 0.3s ease;
-        }
-
-        .product-info {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .product-info h5 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .product-info p {
-            margin: 5px 0;
-            font-size: 14px;
-            display: none;
-        }
-
-        .product-info a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            border-bottom: 1px solid white;
-        }
-
-        .product-info a:hover {
-            color: #ffc107;
-            border-bottom: 1px solid #ffc107;
-        }
-
-        .product-card:hover img {
-            filter: brightness(50%);
-        }
-
-        .product-card:hover .product-info p {
-            display: block;
-        }
-
-        @media (max-width:768px) {
-            .hero-section {
-        background-position: center center;  
-        padding: 90px 0;   
-    }
+        #searchInput {
+            /* background-color: red; */
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+            /* padding: 10px; */
         }
     </style>
 </head>
@@ -210,35 +146,45 @@
             </form>
         </div>
     </div>
-    <div class="herosection" id="herosection">
-    </div>
-    <div class="container">
-        <div id="productContainer" class="row">
+    <!-- <div class="herosection" id="herosection">
+    </div> -->
+    <div  id="herosection" class="cover">
+        <div class="cover-content">
+          <h1>Explore Our Categories</h1>
+          <p>Discover the best products curated just for you.</p>
+        </div>
+      </div>
+    <div class="category-grid">
+        <h2>Shop by Category</h2>
+        <div id="productContainer" class="grid">
         </div>
     </div>
+
+
 
     <script>
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
-        console.log(durityProducts[name],name)
+        console.log(durityProducts[name], name)
         const products = durityProducts[name].products
         function createProductCards() {
             const coverPageConainer = document.getElementById('herosection')
-            if(durityProducts[name].coverPageUrl){
-                  coverPageConainer.innerHTML = `<img src="${durityProducts[name].coverPageUrl}" alt="">`
-            }else{
-                 coverPageConainer.innerHTML = `<img src="/public/banner/products/faucets/bathroom-banner-new.jpg" alt="">`
+            // console.log(coverPageConainer)
+            if (durityProducts[name].coverPageUrl) {
+                coverPageConainer.style.backgroundImage = `url('${durityProducts[name].coverPageUrl}')`
+            } else {
+                coverPageConainer.innerHTML =  `url('/public/banner/products/faucets/bathroom-banner-new.jpg')`
             }
-          
-            console.log(products)
+
+           
             const productContainer = document.getElementById('productContainer');
-            products.forEach((product,index) => {
+            products.forEach((product, index) => {
                 const cardHTML = `
-                 <div id="product_card" class="col-md-3">
-                <div class="product-card">
-                    <img style="width: 100%; height: 100%" alt="Sanitaryware product image" src="${product.imageSrc}"
+                 <div id="product_card" class="category-card">
+               
+                    <img style="width: 100%;  alt="Sanitaryware product image" src="${product.imageSrc}"
                         width="600" />
-                    <div class="product-info">
+                    <div class="category-card-details-box">
                         <h5>
                            ${product.name}
                         </h5>
@@ -246,10 +192,10 @@
                           ${product.details}
                         </p>
                         <a href="/components/product.html?name=${name}&category=${product.name}&index=${index}">
-                            EXPLORE
+                            Explore ->
                         </a>
                     </div>
-                </div>
+               
                 </div>
                 `
                 productContainer.innerHTML += cardHTML;
@@ -258,8 +204,17 @@
         createProductCards()
 
     </script>
-      <script defer src="/components//scripts//navbar2.js"></script>
-      <script src="/components//scripts//catalogue.js"></script>
+    <script defer src="/components//scripts//navbar2.js"></script>
+    <script src="/components//scripts//catalogue.js"></script>
+    <script>
+        const categoryCards = document.querySelectorAll('.category-card');
+
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                alert(`You clicked on ${card.querySelector('h3').textContent}`);
+            });
+        });
+    </script>
 </body>
 
 </html>
