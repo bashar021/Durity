@@ -1,252 +1,805 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Event Cards</title>
-    <link rel="stylesheet" href="/components//styles/navbar2.css">
-    <script src="/data/products.js"></script>
-    <!-- <script defer src="script.js"></script>  -->
-    <style>
-        /* Include some simple styling */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 1.5rem;
-            padding: 5%;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Cards</title>
+  <link rel="stylesheet" href="/components//styles/navbar2.css">
+  <script src="/data/products.js"></script>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
 
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    #my-nav {
+      width: 96%;
+      /* background-color: red; */
+    }
 
-        @media (min-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+    #searchInput {
+      /* background-color: red; */
+      height: 40px;
+      max-height: 40px;
+      padding: 0px;
+      margin: 0px;
+      padding-left: 10px;
+      /* padding: 10px; */
+    }
 
-        .card {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    .event-parallax-header {
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-        .card img {
-            width: 100%;
-            height: 12rem;
-            object-fit: cover;
-        }
+    .event-parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url('../public/events/images.jpeg');
+      background-size: cover;
+      background-position: center;
+      transform: translateZ(-1px) scale(2);
+      z-index: -1;
+    }
 
-        .card-content {
-            padding: 1rem;
-        }
+    .event-header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.9));
+    }
 
-        .card-title {
-            font-weight: bold;
-            margin-top: 0.5rem;
-            font-size: 1.25rem;
-        }
+    .event-header-content {
+      text-align: center;
+      position: relative;
+      padding: 2rem;
+      max-width: 800px;
+    }
 
-        .card-date {
-            color: #3b82f6;
-            font-weight: bold;
-        }
+    .event-header-title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: event-fadeUp 0.8s ease forwards;
+    }
 
-        .card-description {
-            margin-top: 0.5rem;
-            color: #4b5563;
-        }
-    </style>
-     <script>
-        $(function () {
-            $("#navbar").load("/components/navbar.html");
-        });
-        $(function(){
-      $("#footer").load("./footer.html"); 
-    });
-    </script>
-    <script src="/data/events.js"></script>
+    .event-header-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: event-fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    @keyframes event-fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .event-events-section {
+      position: relative;
+      padding: 6rem 2rem;
+      background: #fff;
+      color: #0f172a;
+      border-radius: 40px 40px 0 0;
+      margin-top: -40px;
+    }
+
+    .event-floating-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .event-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: event-float 20s infinite linear;
+    }
+
+    .event-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      background: #3b82f6;
+      top: 10%;
+      left: -150px;
+      animation-delay: 0s;
+    }
+
+    .event-circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      background: #10b981;
+      top: 60%;
+      right: -100px;
+      animation-delay: -5s;
+    }
+
+    @keyframes event-float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      50% {
+        transform: translate(100px, 100px) rotate(180deg);
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(360deg);
+      }
+    }
+
+    .event-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #3b82f6, #10b981);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      border-radius: 20px;
+    }
+
+    .event-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-card:hover::before {
+      opacity: 1;
+    }
+
+    .event-image-container {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .event-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .event-card:hover .event-image {
+      transform: scale(1.1);
+    }
+
+    .event-content {
+      padding: 1.5rem;
+      background: white;
+      position: relative;
+    }
+
+    .event-date {
+      display: inline-block;
+      background: linear-gradient(45deg, #3b82f6, #10b981);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      transform: translateY(-50%);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    .event-title {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .event-preview {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .event-view-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #3b82f6;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .event-card:hover .event-view-more {
+      transform: translateX(5px);
+    }
+
+    /* Carousel Styles */
+    .event-carousel-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .event-carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .event-carousel img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .event-carousel-controls {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .event-carousel-control {
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .event-carousel-control.active {
+      background: white;
+    }
+
+    .event-carousel-control:hover {
+      background: white;
+    }
+
+    /* Modal Styles */
+    .event-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .event-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .event-modal-container {
+      background: white;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.3s ease;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .event-modal-overlay.active .event-modal-container {
+      transform: translateY(0) scale(1);
+    }
+
+    .event-modal-content {
+      padding: 2rem;
+    }
+
+    .event-modal-description {
+      color: #64748b;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-modal-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      background: linear-gradient(to right, #f8fafc, #f1f5f9);
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin-top: 1.5rem;
+    }
+
+    .event-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .event-info-label {
+      font-size: 0.875rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .event-info-value {
+      font-size: 1rem;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    .event-close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .event-close-modal:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+
+    .event-modal-header {
+      position: relative;
+      height: fit-content;
+      overflow: hidden;
+    }
+
+    .event-modal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .event-modal-image-overlay {
+      position: absolute;
+      top: 0px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.191);
+      z-index: 0;
+      max-height: 235px;
+    }
+
+    .event-modal-title-section {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .event-header-title {
+        font-size: 2.5rem;
+      }
+
+      .event-events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-events-section {
+        padding: 4rem 1rem;
+      }
+
+      .event-modal-container {
+        margin: 1rem;
+      }
+    }
+  </style>
+  <script src="/data/events.js"></script>
 </head>
 
 <body>
-    <!-- <div id="navbar"></div> -->
-    <nav id="my-nav">
-        <div class="hamburger">☰</div>
-        <div class="logo">
-          <img src="/api/placeholder/150/50" alt="Company Logo">
-        </div>
-    
-        <div class="search-container">
-          <input  type="text" placeholder="Search..." id="searchInput" autocomplete="off">
-          <div class="search-dropdown" id="suggestions">
-          </div>
-        </div>
-    
-        <div class="nav-links">
-          <div class="dropdown">
-            <a href="#">Products</a>
-            <div class="dropdown-content">
-              <a href="/components/products.html?name=faucets">Faucets</a>
-              <a href="/components/products.html?name=ptmt">Ptmt</a>
-              <a href="/components/products.html?name=showers">Showers</a>
-              <a href="/components/products.html?name=health faucet">Health
-                Faucet</a>
-              <a href="/components/products.html?name=bath accessories">Bath
-                Accessories</a>
-              <a href="/components/products.html?name=faucet parts">Faucet
-                Parts</a>
-            </div>
-          </div>
-          <a href="/components/about.html">About Us</a>
-          <a href="/components/carrerspage.html">Careers</a>
-          <a href="/components/events.html">Events</a>
-          <div class="dropdown">
-            <a>E-Catalogue</a>
-            <div class="dropdown-content">
-              <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
-              <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
-            </div>
-          </div>
-          <a href="/components/register.html">Register</a>
-        </div>
-      </nav>
-      <div class="sidebar">
-        <div class="close-btn">×</div>
-        <div class="nav-links">
-          <div class="dropdown">
-            <a href="#">Products</a>
-            <div class="dropdown-content">
-              <a href="/components/products.html?name=faucets">Faucets</a>
-              <a href="/components/products.html?name=ptmt">Ptmt</a>
-              <a href="/components/products.html?name=showers">Showers</a>
-              <a href="/components/products.html?name=health faucet">Health
-                Faucet</a>
-              <a href="/components/products.html?name=bath accessories">Bath
-                Accessories</a>
-              <a href="/components/products.html?name=faucet parts">Faucet
-                Parts</a>
-            </div>
-          </div>
-          <a href="/components/about.html">About Us</a>
-          <a href="/components/carrerspage.html">Careers</a>
-          <a href="/components/events.html">Events</a>
-          <div class="dropdown">
-            <a href="#">E-Catalogue</a>
-            <div class="dropdown-content">
-              <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
-              <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
-            </div>
-          </div>
-          <a href="/components/register.html">Register</a>
+  <nav id="my-nav">
+    <div class="hamburger">☰</div>
+    <div class="logo">
+      <img src="/api/placeholder/150/50" alt="Company Logo">
+    </div>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+      <div class="search-dropdown" id="suggestions">
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#">Products</a>
+        <div class="dropdown-content">
+          <a href="/components/products.html?name=faucets">Faucets</a>
+          <a href="/components/products.html?name=ptmt">Ptmt</a>
+          <a href="/components/products.html?name=showers">Showers</a>
+          <a href="/components/products.html?name=health faucet">Health
+            Faucet</a>
+          <a href="/components/products.html?name=bath accessories">Bath
+            Accessories</a>
+          <a href="/components/products.html?name=faucet parts">Faucet
+            Parts</a>
         </div>
       </div>
-      <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-form">
-          <button class="close-btn" onclick="closePopup()">&times;</button>
-          <div class="form-header">
-            <p>Please fill out the form below to download our catalog</p>
-          </div>
-          <form id="downloadForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-              <div class="error" id="nameError">Please enter your name</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-              <div class="error" id="emailError">Please enter a valid email</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="mobile">Mobile Number</label>
-              <input type="tel" id="mobile" name="mobile" required>
-              <div class="error" id="mobileError">Please enter a valid mobile number</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="business">Business Name</label>
-              <input type="text" id="business" name="business" required>
-              <div class="error" id="businessError">Please enter your business name</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="message">Message (Optional)</label>
-              <textarea id="message" name="message" rows="3"></textarea>
-            </div>
-    
-            <button type="submit" class="submit-btn">Download Now</button>
-          </form>
+      <a href="/components/about.html">About Us</a>
+      <a href="/components/carrerspage.html">Careers</a>
+      <a href="/components/events.html">Events</a>
+      <div class="dropdown">
+        <a>E-Catalogue</a>
+        <div class="dropdown-content">
+          <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+          <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
         </div>
       </div>
-    <div class="grid" id="eventGrid"></div>
-    <div id="footer"></div>
-    <script>
-        // Array containing event data
-        
+      <a href="/components/register.html">Register</a>
+    </div>
+  </nav>
+  <div class="sidebar">
+    <div class="close-btn">×</div>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#">Products</a>
+        <div class="dropdown-content">
+          <a href="/components/products.html?name=faucets">Faucets</a>
+          <a href="/components/products.html?name=ptmt">Ptmt</a>
+          <a href="/components/products.html?name=showers">Showers</a>
+          <a href="/components/products.html?name=health faucet">Health
+            Faucet</a>
+          <a href="/components/products.html?name=bath accessories">Bath
+            Accessories</a>
+          <a href="/components/products.html?name=faucet parts">Faucet
+            Parts</a>
+        </div>
+      </div>
+      <a href="/components/about.html">About Us</a>
+      <a href="/components/carrerspage.html">Careers</a>
+      <a href="/components/events.html">Events</a>
+      <div class="dropdown">
+        <a href="#">E-Catalogue</a>
+        <div class="dropdown-content">
+          <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+          <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+        </div>
+      </div>
+      <a href="/components/register.html">Register</a>
+    </div>
+  </div>
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-form">
+      <button class="close-btn" onclick="closePopup()">&times;</button>
+      <div class="form-header">
+        <p>Please fill out the form below to download our catalog</p>
+      </div>
+      <form id="downloadForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <div class="error" id="nameError">Please enter your name</div>
+        </div>
 
-        // Function to generate the event cards dynamically
-        const generateEventCards = () => {
-            const eventGrid = document.getElementById("eventGrid");
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <div class="error" id="emailError">Please enter a valid email</div>
+        </div>
 
-            events.forEach(event => {
-                // Create the card element
-                const card = document.createElement("div");
-                card.classList.add("card");
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" required>
+          <div class="error" id="mobileError">Please enter a valid mobile number</div>
+        </div>
 
-                // Add the image
-                const img = document.createElement("img");
-                img.src = event.image;
-                img.alt = event.alt;
-                card.appendChild(img);
+        <div class="form-group">
+          <label for="business">Business Name</label>
+          <input type="text" id="business" name="business" required>
+          <div class="error" id="businessError">Please enter your business name</div>
+        </div>
 
-                // Add the content wrapper
-                const cardContent = document.createElement("div");
-                cardContent.classList.add("card-content");
+        <div class="form-group">
+          <label for="message">Message (Optional)</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
 
-                // Add the date
-                const date = document.createElement("div");
-                date.classList.add("card-date");
-                date.textContent = event.date;
-                cardContent.appendChild(date);
+        <button type="submit" class="submit-btn">Download Now</button>
+      </form>
+    </div>
+  </div>
+  <header class="event-parallax-header">
+    <div class="event-parallax-bg"></div>
+    <div class="event-header-overlay"></div>
+    <div class="event-header-content">
+      <h1 class="event-header-title">Our Events</h1>
+      <p class="event-header-subtitle">Discover our latest exhibitions, product launches, and design workshops</p>
+    </div>
+  </header>
 
-                // Add the title
-                const title = document.createElement("div");
-                title.classList.add("card-title");
-                title.textContent = event.title;
-                cardContent.appendChild(title);
+  <!-- Events Section -->
+  <section class="event-events-section">
+    <div class="event-floating-circles">
+      <div class="event-circle"></div>
+      <div class="event-circle"></div>
+    </div>
+    <div class="event-events-grid">
+      <!-- Event cards will be dynamically inserted here -->
+    </div>
+  </section>
 
-                // Add the description
-                const description = document.createElement("div");
-                description.classList.add("card-description");
-                description.textContent = event.description;
-                cardContent.appendChild(description);
+  <!-- Enhanced Modal with Carousel -->
+  <div class="event-modal-overlay">
+    <div class="event-modal-container">
+      <button class="event-close-modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="event-carousel-container">
+        <div class="event-carousel">
+          <!-- Carousel images will be inserted here -->
+        </div>
+      </div>
+      <div class="event-modal-image-overlay">
+        <div class="event-modal-title-section">
+          <span class="event-modal-date"></span>
+          <h2 class="event-modal-title"></h2>
+        </div>
+        <div class="event-carousel-controls">
+          <!-- Carousel controls will be inserted here -->
+        </div>
+      </div>
+      <div class="event-modal-content">
+        <p class="event-modal-description"></p>
+        <div class="event-modal-info">
+          <!-- Event details will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-                // Append the content to the card
-                card.appendChild(cardContent);
+  <script>
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const parallaxBg = document.querySelector('.event-parallax-bg');
+      const scrolled = window.pageYOffset;
+      parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
 
-                // Append the card to the grid
-                eventGrid.appendChild(card);
-            });
-        };
+    // Sample events data with multiple images
+    const durityEvents = [
+      {
+        id: 1,
+        images: [
+          "/public/events/corporate-event.jpg",
+          "/public/products images/HEALTH FAUCETS/COLOUR/HFCO15C01.jpg",
+          "/public/products images/showers/OVERHEAD SHOWER/BELL-SHO2C01.jpg"
+        ],
+        date: "March 15-17, 2025",
+        title: "International Bathroom Expo 2025",
+        preview: "Join us at the largest bathroom accessories exhibition in Asia. Experience our latest collections and innovative designs.",
+        description: "The International Bathroom Expo is the premier event for bathroom innovations and design trends. This year, we're showcasing our revolutionary smart bathroom solutions and sustainable product lines.",
+        location: "Singapore Expo Center",
+        time: "10:00 AM - 6:00 PM",
+        registration: "Open",
+        booth: "Hall A, Booth 123"
+      },
+      {
+        id: 2,
+        images: [
+          "/public/events/AdobeStock_210716095-1536x1025.jpeg",
+          "https://via.placeholder.com/800x604"
+        ],
+        date: "April 5, 2025",
+        title: "Smart Faucets Launch Event",
+        preview: "Witness the future of bathroom technology with our new line of smart faucets featuring touchless controls and water-saving technology.",
+        description: "Be among the first to experience our revolutionary smart faucets. The event will feature live demonstrations, expert talks, and exclusive launch day offers.",
+        location: "Grand Hyatt Hotel",
+        time: "2:00 PM - 5:00 PM",
+        registration: "By Invitation",
+        booth: "Main Ballroom"
+      },
+      {
+        id: 3,
+        images: [
+          "/public/events/corporate-event-ideas-to-inspire-your-team.jpeg",
+          "https://via.placeholder.com/800x606",
+          "https://via.placeholder.com/800x607"
+        ],
+        date: "May 20-22, 2025",
+        title: "Sustainable Living Workshop",
+        preview: "Learn about water conservation and sustainable bathroom solutions in our interactive workshop series.",
+        description: "Join our experts for an immersive workshop on sustainable bathroom designs. Learn about water-saving technologies, eco-friendly materials, and smart water management systems.",
+        location: "Design Center",
+        time: "9:00 AM - 4:00 PM",
+        registration: "Limited Seats",
+        booth: "Workshop Room 2"
+      }
+    ];
 
-        // Call the function to generate the cards when the page loads
-        window.onload = generateEventCards;
+    // Function to create event cards
+    function createEventCard(event) {
+      const card = document.createElement('div');
+      card.classList.add('event-card');
+      card.innerHTML = `
+    <div class="event-image-container">
+      <img class="event-image" src="${event.images[0]}" alt="${event.title}">
+    </div>
+    <div class="event-content">
+      <span class="event-date">${event.date}</span>
+      <h3 class="event-title">${event.title}</h3>
+      <p class="event-preview">${event.preview}</p>
+      <span class="event-view-more">View More →</span>
+    </div>
+  `;
+      card.addEventListener('click', () => openModal(event));
+      return card;
+    }
 
-    </script>
-     <script defer src="/components//scripts//navbar2.js"></script>
-     <script src="/components//scripts//catalogue.js"></script>
+    // Function to open modal with event details and carousel
+    function openModal(event) {
+      const modalOverlay = document.querySelector('.event-modal-overlay');
+      const carousel = document.querySelector('.event-carousel');
+      const carouselControls = document.querySelector('.event-carousel-controls');
+      const modalDate = document.querySelector('.event-modal-date');
+      const modalTitle = document.querySelector('.event-modal-title');
+      const modalDescription = document.querySelector('.event-modal-description');
+      const modalInfo = document.querySelector('.event-modal-info');
+
+      // Clear existing carousel content
+      carousel.innerHTML = '';
+      carouselControls.innerHTML = '';
+
+      // Add images to the carousel
+      event.images.forEach((image, index) => {
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = `${event.title} Image ${index + 1}`;
+        carousel.innerHTML += `<img src="${image}" alt="">`;
+
+        const control = document.createElement('button');
+        control.classList.add('event-carousel-control');
+        if (index === 0) control.classList.add('active');
+        control.addEventListener('click', () => moveCarousel(index));
+        carouselControls.appendChild(control);
+      });
+
+      // Set modal content
+      modalDate.textContent = event.date;
+      modalTitle.textContent = event.title;
+      modalDescription.textContent = event.description;
+
+      modalInfo.innerHTML = `
+    <div class="event-info-item">
+      <span class="event-info-label">📍 Location</span>
+      <span class="event-info-value">${event.location}</span>
+    </div>
+    <div class="event-info-item">
+      <span class="event-info-label">🕒 Time</span>
+      <span class="event-info-value">${event.time}</span>
+    </div>
+    <div class="event-info-item">
+      <span class="event-info-label">🎟️ Registration</span>
+      <span class="event-info-value">${event.registration}</span>
+    </div>
+    <div class="event-info-item">
+      <span class="event-info-label">🚪 Booth</span>
+      <span class="event-info-value">${event.booth}</span>
+    </div>
+  `;
+
+      // Show modal
+      modalOverlay.classList.add('active');
+    }
+
+    // Function to move the carousel to a specific index
+    function moveCarousel(index) {
+      const carousel = document.querySelector('.event-carousel');
+      const controls = document.querySelectorAll('.event-carousel-control');
+      const offset = -index * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+
+      // Update active control
+      controls.forEach((control, i) => {
+        if (i === index) control.classList.add('active');
+        else control.classList.remove('active');
+      });
+    }
+
+    // Function to close modal
+    function closeModal() {
+      const modalOverlay = document.querySelector('.event-modal-overlay');
+      modalOverlay.classList.remove('active');
+    }
+
+    // Event listener for closing modal
+    document.querySelector('.event-close-modal').addEventListener('click', closeModal);
+    document.querySelector('.event-modal-overlay').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+
+    // Insert event cards into the DOM
+    const eventsGrid = document.querySelector('.event-events-grid');
+    durityEvents.forEach(event => {
+      const card = createEventCard(event);
+      eventsGrid.appendChild(card);
+      console.log('hii')
+    });
+  </script>
+  <script defer src="/components//scripts//navbar2.js"></script>
+  <script src="/components//scripts//catalogue.js"></script>
+
+
 </body>
 
 </html>
