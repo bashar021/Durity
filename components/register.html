@@ -5,22 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- js query  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/components//styles/navbar2.css">
 
     <script src="/data/career.js"></script>
     <title>Register</title>
     <script>
-        $(function () {
-            $("#navbar").load("/components/navbar.html");
-        });
-        $(function () {
-            $("#footer").load("/components/footer.html");
-        });
-        $(function () {
-            $("#chat").load("../components/chatboat.html");
-        });
     </script>
     <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #my-nav {
+            width: 96%;
+            /* background-color: red; */
+        }
+
+        #searchInput {
+            /* background-color: red; */
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+            /* padding: 10px; */
+        }
+
         .register-form-container {
             /* min-height: 100vh; */
             display: flex;
@@ -56,9 +67,9 @@
 
         .container {
             /* background: rgba(255, 255, 255, 0.85); */
-            background-color: rgb(237,240,241);
+            background-color: rgb(237, 240, 241);
             /* background-color: red; */
-            padding: 40px;
+            padding: 20px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             width: 100%;
@@ -69,6 +80,7 @@
             animation: formFloat 6s infinite ease-in-out;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-top: 5%;
         }
 
         @keyframes formFloat {
@@ -152,14 +164,22 @@
             }
         }
 
+        #register-form {
+            width: 100%;
+            /* background-color: blue; */
+
+        }
+
         .input-group {
             margin-bottom: 25px;
             position: relative;
             transform-style: preserve-3d;
+            width: 100%;
+            /* background-color: blue; */
         }
 
         .input-group input {
-            width: 100%;
+            width: 91%;
             padding: 15px 20px;
             border: 2px solid #e3f2fd;
             border-radius: 12px;
@@ -362,6 +382,120 @@
 </head>
 
 <body>
+    <div id="navbar">
+        <nav id="my-nav">
+            <div class="hamburger">☰</div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/api/placeholder/150/50" alt="Company Logo">
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+                <div class="search-dropdown" id="suggestions">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="/components/service.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="/components/catalogue.html">E-Catalogue</a>
+                    <!-- <div class="dropdown-content">
+                <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+              </div> -->
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <div class="close-btn">×</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="#">E-Catalogue</a>
+                    <div class="dropdown-content">
+                        <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                        <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                    </div>
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-form">
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+                <div class="form-header">
+                    <p>Please fill out the form below to download our catalog</p>
+                </div>
+                <form id="downloadForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error" id="emailError">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                        <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required>
+                        <div class="error" id="businessError">Please enter your business name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Download Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="register-form-container">
         <div class="container">
             <h2>Join Us</h2>
@@ -387,7 +521,7 @@
         </div>
     </div>
     <script>
-         document.getElementById('register-form').addEventListener('submit', function (e) {
+        document.getElementById('register-form').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent the default form submission
             const formData = new FormData(this); // Get form data
             // Send the form data to Formspree
@@ -398,20 +532,21 @@
                     'Accept': 'application/json'
                 }
             })
-            .then(response => {
-                if (response.ok) {
-                    alert('Mail sent successfully!');
-                    this.reset(); // Reset the form after successful submission
-                } else {
-                    alert('There was a problem with your submission.');
-                }
-            })
-            .catch(error => {
-                alert('There was a problem with your submission: ' + error.message);
-            });
+                .then(response => {
+                    if (response.ok) {
+                        alert('Mail sent successfully!');
+                        this.reset(); // Reset the form after successful submission
+                    } else {
+                        alert('There was a problem with your submission.');
+                    }
+                })
+                .catch(error => {
+                    alert('There was a problem with your submission: ' + error.message);
+                });
         });
     </script>
-   
+    <script defer src="/components//scripts//navbar2.js"></script>
+
 </body>
 
 </html>

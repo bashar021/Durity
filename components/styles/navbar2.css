@@ -176,18 +176,22 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 5%;
+    /* padding: 5%; */
+    
 }
 
 .popup-form {
     background-color: white;
+    /* background-color: red; */
     padding: 30px;
     border-radius: 12px;
     width: 90%;
     max-width: 500px;
-    position: relative;
+    position: absolute;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    /* height: 80%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .close-btn {
@@ -219,6 +223,7 @@
 
 .form-group {
     margin-bottom: 20px;
+    /* background-color: blue; */
 }
 
 .form-group label {
@@ -230,12 +235,13 @@
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 96%;
     padding: 8px;
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 13px;
     transition: border-color 0.3s;
+
 }
 
 .form-group input:focus,

@@ -390,45 +390,49 @@
         }
         createProductCards()
         function openPopup(path) {
-            const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
-            console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
-            let product_details = products[path]
-            // console.log(product_details)
-            product_details['openPath'] = productUrl
-            const now = new Date();
-            const prevItems = localStorage.getItem('items')
-            let allViewItems = [product_details]
-            if (prevItems) {
-                let value = JSON.parse(prevItems)
-                value = value?.value
-                const exists = value.some(item => item.code === product_details.code);
-                allViewItems = exists ? value : [...value, product_details];
-                // console.log(JSON.parse(prevItems))
-            }
-            const item = {
-                value: allViewItems,
-                expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
-            };
-            localStorage.setItem('items', JSON.stringify(item))
-            document.getElementById('detailsPopup').style.display = 'flex';
-            const details_box = document.getElementById('details_box')
-            details_box.innerHTML += `
+            // console.log(params)
+            url = 'http://127.0.0.1:5500/components/productitem.html?name=ptmt&category=Superb%20Collection%20Yellow&index=1&code=2'
+            url = `/components/productitem.html?name=${name}&category=${category}&index=${index}&code=${path}`
+            console.log(url)
+            window.location.href = url
+            // const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
+            // console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
+            // let product_details = products[path]
+            // // console.log(product_details)
+            // product_details['openPath'] = productUrl
+            // const now = new Date();
+            // const prevItems = localStorage.getItem('items')
+            // let allViewItems = [product_details]
+            // if (prevItems) {
+            //     let value = JSON.parse(prevItems)
+            //     value = value?.value
+            //     const exists = value.some(item => item.code === product_details.code);
+            //     allViewItems = exists ? value : [...value, product_details];
+            // }
+            // const item = {
+            //     value: allViewItems,
+            //     expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
+            // };
+            // localStorage.setItem('items', JSON.stringify(item))
+            // document.getElementById('detailsPopup').style.display = 'flex';
+            // const details_box = document.getElementById('details_box')
+            // details_box.innerHTML += `
                      
-                    <h2 class='text-black'>${product_details?.name}</h2>
-                    <p>Product Code :<span> ${product_details?.code}</span></p>
-                    <p>Range :<span> ${product_details?.brand}</span></p>
-                    <p>Color Finish :<span> ${product_details?.finish}</span></p>
-                    <p>Instalation Area :<span> ${product_details?.area}</span></p>
-                    <p>Type Of Mounting :<span> ${product_details?.mounting}</span></p>
-                    <p>Catridge MM :<span> ${product_details?.size}</span></p>
-                    <p>Flow Rate :<span> ${product_details?.quantity}</span></p>
-                    <p>Flow Type :<span> ${product_details?.flow}</span></p>
-                    <p>State :<span> ${product_details?.state}</span></p>
-            `
-            const detailImgContainer = document.getElementById('detail-img-container')
-            detailImgContainer.innerHTML = `
-            <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='60%' height='70%' class="d-block w-100" alt="Product Image 1">
-            `
+            //         <h2 class='text-black'>${product_details?.name}</h2>
+            //         <p>Product Code :<span> ${product_details?.code}</span></p>
+            //         <p>Range :<span> ${product_details?.brand}</span></p>
+            //         <p>Color Finish :<span> ${product_details?.finish}</span></p>
+            //         <p>Instalation Area :<span> ${product_details?.area}</span></p>
+            //         <p>Type Of Mounting :<span> ${product_details?.mounting}</span></p>
+            //         <p>Catridge MM :<span> ${product_details?.size}</span></p>
+            //         <p>Flow Rate :<span> ${product_details?.quantity}</span></p>
+            //         <p>Flow Type :<span> ${product_details?.flow}</span></p>
+            //         <p>State :<span> ${product_details?.state}</span></p>
+            // `
+            // const detailImgContainer = document.getElementById('detail-img-container')
+            // detailImgContainer.innerHTML = `
+            // <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='60%' height='70%' class="d-block w-100" alt="Product Image 1">
+            // `
         }
         const closePopup = () => {
             console.log('hii')
@@ -439,6 +443,7 @@
         const code = params.get('code')
         if (code) {
             openPopup(code)
+            // console.log(code)
         }
 
     </script>

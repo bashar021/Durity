@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components//styles/navbar2.css">
+    <title>Document</title>
+    <script src="/data/products.js"></script>
+    <style>
+        :root {
+            --primary-color: #ffeb3b;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --bg-primary: #fff;
+            --bg-secondary: #f5f5f5;
+            --spacing-unit: 1rem;
+        }
+
+
+
+        body {
+            /* background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-unit); */
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #my-nav {
+            width: 96%;
+            /* background-color: red; */
+        }
+
+        #searchInput {
+            /* background-color: red; */
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+            /* padding: 10px; */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            /* padding: var(--spacing-unit); */
+            /* margin-top: 5%; */
+            padding-top: 5%;
+            /* background-color: red; */
+        }
+
+        .product-container {
+            display: flex;
+            gap: 3rem;
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            flex: 1;
+            position: relative;
+            min-width: 300px;
+        }
+        .product-image img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: var(--spacing-unit);
+        }
+
+        .product-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            /* background-color:blue; */
+        }
+
+        .product-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--text-primary);
+            line-height: 1.2;
+            position: relative;
+            padding-bottom: 1rem;
+            margin: 0px;
+        }
+
+        .product-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .detail-row {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .product-code {
+            display: inline-block;
+            background: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-code:hover {
+            transform: scale(1.05);
+        }
+
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
+            .product-container {
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+
+            .product-image {
+                min-width: 250px;
+            }
+
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .product-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .product-image {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .image-placeholder {
+                position: relative;
+                aspect-ratio: 16/9;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-title {
+                text-align: center;
+            }
+
+            .product-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .product-code {
+                align-self: center;
+            }
+        }
+
+        /* Small Mobile Responsive */
+        @media (max-width: 480px) {
+            .product-container {
+                padding: 1rem;
+                border-radius: 12px;
+            }
+
+            .detail-row {
+                padding: 0.75rem;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .detail-value {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* High-contrast mode */
+        @media (prefers-contrast: high) {
+            .detail-row {
+                border: 2px solid var(--text-primary);
+            }
+        }
+
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+
+            .product-container,
+            .detail-row,
+            .product-code {
+                transition: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="navbar">
+        <nav id="my-nav">
+            <div class="hamburger">☰</div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/api/placeholder/150/50" alt="Company Logo">
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+                <div class="search-dropdown" id="suggestions">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="/components/service.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="/components/catalogue.html">E-Catalogue</a>
+                    <!-- <div class="dropdown-content">
+                <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+              </div> -->
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <div class="close-btn">×</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="#">E-Catalogue</a>
+                    <div class="dropdown-content">
+                        <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                        <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                    </div>
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-form">
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+                <div class="form-header">
+                    <p>Please fill out the form below to download our catalog</p>
+                </div>
+                <form id="downloadForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error" id="emailError">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                        <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required>
+                        <div class="error" id="businessError">Please enter your business name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Download Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="product-container" id="productItem-container">
+            <div class="product-image" id="productItem-image-container">
+                <div class="image-placeholder">Product Image</div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const category = params.get('category')
+        const index = params.get('index')
+        const products = durityProducts[name].products[index]?.products
+        const code = params.get('code')
+        const productItem = products[code]
+        let productItem_container = document.getElementById('productItem-container')
+        let productItem_image_container = document.getElementById('productItem-image-container')
+        // console.log(products[code])
+        function setData() {
+            console.log('hii', productItem)
+            productItem_image_container.innerHTML = `<img src='${productItem?.imageSrc}/${productItem?.code}.jpg' alt='${productItem?.name}'></img>`
+            productItem_container.innerHTML += `
+            <div class="product-details">
+                <h1 class="product-title fade-in">${productItem?.name}</h1>
+                <div class="product-code fade-in">Product Code: ${productItem?.code}</div>
+                <div class="details-grid">
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Range</span>
+                        <span class="detail-value">${productItem?.brand}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Color Finish</span>
+                        <span class="detail-value">${productItem?.finish}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Installation Area</span>
+                        <span class="detail-value">${productItem?.area}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Type of Mounting</span>
+                        <span class="detail-value">${productItem?.mounting}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Cartridge MM</span>
+                        <span class="detail-value">${productItem?.size}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Flow Rate</span>
+                        <span class="detail-value">${productItem?.quantity}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">Flow Type</span>
+                        <span class="detail-value">${productItem?.flow}</span>
+                    </div>
+                    <div class="detail-row fade-in">
+                        <span class="detail-label">State</span>
+                        <span class="detail-value">${productItem?.state}</span>
+                    </div>
+                </div>
+            </div>
+            `
+
+        }
+        window.onload = setData()
+
+
+    </script>
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(element);
+        });
+
+        // Enhanced hover effects for detail rows
+        document.querySelectorAll('.detail-row').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'scale(1.02)';
+                row.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            });
+
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'scale(1)';
+                row.style.boxShadow = 'none';
+            });
+        });
+
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            document.querySelectorAll('.fade-in').forEach(element => {
+                element.style.transition = 'none';
+                element.style.opacity = 1;
+                element.style.transform = 'none';
+            });
+        }
+    </script>
+    <script defer src="/components//scripts//navbar2.js"></script>
+</body>
+
+</html>
