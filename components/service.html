@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="/components//styles/navbar2.css">
+    <script src="/data/products.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #my-nav {
+            width: 96%;
+        }
+
+        #searchInput {
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+        }
+
+        .pt-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .pt-heading {
+            text-align: center;
+            color: #333;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .pt-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pt-category-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pt-category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .pt-category-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pt-category-content {
+            padding: 1.5rem;
+        }
+
+        .pt-category-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .pt-category-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .pt-view-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .pt-view-more:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .pt-container {
+                padding: 1rem;
+            }
+
+            .pt-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <nav id="my-nav">
+            <div class="hamburger">☰</div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/api/placeholder/150/50" alt="Company Logo">
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+                <div class="search-dropdown" id="suggestions">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="/components/service.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="/components/catalogue.html">E-Catalogue</a>
+                    <!-- <div class="dropdown-content">
+            <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+            <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+          </div> -->
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <div class="close-btn">×</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="#">E-Catalogue</a>
+                    <div class="dropdown-content">
+                        <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                        <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                    </div>
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-form">
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+                <div class="form-header">
+                    <p>Please fill out the form below to download our catalog</p>
+                </div>
+                <form id="downloadForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error" id="emailError">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                        <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required>
+                        <div class="error" id="businessError">Please enter your business name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Download Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pt-container">
+        <h3 class="pt-heading">Our Product Categories</h3>
+        <div class="pt-categories">
+            <!-- Category 1 -->
+            <div class="pt-category-card" onclick="navigateToCategory('/components/products.html?name=faucets')">
+                <img src="/public/products images/faucets/CHERISH/CHE2WACC01.jpg" alt="Shower Fixtures"
+                    class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">Faucets</h2>
+                    <p class="pt-category-description">Premium shower heads, handles, and complete shower systems for a
+                        luxurious bathing experience.</p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="pt-category-card" onclick="navigateToCategory('/components/products.html?name=ptmt')">
+                <img src="/public//products images/ptmt/ALFA BLUE COLLECTION/ALF2WACBLC01.jpg" alt="Towel Bars & Hooks"
+                    class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">PTMT</h2>
+                    <p class="pt-category-description">Stylish and durable towel storage solutions in various finishes
+                        to match your décor.</p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="pt-category-card" onclick="navigateToCategory('/components/products.html?name=showers')">
+                <img src="/public//products images/showers/OVERHEAD SHOWER/BELL-SHO2C01.jpg" alt="Bathroom Mirrors"
+                    class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">Showers</h2>
+                    <p class="pt-category-description">Modern mirrors with LED lighting and anti-fog technology for
+                        clear reflection.</p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="pt-category-card"
+                onclick="navigateToCategory('/components/products.html?name=health%20faucet')">
+                <img src="/public//products images/HEALTH FAUCETS/COLOUR/HFCO15C01.jpg" alt="Storage Solutions"
+                    class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">Health Faucets</h2>
+                    <p class="pt-category-description">Smart storage options including cabinets and shelves to keep your
+                        bathroom organized.</p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 5 -->
+            <div class="pt-category-card" onclick="navigateToCategory('/components/products.html?name=faucet%20parts')">
+                <img src="/public//products images/faucets/DIVINE/DIV2WACC01.jpg" alt="Faucets"
+                    class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">Faucets Parts</h2>
+                    <p class="pt-category-description">Water-efficient faucets with modern designs and durable finishes.
+                    </p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 6 -->
+            <div class="pt-category-card"
+                onclick="navigateToCategory('/components/products.html?name=bath%20accessories')">
+                <img src="/api/placeholder/400/320" alt="Bath Accessories" class="pt-category-image">
+                <div class="pt-category-content">
+                    <h2 class="pt-category-title">Bath Accessories</h2>
+                    <p class="pt-category-description">Essential bathroom accessories including soap dispensers, tissue
+                        holders, and more.</p>
+                    <a href="#" class="pt-view-more">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="/components//scripts//navbar2.js"></script>
+    <script>
+        function navigateToCategory(url) {
+            // In a real implementation, this would navigate to the category page
+            window.location.href = `${url}`;
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

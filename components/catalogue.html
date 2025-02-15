@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogues</title>
+    <link rel="stylesheet" href="/components//styles/navbar2.css">
+    <link rel="stylesheet" href="/components//styles/cataloguesections.css">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #my-nav {
+            width: 96%;
+            /* background-color: red; */
+        }
+
+        #searchInput {
+            /* background-color: red; */
+            height: 40px;
+            max-height: 40px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 10px;
+            /* padding: 10px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <nav id="my-nav">
+            <div class="hamburger">☰</div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/api/placeholder/150/50" alt="Company Logo">
+                </a>
+               
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+                <div class="search-dropdown" id="suggestions">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="/components/service.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="/components/catalogue.html">E-Catalogue</a>
+                    <!-- <div class="dropdown-content">
+                <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+              </div> -->
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <div class="close-btn">×</div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/components/products.html?name=faucets">Faucets</a>
+                        <a href="/components/products.html?name=ptmt">Ptmt</a>
+                        <a href="/components/products.html?name=showers">Showers</a>
+                        <a href="/components/products.html?name=health faucet">Health
+                            Faucet</a>
+                        <a href="/components/products.html?name=bath accessories">Bath
+                            Accessories</a>
+                        <a href="/components/products.html?name=faucet parts">Faucet
+                            Parts</a>
+                    </div>
+                </div>
+                <a href="/components/about.html">About Us</a>
+                <a href="/components/carrerspage.html">Careers</a>
+                <a href="/components/events.html">Events</a>
+                <div class="dropdown">
+                    <a href="#">E-Catalogue</a>
+                    <div class="dropdown-content">
+                        <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+                        <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+                    </div>
+                </div>
+                <a href="/components/register.html">Register</a>
+            </div>
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-form">
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+                <div class="form-header">
+                    <p>Please fill out the form below to download our catalog</p>
+                </div>
+                <form id="downloadForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error" id="emailError">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                        <div class="error" id="mobileError">Please enter a valid mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required>
+                        <div class="error" id="businessError">Please enter your business name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Download Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class="cat-section">
+        <div class="cat-container">
+            <!-- Left Side - Content -->
+            <div class="cat-content-side">
+                <h2 class="cat-section-title">Download Our Product Catalogues</h2>
+                <p class="cat-section-description">
+                    Browse through our comprehensive collection of bathroom accessories. Each catalogue features
+                    detailed
+                    specifications, measurements, and styling inspirations.
+                </p>
+                <div class="cat-feature-list">
+                    <span class="cat-feature-item">Premium Quality</span>
+                    <span class="cat-feature-item">Detailed Specifications</span>
+                    <span class="cat-feature-item">Installation Guides</span>
+                    <span class="cat-feature-item">Price Lists</span>
+                </div>
+            </div>
+
+            <!-- Right Side - Download Cards -->
+            <div class="cat-download-cards">
+                <!-- PTMT Card -->
+                <div class="cat-download-card cat-ptmt-card" onclick="handleDownload('ptmt')">
+                    <div class="cat-card-header">
+                        <div class="cat-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                        </div>
+                        <h3 class="cat-card-title">PTMT Collection</h3>
+                    </div>
+                    <button onclick="openCatalogueF()" class="cat-download-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download Catalogue
+                    </button>
+                </div>
+
+                <!-- Faucets Card -->
+                <div class="cat-download-card cat-faucets-card" onclick="handleDownload('faucets')">
+                    <div class="cat-card-header">
+                        <div class="cat-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3 class="cat-card-title">Faucets Collection</h3>
+                    </div>
+                    <button onclick="openCatalogueF()" class="cat-download-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download Catalogue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script defer src="/components//scripts//navbar2.js"></script>
+    <script src="/components//scripts//catalogue.js"></script>
+</body>
+
+</html>
