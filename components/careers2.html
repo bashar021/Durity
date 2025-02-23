@@ -1,280 +1,335 @@
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Openings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/data/career.js"></script>
-    <link rel="stylesheet" href="/components//styles/navbar2.css">
-    <script src="/data/products.js"></script>
-    <script>
-        $(function () {
-            $("#navbar").load("/components/navbar2.html");
-        });
-        $(function(){
-      $("#footer").load("./footer.html"); 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Openings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/data/career.js"></script>
+  <link rel="stylesheet" href="/components//styles/navbar2.css">
+  <script src="/data/products.js"></script>
+  <script>
+    $(function () {
+      $("#navbar").load("/components/navbar2.html");
     });
-    </script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
+    $(function () {
+      $("#footer").load("./footer.html");
+    });
+  </script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
 
-        .hero-section {
-            background: url('https://placehold.co/1920x600') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
+    .hero-section {
+      background: url('https://placehold.co/1920x600') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
 
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+    .hero-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
 
-        .hero-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+    .hero-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
 
-        .hero-section .btn {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
+    .hero-section .btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
 
-        .content-section {
-            background-color: #f8f9fa;
-            padding: 50px 0;
-        }
+    .content-section {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
 
-        .content-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+    .content-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-        .content-section p {
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
+    .content-section p {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
 
-        .sidebar {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+    .sidebar {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
 
-        .sidebar a {
-            display: block;
-            padding: 10px 0;
-            color: #000;
-            text-decoration: none;
-        }
+    .sidebar a {
+      display: block;
+      padding: 10px 0;
+      color: #000;
+      text-decoration: none;
+    }
 
-        .sidebar a.active {
-            color: red;
-        }
+    .sidebar a.active {
+      color: red;
+    }
 
-        .job-listing {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .job-listing {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .job-listing h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    .job-listing h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-        .job-listing .details {
-            display: flex;
-            justify-content: space-between;
-            font-size: 16px;
-        }
-        .toggle-btn{
-            border: none;
-            outline: none;
-            box-shadow: none;
-            background-color: transparent;
-        }
-        .toggle-btn i {
-          
-            transition: transform 0.3s ease-in-out;
-        }
+    .job-listing .details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+    }
 
-        .toggle-btn[aria-expanded="true"] i {
-            transform: rotate(180deg);
-            /* Rotates the arrow */
-        }
+    .toggle-btn {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    .toggle-btn i {
+
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .toggle-btn[aria-expanded="true"] i {
+      transform: rotate(180deg);
+      /* Rotates the arrow */
+    }
 
 
-        @media (max-width:768px){
-            .hero-section {
-                background-position: center center;
-                padding: 50px 0;
-            }
-        }
-    </style>
+    @media (max-width:768px) {
+      .hero-section {
+        background-position: center center;
+        padding: 50px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- <div id="navbar"></div> -->
+  <!-- <div id="navbar"></div> -->
+  <div id="navbar">
     <nav id="my-nav">
-        <div class="hamburger">☰</div>
-        <div class="logo">
-          <a href="/">
-            <img src="/api/placeholder/150/50" alt="Company Logo">
+      <div class="hamburger">☰</div>
+      <div class="logo">
+        <a href="/">
+          <img src="/api/placeholder/150/50" alt="Company Logo">
         </a>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+        <div class="search-dropdown" id="suggestions">
         </div>
-    
-        <div class="search-container">
-          <input  type="text" placeholder="Search..." id="searchInput" autocomplete="off">
-          <div class="search-dropdown" id="suggestions">
-          </div>
-        </div>
-    
-        <div class="nav-links">
-          <div class="dropdown">
-            <a href="#">Products</a>
-            <div class="dropdown-content">
-              <a href="/components/products.html?name=faucets">Faucets</a>
-              <a href="/components/products.html?name=ptmt">Ptmt</a>
+      </div>
+
+      <div class="nav-links">
+        <div class="dropdown">
+          <a href="/components/service.html">Products</a>
+          <div class="dropdown-content">
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucets" class="products">Faucets</a>
+              <div class="nested-dropdown-content" id="faucets-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=ptmt" class="products">Ptmt</a>
+              <div class="nested-dropdown-content" id="ptmt-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
               <a href="/components/products.html?name=showers">Showers</a>
-              <a href="/components/products.html?name=health faucet">Health
-                Faucet</a>
-              <a href="/components/products.html?name=bath accessories">Bath
-                Accessories</a>
-              <a href="/components/products.html?name=faucet parts">Faucet
-                Parts</a>
+              <div class="nested-dropdown-content" id="showers-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=health faucet">Health Faucet</a>
+              <div class="nested-dropdown-content" id="hf-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
+              <div class="nested-dropdown-content" id="ba-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
+              <div class="nested-dropdown-content" id="fp-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
             </div>
           </div>
-          <a href="/components/about.html">About Us</a>
-          <a href="/components/carrerspage.html">Careers</a>
-          <a href="/components/events.html">Events</a>
-          <div class="dropdown">
-            <a href="/components/catalogue.html">E-Catalogue</a>
-            <!-- <div class="dropdown-content">
+        </div>
+        <a href="/components/about.html">About Us</a>
+        <a href="/components/carrerspage.html">Careers</a>
+        <a href="/components/events.html">Events</a>
+        <div class="dropdown">
+          <a href="/components/catalogue.html">E-Catalogue</a>
+          <!-- <div class="dropdown-content">
               <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
               <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
             </div> -->
-          </div>
-          <a href="/components/register.html">Register</a>
         </div>
-      </nav>
-      <div class="sidebar">
-        <div class="close-btn">×</div>
-        <div class="nav-links">
-          <div class="dropdown">
-            <a href="#">Products</a>
-            <div class="dropdown-content">
-              <a href="/components/products.html?name=faucets">Faucets</a>
-              <a href="/components/products.html?name=ptmt">Ptmt</a>
+        <a href="/components/register.html">Register</a>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <div class="close-btn">×</div>
+      <div class="nav-links">
+        <div class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <!-- <a href="/components/products.html?name=faucets">Faucets</a> -->
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucets" class="products">Faucets</a>
+              <div class="nested-dropdown-content" id="md-faucets-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=ptmt" class="products">Ptmt</a>
+              <div class="nested-dropdown-content" id="md-ptmt-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
               <a href="/components/products.html?name=showers">Showers</a>
-              <a href="/components/products.html?name=health faucet">Health
-                Faucet</a>
-              <a href="/components/products.html?name=bath accessories">Bath
-                Accessories</a>
-              <a href="/components/products.html?name=faucet parts">Faucet
-                Parts</a>
+              <div class="nested-dropdown-content" id="md-showers-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=health faucet">Health Faucet</a>
+              <div class="nested-dropdown-content" id="md-hf-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
+              <div class="nested-dropdown-content" id="md-ba-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
+              <div class="nested-dropdown-content" id="md-fp-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
             </div>
           </div>
-          <a href="/components/about.html">About Us</a>
-          <a href="/components/carrerspage.html">Careers</a>
-          <a href="/components/events.html">Events</a>
-          <div class="dropdown">
-            <a href="#">E-Catalogue</a>
-            <div class="dropdown-content">
-              <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
-              <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
-            </div>
-          </div>
-          <a href="/components/register.html">Register</a>
         </div>
+        <a href="/components/about.html">About Us</a>
+        <a href="/components/carrerspage.html">Careers</a>
+        <a href="/components/events.html">Events</a>
+        <a href="/components/catalogue.html">E-Catalogue</a>
+        <a href="/components/register.html">Register</a>
       </div>
-      <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-form">
-          <button class="close-btn" onclick="closePopup()">&times;</button>
-          <div class="form-header">
-            <p>Please fill out the form below to download our catalog</p>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-form">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="form-header">
+          <p>Please fill out the form below to download our catalog</p>
+        </div>
+        <form id="downloadForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError">Please enter your name</div>
           </div>
-          <form id="downloadForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-              <div class="error" id="nameError">Please enter your name</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-              <div class="error" id="emailError">Please enter a valid email</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="mobile">Mobile Number</label>
-              <input type="tel" id="mobile" name="mobile" required>
-              <div class="error" id="mobileError">Please enter a valid mobile number</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="business">Business Name</label>
-              <input type="text" id="business" name="business" required>
-              <div class="error" id="businessError">Please enter your business name</div>
-            </div>
-    
-            <div class="form-group">
-              <label for="message">Message (Optional)</label>
-              <textarea id="message" name="message" rows="3"></textarea>
-            </div>
-    
-            <button type="submit" class="submit-btn">Download Now</button>
-          </form>
-        </div>
-      </div>
-    <div class="hero-section">
-        <h1>JOIN US</h1>
-        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
-            form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a
-            placeholder before final copy is available.</p>
-        <button class="btn btn-danger">Join the team</button>
-        <button class="btn btn-outline-light">Quit</button>
-    </div>
-    <div class="content-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 sidebar">
-                    <a href="#" class="active">HT & ADMIN</a>
-                    <a href="#">ENGINEERING (20)</a>
-                    <a href="#">SUPPORT</a>
-                    <a href="#">DESIGN</a>
-                    <a href="#">DIGITAL MARKETING</a>
-                </div>
-                <div class="col-md-9">
-                    <h2>COME JOIN US</h2>
-                    <p>We're always looking for creative, talented self-starters to join the JNC family. Check out our
-                        open roles below and fill out an application.</p>
-                        
-                        <div class="container py-2 px-0 job-listing" id="job-listing"></div>                
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="footer"></div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        const generateJobListing = () => {
-            const jobListing = document.getElementById("job-listing")
-            career.forEach((element,index) => {
-                const career_detail = `
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <div class="error" id="mobileError">Please enter a valid mobile number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name</label>
+            <input type="text" id="business" name="business" required>
+            <div class="error" id="businessError">Please enter your business name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Download Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="hero-section">
+    <h1>JOIN US</h1>
+    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
+      form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a
+      placeholder before final copy is available.</p>
+    <button class="btn btn-danger">Join the team</button>
+    <button class="btn btn-outline-light">Quit</button>
+  </div>
+  <div class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <a href="#" class="active">HT & ADMIN</a>
+          <a href="#">ENGINEERING (20)</a>
+          <a href="#">SUPPORT</a>
+          <a href="#">DESIGN</a>
+          <a href="#">DIGITAL MARKETING</a>
+        </div>
+        <div class="col-md-9">
+          <h2>COME JOIN US</h2>
+          <p>We're always looking for creative, talented self-starters to join the JNC family. Check out our
+            open roles below and fill out an application.</p>
+
+          <div class="container py-2 px-0 job-listing" id="job-listing"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const generateJobListing = () => {
+      const jobListing = document.getElementById("job-listing")
+      career.forEach((element, index) => {
+        const career_detail = `
                     <h3 class="mb-0 px-2" style="text-align: right;margin: 0px; padding: 0px;">
                                 <button class="toggle-btn" data-toggle="collapse" data-target="#jobDetails"
                                     aria-expanded="false" aria-controls="jobDetails">
@@ -299,14 +354,14 @@
                                 </div>
                     </div>
                 `
-                
-                jobListing.innerHTML += career_detail
-            });
-        }
-        window.onload = generateJobListing;
-    </script>
-     <script defer src="/components//scripts//navbar2.js"></script>
-     <script src="/components//scripts//catalogue.js"></script>
+
+        jobListing.innerHTML += career_detail
+      });
+    }
+    window.onload = generateJobListing;
+  </script>
+  <script defer src="/components//scripts//navbar2.js"></script>
+  <script src="/components//scripts//catalogue.js"></script>
 </body>
 
 </html>

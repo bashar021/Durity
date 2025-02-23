@@ -348,19 +348,73 @@
 
 }
 
+
+  /* Nested Dropdown */
+  .nested-dropdown {
+    position: relative;
+  }
+
+  .nested-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-height: 300px;
+    overflow: scroll;
+
+    /* margin-left: 5%; */
+  }
+
+  .nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+  }
+
+  .nested-dropdown a {
+    display: block;
+    padding: 10px;
+    color: black;
+  }
+
+  .nested-dropdown-content a:hover {
+    background: #f1f1f1;
+  }
 /* Extra Small Devices (Phones, less than 576px) */
 @media (max-width: 575.98px) {
-   
+    .nested-dropdown-content{
+        position:static;
+        box-shadow: none;
+        margin-left: 5%;
+
+    }
 }
 
 /* Small Devices (Tablets, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+    .nested-dropdown-content{
+        /* position: b; */
+        position:static;
+        box-shadow: none;
+        margin-left: 5%;
+        /* background-color: red; */
+        
+    }
   
 }
 
 /* Medium Devices (Desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    
+    .nested-dropdown-content{
+        /* position: b; */
+        position:static;
+        box-shadow: none;
+        margin-left: 5%;
+        /* background-color: red; */
+        
+    }
     
 
 }
@@ -374,3 +428,5 @@
 @media (min-width: 1200px) {
    
 }
+
+
