@@ -129,7 +129,9 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(99, 102, 241, 0.9);
+    /* background: rgba(99, 102, 241, 0.9); */
+    /* background-color: rgb(99,110,113); */
+    background-color: rgb(220, 218, 218);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -175,7 +177,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(45deg, #60a5fa, #818cf8);
+    background: linear-gradient(45deg, #272727f4, #c0c1c1c2);
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;

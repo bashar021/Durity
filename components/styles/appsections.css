@@ -1,11 +1,3 @@
-:root {
-    --primary: rgb(72,205,207);
-    --primary-dark: rgb(45,185,187);
-    --primary-light: rgb(125,223,225);
-    --accent: rgb(64,184,186);
-    --bg-gradient: linear-gradient(135deg, #f0fafa 0%, #e5f8f8 100%);
-    --card-bg: rgba(255, 255, 255, 0.7);
-  }
 
 
   .app-section {
@@ -18,6 +10,12 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     position: relative;
     overflow: hidden;
+    --primary: rgb(72,205,207);
+    --primary-dark: rgb(45,185,187);
+    --primary-light: rgb(125,223,225);
+    --accent: rgb(64,184,186);
+    --bg-gradient: linear-gradient(135deg, #f0fafa 0%, #e5f8f8 100%);
+    --card-bg: rgba(255, 255, 255, 0.7);
   }
 
   .blur-circle {

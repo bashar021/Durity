@@ -60,7 +60,7 @@
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: #3498db;
+    /* background: #3498db; */
 }
 
 .story-section {

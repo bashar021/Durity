@@ -1,9 +1,3 @@
-:root {
-    --primary-teal: rgb(72,205,207);
-    --primary-blue: rgb(66,136,175);
-    --text-dark: #2d5574;
-    --bg-light: #f8fafb;
-  }
 
   .about-section {
     padding: 100px 20px;
@@ -11,6 +5,10 @@
     position: relative;
     overflow: hidden;
     min-height: 600px;
+    --primary-teal: rgb(72,205,207);
+    --primary-blue: rgb(66,136,175);
+    --text-dark: #2d5574;
+    --bg-light: #f8fafb;
   }
 
   .about-container {
