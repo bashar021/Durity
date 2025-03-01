@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Cards</title>
   <link rel="stylesheet" href="/components//styles/navbar2.css">
+  <link rel="stylesheet" href="/components//styles/common.css">
   <script src="/data/products.js"></script>
   <style>
     body {
@@ -174,7 +175,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #3b82f6, #10b981);
+      /* background: linear-gradient(45deg, #3b82f6, #10b981); */
+      background: linear-gradient(45deg, var(--steelblue-1),var(--steelblue-5));
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: -1;
@@ -215,7 +217,8 @@
 
     .event-date {
       display: inline-block;
-      background: linear-gradient(45deg, #3b82f6, #10b981);
+      /* background: linear-gradient(45deg, #3b82f6, #10b981); */
+      background: linear-gradient(45deg, var(--steelblue-1),var(--steelblue-5));
       color: white;
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
@@ -634,7 +637,7 @@
     <div class="event-parallax-bg"></div>
     <div class="event-header-overlay"></div>
     <div class="event-header-content">
-      <h1 class="event-header-title">Our Events</h1>
+      <h1 class="event-header-title text-white">Our Events</h1>
       <p class="event-header-subtitle">Discover our latest exhibitions, product launches, and design workshops</p>
     </div>
   </header>
@@ -716,8 +719,8 @@
         ],
         date: "April 5, 2025",
         title: "Smart Faucets Launch Event",
-        preview: "Witness the future of bathroom technology with our new line of smart faucets featuring touchless controls and water-saving technology.",
-        description: "Be among the first to experience our revolutionary smart faucets. The event will feature live demonstrations, expert talks, and exclusive launch day offers.",
+        preview: "Witness the future of bathroom technology with our new line of smart .",
+        description: "Be among the first to experience our revolutionary smart faucets. The event will feature live demonstrations.",
         location: "Grand Hyatt Hotel",
         time: "2:00 PM - 5:00 PM",
         registration: "By Invitation",
@@ -753,7 +756,7 @@
       <span class="event-date">${event.date}</span>
       <h3 class="event-title">${event.title}</h3>
       <p class="event-preview">${event.preview}</p>
-      <span class="event-view-more">View More →</span>
+      <span class="event-view-more text-steelblue">View More →</span>
     </div>
   `;
       card.addEventListener('click', () => openModal(event));

@@ -382,6 +382,24 @@
   .nested-dropdown-content a:hover {
     background: #f1f1f1;
   }
+  #location-path-container{
+    /* background-color: red; */
+    /* margin-top: 5%; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* color: var(--gray-1); */
+
+  }
+  #location-path-container img{
+    width: 25px;
+    height: 25px;
+    /* color: var(--gray-1); */
+   
+  }
 /* Extra Small Devices (Phones, less than 576px) */
 @media (max-width: 575.98px) {
     .nested-dropdown-content{

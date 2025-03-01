@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="/components//styles/navbar2.css">
+    <link rel="stylesheet" href="/components//styles/common.css">
     <script src="/data/products.js"></script>
     <style>
         body {
@@ -29,6 +30,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            /* background-color: red; */
+            padding-top: 7%;
         }
 
         .pt-heading {
@@ -97,6 +100,7 @@
         @media (max-width: 768px) {
             .pt-container {
                 padding: 1rem;
+                padding-top: 10%;
             }
 
             .pt-categories {
@@ -272,7 +276,12 @@
         </div>
     </div>
     <div class="pt-container">
-        <h3 class="pt-heading">Our Product Categories</h3>
+        <div id="location-path-container" class="">
+            <img src="/public//icons/home.svg" width="10px" height="10px" alt="home"
+                class="pt-category-image">
+        </div>
+        <h3  class="text-center text-bold text-black text-h1">Our Product Categories</h3>
+      
         <div class="pt-categories">
             <!-- Category 1 -->
             <div class="pt-category-card" onclick="navigateToCategory('/components/products.html?name=faucets')">
@@ -282,7 +291,7 @@
                     <h2 class="pt-category-title">Faucets</h2>
                     <p class="pt-category-description">Premium shower heads, handles, and complete shower systems for a
                         luxurious bathing experience.</p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
 
@@ -294,7 +303,7 @@
                     <h2 class="pt-category-title">PTMT</h2>
                     <p class="pt-category-description">Stylish and durable towel storage solutions in various finishes
                         to match your décor.</p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
 
@@ -306,7 +315,7 @@
                     <h2 class="pt-category-title">Showers</h2>
                     <p class="pt-category-description">Modern mirrors with LED lighting and anti-fog technology for
                         clear reflection.</p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
 
@@ -319,7 +328,7 @@
                     <h2 class="pt-category-title">Health Faucets</h2>
                     <p class="pt-category-description">Smart storage options including cabinets and shelves to keep your
                         bathroom organized.</p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
 
@@ -331,7 +340,7 @@
                     <h2 class="pt-category-title">Faucets Parts</h2>
                     <p class="pt-category-description">Water-efficient faucets with modern designs and durable finishes.
                     </p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
 
@@ -343,7 +352,7 @@
                     <h2 class="pt-category-title">Bath Accessories</h2>
                     <p class="pt-category-description">Essential bathroom accessories including soap dispensers, tissue
                         holders, and more.</p>
-                    <a href="#" class="pt-view-more">View Collection</a>
+                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
                 </div>
             </div>
         </div>

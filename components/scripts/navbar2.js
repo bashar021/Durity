@@ -108,12 +108,38 @@ const setCategoryItems = () => {
     ba_nested_d.innerHTML += `<a href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
     md_ba_nested_d.innerHTML += `<a href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
-  const faucets_part = durityProducts["faucet parts"].products;
+  const faucets_part = durityProducts["faucet parts"]?.products;
   const fp_nested_d = document.getElementById("fp-nested-d");
   const md_fp_nested_d = document.getElementById("md-fp-nested-d");
-  faucets_part.forEach((item, index) => {
+  faucets_part?.forEach((item, index) => {
     fp_nested_d.innerHTML += `<a href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
     md_fp_nested_d.innerHTML += `<a href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
 };
 setCategoryItems();
+
+const getLocation_path = ()=>{
+  const path = window.location.pathname;
+  let name = path.substring(path.lastIndexOf('/') + 1);
+  name = name.replace('.html','')
+  const path_container = document.getElementById('location-path-container')
+  console.log('hii',name)
+  const mapped={
+    service:"Services",
+    products:'Categories',
+    product:'Products',
+    productitem:'Product'
+  }
+  name = mapped[name]
+  if(name === 'Product'){
+    name = 'Services/Categories/Products/Product'
+  }
+  if(name === 'Products'){
+     name = 'Services/Categories/Products/'
+  }
+  if(name === 'Categories'){
+    name = 'Services/Categories/'
+  }
+  path_container.innerHTML += `/${name}`
+}
+getLocation_path()

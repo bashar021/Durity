@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- js query  -->
     <link rel="stylesheet" href="/components//styles/navbar2.css">
+    <link rel="stylesheet" href="/components//styles/common.css">
 
     <script src="/data/career.js"></script>
     <script src="/data/products.js"></script>
@@ -38,8 +39,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9, #64b5f6);
-            background-size: 400% 400%;
+            /* background: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9, #64b5f6); */
+            background: linear-gradient(135deg,var(--steelblue-1),var(--steelblue-5));
+            /* background-size: 400% 400%; */
             animation: gradientBG 15s ease infinite;
             padding: 20px;
             perspective: 1000px;
@@ -549,7 +551,7 @@
     </div>
     <div class="register-form-container">
         <div class="container">
-            <h2>Join Us</h2>
+            <h2 class="text-steelblue">Join Us</h2>
             <form id="register-form">
                 <div class="input-group">
                     <input type="text" id="name" placeholder=" ">
@@ -567,7 +569,7 @@
                     <input type="text" id="address" placeholder=" ">
                     <label for="address">Address</label>
                 </div>
-                <button type="submit">Create Account</button>
+                <button type="submit" class="bg-steelblue">Create Account</button>
             </form>
         </div>
     </div>

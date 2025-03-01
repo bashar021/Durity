@@ -7,6 +7,7 @@
     <title>Catalogues</title>
     <link rel="stylesheet" href="/components//styles/navbar2.css">
     <link rel="stylesheet" href="/components//styles/cataloguesections.css">
+    <link rel="stylesheet" href="/components//styles/common.css">
     <script src="/data/products.js"></script>
     <style>
         body {
@@ -217,7 +218,7 @@
             <!-- Right Side - Download Cards -->
             <div class="cat-download-cards">
                 <!-- PTMT Card -->
-                <div class="cat-download-card cat-ptmt-card" onclick="handleDownload('ptmt')">
+                <div class="cat-download-card cat-ptmt-card">
                     <div class="cat-card-header">
                         <div class="cat-card-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -240,7 +241,7 @@
                 </div>
 
                 <!-- Faucets Card -->
-                <div class="cat-download-card cat-faucets-card" onclick="handleDownload('faucets')">
+                <div class="cat-download-card cat-faucets-card" >
                     <div class="cat-card-header">
                         <div class="cat-card-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -266,7 +267,7 @@
             <div class="popup-form">
                 <button class="close-btn" onclick="closePopup()">&times;</button>
                 <div class="form-header">
-                    <p>Please fill out the form below to download our catalog</p>
+                    <p class="text-black text-h1">Please fill out the form below to download our catalog</p>
                 </div>
                 <form id="downloadForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
