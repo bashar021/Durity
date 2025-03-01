@@ -77,3 +77,6 @@
     height: 0px;
     /* Set the height of the horizontal scrollbar */
 }
+#recentProducts{
+    padding-top: 2%;
+}

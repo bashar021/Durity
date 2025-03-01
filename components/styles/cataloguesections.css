@@ -1,6 +1,7 @@
 .cat-section {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+    /* background: linear-gradient(135deg, #f9fafb, #e5e7eb); */
+    /* background-color: rgb(12, 12, 12); */
   }
 
   .cat-container {

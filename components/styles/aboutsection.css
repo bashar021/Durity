@@ -1,7 +1,7 @@
 
   .about-section {
     padding: 100px 20px;
-    background: var(--bg-light);
+    /* background: var(--bg-light); */
     position: relative;
     overflow: hidden;
     min-height: 600px;
@@ -30,7 +30,7 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--primary-teal);
+    color: var(--steelblue-1);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -41,22 +41,24 @@
     content: "";
     width: 50px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-teal), var(--primary-blue));
+    /* background: linear-gradient(90deg, var( --steelblue-1), var( --steelblue-1),var( --steelblue-4)); */
+    background-color: var( --steelblue-1);
   }
 
-  .section-title {
-    font-size: 3.5rem;
+  .about-section-title {
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 30px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal)); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    /* color: black; */
   }
 
   .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-dark);
+    /* color: var(--text-dark); */
     margin-bottom: 40px;
     position: relative;
   }
@@ -77,15 +79,15 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue)); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
     display: inline-block;
   }
 
   .stat-label {
-    font-size: 1rem;
-    color: var(--text-dark);
+    /* font-size: 1rem;
+    color: var(--text-dark); */
     opacity: 0.8;
   }
 
@@ -95,8 +97,8 @@
     gap: 12px;
     padding: 16px 32px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
-    color: white;
+    /* background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue)); */
+    /* color: white; */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
