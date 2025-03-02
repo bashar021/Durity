@@ -408,6 +408,20 @@
         margin-left: 5%;
 
     }
+    .logo{
+        /* display: none; */
+    }
+    .search-container{
+        /* background-color: red; */
+        /* margin-left: 0px; */
+        /* justify-content: start; */
+
+    }
+    #my-nav{
+        /* background-color: red; */
+        /* justify-content: start; */
+
+    }
 }
 
 /* Small Devices (Tablets, 576px and up) */
