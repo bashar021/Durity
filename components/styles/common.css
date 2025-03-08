@@ -7,7 +7,10 @@
     --gray-1:#848D90;
     /* fonts */
     /* font-style:; */
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+
 }
 .bg-white{
     background-color: white !important;
