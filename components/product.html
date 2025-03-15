@@ -354,6 +354,11 @@
 
         /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
         @media (min-width: 1200px) {}
+        .product-container-details-footer{
+            /* background-color:var(--steelblue-1); */
+            /* background-color: rgb(236, 236, 236);
+            color:var(--steelblue-1); */
+        }
     </style>
 </head>
 
@@ -592,8 +597,11 @@
                 let cardHTML = `
                 <div onclick="openPopup(${index})"  class="productCard " id='md-productCard'>
                     <img src="${product?.imageSrc}${product?.code}.jpg" alt="${product.name}" class="product-image">
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-code">Code: ${product.code}</div>
+                    <div class='product-container-details-footer'>
+                          <div class="product-name">${product.name}</div>
+                          <div class="product-code">Code: ${product.code}</div>
+                    </div>
+                  
                 </div>
             `
                 img.onload = () => {
@@ -603,6 +611,7 @@
                     productContainer.innerHTML += `
                 <div onclick="openPopup(${index})"  class="productCard" id='md-productCard'>
                     <img src="/public/icons/brokenimage.svg" alt="${product.name}" class="product-image">
+                    
                     <div class="product-name">${product.name}</div>
                     <div class="product-code">Code: ${product.code}</div>
                 </div>

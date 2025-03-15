@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+
 *{
     --steelblue-1: #0082C7;
     --steelblue-2: #0272AF;
@@ -8,8 +11,11 @@
     /* fonts */
     /* font-style:; */
     /* font-family: 'Times New Roman', Times, serif; */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    /* font-family: 'Open Sans', sans-serif;
+    font-weight: 600; */
+    /* font-family:  Poppins; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 
 }
 .bg-white{
