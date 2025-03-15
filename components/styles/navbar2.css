@@ -8,18 +8,44 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    width: 100%;
+    /* width: 100%; */
     z-index: 10;
+    padding-left: 0px;
+    width: 100vw;
+    /* padding-left: 10%; */
     /* background-color: red; */
+    /* padding-right: 20%; */
 }
 
 .logo {
-    width: 150px;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    z-index: 1;
+    background-color:rgb(237,240,241);
+    border: solid;
+    border-color: var(--steelblue-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    top: 15%;
+    overflow: hidden;
+    left: 2%;
+    
+}
+.logo a{
+    background-color: green;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 35%; */
 }
 
 .logo img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 80%;
+    margin: auto;
 }
 
 .search-container {
@@ -27,6 +53,7 @@
     margin: 0 20px;
     flex-grow: 1;
     max-width: 400px;
+    margin-left: 15%;
 }
 
 .search-container input {
@@ -44,6 +71,9 @@
     border-radius: 20px;
     outline: none;
     height: 40px;
+}
+.search-icon{
+    display: none;
 }
 .search-dropdown {
     position: absolute;
@@ -91,6 +121,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    margin-right: 8%;
 }
 
 .nav-links a {
@@ -132,14 +163,16 @@
 .hamburger {
     display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 30px;
+    /* background-color: red; */
 }
 
 .sidebar {
     position: fixed;
     top: 0;
     /* right: -300px; */
-    left: -300px;
+    /* left: -300px; */
+    right: -300px;
     width: 300px;
     height: 100vh;
     background: #fff;
@@ -153,7 +186,7 @@
 
 .sidebar.active {
     display: block;
-    left: 0;
+    right: 0;
 }
 
 .close-btn {
@@ -410,17 +443,44 @@
     }
     .logo{
         /* display: none; */
+        width: 80px;
+        height: 80px;
     }
     .search-container{
+        margin-left: 30%;
+        /* background-color: red; */
+        float: right;
+        /* overflow: hidden; */
+        display: flex;
+        gap: 5;
         /* background-color: red; */
         /* margin-left: 0px; */
         /* justify-content: start; */
+        justify-content: end;
 
     }
     #my-nav{
         /* background-color: red; */
         /* justify-content: start; */
 
+    }
+    #searchInput{
+        /* width: 99%; */
+        width: 0px;
+        display: none;
+        height: 40px;
+        margin: 0px;
+        transition: all 1s;
+        /* float: right; */
+       
+    }
+    .search-icon{
+        /* background-color: green; */
+        display: block;
+        float: right;
+        display: flex;
+        justify-items: center;
+        align-items: center;
     }
 }
 
@@ -434,6 +494,9 @@
         /* background-color: red; */
         
     }
+    .search-container{
+        margin-left: 30%;
+    }
   
 }
 
@@ -446,6 +509,9 @@
         margin-left: 5%;
         /* background-color: red; */
         
+    }
+    .search-container{
+        margin-left: 30%;
     }
     
 

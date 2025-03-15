@@ -14,7 +14,12 @@ searchInput.addEventListener("input", () => {
     searchDropdown.style.display = "none";
   }
 });
-
+document.getElementById('search_icon').addEventListener('click',()=>{
+  // console.log('hii search icon clicked')
+  document.getElementById('searchInput').style.display = "block";
+  document.getElementById('search_icon').style.display = "none";
+  document.getElementById('searchInput').style.width = '99%'
+})
 document.addEventListener("click", (e) => {
   if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
     suggestions.style.display = "none";
@@ -88,32 +93,32 @@ const setCategoryItems = () => {
   const md_ba_nested_d = document.getElementById("md-ba-nested-d");
   console.log(ptmt, faucets_nested_d);
   faucet.forEach((item, index) => {
-    faucets_nested_d.innerHTML += `<a href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_faucets_nested_d.innerHTML += `<a href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
 
   ptmt.forEach((item, index) => {
-    ptmt_nested_d.innerHTML += `<a href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_ptmt_nested_d.innerHTML += `<a href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    ptmt_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_ptmt_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   showers.forEach((item, index) => {
-    showers_nested_d.innerHTML += `<a href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_showers_nested_d.innerHTML += `<a href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    showers_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_showers_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   health_faucets.forEach((item, index) => {
-    hf_nested_d.innerHTML += `<a href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_hf_nested_d.innerHTML += `<a href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    hf_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_hf_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   bath_accessories.forEach((item, index) => {
-    ba_nested_d.innerHTML += `<a href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_ba_nested_d.innerHTML += `<a href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    ba_nested_d.innerHTML += `<a  class="text-steelblue"href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_ba_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   const faucets_part = durityProducts["faucet parts"]?.products;
   const fp_nested_d = document.getElementById("fp-nested-d");
   const md_fp_nested_d = document.getElementById("md-fp-nested-d");
   faucets_part?.forEach((item, index) => {
-    fp_nested_d.innerHTML += `<a href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_fp_nested_d.innerHTML += `<a href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    fp_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_fp_nested_d.innerHTML += `<a  class="text-steelblue" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
 };
 setCategoryItems();
@@ -143,3 +148,5 @@ const getLocation_path = ()=>{
   path_container.innerHTML += `/${name}`
 }
 getLocation_path()
+
+
