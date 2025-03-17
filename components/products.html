@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="nested-dropdown">
-                            <a href="/components/products.html?name=ptmt" class="products">Ptmt</a>
+                            <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
                             <div class="nested-dropdown-content" id="ptmt-nested-d">
                                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
                             </div>
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="nested-dropdown">
-                            <a href="/components/products.html?name=ptmt" class="products">Ptmt</a>
+                            <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
                             <div class="nested-dropdown-content" id="md-ptmt-nested-d">
                                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
                             </div>
@@ -209,7 +209,7 @@
                 <a href="#">Products</a>
                 <div class="dropdown-content">
                     <a href="/components/products.html?name=faucets">Faucets</a>
-                    <a href="/components/products.html?name=ptmt">Ptmt</a>
+                    <a href="/components/products.html?name=ptmt">PTMT</a>
                     <a href="/components/products.html?name=showers">Showers</a>
                     <a href="/components/products.html?name=health faucet">Health
                         Faucet</a>
@@ -282,9 +282,8 @@
       </div> -->
     <div class="animated-background"></div>
     <section id="herosection" class="cover parallax">
-        <div class="cover-content">
-            <h1>Explore Our Categories</h1>
-            <p>Discover the best products curated just for you.</p>
+        <div class="cover-content" id="cover-content">
+           
         </div>
     </section>
     <div class="category-grid">
@@ -292,7 +291,7 @@
             <img src="/public//icons/home.svg" width="10px" height="10px" alt="home"
                 class="pt-category-image">
         </div>
-        <h2>Shop by Category</h2>
+        <h2 id="category-heading" class="text-steelblue"></h2>
         <div id="productContainer" class="grid">
         </div>
     </div>
@@ -307,6 +306,13 @@
         const name = params.get('name');
         console.log(durityProducts[name], name)
         const products = durityProducts[name].products
+        document.getElementById('cover-content').innerHTML +=`
+         <h1>Explore Our ${name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+            <p>Discover the best products curated just for you.</p>
+        `
+        document.getElementById('category-heading').innerText +=`
+        ${name.charAt(0).toUpperCase() + name.slice(1)} Collection
+        `
         function createProductCards() {
             const coverPageConainer = document.getElementById('herosection')
             // console.log(coverPageConainer)
@@ -320,6 +326,7 @@
             const productContainer = document.getElementById('productContainer');
             products.forEach((product, index) => {
                 const cardHTML = `
+                  <a class='text-decoration-none text-black' href="/components/product.html?name=${name}&category=${product.name}&index=${index}">
                  <div id="product_card" class="category-card">
                
                     <img style="width: 100%;  alt="Sanitaryware product image" src="${product.imageSrc}"
@@ -331,12 +338,13 @@
                         <p>
                           ${product.details}
                         </p>
-                        <a href="/components/product.html?name=${name}&category=${product.name}&index=${index}">
-                            Explore ->
-                        </a>
+                      
+                          
+                       
                     </div>
                
                 </div>
+                 </a>
                 `
                 productContainer.innerHTML += cardHTML;
             })
@@ -362,6 +370,7 @@
             const scrollPosition = window.scrollY;
             cover.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
         });
+       
 
 
     </script>

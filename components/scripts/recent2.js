@@ -1,8 +1,12 @@
 const prevItems = localStorage.getItem('items')
+const recentViewContainer = document.getElementById('recentProducts')
 function getRecentViewProductList() {
 
     let localStorageValue = JSON.parse(prevItems)
     localStorageValue = localStorageValue?.value
+    if(!localStorageValue || (Array.isArray(localStorageValue) && localStorageValue?.length <=0 )){
+        document.getElementById('recentProducts').style.display = 'none'
+    }
     return localStorageValue
 }
 // Sample product data
