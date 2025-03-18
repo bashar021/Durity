@@ -5,16 +5,39 @@
     footer.innerHTML = `
      <div class="footer-container">
       <div class="footer-content">
-        <div class="footer-about">
-          <h3>Durity</h3>
-          <p>Transform your bathroom into a sanctuary of luxury and comfort with our premium collection of bathroom
+        <div class="footer-about ">
+          <h3 class='mt-0'>Durity</h3>
+          <p class='mt-0 '>Transform your bathroom into a sanctuary of luxury and comfort with our premium collection of bathroom
             accessories. We pride ourselves on combining elegant design with exceptional functionality.</p>
           <!-- <div class="newsletter-form"> -->
           <!-- <input type="email" placeholder="Enter your email"> -->
           <!-- <button type="button">Subscribe</button> -->
           <!-- </div> -->
-          <div id="durity-short-links">
-            <a href="">About Us</a><a href="">Careers</a><a href="">Events</a><a href="">Register</a>
+          <div id="durity-social-links">
+            <a>
+             <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+            </a>
+            <a>
+             <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.892l4.917 2.917-4.917 2.917v-5.834z" />
+            </svg>
+            </a>
+            <a>
+              <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+            </svg>
+            </a>
+            <a>
+             <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+            </svg>
+            </a>
           </div>
           <div class="success-message">Thank you for subscribing!</div>
         </div>
@@ -56,7 +79,9 @@
           </div>
         </div>
       </div>
-
+       <div id="durity-short-links" class='text-center'>
+            <a href="">About Us</a><a href="">Careers</a><a href="">Events</a><a href="">Register</a><a href="">Terms & Conditions</a>
+       </div>
       <div class="footer-bottom text-steelblue ">
         <p class="text-steelblue">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
       </div>
