@@ -116,17 +116,21 @@
     gap: 0.5rem;
     background: none;
     border: none;
-    color: #666;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
+    /* background-color: var(--steelblue-1); */
+    background-image: linear-gradient(var(--steelblue-1),var(--steelblue-2),var(--steelblue-3),var(--steelblue-4),var(--steelblue-5));
+    color: white;
     transition: background 0.2s ease, color 0.2s ease;
   }
 
   .cat-download-btn:hover {
-    background: #f8f9fa;
-    color: #1a1a1a;
+    /* background: #f8f9fa; */
+    background-color: var(--steelblue-5);
+    color:rgb(187, 186, 186);
+
   }
 
   .cat-download-btn svg {
@@ -137,6 +141,19 @@
     transform: translateY(2px);
   }
 
+  #catalogue-download-design-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* width:100% ; */
+    padding-bottom: 5%;
+    padding: 4%;
+    /* background-color: red; */
+  }
+  .catalogue-card{
+    /* background-color: green; */
+    width: 30%;
+  }
   /* Responsive Design */
   @media (max-width: 968px) {
     .cat-container {
