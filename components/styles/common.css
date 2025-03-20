@@ -103,3 +103,6 @@
 .mt-0{
     margin-top: 0px;
 }
+.flex{
+    display: flex;
+}

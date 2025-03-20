@@ -149,7 +149,9 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+.dropdown:hover .arrow-icon{
+    transform: rotate(180deg);
+}
 .dropdown-content a {
     padding: 10px;
     display: block;

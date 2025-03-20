@@ -1,7 +1,5 @@
 // Search functionality
-const searchInput = document.getElementById("searchInput");
 const searchDropdown = document.querySelector(".search-dropdown");
-console.log(searchInput, searchDropdown);
 const productsDropdown = document.querySelector(".products");
 
 document.getElementById("navbar").innerHTML = `
@@ -22,7 +20,7 @@ document.getElementById("navbar").innerHTML = `
       <div class="nav-links">
         <a href="/" class="text-steelblue">Home</a>
         <div class="dropdown">
-          <a href="/components/service.html" class="text-steelblue">Products</a>
+          <a href="/components/service.html" class="text-steelblue flex">Products <img  class='arrow-icon text-steelblue' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="nested-dropdown">
               <a href="/components/products.html?name=faucets" class="products text-steelblue">Faucets</a>
@@ -64,7 +62,7 @@ document.getElementById("navbar").innerHTML = `
           </div>
         </div>
         <div class="dropdown">
-          <a href="/components/service.html" class="text-steelblue">Company</a>
+          <a href="/components/service.html" class="text-steelblue flex">Company <img  class='arrow-icon text-steelblue' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="dropdown">
               <a href="/components/about.html" class="text-steelblue">About Us</a>
@@ -83,9 +81,6 @@ document.getElementById("navbar").innerHTML = `
            
           </div>
         </div>
-       
-       
-       
         <div class="dropdown">
           <a href="/components/catalogue.html" class="text-steelblue">E-Catalogue</a>
           <!-- <div class="dropdown-content">
@@ -190,6 +185,7 @@ document.getElementById("navbar").innerHTML = `
       </div>
     </div>
 `;
+const searchInput = document.getElementById("searchInput");
 document.getElementById("catalogue-download-design-container").innerHTML = `
  <div class="cat-download-card cat-ptmt-card  catalogue-card">
       <div>
@@ -237,19 +233,8 @@ document.getElementById("catalogue-download-design-container").innerHTML = `
       </button>
     </div>
 `;
-searchInput.addEventListener("input", () => {
-  console.log("hiiii");
-  if (searchInput.value !== "") {
-    searchDropdown.classList.add("active");
-    filterSuggestions(searchInput.value);
-  } else {
-    searchDropdown.classList.remove("active");
-    suggestions.innerHTML = ""; // Clear previous suggestions
-    searchDropdown.style.display = "none";
-  }
-});
+
 document.getElementById("search_icon").addEventListener("click", () => {
-  // console.log('hii search icon clicked')
   document.getElementById("searchInput").style.display = "block";
   document.getElementById("search_icon").style.display = "none";
   document.getElementById("searchInput").style.width = "99%";
@@ -260,6 +245,7 @@ document.addEventListener("click", (e) => {
     md_suggestions.style.display = "none";
   }
 });
+
 function filterSuggestions(query) {
   suggestions.innerHTML = ""; // Clear previous suggestions
   const filtered = itemNames?.filter((item) =>
@@ -306,10 +292,20 @@ mobileDropdowns.forEach((dropdown) => {
   });
 });
 
+searchInput.addEventListener("input", () => {
+  if (searchInput.value !== "") {
+    searchDropdown.classList.add("active");
+    filterSuggestions(searchInput.value);
+  } else {
+    searchDropdown.classList.remove("active");
+    suggestions.innerHTML = ""; // Clear previous suggestions
+    searchDropdown.style.display = "none";
+  }
+});
+
 const setCategoryItems = () => {
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name");
-  // console.log(durityProducts[name], name)
   const faucet = durityProducts["faucets"].products;
   const ptmt = durityProducts["ptmt"].products;
   const showers = durityProducts["showers"].products;
@@ -325,7 +321,6 @@ const setCategoryItems = () => {
   const md_hf_nested_d = document.getElementById("md-hf-nested-d");
   const ba_nested_d = document.getElementById("ba-nested-d");
   const md_ba_nested_d = document.getElementById("md-ba-nested-d");
-  console.log(ptmt, faucets_nested_d);
   faucet.forEach((item, index) => {
     faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
     md_faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
@@ -356,13 +351,11 @@ const setCategoryItems = () => {
   });
 };
 setCategoryItems();
-
 const getLocation_path = () => {
   const path = window.location.pathname;
   let name = path.substring(path.lastIndexOf("/") + 1);
   name = name.replace(".html", "");
   const path_container = document.getElementById("location-path-container");
-  console.log("hii", name);
   const mapped = {
     service: "Services",
     products: "Categories",
@@ -379,6 +372,9 @@ const getLocation_path = () => {
   if (name === "Categories") {
     name = "Services/Categories/";
   }
-  path_container.innerHTML += `/${name}`;
+  if(path_container){
+    path_container.innerHTML += `/${name}`;
+  }
+ 
 };
 getLocation_path();
