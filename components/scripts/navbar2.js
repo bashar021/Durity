@@ -3,6 +3,193 @@ const searchInput = document.getElementById("searchInput");
 const searchDropdown = document.querySelector(".search-dropdown");
 console.log(searchInput, searchDropdown);
 const productsDropdown = document.querySelector(".products");
+
+document.getElementById("navbar").innerHTML = `
+ <nav id="my-nav">
+      <a class="logo" href="/">
+        <img id="log-png" src="/public//homepage//logo.svg" alt="Company Logo">
+      </a>
+      <div class="search-container">
+        <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
+        <span id="search_icon" class="search-icon">
+          <img src="/public//icons//icon.svg" alt="">
+        </span>
+        <div class="search-dropdown" id="suggestions">
+        </div>
+      </div>
+      <div class="hamburger">☰</div>
+
+      <div class="nav-links">
+        <a href="/" class="text-steelblue">Home</a>
+        <div class="dropdown">
+          <a href="/components/service.html" class="text-steelblue">Products</a>
+          <div class="dropdown-content">
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucets" class="products text-steelblue">Faucets</a>
+              <div class="nested-dropdown-content" id="faucets-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=ptmt" class="products text-steelblue">PTMT</a>
+              <div class="nested-dropdown-content text-steelblue" id="ptmt-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=showers " class="text-steelblue">Showers</a>
+              <div class="nested-dropdown-content" id="showers-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=health faucet " class="text-steelblue">Health Faucet</a>
+              <div class="nested-dropdown-content" id="hf-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=bath accessories " class="text-steelblue">Bath Accessories</a>
+              <div class="nested-dropdown-content" id="ba-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucet parts " class="text-steelblue">Faucet Parts</a>
+              <div class="nested-dropdown-content" id="fp-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="/components/service.html" class="text-steelblue">Company</a>
+          <div class="dropdown-content">
+            <div class="dropdown">
+              <a href="/components/about.html" class="text-steelblue">About Us</a>
+            </div>
+            <div class="dropdown">
+              <a href="/components/carrerspage.html" class="text-steelblue">Careers</a>
+            </div>
+            <div class="dropdown">
+              <a href="/components/events.html" class="text-steelblue">Events</a>
+            </div>
+            <div class="dropdown">
+              <a href="/components/register.html" class="text-steelblue">Register</a>
+            </div>
+            
+
+           
+          </div>
+        </div>
+       
+       
+       
+        <div class="dropdown">
+          <a href="/components/catalogue.html" class="text-steelblue">E-Catalogue</a>
+          <!-- <div class="dropdown-content">
+            <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
+            <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
+          </div> -->
+        </div>
+       
+      </div>
+    </nav>
+    <div class="sidebar">
+      <div class="close-btn">×</div>
+      <div class="nav-links">
+        <a href="/" class="">Home</a>
+        <div class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <!-- <a href="/components/products.html?name=faucets">Faucets</a> -->
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucets" class="products">Faucets</a>
+              <div class="nested-dropdown-content" id="md-faucets-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
+              <div class="nested-dropdown-content" id="md-ptmt-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=showers">Showers</a>
+              <div class="nested-dropdown-content" id="md-showers-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=health faucet">Health Faucet</a>
+              <div class="nested-dropdown-content" id="md-hf-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
+              <div class="nested-dropdown-content" id="md-ba-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+            <div class="nested-dropdown">
+              <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
+              <div class="nested-dropdown-content" id="md-fp-nested-d">
+                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/components/about.html">About Us</a>
+        <a href="/components/carrerspage.html">Careers</a>
+        <a href="/components/events.html">Events</a>
+        <a href="/components/catalogue.html">E-Catalogue</a>
+        <a href="/components/register.html">Register</a>
+      </div>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-form">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="form-header">
+          <p class="text-black text-h4">Please fill out the form below to download our catalog</p>
+        </div>
+        <form id="downloadForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError">Please enter your name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <div class="error" id="mobileError">Please enter a valid mobile number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name</label>
+            <input type="text" id="business" name="business" required>
+            <div class="error" id="businessError">Please enter your business name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Download Now</button>
+        </form>
+      </div>
+    </div>
+`;
 searchInput.addEventListener("input", () => {
   console.log("hiiii");
   if (searchInput.value !== "") {
@@ -14,12 +201,12 @@ searchInput.addEventListener("input", () => {
     searchDropdown.style.display = "none";
   }
 });
-document.getElementById('search_icon').addEventListener('click',()=>{
+document.getElementById("search_icon").addEventListener("click", () => {
   // console.log('hii search icon clicked')
-  document.getElementById('searchInput').style.display = "block";
-  document.getElementById('search_icon').style.display = "none";
-  document.getElementById('searchInput').style.width = '99%'
-})
+  document.getElementById("searchInput").style.display = "block";
+  document.getElementById("search_icon").style.display = "none";
+  document.getElementById("searchInput").style.width = "99%";
+});
 document.addEventListener("click", (e) => {
   if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
     suggestions.style.display = "none";
@@ -123,30 +310,28 @@ const setCategoryItems = () => {
 };
 setCategoryItems();
 
-const getLocation_path = ()=>{
+const getLocation_path = () => {
   const path = window.location.pathname;
-  let name = path.substring(path.lastIndexOf('/') + 1);
-  name = name.replace('.html','')
-  const path_container = document.getElementById('location-path-container')
-  console.log('hii',name)
-  const mapped={
-    service:"Services",
-    products:'Categories',
-    product:'Products',
-    productitem:'Product'
+  let name = path.substring(path.lastIndexOf("/") + 1);
+  name = name.replace(".html", "");
+  const path_container = document.getElementById("location-path-container");
+  console.log("hii", name);
+  const mapped = {
+    service: "Services",
+    products: "Categories",
+    product: "Products",
+    productitem: "Product",
+  };
+  name = mapped[name];
+  if (name === "Product") {
+    name = "Services/Categories/Products/Product";
   }
-  name = mapped[name]
-  if(name === 'Product'){
-    name = 'Services/Categories/Products/Product'
+  if (name === "Products") {
+    name = "Services/Categories/Products/";
   }
-  if(name === 'Products'){
-     name = 'Services/Categories/Products/'
+  if (name === "Categories") {
+    name = "Services/Categories/";
   }
-  if(name === 'Categories'){
-    name = 'Services/Categories/'
-  }
-  path_container.innerHTML += `/${name}`
-}
-getLocation_path()
-
-
+  path_container.innerHTML += `/${name}`;
+};
+getLocation_path();
