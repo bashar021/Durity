@@ -65,7 +65,13 @@ function createProductCard(product) {
 }
 
 function renderProducts() {
-  products?.map((product) => createProductCard(product));
+  if(products?.length >=2){
+    recentViewContainer.style.display = 'block'
+    products?.map((product) => createProductCard(product));
+  }else{
+    recentViewContainer.style.display = 'none'
+  }
+ 
 }
 renderProducts();
 
