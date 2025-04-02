@@ -18,43 +18,43 @@ document.getElementById("navbar").innerHTML = `
       <div class="hamburger">☰</div>
 
       <div class="nav-links">
-        <a href="/" class="text-steelblue">Home</a>
+        <a href="/" class="">Home</a>
         <div class="dropdown">
-          <a href="/components/service.html" class="text-steelblue flex">Products <img  class='arrow-icon text-steelblue' src='/public/icons/downarrow.svg'/></a>
+          <a href="/components/service.html" class=" flex">Products <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucets" class="products text-steelblue">Faucets</a>
+              <a href="/components/products.html?name=faucets" class="products ">Faucets</a>
               <div class="nested-dropdown-content" id="faucets-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
 
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=ptmt" class="products text-steelblue">PTMT</a>
+              <a href="/components/products.html?name=ptmt" class="products ">PTMT</a>
               <div class="nested-dropdown-content text-steelblue" id="ptmt-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=showers " class="text-steelblue">Showers</a>
+              <a href="/components/products.html?name=showers " class="products">Showers</a>
               <div class="nested-dropdown-content" id="showers-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=health faucet " class="text-steelblue">Health Faucet</a>
+              <a href="/components/products.html?name=health faucet " class="products">Health Faucet</a>
               <div class="nested-dropdown-content" id="hf-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=bath accessories " class="text-steelblue">Bath Accessories</a>
+              <a href="/components/products.html?name=bath accessories " class="products">Bath Accessories</a>
               <div class="nested-dropdown-content" id="ba-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucet parts " class="text-steelblue">Faucet Parts</a>
+              <a href="/components/products.html?name=faucet parts " class="products">Faucet Parts</a>
               <div class="nested-dropdown-content" id="fp-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
@@ -62,19 +62,19 @@ document.getElementById("navbar").innerHTML = `
           </div>
         </div>
         <div class="dropdown">
-          <a href="/components/service.html" class="text-steelblue flex">Company <img  class='arrow-icon text-steelblue' src='/public/icons/downarrow.svg'/></a>
+          <a href="/components/service.html" class=" flex">Company <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="dropdown">
-              <a href="/components/about.html" class="text-steelblue">About Us</a>
+              <a href="/components/about.html" class="">About Us</a>
             </div>
             <div class="dropdown">
-              <a href="/components/carrerspage.html" class="text-steelblue">Careers</a>
+              <a href="/components/carrerspage.html" class="">Careers</a>
             </div>
             <div class="dropdown">
-              <a href="/components/events.html" class="text-steelblue">Events</a>
+              <a href="/components/events.html" class="">Events</a>
             </div>
             <div class="dropdown">
-              <a href="/components/register.html" class="text-steelblue">Register</a>
+              <a href="/components/register.html" class="">Register</a>
             </div>
             
 
@@ -82,7 +82,7 @@ document.getElementById("navbar").innerHTML = `
           </div>
         </div>
         <div class="dropdown">
-          <a href="/components/catalogue.html" class="text-steelblue">E-Catalogue</a>
+          <a href="/components/catalogue.html" class="">E-Catalogue</a>
           <!-- <div class="dropdown-content">
             <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
             <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
@@ -264,6 +264,26 @@ document.getElementById("search_icon").addEventListener("click", () => {
   document.getElementById("searchInput").style.display = "block";
   document.getElementById("search_icon").style.display = "none";
   document.getElementById("searchInput").style.width = "99%";
+  const searchInput = document.getElementById('searchInput');
+  const searchIcon = document.getElementById('search_icon');
+  function handleClickOutside(event) {
+    // Check if the click was outside the input and the search icon
+    if (
+        searchInput && !searchInput.contains(event.target) &&
+        searchIcon && !searchIcon.contains(event.target)
+    ) {
+        // Check if the input is empty
+        if (searchInput.value.trim() === '') {
+            console.log('There is no value');
+            document.getElementById("search_icon").style.display = "block";
+            document.getElementById("searchInput").style.display = "none";
+            document.getElementById("searchInput").style.width = "0%";
+        }
+        // Remove the event listener after checking
+        document.removeEventListener('click', handleClickOutside);
+    }
+}
+  document.addEventListener('click', handleClickOutside);
 });
 document.addEventListener("click", (e) => {
   if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
@@ -348,32 +368,32 @@ const setCategoryItems = () => {
   const ba_nested_d = document.getElementById("ba-nested-d");
   const md_ba_nested_d = document.getElementById("md-ba-nested-d");
   faucet.forEach((item, index) => {
-    faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_faucets_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    faucets_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_faucets_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
 
   ptmt.forEach((item, index) => {
-    ptmt_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_ptmt_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    ptmt_nested_d.innerHTML += `<a class="" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_ptmt_nested_d.innerHTML += `<a class="" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   showers.forEach((item, index) => {
-    showers_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_showers_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    showers_nested_d.innerHTML += `<a class="" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_showers_nested_d.innerHTML += `<a class="" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   health_faucets.forEach((item, index) => {
-    hf_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_hf_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    hf_nested_d.innerHTML += `<a class="" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_hf_nested_d.innerHTML += `<a class="" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   bath_accessories.forEach((item, index) => {
-    ba_nested_d.innerHTML += `<a  class="text-steelblue"href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_ba_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    ba_nested_d.innerHTML += `<a  class=""href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_ba_nested_d.innerHTML += `<a class="" href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
   const faucets_part = durityProducts["faucet parts"]?.products;
   const fp_nested_d = document.getElementById("fp-nested-d");
   const md_fp_nested_d = document.getElementById("md-fp-nested-d");
   faucets_part?.forEach((item, index) => {
-    fp_nested_d.innerHTML += `<a class="text-steelblue" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
-    md_fp_nested_d.innerHTML += `<a  class="text-steelblue" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    fp_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
+    md_fp_nested_d.innerHTML += `<a  class="" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name}</a>`;
   });
 };
 setCategoryItems();

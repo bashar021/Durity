@@ -592,7 +592,7 @@
         const index = params.get('index')
         const products = durityProducts[name].products[index]?.products
         const productContainer = document.getElementById('productsBox')
-        document.getElementById('products-heading').innerText = `${category.charAt(0).toUpperCase() + category.slice(1)} ${name.charAt(0).toUpperCase() + name.slice(1)}`
+        document.getElementById('products-heading').innerText = `${category?.toUpperCase()} ${name?.toUpperCase()}`
 
         function createProductCards(currentPage, itemPerPage) {
 
