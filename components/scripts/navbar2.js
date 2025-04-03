@@ -398,6 +398,11 @@ const setCategoryItems = () => {
 };
 setCategoryItems();
 const getLocation_path = () => {
+  const params = new URLSearchParams(window.location.search);
+  const queryObj = {};
+  params.forEach((value, key) => {
+      queryObj[key] = value;
+  });
   const path = window.location.pathname;
   let name = path.substring(path.lastIndexOf("/") + 1);
   name = name.replace(".html", "");
@@ -410,16 +415,17 @@ const getLocation_path = () => {
   };
   name = mapped[name];
   if (name === "Product") {
-    name = "Services/Categories/Products/Product";
+    name = `/<a class='text-black' href="/components/service.html">Services</a>/<a class='text-black' href="/components/products.html?name=${queryObj['name']}">Categories</a>/Products/Product`;
   }
   if (name === "Products") {
-    name = "Services/Categories/Products/";
+    name = `/<a class='text-black' href="/components/service.html">Services</a>/<a class='text-black' href="/components/products.html?name=${queryObj['name']}">Categories</a>/Products/`;
   }
   if (name === "Categories") {
-    name = "Services/Categories/";
+    name = `/<a class='text-black' href="/components/service.html">Services</a>/Categories/`;
   }
   if(path_container){
-    path_container.innerHTML += `/${name}`;
+    path_container.innerHTML += name;
+    // path_container.innerHTML += `<a href="#">hii</a>`;
   }
  
 };
