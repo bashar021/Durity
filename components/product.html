@@ -118,10 +118,31 @@
         .productCard{
             /* background-color: red; */
             padding: 0px;
+            display: flex;
+            flex-direction: column;
         }
         .product-container-details-footer{
             background-color: rgb(237, 237, 237);
-            padding: 2%;
+            /* padding: 2%; */
+            /* padding-left: 2%; */
+            /* height:max-content; */
+            bottom: 0px;
+            overflow:hidden;
+            flex: 1;      
+        }
+        .product-name{
+            /* white-space:; */
+            /* word-wrap: break-word; */
+            /* background-color: red; */
+            /* width: 80%; */
+            /* margin-left: 2%;  */
+            /* margin-right: 2%; */
+            padding-left: 2%;
+            white-space: normal;
+            word-wrap:break-word;
+        }
+        .product-code{
+            padding-left: 2%;
         }
 
 
@@ -622,9 +643,10 @@
                     productContainer.innerHTML += `
                 <div onclick="openPopup(${index})"  class="productCard" id='md-productCard'>
                     <img src="/public/icons/brokenimage.svg" alt="${product.name}" class="product-image">
-                    
+                     <div class='product-container-details-footer'>
                     <div class="product-name">${product.name}</div>
                     <div class="product-code">Code: ${product.code}</div>
+                      </div>
                 </div>
             `
                 }
