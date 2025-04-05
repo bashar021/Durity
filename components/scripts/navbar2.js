@@ -191,7 +191,7 @@ if(catalogue_download_design_container){
   catalogue_download_design_container.innerHTML = `
   <div class="cat-download-card cat-ptmt-card  catalogue-card">
        <div>
-         <img src="/public//homepage/Untitled-design.jpg" width="100%" alt="PTMT Catalogue Design" />
+         <img src="https://placehold.co/675X863" width="100%" alt="PTMT Catalogue Design" />
        </div>
        <div class="cat-card-header">
          <div class="cat-card-icon">
@@ -215,7 +215,7 @@ if(catalogue_download_design_container){
      <!-- Faucets Card -->
      <div class="cat-download-card cat-faucets-card catalogue-card">
        <div>
-         <img src="/public//homepage/Untitled2-design.png" width="100%" alt="PTMT Catalogue Design" />
+         <img src="https://placehold.co/675X863" width="100%" alt="PTMT Catalogue Design" />
        </div>
        <div class="cat-card-header">
          <div class="cat-card-icon">

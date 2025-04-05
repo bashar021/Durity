@@ -6,7 +6,7 @@ const durityProducts = {
       {
         name: "Futurix",
         imageSrc:
-          "/public/topproducts/CATEGORY PHTO/FUTURIX.png",
+          "https://placehold.co/1080x1080",
         //   details:' High-quality sanitaryware for your bathroom.',
         details: "",
         products: [
@@ -22,7 +22,7 @@ const durityProducts = {
             flow: "FOAM FLOW",
             state: "ALL STATE",
             // imageSrc: "/public/WhatsApp Image 2024-10-30 at 10.49.55.jpeg",
-            imageSrc: "/public/products images/faucets/FUTURIX/",
+            imageSrc: "https://placehold.co/1080x1080",
             // details:' High-quality sanitaryware for your bathroom.',
             details: "",
             imagesdata: [],
