@@ -39,19 +39,7 @@ const setFooter = () => {
       <div class="footer-content">
       
         
-        <div class="footer-about ">
-        
-          <p class='mt-0 '>Transform your bathroom into a sanctuary of luxury and comfort with our premium collection of bathroom
-            accessories. We pride ourselves on combining elegant design with exceptional functionality. design with exceptional functionality design with exceptional functionality.</p>
-          <!-- <div class="newsletter-form"> -->
-          <!-- <input type="email" placeholder="Enter your email"> -->
-          <!-- <button type="button">Subscribe</button> -->
-          <!-- </div> -->
-          <div id="durity-social-links">
-           
-          </div>
-          <div class="success-message">Thank you for subscribing!</div>
-        </div>
+      
 
         <div class="l-products-section">
           <!-- Product categories will be dynamically populated -->
