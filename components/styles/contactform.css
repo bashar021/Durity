@@ -39,6 +39,7 @@
     color: white;
     position: relative;
     overflow: hidden;
+    padding-top: 10px;
 }
 
 .cf-info::after {
@@ -73,12 +74,13 @@
 
 .cf-card {
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 10px;
     border-radius: 15px;
     margin-bottom: 25px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s;
+    padding-left: 25px;
 }
 
 .cf-card:hover {
@@ -101,6 +103,7 @@
     flex: 1;
     padding: 60px;
     background: #fff;
+    padding-top: 10px;
 }
 
 .cf-form h2 {
@@ -121,7 +124,7 @@
 }
 
 .cf-form-group {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -136,7 +139,7 @@
 .cf-form-group input,
 .cf-form-group textarea {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border: 2px solid #eee;
     border-radius: 10px;
     font-size: 16px;

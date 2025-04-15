@@ -6,7 +6,7 @@ const setFooter = () => {
        <div id='footer-logo-section'>
               <img src='/public//homepage//logo.svg'/>
               <div>
-               <h1>Durity</h1>
+               <h1 class='text-h3'>Follow Us</h1>
                 <a>
              <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
               <path
