@@ -6,7 +6,7 @@ const setFooter = () => {
        <div id='footer-logo-section'>
               <img src='/public//homepage//logo.svg'/>
               <div>
-               <h1 class='text-h3'>Follow Us</h1>
+               <h1 class='text-h3 '>Follow Us</h1>
                 <a>
              <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -53,14 +53,14 @@ const setFooter = () => {
               <path
                 d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
             </svg>
-            Work & Office Address - 56/B, Damodar Park Industrial Area, Delhi - 110095
+            Work & Office Address - 56/B, Damodar Park Industrial Area, Dilshad Garden, Delhi - 110095
           </div>
           <div class="contact-info">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M20 4h-16c-1.105 0-2 .895-2 2v12c0 1.105.895 2 2 2h16c1.105 0 2-.895 2-2v-12c0-1.105-.895-2-2-2zm0 4.236l-8 4.882-8-4.882v-2.236l8 4.882 8-4.882v2.236z" />
             </svg>
-            info@luxbath.com
+            contact@duritybath.com
           </div>
           <div class="contact-info">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
