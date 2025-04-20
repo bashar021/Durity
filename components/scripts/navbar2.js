@@ -147,46 +147,7 @@ document.getElementById("navbar").innerHTML = `
         <a href="/components/register.html">Register</a>
       </div>
     </div>
-    <div class="popup-overlay" id="popupOverlay">
-      <div class="popup-form">
-        <button class="close-btn" onclick="closePopup()">&times;</button>
-        <div class="form-header">
-          <p class="text-black text-h4">Please fill out the form below to download our catalog</p>
-        </div>
-        <form id="downloadForm" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <div class="error" id="nameError">Please enter your name</div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <div class="error" id="emailError">Please enter a valid email</div>
-          </div>
-
-          <div class="form-group">
-            <label for="mobile">Mobile Number</label>
-            <input type="tel" id="mobile" name="mobile" required>
-            <div class="error" id="mobileError">Please enter a valid mobile number</div>
-          </div>
-
-          <div class="form-group">
-            <label for="business">Business Name</label>
-            <input type="text" id="business" name="business" required>
-            <div class="error" id="businessError">Please enter your business name</div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message (Optional)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Download Now</button>
-        </form>
-      </div>
-    </div>
+  
 `;
 const searchInput = document.getElementById("searchInput");
 const catalogue_download_design_container = document.getElementById('catalogue-download-design-container')
@@ -237,6 +198,49 @@ if(catalogue_download_design_container){
          Download Catalogue
        </button>
      </div>
+
+
+
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-form">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="form-header">
+          <p class="text-black text-h4 mt-0 mb-0">Please fill out the form below to download our catalog</p>
+        </div>
+        <form id="downloadForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError">Please enter your name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <div class="error" id="mobileError">Please enter a valid mobile number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name</label>
+            <input type="text" id="business" name="business" required>
+            <div class="error" id="businessError">Please enter your business name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Download Now</button>
+        </form>
+      </div>
+    </div>
  `;
 }
 

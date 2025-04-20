@@ -71,12 +71,7 @@
     background: #555;
 }
 
-.invisible-scrollbar::-webkit-scrollbar {
-    width: 0px;
-    /* Set the width of the vertical scrollbar */
-    height: 0px;
-    /* Set the height of the horizontal scrollbar */
-}
+
 #recentProducts{
     padding-top: 2%;
 }
