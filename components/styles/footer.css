@@ -94,6 +94,7 @@
 
 .l-category-header .arrow {
     transition: transform 0.3s ease;
+    color: white;
 }
 
 .l-category-header.active .arrow {

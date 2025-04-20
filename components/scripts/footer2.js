@@ -4,7 +4,7 @@ const setFooter = () => {
   let footer = document.getElementById("footer");
   footer.innerHTML = `
        <div id='footer-logo-section'>
-              <img src='/public//homepage//logo.svg'/>
+              <img width='70' height='70' src='/public//homepage//logo.svg'/>
               <div>
                <h1 class='text-h3 '>Follow Us</h1>
                 <a>
@@ -149,7 +149,10 @@ Object.entries(productCategories).forEach(([category, products]) => {
   categoryElement.innerHTML = `
         <div class="l-category-header">
             <h4>${category}</h4>
-            <span class="arrow">▼</span>
+            <span class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
+            </span>
+            
         </div>
         <div class="l-category-content">
             <div class="l-product-grid">

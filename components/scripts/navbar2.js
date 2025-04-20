@@ -23,38 +23,41 @@ document.getElementById("navbar").innerHTML = `
           <a href="/components/service.html" class=" flex">Products <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucets" class="products ">Faucets</a>
+              <p href="/components/products.html?name=faucets" class="products ">
+              Faucets 
+              <img  src='/public/icons/downarrow.svg'/>
+              </p>
               <div class="nested-dropdown-content" id="faucets-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
 
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=ptmt" class="products ">PTMT</a>
+              <p href="/components/products.html?name=ptmt" class="products ">PTMT <img  src='/public/icons/downarrow.svg'/></p>
               <div class="nested-dropdown-content text-steelblue" id="ptmt-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=showers " class="products">Showers</a>
+              <p href="/components/products.html?name=showers " class="products">Showers <img  src='/public/icons/downarrow.svg'/></p>
               <div class="nested-dropdown-content" id="showers-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=health faucet " class="products">Health Faucet</a>
+              <p href="/components/products.html?name=health faucet " class="products" >Health Faucet <img  src='/public/icons/downarrow.svg'/></p>
               <div class="nested-dropdown-content" id="hf-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=bath accessories " class="products">Bath Accessories</a>
+              <p href="/components/products.html?name=bath accessories " class="products">Bath Accessories <img  src='/public/icons/downarrow.svg'/></p>
               <div class="nested-dropdown-content" id="ba-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucet parts " class="products">Faucet Parts</a>
+              <p href="/components/products.html?name=faucet parts " class="products">Faucet Parts <img  src='/public/icons/downarrow.svg'/></p>
               <div class="nested-dropdown-content" id="fp-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>

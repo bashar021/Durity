@@ -419,7 +419,8 @@
   }
 
   .nested-dropdown-content a:hover {
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
+    background-color: var(--steelblue-1);
   }
   #location-path-container{
     /* background-color: red; */
@@ -439,10 +440,30 @@
     /* color: var(--gray-1); */
    
   }
+  .products{
+    display: flex ;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* background-color: red; */
+    margin-bottom: 5px;
+    flex-direction: row;
+    margin-top: 0px;
+    color: black;
+    padding-left: 10px;
+    font-size: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
   .products:hover{
     /* background-color: red; */
-    background-color: rgb(239, 238, 238);
+    /* background-color: rgb(239, 238, 238); */
+    background-color: var(--steelblue-1);
   }
+  .products:hover img {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  
   .search-icon{
     display: block;
   }
