@@ -106,3 +106,15 @@
 .flex{
     display: flex;
 }
+.justify-content-center{
+    justify-self: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.gap-2{
+    gap: 5px;
+}
+.gap-3{
+    gap: 7.5px;
+}
