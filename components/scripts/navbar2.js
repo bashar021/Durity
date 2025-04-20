@@ -25,7 +25,7 @@ document.getElementById("navbar").innerHTML = `
             <div class="nested-dropdown">
               <p onclick="window.location.href='/components/products.html?name=faucets'" href="/components/products.html?name=faucets" class="products ">
               Faucets 
-              <img  src='/public/icons/downarrow.svg'/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
               </p>
               <div class="nested-dropdown-content" id="faucets-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
@@ -33,31 +33,31 @@ document.getElementById("navbar").innerHTML = `
             </div>
 
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=ptmt'" href="/components/products.html?name=ptmt" class="products ">PTMT <img  src='/public/icons/downarrow.svg'/></p>
+              <p onclick="window.location.href='/components/products.html?name=ptmt'" href="/components/products.html?name=ptmt" class="products ">PTMT  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content text-steelblue" id="ptmt-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=showers '" href="/components/products.html?name=showers " class="products">Showers <img  src='/public/icons/downarrow.svg'/></p>
+              <p onclick="window.location.href='/components/products.html?name=showers '" href="/components/products.html?name=showers " class="products">Showers  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="showers-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=health faucet '" href="/components/products.html?name=health faucet " class="products" >Health Faucet <img  src='/public/icons/downarrow.svg'/></p>
+              <p onclick="window.location.href='/components/products.html?name=health faucet '" href="/components/products.html?name=health faucet " class="products" >Health Faucet  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="hf-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=bath accessories '" href="/components/products.html?name=bath accessories " class="products">Bath Accessories <img  src='/public/icons/downarrow.svg'/></p>
+              <p onclick="window.location.href='/components/products.html?name=bath accessories '" href="/components/products.html?name=bath accessories " class="products">Bath Accessories  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="ba-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=faucet parts '" href="/components/products.html?name=faucet parts " class="products">Faucet Parts <img  src='/public/icons/downarrow.svg'/></p>
+              <p onclick="window.location.href='/components/products.html?name=faucet parts '" href="/components/products.html?name=faucet parts " class="products">Faucet Parts  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="fp-nested-d">
                 <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
