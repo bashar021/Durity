@@ -243,31 +243,30 @@ if(catalogue_download_design_container){
 const customer_support = document.getElementById("customer-support")
 if(customer_support){
   customer_support.innerHTML = `
-   <div >
-      
-      <h2 class='flex align-items-center gap-2'>
+    <div >
+      <p class='flex align-items-center gap-2 text-black text-h2 mt-0 pt-0 pb-0 mb-2'>
        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M7.25 10a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0M12 6.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5"/><path d="M3.524 8.857a8.29 8.29 0 0 1 8.26-7.607h.432a8.29 8.29 0 0 1 8.26 7.607a8.94 8.94 0 0 1-1.99 6.396l-4.793 5.861a2.187 2.187 0 0 1-3.386 0l-4.793-5.861a8.94 8.94 0 0 1-1.99-6.396m8.26-6.107A6.79 6.79 0 0 0 5.02 8.98a7.44 7.44 0 0 0 1.656 5.323l4.793 5.862a.687.687 0 0 0 1.064 0l4.793-5.862A7.44 7.44 0 0 0 18.98 8.98a6.79 6.79 0 0 0-6.765-6.23z"/></g></svg>
       Dealer Locater
-      </h2>
+      </p>
       <div id='customer-horizontal-line'></div>
-      <p>Become an  Dealer – Where Quality and Reliability Flow Together.</p>
+      <p class='text-black text-h4 mb-0'>Become an  Dealer – Where Quality and Reliability Flow Together.</p>
     </div>
+
     <div >
-     
-      <h2 class='flex align-items-center gap-2'>
+      <p class='flex align-items-center gap-2 text-black text-h2 mt-0 pt-0 mb-2'>
        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 36 36"><path fill="currentColor" d="M23 26a1 1 0 0 1-1 1H8c-.22 0-.43.2-.61.33L4 30V14a1 1 0 0 1 1-1h3.86v-2H5a3 3 0 0 0-3 3v18a1 1 0 0 0 .56.89a1 1 0 0 0 1-.1L8.71 29h13.44A2.77 2.77 0 0 0 25 26.13V25h-2Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M31 4H14a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h13.55l4.78 3.71a1 1 0 0 0 1 .11a1 1 0 0 0 .57-.9V7A3 3 0 0 0 31 4m1 18.94l-3.5-2.73a1 1 0 0 0-.61-.21H14a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h17a1.1 1.1 0 0 1 1 1.06Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
-      Talk to an Expert</h2>
+      Talk to an Expert</p>
       
        <div id='customer-horizontal-line'></div>
-      <p>Need Expert Advice? Talk to an Durity Experts  Today!</p>
+      <p class='text-black text-h4 mb-0'>Need Expert Advice? Talk to an Durity Experts  Today!</p>
     </div>
-    <div >
     
-      <h2 class='flex align-items-center gap-2'>
+    <div >
+      <p class='flex align-items-center gap-2 text-black text-h2 mt-0 pt-0 mb-2'>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M3 7V4.37A3.93 3.93 0 0 1 7 .5a3.93 3.93 0 0 1 4 3.87V7M1.5 5.5h1A.5.5 0 0 1 3 6v3a.5.5 0 0 1-.5.5h-1a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1m11 4h-1A.5.5 0 0 1 11 9V6a.5.5 0 0 1 .5-.5h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1M9 12.25a2 2 0 0 0 2-2V8m-2 4.25a1.25 1.25 0 0 1-1.25 1.25h-1.5a1.25 1.25 0 0 1 0-2.5h1.5A1.25 1.25 0 0 1 9 12.25" stroke-width="1"/></svg>
-      Customer Service Request</h2>
-       <div id='customer-horizontal-line'></div>
-      <p>Your Satisfaction, Our Priority – Contact Durity Customer Service Today!</p>
+      Customer Service Request</p>
+      <div id='customer-horizontal-line'></div>
+        <p class='text-black text-h4 mb-0'>Your Satisfaction, Our Priority – Contact Durity Customer Service Today!</p>
     </div>
   `
 }
