@@ -464,11 +464,14 @@
     /* background-color: rgb(239, 238, 238); */
     background-color: var(--steelblue-1);
     color: white;
+    cursor: pointer;
+    
   }
   .products:hover svg {
     transform: rotate(180deg);
     transition: transform 0.3s ease;
     color: white;
+    
   }
   
   .search-icon{
