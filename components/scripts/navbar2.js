@@ -302,7 +302,7 @@ document.getElementById("search_icon").addEventListener("click", () => {
 document.addEventListener("click", (e) => {
   if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
     suggestions.style.display = "none";
-    md_suggestions.style.display = "none";
+    // md_suggestions.style.display = "none";
   }
 });
 
