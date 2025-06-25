@@ -88,7 +88,7 @@ const setFooter = () => {
     `;
 };
 setFooter();
-const productCategories = {
+let productCategories = {
   Faucets: [
     "Freestanding Tubs",
     "Clawfoot Tubs",
@@ -138,6 +138,37 @@ const productCategories = {
     "Aromatherapy Diffusers",
   ],
 };
+const setProductListInFooter = ()=>{
+  console.log('hiiiii',durityProducts)
+  let {faucets,ptmt,showers,} = durityProducts
+  let d = durityProducts
+  ptmt = ptmt?.products?.map((item)=>{
+    return item?.name
+  })
+  faucets = faucets?.products?.map((item)=>{
+    return item?.name
+  })
+  showers = showers?.products?.map((item)=>{
+    return item?.name
+  })
+  let faucet_parts = d['faucet parts']?.products?.map((item)=>{
+    return item?.name
+  })
+  let bath_accessories = d['bath accessories']?.products?.map((item)=>{
+    return item?.name
+  })
+  let health_faucet = d['health faucet']?.products?.map((item)=>{
+    return item?.name
+  })
+  productCategories['PTMT'] = ptmt
+  productCategories['Faucets'] = faucets
+  productCategories['Showers'] = showers
+  productCategories['Faucets Parts'] =  faucet_parts
+  productCategories['Bath Accessories'] = bath_accessories
+  productCategories['Health Faucets'] =   health_faucet
+
+}
+setProductListInFooter()
 
 // console.log('hii hello')
 // Populate product categories

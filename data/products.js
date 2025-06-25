@@ -14366,7 +14366,7 @@ const durityProducts = {
             quantity: "N/A",
             flow: "N/A",
             state: "ALL STATE",
-            imageSrc: '/public/products images/faucets/COUPLING BRASS 3"/',
+            imageSrc: '/public/products images/bath accessories /WASTE COUPLING/',
             details: "",
             imagesdata: [],
           },
