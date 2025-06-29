@@ -4,7 +4,7 @@ const setFooter = () => {
   let footer = document.getElementById("footer");
   footer.innerHTML = `
        <div id='footer-logo-section'>
-              <img width='80' height='80' src='/public//homepage//logo.svg'/>
+              <img width='80' height='80' src='/public/icons/logo.svg'/>
               <div>
                <h1 class='text-h3 '>Follow Us</h1>
                 <a>

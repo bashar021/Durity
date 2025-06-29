@@ -5,7 +5,7 @@ const productsDropdown = document.querySelector(".products");
 document.getElementById("navbar").innerHTML = `
  <nav id="my-nav">
       <a class="logo" href="/">
-        <img id="log-png" src="/public//homepage//logo.svg" alt="Company Logo">
+        <img id="log-png" src="/public/icons/logo.svg" alt="Company Logo">
       </a>
       <div class="search-container">
         <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
@@ -155,7 +155,7 @@ if(catalogue_download_design_container){
   catalogue_download_design_container.innerHTML = `
   <div class="cat-download-card cat-ptmt-card  catalogue-card">
        <div>
-         <img src="https://placehold.co/675X863" width="100%" alt="PTMT Catalogue Design" />
+         <img src="/public/home page/home page catalogue banner /PTMT  CATLOG.jpg" width="100%" alt="PTMT Catalogue Design" />
        </div>
        <div class="cat-card-header">
          <div class="cat-card-icon">
@@ -179,7 +179,7 @@ if(catalogue_download_design_container){
      <!-- Faucets Card -->
      <div class="cat-download-card cat-faucets-card catalogue-card">
        <div>
-         <img src="https://placehold.co/675X863" width="100%" alt="PTMT Catalogue Design" />
+         <img src="/public/home page/home page catalogue banner /FAUCET.jpg" width="100%" alt="PTMT Catalogue Design" />
        </div>
        <div class="cat-card-header">
          <div class="cat-card-icon">
