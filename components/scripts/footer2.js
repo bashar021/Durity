@@ -143,22 +143,28 @@ const setProductListInFooter = ()=>{
   let {faucets,ptmt,showers,} = durityProducts
   let d = durityProducts
   ptmt = ptmt?.products?.map((item)=>{
-    return item?.name
+    // return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
   })
   faucets = faucets?.products?.map((item)=>{
-    return item?.name
+    // return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
   })
   showers = showers?.products?.map((item)=>{
-    return item?.name
+    // return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
   })
   let faucet_parts = d['faucet parts']?.products?.map((item)=>{
-    return item?.name
+    // return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
   })
   let bath_accessories = d['bath accessories']?.products?.map((item)=>{
-    return item?.name
+    // return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
   })
   let health_faucet = d['health faucet']?.products?.map((item)=>{
-    return item?.name
+    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    // return item?.name
   })
   productCategories['PTMT'] = ptmt
   productCategories['Faucets'] = faucets
