@@ -7,7 +7,7 @@ const durityProducts = {
       {
         name: "GLORIA BLACK",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets/categories/GLORIA BLACK.png",
         details: "",
         products: [
           {
@@ -406,7 +406,7 @@ const durityProducts = {
       {
         name: "Gloria",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets/categories/GLORIA COLLENTION.jpg",
         details: "",
         products:[
           {
@@ -803,7 +803,7 @@ const durityProducts = {
       },
       {
         name: "Futurix",
-        imageSrc: "https://placehold.co/1080x1080",
+        imageSrc: "/public/products category page images/faucets/categories/FUTURIX COLLENTION.jpg",
         //   details:' High-quality sanitaryware for your bathroom.',
         details: "",
         products:[
@@ -1384,7 +1384,7 @@ const durityProducts = {
       {
         name: "Elegance",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets/categories/ELEGANCE COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -1991,7 +1991,7 @@ const durityProducts = {
       },
       {
         name: "Primo",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/PRIMO.png",
+        imageSrc: "/public/products category page images/faucets/categories/PRIMO COLLECTION.jpg",
         details: "",
         products:[
           {
@@ -2599,7 +2599,7 @@ const durityProducts = {
       {
         name: "Valnetino",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets/categories/VALENTINO COLLECTION.png",
         details: "",
         products: [
           {
@@ -2906,7 +2906,7 @@ const durityProducts = {
       },
       {
         name: "Iconic",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/Iconic.png",
+        imageSrc: "/public/products category page images/faucets/categories/ICONIC COLLENTION.jpg",
         details: "",
         products:[
           {
@@ -3215,7 +3215,7 @@ const durityProducts = {
       {
         name: "Florex",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets/categories/FLOREX COLECTION.jpg",
         details: "",
         products:[
           {
@@ -3807,7 +3807,7 @@ const durityProducts = {
       },
       {
         name: "Cherish",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/CHERISH.png",
+        imageSrc: "/public/products category page images/faucets/categories/CHERISH COLLEN.jpg",
         details: "",
         products: [
           {
@@ -4414,7 +4414,7 @@ const durityProducts = {
       },
       {
         name: "Felicity",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/FELICITY.png",
+        imageSrc: "/public/products category page images/faucets/categories/FELICITY COLLECTION.jpg",
         details: "",
         products:[
           {
@@ -5022,7 +5022,7 @@ const durityProducts = {
       },
       {
         name: "Supra",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/SUPRA.png",
+        imageSrc: "/public/products category page images/faucets/categories/SUPRA COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -5629,7 +5629,7 @@ const durityProducts = {
       },
       {
         name: "Trend",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/TREND.png",
+        imageSrc: "/public/products category page images/faucets/categories/trend collention1.jpg",
         details: "",
         products: [
           {
@@ -5936,7 +5936,7 @@ const durityProducts = {
       },
       {
         name: "Titan",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/TITAN.png",
+        imageSrc: "/public/products category page images/faucets/categories/TITAN COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -6243,7 +6243,7 @@ const durityProducts = {
       },
       {
         name: "Vista",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/VISTA.png",
+        imageSrc: "/public/products category page images/faucets/categories/VISTA COLLECTION1.png",
         details: "",
         products: [
           {
@@ -6550,7 +6550,7 @@ const durityProducts = {
       },
       {
         name: "Deluxe",
-        imageSrc: "/public/topproducts/CATEGORY PHTO/DELUXE.png",
+        imageSrc: "/public/products category page images/faucets/categories/DELUXE COLLECTION1.png",
         details: "",
         products:[
           {
@@ -9260,7 +9260,7 @@ const durityProducts = {
     products: [
       {
         name: "SUPERB BLUE COLLECTION									",
-        imageSrc: "/public/topproducts/PTMT/BLUE SUPERB.png",
+        imageSrc: "/public/products category page images/ptmt/categories/SUPERB BLUE COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -9433,7 +9433,7 @@ const durityProducts = {
       },
       {
         name: "SUPERB YELLOW COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/YELLOW SUPERB.png",
+        imageSrc: "/public/products category page images/ptmt/categories/SUPERB YELLOW COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -9605,7 +9605,7 @@ const durityProducts = {
       },
       {
         name: "ALFA BLUE COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/ALFA BLUE.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ALFA BLUE COLLECTION.jpg",
         details: "",
         products:[
           {
@@ -9777,7 +9777,7 @@ const durityProducts = {
       },
       {
         name: "ALFA YELLOW COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/YELLOW ALFA.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ALFA YELLOW COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -9949,7 +9949,7 @@ const durityProducts = {
       },
       {
         name: "LUDO BLUE COLLECTION									",
-        imageSrc: "/public/topproducts/PTMT/LUDO.png",
+        imageSrc: "/public/products category page images/ptmt/categories/LUDO BLUE COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -10046,7 +10046,7 @@ const durityProducts = {
       },
       {
         name: "SLEEK COLLENTION",
-        imageSrc: "/public/topproducts/PTMT/SLEEK.png",
+        imageSrc: "/public/products category page images/ptmt/categories/SLEEK COLLENTION.jpg",
         details: "",
         products: [
           {
@@ -10218,7 +10218,7 @@ const durityProducts = {
       },
       {
         name: "ULTRA BLUE COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/BLUE ULTRA.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ULTRA BLUE COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -10390,7 +10390,7 @@ const durityProducts = {
       },
       {
         name: "ULTRA YELLOW COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/YELLOW ULTRA.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ULTRA YELLOW COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -10562,7 +10562,7 @@ const durityProducts = {
       },
       {
         name: "STONE BLUE COLLECTION									",
-        imageSrc: "/public/topproducts/PTMT/BLUE STONE.png",
+        imageSrc: "/public/products category page images/ptmt/categories/STONE BLUE COLLECTION.jpg",
         details: "",
         products: [
           {
@@ -10734,7 +10734,7 @@ const durityProducts = {
       },
       {
         name: "STONE YELLOW COLLECTION									",
-        imageSrc: "/public/topproducts/PTMT/YELLOW STONE.png",
+        imageSrc: "/public/products category page images/ptmt/categories/STONE YELLOW COLLECTION.jpg",
         details: "",
         products:[
           {
@@ -10891,7 +10891,7 @@ const durityProducts = {
       },
       {
         name: "ROYAL BLUE COLLECTION",
-        imageSrc: "/public/topproducts/PTMT/BLUE ROYAL.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ROYAL BLUE COLLECTION1.jpg",
         details: "",
         products:[
           {
@@ -11063,7 +11063,7 @@ const durityProducts = {
       },
       {
         name: "ROYAL YELLOW COLLECTION									",
-        imageSrc: "/public/topproducts/PTMT/ROYAL YELLOW.png",
+        imageSrc: "/public/products category page images/ptmt/categories/ROYAL YELLOW COLLECTION 1.jpg",
         details: "",
         products: [
           {
@@ -11313,7 +11313,7 @@ const durityProducts = {
       {
         name: "TITAN",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/TITAN SHOWER.png",
         details: "",
         products: [
           {
@@ -11381,7 +11381,7 @@ const durityProducts = {
       {
         name: "AMAZE",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/AMAZE SHOWER.png",
         details: "",
         products: [
           {
@@ -11449,7 +11449,7 @@ const durityProducts = {
       {
         name: "VEGAS",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/VEGAS SHOWER.png",
         details: "",
         products: [
           {
@@ -11517,7 +11517,7 @@ const durityProducts = {
       {
         name: "FLOWER",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/FLOWER SHOWER 1.png",
         details: "",
         products: [
           {
@@ -11570,7 +11570,7 @@ const durityProducts = {
       {
         name: "ALIVE",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/ALIVE SHOWER.png",
         details: "",
         products: [
           {
@@ -11608,7 +11608,7 @@ const durityProducts = {
       {
         name: "AMAZE ROUND",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/AMAZE ROUND SHOWER.png",
         details: "",
         products: [
           {
@@ -11661,7 +11661,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM SQUARE BRASS THREAD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM SQUARE BRASS THREAD.png",
         details: "",
         products: [
           {
@@ -11744,7 +11744,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM RECTANGLE BRASS THREAD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM RECTANGLE BRASS THREAD.png",
         details: "",
         products: [
           {
@@ -11827,7 +11827,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM OVAL BRASS THREAD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM OVAL BRASS THREAD.png",
         details: "",
         products: [
           {
@@ -11910,7 +11910,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM SQUARE SS THREAD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM SQUARE SS THREAD.png",
         details: "",
         products: [
           {
@@ -11993,7 +11993,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM ROCKET BRASS THREAD									",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM ROCKET BRASS THREAD.png",
         details: "",
         products: [
           {
@@ -12076,7 +12076,7 @@ const durityProducts = {
       {
         name: "SHOWER ARM ROUND SS THREAD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/SHOWER ARM ROUND SS THREAD.png",
         details: "",
         products: [
           {
@@ -12160,7 +12160,7 @@ const durityProducts = {
       {
         name: "OVERHEAD SHOWER",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/OVERHEAD SHOWER.png",
         details: "",
         products: [
           {
@@ -12274,7 +12274,7 @@ const durityProducts = {
       {
         name: "TELEPHONIC SHOWER",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/showers/categories/TELEPHONIC SHOWER.png",
         details: "",
         products: [
           {
@@ -12393,7 +12393,7 @@ const durityProducts = {
       {
         name: "FUTURIX",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/FUTURIX 1.png",
         details: "",
         products: [
           {
@@ -12431,7 +12431,7 @@ const durityProducts = {
       {
         name: "TREND",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/TREND.png",
         details: "",
         products: [
           {
@@ -12469,7 +12469,7 @@ const durityProducts = {
       {
         name: "FELICITY",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/FELICITY.png",
         details: "",
         products: [
           {
@@ -12507,7 +12507,7 @@ const durityProducts = {
       {
         name: "QUBIX",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/QUBIX.png",
         details: "",
         products: [
           {
@@ -12545,7 +12545,7 @@ const durityProducts = {
       {
         name: "COLOUR",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/COLOUR.png",
         details: "",
         products: [
           {
@@ -12583,7 +12583,7 @@ const durityProducts = {
       {
         name: "MILANO",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/MILANO.png",
         details: "",
         products: [
           {
@@ -12621,7 +12621,7 @@ const durityProducts = {
       {
         name: "NOVA",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/NOVA.png",
         details: "",
         products: [
           {
@@ -12659,7 +12659,7 @@ const durityProducts = {
       {
         name: "SLIDE",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/SLIDE.png",
         details: "",
         products: [
           {
@@ -12697,7 +12697,7 @@ const durityProducts = {
       {
         name: "SUPRA",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/SUPRA 1.png",
         details: "",
         products: [
           {
@@ -12735,7 +12735,7 @@ const durityProducts = {
       {
         name: "DONALD",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/DONALD.png",
         details: "",
         products: [
           {
@@ -12808,7 +12808,7 @@ const durityProducts = {
       {
         name: "PRIMO",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/PRIMO.png",
         details: "",
         products: [
           {
@@ -12846,7 +12846,7 @@ const durityProducts = {
       {
         name: "TITAN",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/TITAN.png",
         details: "",
         products: [
           {
@@ -12884,7 +12884,7 @@ const durityProducts = {
       {
         name: "VISTA",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/health faucets/categories/VISTA.png",
         details: "",
         products: [
           {
@@ -12928,7 +12928,7 @@ const durityProducts = {
       {
         name: "FLEXIABLE FAUCET",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/bath accessories /categories/FLEXIBLE FAUCET.png",
         details: "",
         products: [
           {
@@ -13086,7 +13086,7 @@ const durityProducts = {
       {
         name: "PROJECT ANGLE COCK",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/bath accessories /categories/PROJECT ANGLE COCK.png",
         details: "",
         products: [
           {
@@ -13139,7 +13139,7 @@ const durityProducts = {
       {
         name: "BUDGET ANGLE COCK",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/bath accessories /categories/BUDGET ANGLE COCK.jpg",
         details: "",
         products: [
           {
@@ -13192,7 +13192,7 @@ const durityProducts = {
       {
         name: "AUTO CLOSING TAPS",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/bath accessories /categories/AUTO CLOSING TAP.png",
         details: "",
         products: [
           {
@@ -13245,8 +13245,8 @@ const durityProducts = {
       {
         name: "WAVE FLOOR DRAINER",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
-        details: "/public/products images/bath accessories /FLEXIABLE FAUCET/",
+          "/public/products category page images/bath accessories /categories/WAVE FLOOR DRAINER.png",
+        details: "",
         products: [
           {
             name: 'WAVE FLOOR DRAINER 16"*4"',
@@ -13740,7 +13740,7 @@ const durityProducts = {
         imageSrc:
           "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
         details:
-          "/public/products images/bath accessories /LOCKING GRATINGS/CP ROUND HOLE LOCKING/",
+          "",
         products: [
           {
             name: "CP ROUND HOLE LOCKING 5*5",
@@ -13764,7 +13764,7 @@ const durityProducts = {
         imageSrc:
           "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
         details:
-          "/public/products images/bath accessories /LOCKING GRATINGS/CP FANCY SQAURE PLAIN LOCKING/",
+          "",
         products: [
           {
             name: "CP FANCY SQUARE PLAIN LOCKING 5*5",
@@ -14014,7 +14014,7 @@ const durityProducts = {
         name: "TOWEL RING",
         imageSrc:
           "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
-        details: "/public/products images/bath accessories /TOWEL RING/",
+        details: "",
         products: [
           {
             name: "CP CUBE",
@@ -15067,7 +15067,7 @@ const durityProducts = {
       {
         name: "SPARE PARTS",
         imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+          "/public/products category page images/faucets parts/categories/SPARE PART ALL IN ONE.png",
         details: "",
         products: [
           {
@@ -15777,24 +15777,24 @@ const durityProducts = {
           },
         ],
       },
-      {
-        name: "SPARE PARTS",
-        imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
-        details: "",
-        products: [
+      // {
+      //   name: "SPARE PARTS",
+      //   imageSrc:
+      //     "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+      //   details: "",
+      //   products: [
       
-        ],
-      },
-      {
-        name: "SPARE PARTS",
-        imageSrc:
-          "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
-        details: "",
-        products: [
+      //   ],
+      // },
+      // {
+      //   name: "SPARE PARTS",
+      //   imageSrc:
+      //     "/public/topproducts/Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer.jpg",
+      //   details: "",
+      //   products: [
          
-        ],
-      },
+      //   ],
+      // },
     ],
   },
 };

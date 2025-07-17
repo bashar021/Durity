@@ -79,7 +79,7 @@ const setFooter = () => {
         </div>
       </div>
        <div id="durity-short-links" class='text-center'>
-            <a href="">About Us</a><a href="">Careers</a><a href="">Events</a><a href="">Register</a><a href="">Terms & Conditions</a>
+            <a href="/components/about.html">About Us</a><a href="/components/carrerspage.html">Careers</a><a href="/components/events.html">Events</a><a href="/components/register.html">Register</a><a href="">Terms & Conditions</a>
        </div>
       <div class="footer-bottom text-steelblue ">
         <p class="text-steelblue">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>

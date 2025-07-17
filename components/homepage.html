@@ -175,7 +175,7 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
           </div>
         </div>
 
-        <a href="/about" class="about-cta bg-steelblue text-white">
+        <a href="/components/about.html" class="about-cta bg-steelblue text-white">
           <span>More About Us</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -201,11 +201,10 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 
       <div class="product-list invisible-scrollbar" id="productList">
         <!-- Products will be inserted here by JavaScript -->
-        <a href="${product.url}" class="productCard">
+        <!-- <a href="${product.url}" class="productCard">
           <img src="/public/home page/trending products images/VISTA COLLECTION.png"   alt="" class="product-image">
           <div class="product-name">Vista Collection </div>
-          <!-- <div class="product-code">Code: </div> -->
-        </a>
+        </a> -->
         <a href="${product.url}" class="productCard">
           <img  src="/public/home page/trending products images/Gloria Black Collection.jpg" alt="" class="product-image">
           <div class="product-name">Gloria Black Collection</div>
@@ -330,10 +329,12 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                       <span class="price-currency">$</span>
                       <span class="price-amount">499</span>
                   </div> -->
-          <button class="cta-button">
-            <!-- <i class="fas fa-shopping-cart"></i> -->
+          <!-- <button class="cta-button">
             Explore Faucets
-          </button>
+          </button> -->
+          <a href="/components/products.html?name=faucets" class="cta-button">
+            Explore Faucets
+          </a>
         </div>
 
         <!-- Product 2 -->
@@ -359,10 +360,10 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                       <span class="price-currency">$</span>
                       <span class="price-amount">299</span>
                   </div> -->
-          <button class="cta-button">
+          <a href="/components/products.html?name=ptmt" class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore PTMT
-          </button>
+          </a>
         </div>
         <!-- Product 3 -->
         <div class="product-card">
@@ -385,10 +386,10 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                       <span class="price-currency">$</span>
                       <span class="price-amount">399</span>
                   </div> -->
-          <button class="cta-button">
+          <a href="/components/products.html?name=showers" class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore Showers
-          </button>
+          </a>
         </div>
 
         <!-- Product 4 -->
@@ -413,10 +414,10 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                       <span class="price-currency">$</span>
                       <span class="price-amount">349</span>
                   </div> -->
-          <button class="cta-button">
+          <a href="/components/products.html?name=health%20faucet" class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore Health Faucets
-          </button>
+          </a>
         </div>
       </div>
     </div>
