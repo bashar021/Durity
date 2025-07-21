@@ -34,6 +34,7 @@
 //     },
 // ];
 // products = getRecentViewProductList()
+console.log('trending2.js is opning')
 function createProductCard(product) {
     const productList = document.getElementById('productList');
     let src = `${product.imageSrc}${product.code}.jpg`
@@ -99,3 +100,4 @@ function renderTrendingProducts() {
 //     const walk = (x - startX) * 2;
 //     productContainer.scrollLeft = scrollLeft - walk;
 // });
+console.log('treending 2 is closing')

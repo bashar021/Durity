@@ -1,5 +1,5 @@
 // Product categories data
-
+console.log('footer is opning')
 const setFooter = () => {
   let footer = document.getElementById("footer");
   footer.innerHTML = `
@@ -89,7 +89,7 @@ const setFooter = () => {
 };
 setFooter();
 let productCategories = {
-  Faucets: [
+  faucets: [
     "Freestanding Tubs",
     "Clawfoot Tubs",
     "Whirlpool Baths",
@@ -97,7 +97,7 @@ let productCategories = {
     "Bath Mats",
     "Bath Caddies",
   ],
-  PTMT: [
+  ptmt: [
     "Rain Showers",
     "Smart Showers",
     "Body Jets",
@@ -105,7 +105,7 @@ let productCategories = {
     "Shower Panels",
     "Shower Heads",
   ],
-  Showers: [
+  showers: [
     "Vanity Units",
     "Medicine Cabinets",
     "Wall Cabinets",
@@ -113,7 +113,7 @@ let productCategories = {
     "Towel Storage",
     "Bathroom Shelving",
   ],
-  "Health Faucets": [
+  "health faucet": [
     "Faucets",
     "Drains",
     "Grab Bars",
@@ -121,7 +121,7 @@ let productCategories = {
     "Robe Hooks",
     "Shower Door Hardware",
   ],
-  "Bath Accessories": [
+  "bath accessories": [
     "Towel Warmers",
     "Heated Floors",
     "Steam Systems",
@@ -129,7 +129,7 @@ let productCategories = {
     "Smart Mirrors",
     "Aromatherapy Diffusers",
   ],
-  "Faucets Parts": [
+  "faucet parts": [
     "Towel Warmers",
     "Heated Floors",
     "Steam Systems",
@@ -148,7 +148,10 @@ const setProductListInFooter = ()=>{
   })
   faucets = faucets?.products?.map((item)=>{
     // return item?.name
-    return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    let value = item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    // return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    // return <a >value</a>
+    return value
   })
   showers = showers?.products?.map((item)=>{
     // return item?.name
@@ -166,12 +169,12 @@ const setProductListInFooter = ()=>{
     return item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
     // return item?.name
   })
-  productCategories['PTMT'] = ptmt
-  productCategories['Faucets'] = faucets
-  productCategories['Showers'] = showers
-  productCategories['Faucets Parts'] =  faucet_parts
-  productCategories['Bath Accessories'] = bath_accessories
-  productCategories['Health Faucets'] =   health_faucet
+  productCategories['ptmt'] = ptmt
+  productCategories['faucets'] = faucets
+  productCategories['showers'] = showers
+  productCategories['faucet parts'] =  faucet_parts
+  productCategories['bath accessories'] = bath_accessories
+  productCategories['health faucet'] =   health_faucet
 
 }
 setProductListInFooter()
@@ -185,7 +188,7 @@ Object.entries(productCategories).forEach(([category, products]) => {
   categoryElement.className = "l-product-category";
   categoryElement.innerHTML = `
         <div class="l-category-header">
-            <h4>${category}</h4>
+            <h4>${category?.toUpperCase()}</h4>
             <span class="arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
             </span>
@@ -195,8 +198,8 @@ Object.entries(productCategories).forEach(([category, products]) => {
             <div class="l-product-grid">
                 ${products
                   .map(
-                    (product) => `
-                    <a href="#" class="l-product-link">${product}</a>
+                    (product,index) => `
+                    <a href="/components/product.html?name=${category}&category=${product}&index=${index}" class="l-product-link">${product}</a>
                 `
                   )
                   .join("")}
@@ -232,7 +235,7 @@ document.querySelectorAll(".l-category-header").forEach((header) => {
 // Newsletter functionality
 const subscribeButton = document.querySelector(".newsletter-form button");
 const emailInput = document.querySelector(".newsletter-form input");
-const successMessage = document.querySelector(".success-message");
+// const successMessage = document.querySelector(".success-message");
 
 // subscribeButton.addEventListener("click", () => {
 //   const email = emailInput.value.trim();
@@ -246,3 +249,5 @@ const successMessage = document.querySelector(".success-message");
 //     }, 3000);
 //   }
 // });
+
+console.log('footer is closing')

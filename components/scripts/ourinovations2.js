@@ -1,3 +1,4 @@
+console.log('our inovation is opning')
 const carousel = document.getElementById('productCarousel');
 const cards = document.querySelectorAll('.inovative-product');
 let activeIndex = Math.floor(cards.length / 2); // Start with the center card
@@ -24,13 +25,13 @@ function setActiveCard(index) {
 }
 
 // Add click event listeners to cards
-cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-        activeIndex = index;
-        setActiveCard(activeIndex);
-    });
-});
-setActiveCard(activeIndex-1);
+// cards.forEach((card, index) => {
+//     card.addEventListener('click', () => {
+//         activeIndex = index;
+//         setActiveCard(activeIndex);
+//     });
+// });
+// setActiveCard(activeIndex-1);
 
 // Scroll buttons functionality
 function scrollCarousel(direction) {
@@ -41,3 +42,4 @@ function scrollCarousel(direction) {
     }
     setActiveCard(activeIndex);
 }
+console.log('our inovation is closing')

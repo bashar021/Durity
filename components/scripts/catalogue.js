@@ -1,4 +1,4 @@
-
+console.log('catalogue is opning')
 
 function openCatalogueF() {
     document.getElementById('popupOverlay').style.display = 'flex';
@@ -84,3 +84,5 @@ document.getElementById('popupOverlay').onclick = function(event) {
         closePopup();
     }
 };
+
+console.log('catalogue is closing')

@@ -103,12 +103,17 @@
 }
 .suggestion-item{
     /* background-color: red; */
-    margin-top: 8px;
+    /* margin-top: 8px; */
     padding-left: 5px;
     padding-right: 5px;
     border-bottom: solid;
     border-width: 1px;
     border-color: rgba(128, 128, 128, 0.538);
+    cursor: pointer;
+    /* margin-top: 8px; */
+}
+.suggestion-item:hover{
+    background-color: rgb(180, 178, 178);
 }
 .search-dropdown a {
     padding: 10px;

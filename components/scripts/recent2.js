@@ -1,3 +1,4 @@
+console.log('recent2 is opning')
 const prevItems = localStorage.getItem("items");
 const recentViewContainer = document.getElementById("recentProducts");
 
@@ -108,3 +109,4 @@ if (productContainer) {
 }
 
 
+console.log('recent2 is closing')

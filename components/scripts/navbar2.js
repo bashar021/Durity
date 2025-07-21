@@ -1,5 +1,5 @@
 // Search functionality
-const searchDropdown = document.querySelector(".search-dropdown");
+console.log('navbar is opning')
 const productsDropdown = document.querySelector(".products");
 
 document.getElementById("navbar").innerHTML = `
@@ -150,6 +150,7 @@ document.getElementById("navbar").innerHTML = `
   
 `;
 const searchInput = document.getElementById("searchInput");
+const searchDropdown = document.querySelector(".search-dropdown");
 const catalogue_download_design_container = document.getElementById('catalogue-download-design-container')
 if(catalogue_download_design_container){
   catalogue_download_design_container.innerHTML = `
@@ -307,6 +308,7 @@ document.addEventListener("click", (e) => {
 });
 
 function filterSuggestions(query) {
+
   suggestions.innerHTML = ""; // Clear previous suggestions
   const filtered = itemNames?.filter((item) =>
     item?.toLowerCase().includes(query.toLowerCase())
@@ -353,10 +355,15 @@ mobileDropdowns.forEach((dropdown) => {
 });
 
 searchInput.addEventListener("input", () => {
+  
   if (searchInput.value !== "") {
+   
     searchDropdown.classList.add("active");
+    console.log(searchInput.value,'hiii')
     filterSuggestions(searchInput.value);
+    
   } else {
+   
     searchDropdown.classList.remove("active");
     suggestions.innerHTML = ""; // Clear previous suggestions
     searchDropdown.style.display = "none";
@@ -445,3 +452,5 @@ const getLocation_path = () => {
  
 };
 getLocation_path();
+
+console.log('nav bar is closing')
