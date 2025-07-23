@@ -238,7 +238,7 @@ if(catalogue_download_design_container){
             <textarea id="message" name="message" rows="3"></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Download Now</button>
+          <button type="submit" id="catalogue-dn-form" class="submit-btn">Download Now</button>
         </form>
       </div>
     </div>

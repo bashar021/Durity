@@ -61,25 +61,29 @@ form.addEventListener("submit", function (e) {
     .then(response => {
       if (response.ok) {
         successMessage.style.display = "block";
+        // alert('Message send successfully')
         form.reset();
       } else {
         response.json().then(data => {
         //   document.getElementById("response").innerText =
         //     data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! Something went wrong.";
         successMessage.innerHTML = 'Oops! Something went wrong.'
+        // alert('oops! something wents wrong.')
         });
       }
     })
     .catch(error => {
     //   document.getElementById("response").innerText = "Error sending message.";
     successMessage.innerHTML = 'Error sending message.'
-      console.error("Error:", error);
+    // alert('error in sending message ')
+      // console.error("Error:", error);
     });
     // form.reset();
     // successMessage.style.display = "block";
 
     setTimeout(() => {
       successMessage.style.display = "none";
+
     }, 3000);
   }
 });
