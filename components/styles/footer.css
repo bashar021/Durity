@@ -300,3 +300,10 @@
         width: 100%;
     }
 }
+
+
+.social-links{
+    text-decoration: none;
+    /* background-color: #035f94; */
+    color: #035f94;
+}
