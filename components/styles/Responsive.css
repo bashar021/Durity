@@ -1,0 +1,119 @@
+/* Very small phones (≤ 480px) */
+@media (max-width: 480px) {
+  /* Styles for small phones */
+  .footer-trademark {
+    /* background-color: red; */
+  }
+  .footer-trademark p {
+    font-size: 10px;
+  }
+  #durity-short-links {
+    font-size: 13px;
+  }
+  #footer-company-logo {
+    display: none;
+    /* height: 50px; */
+    /* width: 50px; */
+  }
+  .follow-us-footer-text {
+    margin-left: 20px;
+  }
+  #customer-support {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5%;
+  }
+  #customer-support div {
+    margin-bottom: 20px;
+  }
+  #catalogue-download-design-container {
+    font-size: 10px;
+    display: block;
+  }
+  .cat-download-card {
+    width: 85%;
+    margin-bottom: 20px;
+  }
+  .our-catalofues-title {
+    /* font-size: 120%; */
+  }
+  .cat-download-btn {
+    font-size: 12px;
+  }
+
+  .cf-section {
+    /* background-color: red; */
+    padding: 0px;
+  }
+  .cf-container {
+    width: 100%;
+    max-width: 100%;
+    /* background-color: red; */
+
+    margin: 0px;
+    margin-bottom: 5%;
+  }
+  .cf-info::after {
+    /* background-color: red; */
+    /* background-image: linear-gradient(red); */
+    width: 100%;
+  }
+  .cf-form-group input,
+  .cf-form-group textarea {
+    width: 95%;
+    padding: 10px;
+
+    font-size: 16px;
+  }
+  .homepage-our-collection-img{
+    /* height: 250px; */
+    height: 145px;
+    width: 170px;
+    /* width: 300px; */
+  }
+  .section-content{
+    /* background-color: red; */
+    max-width: 100%;
+    width: 100%;
+  }
+  .top-products-section{
+    /* background-color: green; */
+    padding: 0px;
+    margin-bottom: 8%;
+    min-height: auto;
+
+  }
+  .products-grid{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+  }
+  .our-collection-card{
+    /* background-color: red; */
+    padding: 10px;
+    /* width: fit-content; */
+    width: 40%;
+  }
+  .cta-button{
+    font-size: 12px;
+  }
+  
+  .section-content{
+    /* background-color: red; */
+  }
+  .background-shapes{
+    display: none;
+  }
+}
+
+/* Standard phones (≤ 600px) */
+@media (max-width: 600px) {
+  /* Styles for most phones */
+}
+
+/* Tablets and small devices (≤ 768px) */
+@media (max-width: 768px) {
+  /* Styles for tablets or landscape phones */
+}

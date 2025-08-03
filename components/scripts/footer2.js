@@ -10,9 +10,9 @@ const setFooter = () => {
   let footer = document.getElementById("footer");
   footer.innerHTML = `
        <div id='footer-logo-section'>
-              <img width='80' height='80' src='/public/icons/logo.svg'/>
+              <img id="footer-company-logo" width='80' height='80' src='/public/icons/logo.svg' alt='durity'/>
               <div>
-               <h1 class='text-h3 '>Follow Us</h1>
+               <h1 class='text-h3 follow-us-footer-text'>Follow Us</h1>
               <a class='social-links'  href='https://www.instagram.com/duritybathfittings?igsh=MWNsMm10cWc4bDNkbQ==' target="blank">
            <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
              <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 7.5c.828 0 1.5.672 1.5 1.5v6c0 .828-.672 1.5-1.5 1.5h-9c-.828 0-1.5-.672-1.5-1.5v-6c0-.828.672-1.5 1.5-1.5h9zm-4.5 1.5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 1.2c.993 0 1.8.807 1.8 1.8s-.807 1.8-1.8 1.8-1.8-.807-1.8-1.8.807-1.8 1.8-1.8zm3.75-2.1c-.414 0-.75.336-.75.75s.336.75.75.75.75-.336.75-.75-.336-.75-.75-.75z"/>
@@ -86,8 +86,8 @@ const setFooter = () => {
        <div id="durity-short-links" class='text-center'>
             <a href="/components/about.html">About Us</a><a href="/components/carrerspage.html">Careers</a><a href="/components/events.html">Events</a><a href="/components/register.html">Register</a><a href="">Terms & Conditions</a>
        </div>
-      <div class="footer-bottom text-steelblue ">
-        <p class="text-steelblue">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
+      <div class="footer-bottom text-steelblue footer-trademark">
+        <p class="text-steelblue x">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
       </div>
     </div>
     `;

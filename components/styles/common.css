@@ -130,3 +130,8 @@
     height: 0px; 
     /* Set the height of the horizontal scrollbar */
     }
+
+.homepage-our-collection-img{
+    height: 500px;
+    width: 600px;
+}
