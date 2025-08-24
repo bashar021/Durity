@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/components//styles//navbar2.css">
     <link rel="stylesheet" href="/components//styles/common.css">
     <link rel="stylesheet" href="/components//styles/footer.css">
+    <link rel="stylesheet" href="/components//styles/Responsive.css">
     <script src="/data/products.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/public/icons/D logo.png" />
     <script>
 
         $(function () {
@@ -46,168 +48,6 @@
 <body>
     <!-- <div id="navbar"></div> -->
     <div id="navbar">
-        <nav id="my-nav">
-            <div class="hamburger">☰</div>
-            <div class="logo">
-                <a href="/">
-                    <img src="/api/placeholder/150/50" alt="Company Logo">
-                </a>
-            </div>
-
-            <div class="search-container">
-                <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
-                <div class="search-dropdown" id="suggestions">
-                </div>
-            </div>
-
-            <div class="nav-links">
-                <div class="dropdown">
-                    <a href="/components/service.html">Products</a>
-                    <div class="dropdown-content">
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=faucets" class="products">Faucets</a>
-                            <div class="nested-dropdown-content" id="faucets-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
-                            <div class="nested-dropdown-content" id="ptmt-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=showers">Showers</a>
-                            <div class="nested-dropdown-content" id="showers-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=health faucet">Health Faucet</a>
-                            <div class="nested-dropdown-content" id="hf-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
-                            <div class="nested-dropdown-content" id="ba-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
-                            <div class="nested-dropdown-content" id="fp-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="/components/about.html">About Us</a>
-                <a href="/components/carrerspage.html">Careers</a>
-                <a href="/components/events.html">Events</a>
-                <div class="dropdown">
-                    <a href="/components/catalogue.html">E-Catalogue</a>
-                    <!-- <div class="dropdown-content">
-                <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
-                <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
-              </div> -->
-                </div>
-                <a href="/components/register.html">Register</a>
-            </div>
-        </nav>
-        <div class="sidebar">
-            <div class="close-btn">×</div>
-            <div class="nav-links">
-                <div class="dropdown">
-                    <a href="#">Products</a>
-                    <div class="dropdown-content">
-                        <!-- <a href="/components/products.html?name=faucets">Faucets</a> -->
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=faucets" class="products">Faucets</a>
-                            <div class="nested-dropdown-content" id="md-faucets-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
-                            <div class="nested-dropdown-content" id="md-ptmt-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=showers">Showers</a>
-                            <div class="nested-dropdown-content" id="md-showers-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=health faucet">Health Faucet</a>
-                            <div class="nested-dropdown-content" id="md-hf-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
-                            <div class="nested-dropdown-content" id="md-ba-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                        <div class="nested-dropdown">
-                            <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
-                            <div class="nested-dropdown-content" id="md-fp-nested-d">
-                                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="/components/about.html">About Us</a>
-                <a href="/components/carrerspage.html">Careers</a>
-                <a href="/components/events.html">Events</a>
-                <a href="/components/catalogue.html">E-Catalogue</a>
-                <a href="/components/register.html">Register</a>
-            </div>
-        </div>
-        <div class="popup-overlay" id="popupOverlay">
-            <div class="popup-form">
-                <button class="close-btn" onclick="closePopup()">&times;</button>
-                <div class="form-header">
-                    <p>Please fill out the form below to download our catalog</p>
-                </div>
-                <form id="downloadForm" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <div class="error" id="nameError">Please enter your name</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        <div class="error" id="emailError">Please enter a valid email</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mobile">Mobile Number</label>
-                        <input type="tel" id="mobile" name="mobile" required>
-                        <div class="error" id="mobileError">Please enter a valid mobile number</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="business">Business Name</label>
-                        <input type="text" id="business" name="business" required>
-                        <div class="error" id="businessError">Please enter your business name</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Download Now</button>
-                </form>
-            </div>
-        </div>
     </div>
     <div class="hero">
         <div>
@@ -219,7 +59,7 @@
     <div class="content">
         <section class="story-section">
             <div>
-                <h2 class="text-center text-h1">Our Story</h2>
+                <h2 class="text-center text-h1 about-page-titles">Our Story</h2>
                 <p>Founded over a decade ago, Durity Bath Fittings has grown into a trusted name in the world of bathroom solutions. What started as a humble initiative to deliver reliable, affordable fittings has now evolved into a respected B2B brand known for its quality, consistency, and innovation.</p>
                 <p>From day one, our focus has been clear — to build bathroom fittings that are durable, stylish, and engineered for performance. Every Durity product is a reflection of that vision. Designed for modern living and made to withstand time, our fittings are crafted using premium brass, advanced chrome plating, and precision-engineered components that meet rigorous quality standards. </p>
             </div>
@@ -242,7 +82,7 @@
         </div>
 
         <section class="timeline">
-            <h2 class="section-title">Our Journey</h2>
+            <h2 class="section-title about-page-titles">Our Journey</h2>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-date">2010</div>
@@ -274,7 +114,7 @@
         </section>
 
         <section class="testimonials">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title about-page-titles">What Our Clients Say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
@@ -332,7 +172,7 @@
         </div>
 
         <section class="awards-section">
-            <h2 class="section-title">Recognition & Awards</h2>
+            <h2 class="section-title about-page-titles">Recognition & Awards</h2>
             <div class="awards-grid">
                 <div class="award-card">
                     <div class="award-year">2023</div>
@@ -386,7 +226,7 @@
         </section> -->
 
         <section>
-            <h2 class="section-title">Our Showrooms</h2>
+            <h2 class="section-title about-page-titles">Our Showrooms</h2>
             <div class="gallery">
                 <div class="gallery-item">
                     <img src="/public/about us/4 showroom images/01.jpg" alt="Montreal Showroom">

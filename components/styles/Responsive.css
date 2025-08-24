@@ -95,9 +95,43 @@
     padding: 10px;
     /* width: fit-content; */
     width: 40%;
+    margin: 0px;
+    text-align: center;
+  }
+  .product-image-wrapper{
+   margin-bottom: 0px;
   }
   .cta-button{
     font-size: 12px;
+    word-break:keep-all;
+    word-wrap:normal;
+    line-break: none;
+    /* padding: 0px; */
+    padding-left: 0px;
+    text-align: center;
+    padding-right: 0px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .about-visual{
+    padding: 0px;
+    /* background-color: green; */
+    width: 100%;
+  }
+  .image-container{
+    /* background-color: red; */
+    margin-right: 0px;
+    right:10px;
+    left: 0px;
+    width: fit-content;
+    max-width: 100%;
+  }
+  .image-container img{
+    min-width: 100%;
   }
   
   .section-content{
@@ -105,6 +139,99 @@
   }
   .background-shapes{
     display: none;
+  }
+  .timeline{
+    /* background-color: red; */
+    min-width: 100%;
+    max-width: 100%;
+    /* margin: 0px; */
+  }
+  .timeline::before {
+    display: none;
+  }
+  .timeline-item{
+    /* background-color: green; */
+    max-width: 85%;
+    width: 85%;
+    padding: 0px;
+    /* min-width: 70%; */
+
+  }
+  .timeline-content{
+    /* background-color: blue; */
+    max-width: 100%;
+    width: 100%;
+    /* min-width: 80% */
+    /* display: none; */
+  }
+ 
+  .timeline-content p{
+    /* display: none; */
+  }
+  .timeline-content h3{
+    /* display: none; */
+  }
+  .timeline-date{
+    /* display: none; */
+  }
+  .about-page-titles{
+    font-size: 28px;
+  }
+  .home-page-titles{
+    font-size: 28px;
+  }
+  .careers-search-section{
+    /* background-color: red; */
+    padding-left: 0px;
+  
+    padding-right: 0px;
+  }
+  .careers-search-container{
+    /* background-color: green; */
+    max-width: 100%;
+    width:100% ;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .careers-search-input{
+    max-width: 80%;
+  }
+  .event-modal-overlay{
+    padding: 0px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+  }
+  .event-modal-container{
+    /* background-color: red; */
+    height: 70%;
+    min-width: 100%;
+    margin: 0px;
+  }
+  .event-modal-content{
+    /* background-color: red; */
+    padding-left: 0px !important;
+  }
+  .event-modal-description{
+    padding-left: 6%;
+  }
+  .event-modal-info{
+    /* background-color: red; */
+    /* padding: 0px; */
+    width: 95%;
+  }
+  .product-page-category-container{
+    /* background-color: red; */
+    /* padding: 0px; */
+    /* gap: 0px; */
+    /* scroll-padding: ; */
+    padding-bottom: 5%;
+  }
+  .product-page-category-container div{
+    /* background-color: green; */
+    min-width: 46%;
   }
 }
 

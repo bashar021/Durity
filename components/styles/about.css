@@ -132,6 +132,7 @@
 .timeline {
     position: relative;
     padding: 60px 0;
+    /* background-color: red; */
 }
 
 .timeline::before {
