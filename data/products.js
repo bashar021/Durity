@@ -2597,7 +2597,7 @@ const durityProducts = {
         ],
       },
       {
-        name: "Valnetino",
+        name: "Valentino",
         imageSrc:
           "/public/products category page images/faucets/categories/VALENTINO COLLECTION.png",
         details: "",
@@ -15821,7 +15821,6 @@ function getName() {
       }
     }
   }
-  console.log(itemsMapping);
 
   return { itemsMapping, itemNames };
 }

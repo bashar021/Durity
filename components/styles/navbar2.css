@@ -322,6 +322,9 @@
     background-color: #0052a3;
 }
 
+.catalogue-download-form-box{
+    overflow-y: auto;
+}
 @media (max-width: 968px) {
     .nav-links {
         display: none;

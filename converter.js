@@ -19,4 +19,3 @@ let  result = rows.slice(1).map(row => {
 result = result.map((item)=>{
     return {name:item['ITEM NAME'],code:item['ITEM CODE'],brand:item['Range'],finish:item['Color finish'],area:item['Instalation area'],mounting:item['type of mounting'],size:item['catridge MM'],quantity:item['Flow rate'],flow:item['Flow Type'],state:item['State'],imageSrc:'/public/products images/faucets/DELUXE/',details:'',imagesdata:[]}
 })
-console.log(result);

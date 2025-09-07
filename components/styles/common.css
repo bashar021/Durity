@@ -135,3 +135,32 @@
     height: 500px;
     width: 600px;
 }
+
+
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .scroll-btn:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  .scroll-btn.left-0 {
+    left: 5px;
+  }
+  
+  .scroll-btn.right-0 {
+    right: 5px;
+  }

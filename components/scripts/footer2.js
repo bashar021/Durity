@@ -1,5 +1,4 @@
 // Product categories data
-console.log('footer is opning')
 {/* <a>
 <svg width="30" height="40" viewBox="0 0 24 24" fill="currentColor">
  <path
@@ -84,7 +83,7 @@ const setFooter = () => {
         </div>
       </div>
        <div id="durity-short-links" class='text-center'>
-            <a href="/components/about.html">About Us</a><a href="/components/carrerspage.html">Careers</a><a href="/components/events.html">Events</a><a href="/components/register.html">Register</a><a href="">Terms & Conditions</a>
+            <a href="/components/about.html">About Us</a><span class='footer-nav-vertical-line'></span><a href="/components/carrerspage.html">Careers</a><span class='footer-nav-vertical-line'></span><a href="">Terms & Conditions</a><span class='footer-nav-vertical-line'></span><a href="/components/register.html">Register</a><span class='footer-nav-vertical-line'></span><a href="/components/events.html">Events</a>
        </div>
       <div class="footer-bottom text-steelblue footer-trademark">
         <p class="text-steelblue x">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
@@ -144,7 +143,6 @@ let productCategories = {
   ],
 };
 const setProductListInFooter = ()=>{
-  console.log('hiiiii',durityProducts)
   let {faucets,ptmt,showers,} = durityProducts
   let d = durityProducts
   ptmt = ptmt?.products?.map((item)=>{
@@ -254,5 +252,3 @@ const emailInput = document.querySelector(".newsletter-form input");
 //     }, 3000);
 //   }
 // });
-
-console.log('footer is closing')

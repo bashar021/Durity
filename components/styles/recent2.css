@@ -2,8 +2,13 @@
     width: 100%;
     overflow-x: auto;
     padding: 20px 0;
+    /* background-color: red; */
+
 }
 
+.recent-view-scrollbtn-box{
+    position: relative;
+}
 .product-list {
     display: flex;
     gap: 20px;
@@ -73,4 +78,5 @@
 
 #recentProducts{
     padding-top: 2%;
+    /* position: relative; */
 }

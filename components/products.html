@@ -147,7 +147,6 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
-        console.log(durityProducts[name], name)
         const products = durityProducts[name].products
         document.getElementById('cover-content').innerHTML +=`
          <h1>Explore Our ${name.charAt(0).toUpperCase() + name.slice(1)}</h1>

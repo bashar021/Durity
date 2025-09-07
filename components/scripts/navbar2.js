@@ -1,5 +1,4 @@
 // Search functionality
-console.log('navbar is opning')
 const productsDropdown = document.querySelector(".products");
 
 document.getElementById("navbar").innerHTML = `
@@ -86,10 +85,7 @@ document.getElementById("navbar").innerHTML = `
         </div>
         <div class="dropdown">
           <a href="/components/catalogue.html" class="">E-Catalogue</a>
-          <!-- <div class="dropdown-content">
-            <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
-            <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
-          </div> -->
+         
         </div>
        
       </div>
@@ -202,8 +198,8 @@ if(catalogue_download_design_container){
 
 
 
-    <div class="popup-overlay" id="popupOverlay">
-      <div class="popup-form">
+    <div class="popup-overlay" id="cataloguePopupOverlay">
+      <div class="popup-form catalogue-download-form-box">
         <button class="close-btn" onclick="closePopup()">&times;</button>
         <div class="form-header">
           <p class="text-black text-h4 mt-0 mb-0">Please fill out the form below to download our catalog</p>
@@ -235,7 +231,7 @@ if(catalogue_download_design_container){
 
           <div class="form-group">
             <label for="message">Message (Optional)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
+            <textarea id="message" name="message" rows="2"></textarea>
           </div>
 
           <button type="submit" id="catalogue-dn-form" class="submit-btn">Download Now</button>
@@ -289,7 +285,7 @@ document.getElementById("search_icon").addEventListener("click", () => {
     ) {
         // Check if the input is empty
         if (searchInput.value.trim() === '') {
-            console.log('There is no value');
+        
             document.getElementById("search_icon").style.display = "block";
             document.getElementById("searchInput").style.display = "none";
             document.getElementById("searchInput").style.width = "0%";
@@ -359,7 +355,6 @@ searchInput.addEventListener("input", () => {
   if (searchInput.value !== "") {
    
     searchDropdown.classList.add("active");
-    console.log(searchInput.value,'hiii')
     filterSuggestions(searchInput.value);
     
   } else {
@@ -389,33 +384,33 @@ const setCategoryItems = () => {
   const ba_nested_d = document.getElementById("ba-nested-d");
   const md_ba_nested_d = document.getElementById("md-ba-nested-d");
   faucet.forEach((item, index) => {
-    faucets_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    faucets_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
     }</a>`;
-    md_faucets_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_faucets_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
 
   ptmt.forEach((item, index) => {
-    ptmt_nested_d.innerHTML += `<a class="" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_ptmt_nested_d.innerHTML += `<a class="" href="components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    ptmt_nested_d.innerHTML += `<a class="" href="/components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_ptmt_nested_d.innerHTML += `<a class="" href="/components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   showers.forEach((item, index) => {
-    showers_nested_d.innerHTML += `<a class="" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_showers_nested_d.innerHTML += `<a class="" href="components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    showers_nested_d.innerHTML += `<a class="" href="/components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_showers_nested_d.innerHTML += `<a class="" href="/components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   health_faucets.forEach((item, index) => {
-    hf_nested_d.innerHTML += `<a class="" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_hf_nested_d.innerHTML += `<a class="" href="components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    hf_nested_d.innerHTML += `<a class="" href="/components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_hf_nested_d.innerHTML += `<a class="" href="/components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   bath_accessories.forEach((item, index) => {
-    ba_nested_d.innerHTML += `<a  class=""href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_ba_nested_d.innerHTML += `<a class="" href="components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    ba_nested_d.innerHTML += `<a  class=""href="/components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_ba_nested_d.innerHTML += `<a class="" href="/components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   const faucets_part = durityProducts["faucet parts"]?.products;
   const fp_nested_d = document.getElementById("fp-nested-d");
   const md_fp_nested_d = document.getElementById("md-fp-nested-d");
   faucets_part?.forEach((item, index) => {
-    fp_nested_d.innerHTML += `<a class="" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_fp_nested_d.innerHTML += `<a  class="" href="components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    fp_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_fp_nested_d.innerHTML += `<a  class="" href="/components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
 };
 setCategoryItems();
@@ -452,5 +447,3 @@ const getLocation_path = () => {
  
 };
 getLocation_path();
-
-console.log('nav bar is closing')

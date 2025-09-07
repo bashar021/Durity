@@ -2,12 +2,21 @@
     width: 100%;
     overflow-x: auto;
     padding: 20px 0;
+      /* show grab hand */
+}
+.product-container:active {
+    cursor: grabbing; 
+  }
+.trending-products-sroll-button-box{
+    /* background-color: red; */
+    position: relative;
 }
 
 .product-list {
     display: flex;
     gap: 20px;
     padding: 10px;
+    cursor: grab; 
 }
 
 .productCard {
@@ -73,3 +82,9 @@
     background: #555;
 }
 
+
+#trending-products-container{
+    background-color: var(--steelblue-1);
+    padding-top: 5px;
+    position: relative;
+}

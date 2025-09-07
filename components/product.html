@@ -40,31 +40,34 @@
             padding: 0px;
             /* background-color: red; */
         }
+
         .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 15px;
-        } 
-.productCard {
-    flex: 0 0 250px;
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
-    padding: 15px;
-    max-width: 240px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    background: white;
-    text-decoration: none;
-    color: inherit;
-    
-}
+        }
 
-.productCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+        .productCard {
+            flex: 0 0 250px;
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            padding: 15px;
+            max-width: 240px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background: white;
+            text-decoration: none;
+            color: inherit;
+
+        }
+
+        .productCard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
         .hero-section {
             background: url('https://placehold.co/1920x600') no-repeat center center;
             background-size: cover;
@@ -142,22 +145,24 @@
             z-index: 20;
         } */
 
-        .productCard{
+        .productCard {
             /* background-color: red; */
             padding: 0px;
             display: flex;
             flex-direction: column;
         }
-        .product-container-details-footer{
+
+        .product-container-details-footer {
             background-color: rgb(237, 237, 237);
             /* padding: 2%; */
             /* padding-left: 2%; */
             /* height:max-content; */
             bottom: 0px;
-            overflow:hidden;
-            flex: 1;      
+            overflow: hidden;
+            flex: 1;
         }
-        .product-name{
+
+        .product-name {
             /* white-space:; */
             /* word-wrap: break-word; */
             /* background-color: red; */
@@ -166,9 +171,10 @@
             /* margin-right: 2%; */
             padding-left: 2%;
             white-space: normal;
-            word-wrap:break-word;
+            word-wrap: break-word;
         }
-        .product-code{
+
+        .product-code {
             padding-left: 2%;
         }
 
@@ -391,16 +397,15 @@
             }
         } */
         @media(max-width: 575.98px) {
-            .productCard{
+            .productCard {
                 /* background-color: red; */
                 /* width: 100px; */
                 max-width: 38vw !important;
             }
         }
+
         /* Small Devices (Tablets, 576px and up) */
-        @media (min-width: 576px) and (max-width: 767.98px) {
-            
-        }
+        @media (min-width: 576px) and (max-width: 767.98px) {}
 
         /* Medium Devices (Desktops, 768px and up) */
         @media (min-width: 768px) and (max-width: 991.98px) {}
@@ -410,12 +415,12 @@
 
         /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
         @media (min-width: 1200px) {}
-        .product-container-details-footer{
+
+        .product-container-details-footer {
             /* background-color:var(--steelblue-1); */
             /* background-color: rgb(236, 236, 236);
             color:var(--steelblue-1); */
         }
-       
     </style>
 </head>
 
@@ -426,12 +431,11 @@
 
     <div class="hero-section"></div>
     <div id="location-path-container" class="">
-        <img src="/public//icons/home.svg" width="10px" height="10px" alt="home"
-            class="pt-category-image">
+        <img src="/public//icons/home.svg" width="10px" height="10px" alt="home" class="pt-category-image">
     </div>
     <h1 id="products-heading" class="text-center text-steelblue text-h1"></h1>
     <div id="productsBox" class="category-container product-page-category-container">
-        
+
     </div>
 
     <div id="detailsPopup" class="productDetailsPopup">
@@ -460,7 +464,7 @@
         <button class="pagination-button" id="nextButton">Next</button>
     </div>
     <div class="pagination-info" id="pageInfo"></div>
-    <div  id="customer-support"></div>
+    <div id="customer-support"></div>
     <footer class="footer" id="footer">
     </footer>
     <script defer src="/components//scripts/footer2.js"></script>
@@ -471,21 +475,36 @@
     <!-- <div id="footer"></div> -->
 
     <script>
-        // const durityProducts = window.durityProducts
-        // import {durityProducts} from './products.js';
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
         const category = params.get('category')
         const index = params.get('index')
-        const products = durityProducts[name].products[index]?.products
+        const products = durityProducts[name].products[index]?.products // taking out master product data from the data file 
+        const data_length = products?.length
         const productContainer = document.getElementById('productsBox')
+        const pageFromUrl = parseInt(params.get('page'), 10);
+        const page_size = 10 // items per page 
+        // console.log('total data length = ',data_length,' page size = ',page_size,' current page = ',pageFromUrl||1)
         document.getElementById('products-heading').innerText = `${category?.toUpperCase()} ${name?.toUpperCase()}`
+        document.addEventListener('pageChange', (e) => {
+            productContainer.innerHTML = '';
+            createProductCards(e.detail?.currentPage, page_size)
+            // Here you can update your content based on the new page
+        });
+        createProductCards(pageFromUrl || 1, 8) // creating initial product cards when page open 
+        const code = params.get('code')
+        if (code) {
+            openPopup(code)
+        }
 
-        function createProductCards(currentPage, itemPerPage) {
-
-            const startIndex = (currentPage - 1) * itemPerPage
-            const endIndex = startIndex + itemPerPage
-            console.log(startIndex, endIndex, 'hii')
+        function createProductCards(currentPage) {
+            const total = products?.length // total length of the data 
+            const startIndex = (currentPage - 1) * page_size
+            const endIndex = startIndex + page_size
+            let off_set = 0
+            if (currentPage > 1) {
+                off_set = currentPage * page_size
+            }
 
             let toShowProducts = products.slice(startIndex, endIndex)
             toShowProducts.forEach((product, index) => {
@@ -493,7 +512,7 @@
                 const img = new Image();
                 img.src = src
                 let cardHTML = `
-                <div onclick="openPopup(${index})"  class="productCard " id='md-productCard'>
+                <div onclick="openPopup(${index + startIndex})"  class="productCard " id='md-productCard'>
                     <img src="${product?.imageSrc}${product?.code}.jpg" alt="${product.name}"  class="product-image">
                     <div class='product-container-details-footer'>
                           <div class="product-name">${product.name}</div>
@@ -518,10 +537,8 @@
                 }
             })
         }
-        createProductCards(1, 8)
-        function saveToLocalStorage(path){
+        function saveToLocalStorage(path) {
             const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
-            console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
             let product_details = products[path]
             product_details['openPath'] = productUrl
             const now = new Date();
@@ -540,6 +557,9 @@
             localStorage.setItem('items', JSON.stringify(item))
         }
         function openPopup(path) {
+
+
+            // return 0
             saveToLocalStorage(path)
             url = `/components/productitem.html?name=${name}&category=${category}&index=${index}&code=${path}`
             window.location.href = url
@@ -583,16 +603,11 @@
             // `
         }
         const closePopup = () => {
-            console.log('hii')
             document.getElementById('detailsPopup').style.display = 'none';
             const details_box = document.getElementById('details_box')
             details_box.innerHTML = ``
         }
-        const code = params.get('code')
-        if (code) {
-            openPopup(code)
-            // console.log(code)
-        }
+    
 
         class Pagination {
             constructor(options) {
@@ -607,6 +622,13 @@
                 this.pageInfo = document.getElementById('pageInfo');
 
                 this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+
+                // ✅ Read initial page from URL (default to 1 if invalid or missing)
+                const params = new URLSearchParams(window.location.search);
+                const pageFromUrl = parseInt(params.get('page'), 10);
+                this.currentPage = (!isNaN(pageFromUrl) && pageFromUrl >= 1 && pageFromUrl <= this.totalPages)
+                    ? pageFromUrl
+                    : 1;
 
                 this.init();
             }
@@ -639,55 +661,39 @@
                 return Array.from({ length: end - start + 1 }, (_, i) => start + i);
             }
 
-        //     render() {
-               
-        //         this.prevButton.disabled = this.currentPage === 1;
-        //         this.nextButton.disabled = this.currentPage === this.totalPages;
+            render() {
+                this.prevButton.disabled = this.currentPage === 1;
+                this.nextButton.disabled = this.currentPage === this.totalPages;
 
-               
-        //         const pageRange = this.getPageRange();
-        //         this.pageNumbers.innerHTML = pageRange
-        //             .map(pageNum => `
-        //     <button class="pagination-button ${pageNum === this.currentPage ? 'active' : ''}"
-        //             onclick="pagination.goToPage(${pageNum})">
-        //       ${pageNum}
-        //     </button>
-        //   `).join('');
+                // Clear existing page numbers
+                this.pageNumbers.innerHTML = '';
 
-               
-        //         const start = (this.currentPage - 1) * this.itemsPerPage + 1;
-        //         const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
-        //         this.pageInfo.textContent = `Showing ${start}-${end} of ${this.totalItems} items`;
-        //     }
-        render() {
-    this.prevButton.disabled = this.currentPage === 1;
-    this.nextButton.disabled = this.currentPage === this.totalPages;
+                // Dynamically create and append buttons
+                const pageRange = this.getPageRange();
+                pageRange.forEach(pageNum => {
+                    const btn = document.createElement('button');
+                    btn.textContent = pageNum;
+                    btn.className = `pagination-button ${pageNum === this.currentPage ? 'active' : ''}`;
+                    btn.addEventListener('click', () => this.goToPage(pageNum));
+                    this.pageNumbers.appendChild(btn);
+                });
 
-    // Clear existing page numbers
-    this.pageNumbers.innerHTML = '';
-
-    // Dynamically create and append buttons
-    const pageRange = this.getPageRange();
-    pageRange.forEach(pageNum => {
-        const btn = document.createElement('button');
-        btn.textContent = pageNum;
-        btn.className = `pagination-button ${pageNum === this.currentPage ? 'active' : ''}`;
-        btn.addEventListener('click', () => this.goToPage(pageNum));
-        this.pageNumbers.appendChild(btn);
-    });
-
-    const start = (this.currentPage - 1) * this.itemsPerPage + 1;
-    const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
-    this.pageInfo.textContent = `Showing ${start}-${end} of ${this.totalItems} items`;
-}
+                const start = (this.currentPage - 1) * this.itemsPerPage + 1;
+                const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
+                this.pageInfo.textContent = `Showing ${start}-${end} of ${this.totalItems} items`;
+            }
 
 
             goToPage(page) {
-               
+
                 if (page < 1 || page > this.totalPages) return;
                 this.currentPage = page;
                 this.render();
-                console.log(page,'page')
+
+                // ✅ Update URL query param without reload
+                const url = new URL(window.location);
+                url.searchParams.set('page', this.currentPage);
+                window.history.pushState({}, '', url);
 
                 // Custom event for page change
                 const event = new CustomEvent('pageChange', {
@@ -698,31 +704,15 @@
                         endIndex: Math.min(this.currentPage * this.itemsPerPage, this.totalItems)
                     }
                 });
-                console.log(event,'event')
                 document.dispatchEvent(event);
             }
         }
         const pagination = new Pagination({
-            totalItems: products.length,
-            itemsPerPage: 12,
-            maxPageNumbers: 5
+            totalItems: data_length,
+            itemsPerPage: page_size,
+            // maxPageNumbers: 5
         });
 
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     window.pagination = new Pagination({
-//         totalItems: products.length,
-//         itemsPerPage: 12,
-//         maxPageNumbers: 5
-//     });
-// });
-
-        document.addEventListener('pageChange', (e) => {
-            console.log('Page changed:', e.detail);
-            productContainer.innerHTML = '';
-            createProductCards(e.detail?.currentPage, e.detail?.itemsPerPage)
-            // Here you can update your content based on the new page
-        });
     </script>
     <script defer src="/components//scripts//navbar2.js"></script>
     <script src="/components//scripts//catalogue.js"></script>

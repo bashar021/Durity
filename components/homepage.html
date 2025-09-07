@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/components//styles/cataloguesections.css">
   <link rel="stylesheet" href="/components//styles/common.css">
   <link rel="stylesheet" href="/components//styles/Responsive.css">
+  <link rel="stylesheet" href="/components//styles/homepageCarausel.css">
   <script src="/data/products.js"></script>
   <script>
     $(function () {
@@ -55,24 +56,6 @@
       padding-left: 10px;
       /* padding: 10px; */
     }
-    #home-page-banner-container{
-      /* max-height: 60%; */
-      /* padding-bottom: 5%; */
-      /* background-color: red; */
-    padding-top: 0.5%;
-    }
-    #home-page-banner-container img{
-      width: 100%;
-      /* max-height: 100%; */
-      object-fit: contain;
-      background-color:white;
-      /* min-height: 710px; */
-      height: 100%;
-      /* max-height: 710px; */
-      object-fit: cover;
-    }
-  
-
   </style>
 </head>
 
@@ -80,18 +63,56 @@
   <div id="navbar">
   </div>
   <!-- <div id="banner"></div> -->
-  <div id="home-page-banner-container">
-    <!-- <img src="https://placehold.co/1920x1080" width="100%" height="100%"  alt=""></img> -->
+  <!-- <div id="home-page-banner-container">
+    <img src="https://placehold.co/1920x1080" width="100%" height="100%"  alt=""></img>
     <img  src="/public/home page/home page main banner/COVER 01.jpg"     alt="banner"></img>
+  </div> -->
+  <div id="home-page-banner-container">
+    <!-- home page carausel  -->
+    <div class="carousel-wrapper">
+      <div class="carousel-slides" id="carouselSlides">
+        <!-- Slides will be dynamically generated -->
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="carousel-nav prev" onclick="HomePageCarousel.prevSlide()">&lt;</button>
+      <button class="carousel-nav next" onclick="HomePageCarousel.nextSlide()">&gt;</button>
+
+      <!-- Dots Navigation -->
+      <div class="carousel-dots" id="carouselDots">
+        <!-- Dots will be dynamically generated -->
+      </div>
+
+      <!-- Progress Bar -->
+      <!-- <div class="carousel-progress">
+        <div class="carousel-progress-bar" id="progressBar"></div>
+      </div> -->
+
+      <!-- Play/Pause Control -->
+      <!-- <button class="carousel-control" id="playPauseBtn" onclick="carousel.toggleAutoplay()">
+        ⏸️
+      </button> -->
+    </div>
   </div>
   <div id="recentProducts" class="bg-smoke">
     <p class="text-center text-bold text-h1 text-black">RECENT VIEW PRODUCTS</p>
-    <div class="product-container invisible-scrollbar">
-
-      <div class="product-list invisible-scrollbar" id="productList">
-        <!-- Products will be inserted here by JavaScript -->
+    <div class="recent-view-scrollbtn-box">
+      <button id="recentScrollLeft" class="scroll-btn left-0">
+        &#10094; <!-- ‹ symbol -->
+      </button>
+      <div id="recent-view-product-container" class="product-container invisible-scrollbar ">
+        <div class="product-list invisible-scrollbar" id="productList">
+          <!-- Products will be inserted here by JavaScript -->
+        </div>
       </div>
+      <button id="recentScrollRight" class="scroll-btn right-0">
+        &#10095; <!-- › symbol -->
+      </button>
     </div>
+
+  </div>
+
+
   </div>
   <div id="whoweare">
     <p class="text-black text-center text-h1 text-bold">WHO WE ARE</p>
@@ -109,45 +130,48 @@
       </div> -->
       <div class="whoweare-box">
         <div class="whoweare-svg-container">
-          <svg width="60" height="60" fill="none" stroke="currentColor" stroke-width="2"
-stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-  <rect x="3" y="3" width="7" height="7" />
-  <rect x="14" y="3" width="7" height="7" />
-  <rect x="14" y="14" width="7" height="7" />
-  <rect x="3" y="14" width="7" height="7" />
-</svg>
+          <svg width="60" height="60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
 
         </div>
         <h3>Huge Collection </h3>
-        <p class="text-color-grey text-h3">Explore our huge collection of bathroom accessories, offering diverse styles and finishes to perfectly match any space and preference.</p>
+        <p class="text-color-grey text-h3">Explore our huge collection of bathroom accessories, offering diverse styles
+          and finishes to perfectly match any space and preference.</p>
       </div>
       <div class="whoweare-box">
         <div class="whoweare-svg-container">
-          <svg width="65" height="65" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg width="65" height="65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
             <path d="M9 18h6" />
             <path d="M10 22h4" />
             <path d="M12 2a7 7 0 0 0-4 12v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1a7 7 0 0 0-4-12z" />
           </svg>
-          
+
         </div>
         <h3>Next-Gen Design </h3>
-        <p class="text-color-grey text-h3">Experience innovation with our next-gen designs—modern, sleek, and functional accessories crafted to elevate today’s  bathroom aesthetics.</p>
+        <p class="text-color-grey text-h3">Experience innovation with our next-gen designs—modern, sleek, and functional
+          accessories crafted to elevate today’s bathroom aesthetics.</p>
       </div>
 
       <div class="whoweare-box">
         <div class="whoweare-svg-container">
-          <svg width="65" height="65" fill="none" stroke="currentColor" stroke-width="2" 
-          stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg width="65" height="65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
             <path d="M3 10h18v6a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-6z" />
             <path d="M7 10V5a2 2 0 1 1 4 0v5" />
             <line x1="6" y1="19" x2="6" y2="21" />
             <line x1="18" y1="19" x2="18" y2="21" />
           </svg>
-          
+
         </div>
         <h3>Bath Solution</h3>
-        <p class="text-color-grey text-h3">From taps to towel holders, we provide complete bath solutions that combine quality, durability, and style for every bathroom need.</p>
+        <p class="text-color-grey text-h3">From taps to towel holders, we provide complete bath solutions that combine
+          quality, durability, and style for every bathroom need.</p>
       </div>
     </div>
   </div>
@@ -158,7 +182,9 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 
         <h3 class="about-section-title text-black">A Decade of Trust. A Legacy of Quality.</h3>
         <p class="about-text text-gray">
-          Founded over a decade ago, Durity Bath Fittings has grown into a trusted name in the world of bathroom solutions. What started as a humble initiative to deliver reliable, affordable fittings has now evolved into a respected B2B brand known for its quality, consistency, and innovation.
+          Founded over a decade ago, Durity Bath Fittings has grown into a trusted name in the world of bathroom
+          solutions. What started as a humble initiative to deliver reliable, affordable fittings has now evolved into a
+          respected B2B brand known for its quality, consistency, and innovation.
         </p>
 
         <div class="stats-grid">
@@ -188,64 +214,75 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <div class="image-container">
           <img src="/public/home page/home page about us three images/1.jpg" alt="Product 1">
           <img src="/public/home page/home page about us three images/2.jpg" alt="Product 2">
-          <img id="about-section-image-3" src="/public/home page/home page about us three images/3.jpg"
-            alt="Product 3">
+          <img id="about-section-image-3" src="/public/home page/home page about us three images/3.jpg" alt="Product 3">
         </div>
       </div>
     </div>
   </section>
 
-  <div id="trending">
+  <div id="trending-products-container">
     <!-- <p class="section-heading">Trending Accessories</p> -->
     <h1 class="text-center text-bold text-black text-h1">TRENDING PRODUCTS</h1>
-    <div class="product-container invisible-scrollbar">
+    <div class="trending-products-sroll-button-box">
+      <button id="scrollLeft" class="scroll-btn left-0">
+        &#10094; <!-- ‹ symbol -->
+      </button>
+      <div id="product-container" class="product-container invisible-scrollbar ">
 
-      <div class="product-list invisible-scrollbar" id="productList">
-        <!-- Products will be inserted here by JavaScript -->
-        <!-- <a href="${product.url}" class="productCard">
-          <img src="/public/home page/trending products images/VISTA COLLECTION.png"   alt="" class="product-image">
-          <div class="product-name">Vista Collection </div>
-        </a> -->
-        <a class="productCard">
-          <img  src="/public/home page/trending products images/Gloria Black Collection.jpg" alt="" class="product-image">
-          <div class="product-name">Gloria Black Collection</div>
+        <div class="product-list invisible-scrollbar" id="productList">
+          <!-- Products will be inserted here by JavaScript -->
+          <!-- <a href="${product.url}" class="productCard">
+            <img src="/public/home page/trending products images/VISTA COLLECTION.png"   alt="" class="product-image">
+            <div class="product-name">Vista Collection </div>
+          </a> -->
+          <a class="productCard" href="/components/product.html?name=faucets&category=GLORIA%20BLACK&index=0">
+            <img src="/public/home page/trending products images/Gloria Black Collection.jpg" alt=""
+              class="product-image">
+            <div class="product-name">Gloria Black Collection</div>
 
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/Primo Collection.jpg" alt="" class="product-image">
-          <div class="product-name"> Primo Collection</div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/Valentino Collection.jpg" alt=""
-            class="product-image">
-          <div class="product-name">Valentino Collection</div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/VISTA COLLECTION.png" alt=""
-            class="product-image">
-          <div class="product-name">Vista Collection</div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/TREND COLLECTION.jpg" alt="" class="product-image">
-          <div class="product-name"> Trend Collection</div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/futurix health faucet.png" alt="" class="product-image">
-          <div class="product-name"> Futurix Health Faucet
-          </div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/COLOUR HEALTH FAUCET.png" alt="" class="product-image">
-          <div class="product-name">Colour Health Faucet
-          </div>
-        </a>
-        <a  class="productCard">
-          <img src="/public/home page/trending products images/FLOWER SHOWER.png" alt="" class="product-image">
-          <div class="product-name">Flower Rain Shower
-          </div>
-        </a>
+          </a>
+          <a class="productCard" href="/components/product.html?name=faucets&category=Primo&index=4">
+            <img src="/public/home page/trending products images/Primo Collection.jpg" alt="" class="product-image">
+            <div class="product-name"> Primo Collection</div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=faucets&category=Valentino&index=5">
+            <img src="/public/home page/trending products images/Valentino Collection.jpg" alt="" class="product-image">
+            <div class="product-name">Valentino Collection</div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=faucets&category=Vista&index=13">
+            <img src="/public/home page/trending products images/VISTA COLLECTION.png" alt="" class="product-image">
+            <div class="product-name">Vista Collection</div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=faucets&category=Trend&index=11">
+            <img src="/public/home page/trending products images/TREND COLLECTION.jpg" alt="" class="product-image">
+            <div class="product-name"> Trend Collection</div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=health%20faucet&category=FUTURIX&index=0">
+            <img src="/public/home page/trending products images/futurix health faucet.png" alt=""
+              class="product-image">
+            <div class="product-name"> Futurix Health Faucet
+            </div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=health%20faucet&category=COLOUR&index=4">
+            <img src="/public/home page/trending products images/COLOUR HEALTH FAUCET.png" alt="" class="product-image">
+            <div class="product-name">Colour Health Faucet
+            </div>
+          </a>
+          <a class="productCard" href="/components/product.html?name=showers&category=FLOWER&index=4">
+            <img src="/public/home page/trending products images/FLOWER SHOWER.png" alt="" class="product-image">
+            <div class="product-name">Flower Rain Shower
+            </div>
+          </a>
+        </div>
+
       </div>
+      <button id="scrollRight" class="scroll-btn right-0">
+        &#10095; <!-- › symbol -->
+      </button>
     </div>
+
+
+
   </div>
   <!-- <div class="innovation-section">
     <div class="innovation-section-title">
@@ -312,8 +349,8 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <!-- Product 1 -->
         <div class="product-card our-collection-card">
           <div class="product-image-wrapper">
-            <img src="/public/home page/home page our collection images/FAUCET.png"
-              alt="Smart Shower System" class="product-image homepage-our-collection-img"  >
+            <img src="/public/home page/home page our collection images/FAUCET.png" alt="Smart Shower System"
+              class="product-image homepage-our-collection-img">
             <!-- <span class="product-label">NEW</span> -->
           </div>
           <!-- <h3 class="product-title">Faucets</h3>
@@ -341,10 +378,8 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <!-- Product 2 -->
         <div class="product-card our-collection-card">
           <div class="product-image-wrapper">
-            <img
-              src="/public/home page/home page our collection images/PTMT.jpg"
-            
-              alt="Luxury Bathtub" class="product-image homepage-our-collection-img" >
+            <img src="/public/home page/home page our collection images/PTMT.jpg" alt="Luxury Bathtub"
+              class="product-image homepage-our-collection-img">
             <!-- <span class="product-label">PREMIUM</span> -->
           </div>
           <!-- <h3 class="product-title">PTMT</h3>
@@ -369,8 +404,9 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <!-- Product 3 -->
         <div class="product-card our-collection-card">
           <div class="product-image-wrapper">
-            
-            <img     src="/public/home page/home page our collection images/SHOWER.png" alt="Smart Mirror" class="product-image homepage-our-collection-img" >
+
+            <img src="/public/home page/home page our collection images/SHOWER.png" alt="Smart Mirror"
+              class="product-image homepage-our-collection-img">
             <!-- <span class="product-label">BESTSELLER</span> -->
           </div>
           <!-- <h3 class="product-title">Showers</h3>
@@ -396,10 +432,8 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <!-- Product 4 -->
         <div class="product-card our-collection-card ">
           <div class="product-image-wrapper">
-            <img
-           
-              src="/public/home page/home page our collection images/HEALTH FAUCET.png"
-              alt="Storage Solution" class="product-image homepage-our-collection-img" >
+            <img src="/public/home page/home page our collection images/HEALTH FAUCET.png" alt="Storage Solution"
+              class="product-image homepage-our-collection-img">
             <!-- <span class="product-label">TRENDING</span> -->
           </div>
           <!-- <h3 class="product-title">Health Faucets</h3>
@@ -430,13 +464,14 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <div class="cf-card">
           <h3>Our Mission
           </h3>
-          <p>To deliver exceptional quality bathroom fittings that offer long-term value to our clients — without compromising on aesthetics, performance, or trust.
+          <p>To deliver exceptional quality bathroom fittings that offer long-term value to our clients — without
+            compromising on aesthetics, performance, or trust.
           </p>
         </div>
         <div class="cf-card">
           <h3>Visit Us</h3>
           <p>Work & Office Address<br>
-            56/B, Damodar Park Industrial Area,<br/> Dilshad Garden,<br>
+            56/B, Damodar Park Industrial Area,<br /> Dilshad Garden,<br>
             Delhi - 110095</p>
         </div>
         <div class="cf-card">
@@ -518,7 +553,9 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
       </div>
       <div class="content-right">
         <h2 class="text-black bg-black">Next-Gen Bathing Starts Here</h2>
-        <p class="text-gray">Xperience the ultimate convenience at your fingertips. Download our app today and explore a world of premium bathroom accessories, exclusive offers, and seamless shopping, all from the comfort of your home.</p>
+        <p class="text-gray">Xperience the ultimate convenience at your fingertips. Download our app today and explore a
+          world of premium bathroom accessories, exclusive offers, and seamless shopping, all from the comfort of your
+          home.</p>
 
         <!-- <div class="features">
           <div class="feature-item">
@@ -560,11 +597,18 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 
         <div class="store-buttons">
           <a href="https://apps.apple.com/in/app/durity-bath/id6742816121" target="blank" class="store-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47c-1.34.03-1.77-.79-3.29-.79c-1.53 0-2 .77-3.27.82c-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51c1.28-.02 2.5.87 3.29.87c.78 0 2.26-1.07 3.81-.91c.65.03 2.47.26 3.64 1.98c-.09.06-2.17 1.28-2.15 3.81c.03 3.02 2.65 4.03 2.68 4.04c-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5c.13 1.17-.34 2.35-1.04 3.19c-.69.85-1.83 1.51-2.95 1.42c-.15-1.15.41-2.35 1.05-3.11"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47c-1.34.03-1.77-.79-3.29-.79c-1.53 0-2 .77-3.27.82c-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51c1.28-.02 2.5.87 3.29.87c.78 0 2.26-1.07 3.81-.91c.65.03 2.47.26 3.64 1.98c-.09.06-2.17 1.28-2.15 3.81c.03 3.02 2.65 4.03 2.68 4.04c-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5c.13 1.17-.34 2.35-1.04 3.19c-.69.85-1.83 1.51-2.95 1.42c-.15-1.15.41-2.35 1.05-3.11" />
+            </svg>
             <span>Apple Store</span>
           </a>
-          <a href="https://play.google.com/store/apps/details?id=com.DurityBathBasiq360.app" target="blank" class="store-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M12.735 1.828L13.6.254a.172.172 0 0 0-.3-.164l-.874 1.59a6 6 0 0 0-2.428-.508c-.869 0-1.69.181-2.424.506L6.698.09a.17.17 0 0 0-.232-.069a.17.17 0 0 0-.069.232l.866 1.572c-1.7.874-2.85 2.537-2.849 4.447l11.166-.001c0-1.91-1.146-3.57-2.845-4.444m-5.278 2.43a.467.467 0 1 1 .001-.934a.467.467 0 0 1 0 .935M15.542 6.7l.002 8.012c0 .481-.262.897-.648 1.127a1.3 1.3 0 0 1-.675.19l-.904.001v2.734a1.237 1.237 0 0 1-1.489 1.21a1.24 1.24 0 0 1-.99-1.209V16.03H9.163v2.735A1.237 1.237 0 0 1 7.925 20a1.24 1.24 0 0 1-1.238-1.235V16.03h-.901c-.521 0-.967-.3-1.182-.736a1.3 1.3 0 0 1-.141-.581l-.002-8.01zM2.74 6.47c.684 0 1.24.553 1.24 1.234v5.17q0 .127-.025.249a1.238 1.238 0 0 1-1.897.78a1.23 1.23 0 0 1-.557-1.03L1.5 7.704c0-.68.555-1.234 1.24-1.234m14.52-.001c.684 0 1.24.552 1.24 1.234v5.169c0 .683-.555 1.235-1.239 1.235c-.685 0-1.24-.552-1.24-1.235v-5.17c0-.682.554-1.235 1.238-1.234M12.54 3.325a.467.467 0 1 1 0 .933a.467.467 0 1 1 0-.933"/></svg>
+          <a href="https://play.google.com/store/apps/details?id=com.DurityBathBasiq360.app" target="blank"
+            class="store-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+              <path fill="currentColor" fill-rule="evenodd"
+                d="M12.735 1.828L13.6.254a.172.172 0 0 0-.3-.164l-.874 1.59a6 6 0 0 0-2.428-.508c-.869 0-1.69.181-2.424.506L6.698.09a.17.17 0 0 0-.232-.069a.17.17 0 0 0-.069.232l.866 1.572c-1.7.874-2.85 2.537-2.849 4.447l11.166-.001c0-1.91-1.146-3.57-2.845-4.444m-5.278 2.43a.467.467 0 1 1 .001-.934a.467.467 0 0 1 0 .935M15.542 6.7l.002 8.012c0 .481-.262.897-.648 1.127a1.3 1.3 0 0 1-.675.19l-.904.001v2.734a1.237 1.237 0 0 1-1.489 1.21a1.24 1.24 0 0 1-.99-1.209V16.03H9.163v2.735A1.237 1.237 0 0 1 7.925 20a1.24 1.24 0 0 1-1.238-1.235V16.03h-.901c-.521 0-.967-.3-1.182-.736a1.3 1.3 0 0 1-.141-.581l-.002-8.01zM2.74 6.47c.684 0 1.24.553 1.24 1.234v5.17q0 .127-.025.249a1.238 1.238 0 0 1-1.897.78a1.23 1.23 0 0 1-.557-1.03L1.5 7.704c0-.68.555-1.234 1.24-1.234m14.52-.001c.684 0 1.24.552 1.24 1.234v5.169c0 .683-.555 1.235-1.239 1.235c-.685 0-1.24-.552-1.24-1.235v-5.17c0-.682.554-1.235 1.238-1.234M12.54 3.325a.467.467 0 1 1 0 .933a.467.467 0 1 1 0-.933" />
+            </svg>
             <span>Google Play</span>
           </a>
         </div>
@@ -574,9 +618,9 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
   <h1 class="text-center text-black text-bold text-h1 our-catalofues-title">OUR CATALOGUES</h1>
   <div id="catalogue-download-design-container">
     <!-- PTMT Card -->
-   
+
   </div>
-  <div  id="customer-support"></div>
+  <div id="customer-support"></div>
   <!-- <div class="social-section bg-smoke">
     <div class="social-container">
       <div class="social-heading">
@@ -637,16 +681,16 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
   </footer>
 
   <div id="chat"></div>
-  <script src="/components/scripts/contactform.js"></script>
+  
   <script defer src="/components//scripts//navbar2.js"></script>
   <script src="/components//scripts//footer2.js"></script>
   <script src="/components//scripts//catalogue.js"></script>
-  <script src="/components//scripts//recent2.js"></script>
-  <script src="/components//scripts//trending2.js"></script>
-  <script src="/components//scripts//ourinovations2.js"></script>
- 
+  <script src="/components//scripts/main.js"></script>
   
-  
+
+
+
+
   <script>
     // Add hover sound effect (optional)
     const socialItems = document.querySelectorAll('.social-item');
@@ -658,91 +702,7 @@ stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
       });
     });
   </script>
-  <!-- app section script  -->
-  <script>
-    // Add smooth parallax effect to phone mockups
-    document.addEventListener('mousemove', (e) => {
-      const phones = document.querySelectorAll('.phone-mockup');
-      const rect = document.querySelector('.phones-container').getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      const moveX = (e.clientX - centerX) / 40;
-      const moveY = (e.clientY - centerY) / 40;
-
-      phones.forEach((phone, index) => {
-        const depth = index === 0 ? 1 : 0.7;
-        const baseRotation = index === 0 ? -15 : 15;
-        const baseTranslateX = index === 0 ? 40 : -40;
-        const baseTranslateY = index === 0 ? 0 : 40;
-
-        phone.style.transform = `
-          perspective(1000px)
-          rotateY(${baseRotation + moveX * depth}deg)
-          rotateX(${-moveY * depth}deg)
-          translateX(${baseTranslateX}px)
-          translateY(${baseTranslateY}px)
-        `;
-      });
-    });
-  </script>
-  <!-- about section script  -->
-  <script>
-    // Animated number counting
-    const stats = document.querySelectorAll('.stat-number');
-
-    stats.forEach(stat => {
-      const targetValue = parseInt(stat.getAttribute('data-value'));
-      const duration = 2000; // 2 seconds
-      const step = targetValue / (duration / 16); // 60fps
-      let current = 0;
-
-      const updateValue = () => {
-        current += step;
-        if (current < targetValue) {
-          stat.textContent = Math.round(current).toLocaleString();
-          requestAnimationFrame(updateValue);
-        } else {
-          stat.textContent = targetValue.toLocaleString();
-        }
-      };
-
-      // Start animation when element is in view
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          updateValue();
-          observer.disconnect();
-        }
-      });
-
-      observer.observe(stat);
-    });
-  </script>
-  <!-- for catalogue section  -->
-  <script>
-    function handleDownload(type) {
-      // Replace this with your actual download logic
-      console.log(`Downloading ${type} catalogue`);
-
-      const card = event.target.closest('.cat-download-card');
-      const btn = card.querySelector('.cat-download-btn');
-      const originalContent = btn.innerHTML;
-
-      // Show loading state
-      btn.innerHTML = `
-        <svg class="cat-animate-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-        </svg>
-        Downloading...
-      `;
-
-      // Reset button after 2 seconds (remove this in production)
-      setTimeout(() => {
-        btn.innerHTML = originalContent;
-      }, 2000);
-    }
-  </script>
-
+  
 </body>
 
 </html>
