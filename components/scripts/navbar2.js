@@ -9,7 +9,7 @@ document.getElementById("navbar").innerHTML = `
       <div class="search-container">
         <input type="text" placeholder="Search..." id="searchInput" autocomplete="off">
         <span id="search_icon" class="search-icon">
-          <img src="/public//icons//icon.svg" alt="">
+          <img src="/public/icons/icon.svg" alt="">
         </span>
         <div class="search-dropdown" id="suggestions">
         </div>
