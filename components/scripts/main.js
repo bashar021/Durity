@@ -563,7 +563,7 @@ if (form) {
       const form = e.target;
       const formData = new FormData(form);
 
-      fetch("https://formspree.io/f/mbldkyjj", {
+      fetch("https://formspree.io/f/xblzrjgq", {
         method: "POST",
         body: formData,
         headers: {
@@ -763,11 +763,12 @@ function handleSubmit(event) {
   }
 
   if (isValid) {
-    const form = event.target;
+    // const form = event.target;
     const formData = new FormData(form);
+    console.log(formData)
     document.getElementById("catalogue-dn-form").innerText = "Please wait..";
 
-    fetch("https://formspree.io/f/mgvzarpo", {
+    fetch("https://formspree.io/f/mgvlrkjy", {
       method: "POST",
       body: formData,
       headers: {
@@ -777,20 +778,15 @@ function handleSubmit(event) {
       .then((response) => {
         if (response.ok) {
           //   successMessage.style.display = "block";
-          //   alert('Message send successfully')
+          alert('Message send successfully')
           form.reset();
-          document.getElementById("popupOverlay").style.display = "none";
           window.open(
             "https://drive.google.com/file/d/13IMJyHvVRQcZ1x0dbf69iZV5O2_AE-BP/view",
             "_blank"
           );
+          document.getElementById("cataloguePopupOverlay").style.display = "none";
         } else {
-          response.json().then((data) => {
-            //   document.getElementById("response").innerText =
-            //     data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! Something went wrong.";
-            //   successMessage.innerHTML = 'Oops! Something went wrong.'
-            alert("oops! something wents wrong.");
-          });
+          alert('There was a problem with your submission.');
         }
       })
       .catch((error) => {
