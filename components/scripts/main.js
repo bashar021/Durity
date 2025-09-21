@@ -269,7 +269,8 @@ products section on a webpage. It includes functionalities such as retrieving sa
 from local storage, creating product cards for display, rendering the products on the webpage, and
 handling scrolling interactions within the recent view product carousel. */
 //  recent view section
-const prevItems = localStorage.getItem("items");
+// const prevItems = localStorage.getItem("items");
+const prevItems = sessionStorage.getItem('items')
 const recentViewContainer = document.getElementById("recentProducts");
 const productList = document.getElementById("recent-view-product-container");
 const scrollLeftBtn = document.getElementById("recentScrollLeft");

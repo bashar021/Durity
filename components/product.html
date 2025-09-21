@@ -542,7 +542,8 @@
             let product_details = products[path]
             product_details['openPath'] = productUrl
             const now = new Date();
-            const prevItems = localStorage.getItem('items')
+            // const prevItems = localStorage.getItem('items')
+            const prevItems = sessionStorage?.getItem('items')
             let allViewItems = [product_details]
             if (prevItems) {
                 let value = JSON.parse(prevItems)
@@ -554,7 +555,9 @@
                 value: allViewItems,
                 expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
             };
-            localStorage.setItem('items', JSON.stringify(item))
+            console.log(item)
+            // localStorage.setItem('items', JSON.stringify(item))
+            sessionStorage.setItem('items', JSON.stringify(item))
         }
         function openPopup(path) {
 
