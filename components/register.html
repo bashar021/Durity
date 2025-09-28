@@ -394,23 +394,23 @@
             <h2 class="text-steelblue">Join Us</h2>
             <form id="register-form">
                 <div class="input-group">
-                    <input type="text" id="name" placeholder=" ">
+                    <input name="name" type="text" id="name" placeholder=" ">
                     <label for="name">Full Name</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" placeholder=" ">
+                    <input name="email" type="email" id="email" placeholder=" ">
                     <label for="email">Email Address</label>
                 </div>
                 <div class="input-group">
-                    <input type="number" id="number" placeholder=" ">
+                    <input name="number" type="number" id="number" placeholder=" ">
                     <label for="number">Phone</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" id="company" placeholder=" ">
+                    <input name="company" type="text" id="company" placeholder=" ">
                     <label for="company">Company</label>
                 </div>
                 <div class="input-group">
-                    <input type="text" id="address" placeholder=" ">
+                    <input name="address" type="text" id="address" placeholder=" ">
                     <label for="address">Address</label>
                 </div>
                 <button type="submit" class="bg-steelblue">Create Account</button>
@@ -423,13 +423,14 @@
     <script>
         document.getElementById('register-form').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent the default form submission
-            const formData = new FormData(this); // Get form data
+            const form = e.target
+            const formData = new FormData(form); // Get form data
             // Send the form data to Formspree
-            fetch('https://formspree.io/f/mbldkyjj', {
+            fetch('https://formspree.io/f/mnngaqpw', {
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'Accept': 'application/json'
+                    Accept: 'application/json'
                 }
             })
                 .then(response => {

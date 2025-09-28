@@ -79,14 +79,13 @@
 .search-icon{
     display: none;
 }
+
 .search-dropdown {
     position: absolute;
-    top: 100%;
+    top: 10px;
+    padding-top: 40px;
     left: 0;
-    width: 100%;
-    /* background: #fff; */
-    /* background: radial-gradient(); */
-    /* background-color: ; */
+    width: 99%;
     background-image: linear-gradient(rgb(237,240,241),white);
     border: 1px solid transparent;
     border-top: none;
@@ -94,9 +93,39 @@
     display: none;
     z-index: 1000;
     max-height: 350px;
-    overflow: scroll;
+    overflow: hidden;
+    overflow-y: scroll;
+   
+    border-top-left-radius: 20px;
+    /* border-top-right-radius: 20px; */
+    border-top-right-radius: 20px !important;
 
 }
+
+/* Chrome, Edge, Safari scrollbar styling */
+.search-dropdown::-webkit-scrollbar {
+    width: 0px !important;               /* scrollbar width */
+  }
+  
+  .search-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;       /* track background */
+    border-radius: 10px;
+  }
+  
+  .search-dropdown::-webkit-scrollbar-thumb {
+    background: #b3b3b3;       /* scrollbar color */
+    border-radius: 10px;
+  }
+  
+  .search-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #888;          /* hover color */
+  }
+  
+  /* Firefox scrollbar styling */
+  .search-dropdown {
+    scrollbar-width: thin !important;             /* "auto" or "thin" */
+    scrollbar-color: #b3b3b3 #f1f1f1;  /* thumb and track color */
+  }
 
 .search-dropdown.active {
     display: block;
@@ -104,13 +133,15 @@
 .suggestion-item{
     /* background-color: red; */
     /* margin-top: 8px; */
-    padding-left: 5px;
+    padding-left: 10px;
     padding-right: 5px;
     border-bottom: solid;
     border-width: 1px;
     border-color: rgba(128, 128, 128, 0.538);
     cursor: pointer;
     /* margin-top: 8px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .suggestion-item:hover{
     background-color: rgb(180, 178, 178);
@@ -506,6 +537,7 @@
     height: 40px;
     margin: 0px;
     transition: all 1s;
+    z-index: 100000;
     /* float: right; */
    
 }

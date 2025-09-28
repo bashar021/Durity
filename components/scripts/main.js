@@ -257,19 +257,43 @@ const HomePageCarousel = new BannerCarousel();
 //     '/path/to/new-image2.jpg'
 // ]);
 // Example of how to replace all images:
-HomePageCarousel.setImages([
-  "/public/home page/home page main banner/COVER 01.jpg",
-  "/public/home page/home page main banner/COVER 2.jpg",
-  "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
-  // '/path/to/image3.jpg'
-]);
 
+if(window.innerWidth <= 768){
+  HomePageCarousel.setImages([
+    // "/public/home page/home page main banner/1080x1920-ugd930ckdcujq44s.jpg",
+    "https://placehold.co/1080x1920/667eea/white?text=1080x1920 9:16",
+    "https://placehold.co/1080x1920/red/white?text=1080x1920 9:16",
+    "https://placehold.co/1080x1920/blue/white?text=1080x1920 9:16",
+    // "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
+    // '/path/to/image3.jpg'
+  ]);
+}else if (window.innerWidth <= 1024){
+  HomePageCarousel.setImages([
+    // "/public/home page/home page main banner/1080x1920-ugd930ckdcujq44s.jpg",
+    "https://placehold.co/1536x2048/667eea/white?text=1536x2048 4:3",
+    "https://placehold.co/1536x2048/red/white?text=1536x2048 4:3",
+    "https://placehold.co/1536x2048/blue/white?text=1536x2048 4:3",
+    // "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
+    // '/path/to/image3.jpg'
+  ]);
+}
+else{
+  HomePageCarousel.setImages([
+    "/public/home page/home page main banner/COVER 01.jpg",
+    "/public/home page/home page main banner/COVER 2.jpg",
+    "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
+    "https://placehold.co/1920×1080/blue/white?text=1920×1080 16:9",
+    // '/path/to/image3.jpg'
+  ]);
+}
+console.log(window.innerWidth,'adgajkhdhlasdhj',window.innerHeight)
 /* The `// recent view section` in the JavaScript code is responsible for managing the recent view
 products section on a webpage. It includes functionalities such as retrieving saved product lists
 from local storage, creating product cards for display, rendering the products on the webpage, and
 handling scrolling interactions within the recent view product carousel. */
 //  recent view section
-const prevItems = localStorage.getItem("items");
+// const prevItems = localStorage.getItem("items");
+const prevItems = sessionStorage.getItem('items')
 const recentViewContainer = document.getElementById("recentProducts");
 const productList = document.getElementById("recent-view-product-container");
 const scrollLeftBtn = document.getElementById("recentScrollLeft");
@@ -322,9 +346,10 @@ function createProductCard(product) {
   const img = new Image();
   img.src = src;
   img.onload = () => {
+    // class="product-image"
     productList.innerHTML += `
-        <a href="${product.openPath}" class="productCard">
-            <img src="${src}" alt="${product.name}" class="product-image">
+        <a href="${product.openPath}" class=" recent-view-cards-container">
+            <img src="${src}" alt="${product.name}" >
             <div class="product-name">${product.name}</div>
             <div class="product-code">Code: ${product.code}</div>
         </a>
@@ -332,8 +357,8 @@ function createProductCard(product) {
   };
   img.onerror = () => {
     productList.innerHTML += `
-        <a href="${product.openPath}" class="productCard">
-            <img src="/public/icons/brokenImage.svg" alt="" class="product-image">
+        <a href="${product.openPath}" class=" recent-view-cards-container">
+            <img src="/public/icons/brokenImage.svg" alt="" >
             <div class="product-name">${product.name}</div>
             <div class="product-code">Code: ${product.code}</div>
         </a>
@@ -563,7 +588,7 @@ if (form) {
       const form = e.target;
       const formData = new FormData(form);
 
-      fetch("https://formspree.io/f/mbldkyjj", {
+      fetch("https://formspree.io/f/xblzrjgq", {
         method: "POST",
         body: formData,
         headers: {
@@ -572,22 +597,22 @@ if (form) {
       })
         .then((response) => {
           if (response.ok) {
-            successMessage.style.display = "block";
-            // alert('Message send successfully')
+            // successMessage.style.display = "block";
+            alert('Message send successfully')
             form.reset();
           } else {
             response.json().then((data) => {
               //   document.getElementById("response").innerText =
               //     data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! Something went wrong.";
-              successMessage.innerHTML = "Oops! Something went wrong.";
-              // alert('oops! something wents wrong.')
+              // successMessage.innerHTML = "Oops! Something went wrong.";
+              alert('oops! something wents wrong.')
             });
           }
         })
         .catch((error) => {
           //   document.getElementById("response").innerText = "Error sending message.";
-          successMessage.innerHTML = "Error sending message.";
-          // alert('error in sending message ')
+          // successMessage.innerHTML = "Error sending message.";
+          alert('Error sending message.')
           // console.error("Error:", error);
         });
       // form.reset();
@@ -763,11 +788,12 @@ function handleSubmit(event) {
   }
 
   if (isValid) {
-    const form = event.target;
+    // const form = event.target;
     const formData = new FormData(form);
+    console.log(formData)
     document.getElementById("catalogue-dn-form").innerText = "Please wait..";
 
-    fetch("https://formspree.io/f/mgvzarpo", {
+    fetch("https://formspree.io/f/mgvlrkjy", {
       method: "POST",
       body: formData,
       headers: {
@@ -777,20 +803,15 @@ function handleSubmit(event) {
       .then((response) => {
         if (response.ok) {
           //   successMessage.style.display = "block";
-          //   alert('Message send successfully')
+          alert('Message send successfully')
           form.reset();
-          document.getElementById("popupOverlay").style.display = "none";
           window.open(
             "https://drive.google.com/file/d/13IMJyHvVRQcZ1x0dbf69iZV5O2_AE-BP/view",
             "_blank"
           );
+          document.getElementById("cataloguePopupOverlay").style.display = "none";
         } else {
-          response.json().then((data) => {
-            //   document.getElementById("response").innerText =
-            //     data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! Something went wrong.";
-            //   successMessage.innerHTML = 'Oops! Something went wrong.'
-            alert("oops! something wents wrong.");
-          });
+          alert('There was a problem with your submission.');
         }
       })
       .catch((error) => {

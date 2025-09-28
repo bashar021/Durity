@@ -485,7 +485,7 @@
         let productItem_image_container = document.getElementById('productItem-image-container')
         // console.log(products[code])
         function setData() {
-            productItem_image_container.innerHTML = `<img src='${productItem?.imageSrc}/${productItem?.code}.jpg' alt='${productItem?.name}'></img>`
+            productItem_image_container.innerHTML = `<img src='${productItem?.imageSrc}${productItem?.code}.jpg' alt='${productItem?.name}'></img>`
             productItem_container.innerHTML += `
             <div class="product-details">
                 <h1 class="product-title fade-in">${productItem?.name}</h1>
