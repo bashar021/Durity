@@ -106,10 +106,12 @@
 
 .carousel-nav.prev {
     left: 20px;
+    z-index: 1;
 }
 
 .carousel-nav.next {
     right: 20px;
+    z-index: 1;
 }
 
 /* Progress Bar */
@@ -156,10 +158,16 @@
     transform: scale(1.1);
 }
 
+@media (max-width:480px){
+    .home-page-titles{
+        font-size: 28px !important;
+    }
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     #home-page-banner-container {
-        height: 50vh;
+        /* height: 50vh; */
+        height: 92vh;
         min-height: 300px;
     }
 
@@ -196,6 +204,15 @@
     }
 }
 
+/* Tablets (portrait + landscape) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* tablet styles here */
+    #home-page-banner-container {
+        /* height: 50vh; */
+        height: 92vh;
+        min-height: 300px;
+    }
+}
 /* Loading animation */
 .carousel-slide.loading {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);

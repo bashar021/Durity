@@ -11,8 +11,11 @@ document.getElementById("navbar").innerHTML = `
         <span id="search_icon" class="search-icon">
           <img src="/public/icons/icon.svg" alt="">
         </span>
-        <div class="search-dropdown" id="suggestions">
+       
+         <div class="search-dropdown" id="suggestions">
         </div>
+     
+       
       </div>
       <div class="hamburger">☰</div>
 
@@ -303,15 +306,41 @@ document.addEventListener("click", (e) => {
   }
 });
 
-function filterSuggestions(query) {
+// function filterSuggestions(query) {
 
+//   suggestions.innerHTML = ""; // Clear previous suggestions
+//   const filtered = itemNames?.filter((item) =>
+//     item?.toLowerCase().includes(query.toLowerCase())
+//   );
+//   if (filtered.length > 0) {
+//     suggestions.style.display = "block"; // Show suggestions
+//     filtered.forEach((item) => {
+//       const div = document.createElement("div");
+//       div.className = "suggestion-item";
+//       div.textContent = item;
+//       div.onclick = () => {
+//         searchInput.value = item; // Set input value to clicked suggestion
+//         window.open(`/components/product.html?${itemsMapping[item]}`, "_self");
+//         suggestions.style.display = "none"; // Hide suggestions
+//       };
+//       suggestions.appendChild(div);
+//     });
+//   } else {
+//     suggestions.style.display = "none"; // Hide if no suggestions
+//   }
+// }
+function filterSuggestions(query) {
   suggestions.innerHTML = ""; // Clear previous suggestions
-  const filtered = itemNames?.filter((item) =>
-    item?.toLowerCase().includes(query.toLowerCase())
-  );
-  if (filtered.length > 0) {
+
+  const filtered = itemNames
+    ?.filter((item) => item?.toLowerCase().includes(query.toLowerCase()));
+
+  // Remove duplicates
+  const uniqueFiltered = [...new Set(filtered)];
+
+  if (uniqueFiltered.length > 0) {
     suggestions.style.display = "block"; // Show suggestions
-    filtered.forEach((item) => {
+    uniqueFiltered.forEach((item) => {
       const div = document.createElement("div");
       div.className = "suggestion-item";
       div.textContent = item;
@@ -326,6 +355,7 @@ function filterSuggestions(query) {
     suggestions.style.display = "none"; // Hide if no suggestions
   }
 }
+
 
 // Mobile sidebar functionality
 const hamburger = document.querySelector(".hamburger");
