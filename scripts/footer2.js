@@ -83,7 +83,7 @@ const setFooter = () => {
         </div>
       </div>
        <div id="durity-short-links" class='text-center'>
-            <a href="/components/about.html">About Us</a><span class='footer-nav-vertical-line'></span><a href="/components/carrerspage.html">Careers</a><span class='footer-nav-vertical-line'></span><a href="/components/termsAndConditions.html">Terms & Conditions</a><span class='footer-nav-vertical-line'></span><a href="/components/register.html">Register</a><span class='footer-nav-vertical-line'></span><a href="/components/events.html">Events</a>
+            <a href="/about.html">About Us</a><span class='footer-nav-vertical-line'></span><a href="/carrerspage.html">Careers</a><span class='footer-nav-vertical-line'></span><a href="/termsAndConditions.html">Terms & Conditions</a><span class='footer-nav-vertical-line'></span><a href="/register.html">Register</a><span class='footer-nav-vertical-line'></span><a href="/events.html">Events</a>
        </div>
       <div class="footer-bottom text-steelblue footer-trademark">
         <p class="text-steelblue x">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
@@ -202,7 +202,7 @@ Object.entries(productCategories).forEach(([category, products]) => {
                 ${products
                   .map(
                     (product,index) => `
-                    <a href="/components/product.html?name=${category}&category=${product}&index=${index}" class="l-product-link">${product}</a>
+                    <a href="/product.html?name=${category}&category=${product}&index=${index}" class="l-product-link">${product}</a>
                 `
                   )
                   .join("")}
