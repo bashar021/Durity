@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="/components/styles/productspage.css">
+    <link rel="stylesheet" href="/styles/productspage.css">
     <script src="/data/products.js"></script>
-    <link rel="stylesheet" href="/components/styles/navbar2.css">
-    <link rel="stylesheet" href="/components/styles/footer.css">
-    <link rel="stylesheet" href="/components/styles/common.css">
-    <link rel="stylesheet" href="/components/styles/Responsive.css">
-    <link rel="icon" type="image/svg+xml" href="/public/icons/D logo.png" />
+    <link rel="stylesheet" href="/styles/navbar2.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="/styles/Responsive.css">
+    <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
 
     <script>
     </script>
@@ -61,28 +61,28 @@
             <div class="dropdown">
                 <a href="#">Products</a>
                 <div class="dropdown-content">
-                    <a href="/components/products.html?name=faucets">Faucets</a>
-                    <a href="/components/products.html?name=ptmt">PTMT</a>
-                    <a href="/components/products.html?name=showers">Showers</a>
-                    <a href="/components/products.html?name=health faucet">Health
+                    <a href="/products.html?name=faucets">Faucets</a>
+                    <a href="/products.html?name=ptmt">PTMT</a>
+                    <a href="/products.html?name=showers">Showers</a>
+                    <a href="/products.html?name=health faucet">Health
                         Faucet</a>
-                    <a href="/components/products.html?name=bath accessories">Bath
+                    <a href="/products.html?name=bath accessories">Bath
                         Accessories</a>
-                    <a href="/components/products.html?name=faucet parts">Faucet
+                    <a href="/products.html?name=faucet parts">Faucet
                         Parts</a>
                 </div>
             </div>
-            <a href="/components/about.html">About Us</a>
-            <a href="/components/carrerspage.html">Careers</a>
-            <a href="/components/events.html">Events</a>
+            <a href="/about.html">About Us</a>
+            <a href="/carrerspage.html">Careers</a>
+            <a href="/events.html">Events</a>
             <div class="dropdown">
-                <a href="/components/catalogue.html">E-Catalogue</a>
+                <a href="/catalogue.html">E-Catalogue</a>
                 <!-- <div class="dropdown-content">
                   <span onclick="openCatalogueF()" class="dropdown-item">Faucets</span>
                   <span onclick="openCatalogueF()" class="dropdown-item">PTMT</span>
                 </div> -->
             </div>
-            <a href="/components/register.html">Register</a>
+            <a href="/register.html">Register</a>
         </div>
     </div>
     <div class="popup-overlay" id="popupOverlay">
@@ -152,7 +152,7 @@
     <div  id="customer-support"></div>
     <footer class="footer" id="footer">
     </footer>
-    <script defer src="/components/scripts/footer2.js"></script>
+    <script defer src="/scripts/footer2.js"></script>
 
 
 
@@ -180,7 +180,7 @@
             const productContainer = document.getElementById('productContainer');
             products.forEach((product, index) => {
                 const cardHTML = `
-                  <a class='text-decoration-none text-black' href="/components/product.html?name=${name}&category=${product.name}&index=${index}">
+                  <a class='text-decoration-none text-black' href="/product.html?name=${name}&category=${product.name}&index=${index}">
                  <div id="product_card" class="category-card">
                
                     <img style="width: 100%";  alt="Sanitaryware product image" src="${product.imageSrc}"
@@ -206,8 +206,8 @@
         createProductCards()
 
     </script>
-    <script defer src="/components/scripts/navbar2.js"></script>
-    <script src="/components/scripts/catalogue.js"></script>
+    <script defer src="/scripts/navbar2.js"></script>
+    <script src="/scripts/catalogue.js"></script>
     <script>
         const categoryCards = document.querySelectorAll('.category-card');
 

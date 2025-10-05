@@ -22,64 +22,64 @@ document.getElementById("navbar").innerHTML = `
       <div class="nav-links">
         <a href="/" class="">Home</a>
         <div class="dropdown">
-          <a href="/components/service.html" class=" flex">Products <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
+          <a href="/service.html" class=" flex">Products <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=faucets'" href="/components/products.html?name=faucets" class="products ">
+              <p onclick="window.location.href='/products.html?name=faucets'" href="/products.html?name=faucets" class="products ">
               Faucets 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
               </p>
               <div class="nested-dropdown-content" id="faucets-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
 
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=ptmt'" href="/components/products.html?name=ptmt" class="products ">PTMT  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
+              <p onclick="window.location.href='/products.html?name=ptmt'" href="/products.html?name=ptmt" class="products ">PTMT  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content text-steelblue" id="ptmt-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=showers '" href="/components/products.html?name=showers " class="products">Showers  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
+              <p onclick="window.location.href='/products.html?name=showers '" href="/products.html?name=showers " class="products">Showers  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="showers-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=health faucet '" href="/components/products.html?name=health faucet " class="products" >Health Faucet  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
+              <p onclick="window.location.href='/products.html?name=health faucet '" href="/products.html?name=health faucet " class="products" >Health Faucet  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="hf-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=bath accessories '" href="/components/products.html?name=bath accessories " class="products">Bath Accessories  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
+              <p onclick="window.location.href='/products.html?name=bath accessories '" href="/products.html?name=bath accessories " class="products">Bath Accessories  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="ba-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <p onclick="window.location.href='/components/products.html?name=faucet parts '" href="/components/products.html?name=faucet parts " class="products">Faucet Parts  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
+              <p onclick="window.location.href='/products.html?name=faucet parts '" href="/products.html?name=faucet parts " class="products">Faucet Parts  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg></p>
               <div class="nested-dropdown-content" id="fp-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
           </div>
         </div>
         <div class="dropdown">
-          <a href="/components/service.html" class=" flex">Company <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
+          <a href="/service.html" class=" flex">Company <img  class='arrow-icon ' src='/public/icons/downarrow.svg'/></a>
           <div class="dropdown-content">
             <div class="dropdown">
-              <p class="products" onclick="window.location.href='/components/about.html'"  href="/components/about.html" class="">About Us</p>
+              <p class="products" onclick="window.location.href='/about.html'"  href="/about.html" class="">About Us</p>
             </div>
             <div class="dropdown">
-              <p class="products" onclick="window.location.href='/components/carrerspage.html'"  href="/components/carrerspage.html" class="">Careers</p>
+              <p class="products" onclick="window.location.href='/carrerspage.html'"  href="/carrerspage.html" class="">Careers</p>
             </div>
             <div class="dropdown">
-              <p class="products" onclick="window.location.href='/components/events.html'"  href="/components/events.html" class="">Events</p>
+              <p class="products" onclick="window.location.href='/events.html'"  href="/events.html" class="">Events</p>
             </div>
             <div class="dropdown">
-              <p class="products" onclick="window.location.href='/components/register.html'"  href="/components/register.html" class="">Register</p>
+              <p class="products" onclick="window.location.href='/register.html'"  href="/register.html" class="">Register</p>
             </div>
             
 
@@ -87,7 +87,7 @@ document.getElementById("navbar").innerHTML = `
           </div>
         </div>
         <div class="dropdown">
-          <a href="/components/catalogue.html" class="">E-Catalogue</a>
+          <a href="/catalogue.html" class="">E-Catalogue</a>
          
         </div>
        
@@ -100,50 +100,50 @@ document.getElementById("navbar").innerHTML = `
         <div class="dropdown">
           <a href="#">Products</a>
           <div class="dropdown-content">
-            <!-- <a href="/components/products.html?name=faucets">Faucets</a> -->
+            <!-- <a href="/products.html?name=faucets">Faucets</a> -->
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucets" class="products">Faucets</a>
+              <a href="/products.html?name=faucets" class="products">Faucets</a>
               <div class="nested-dropdown-content" id="md-faucets-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=ptmt" class="products">PTMT</a>
+              <a href="/products.html?name=ptmt" class="products">PTMT</a>
               <div class="nested-dropdown-content" id="md-ptmt-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=showers">Showers</a>
+              <a href="/products.html?name=showers">Showers</a>
               <div class="nested-dropdown-content" id="md-showers-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=health faucet">Health Faucet</a>
+              <a href="/products.html?name=health faucet">Health Faucet</a>
               <div class="nested-dropdown-content" id="md-hf-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=bath accessories">Bath Accessories</a>
+              <a href="/products.html?name=bath accessories">Bath Accessories</a>
               <div class="nested-dropdown-content" id="md-ba-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
             <div class="nested-dropdown">
-              <a href="/components/products.html?name=faucet parts">Faucet Parts</a>
+              <a href="/products.html?name=faucet parts">Faucet Parts</a>
               <div class="nested-dropdown-content" id="md-fp-nested-d">
-                <!-- <a href="/components/products.html?name=ptmt&sub=taps">Taps</a> -->
+                <!-- <a href="/products.html?name=ptmt&sub=taps">Taps</a> -->
               </div>
             </div>
           </div>
         </div>
-        <a href="/components/about.html">About Us</a>
-        <a href="/components/carrerspage.html">Careers</a>
-        <a href="/components/events.html">Events</a>
-        <a href="/components/catalogue.html">E-Catalogue</a>
-        <a href="/components/register.html">Register</a>
+        <a href="/about.html">About Us</a>
+        <a href="/carrerspage.html">Careers</a>
+        <a href="/events.html">Events</a>
+        <a href="/catalogue.html">E-Catalogue</a>
+        <a href="/register.html">Register</a>
       </div>
     </div>
   
@@ -320,7 +320,7 @@ document.addEventListener("click", (e) => {
 //       div.textContent = item;
 //       div.onclick = () => {
 //         searchInput.value = item; // Set input value to clicked suggestion
-//         window.open(`/components/product.html?${itemsMapping[item]}`, "_self");
+//         window.open(`/product.html?${itemsMapping[item]}`, "_self");
 //         suggestions.style.display = "none"; // Hide suggestions
 //       };
 //       suggestions.appendChild(div);
@@ -346,7 +346,7 @@ function filterSuggestions(query) {
       div.textContent = item;
       div.onclick = () => {
         searchInput.value = item; // Set input value to clicked suggestion
-        window.open(`/components/product.html?${itemsMapping[item]}`, "_self");
+        window.open(`/product.html?${itemsMapping[item]}`, "_self");
         suggestions.style.display = "none"; // Hide suggestions
       };
       suggestions.appendChild(div);
@@ -414,33 +414,33 @@ const setCategoryItems = () => {
   const ba_nested_d = document.getElementById("ba-nested-d");
   const md_ba_nested_d = document.getElementById("md-ba-nested-d");
   faucet.forEach((item, index) => {
-    faucets_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
+    faucets_nested_d.innerHTML += `<a class="" href="/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()
     }</a>`;
-    md_faucets_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_faucets_nested_d.innerHTML += `<a class="" href="/product.html?name=faucets&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
 
   ptmt.forEach((item, index) => {
-    ptmt_nested_d.innerHTML += `<a class="" href="/components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_ptmt_nested_d.innerHTML += `<a class="" href="/components/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    ptmt_nested_d.innerHTML += `<a class="" href="/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_ptmt_nested_d.innerHTML += `<a class="" href="/product.html?name=ptmt&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   showers.forEach((item, index) => {
-    showers_nested_d.innerHTML += `<a class="" href="/components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_showers_nested_d.innerHTML += `<a class="" href="/components/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    showers_nested_d.innerHTML += `<a class="" href="/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_showers_nested_d.innerHTML += `<a class="" href="/product.html?name=showers&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   health_faucets.forEach((item, index) => {
-    hf_nested_d.innerHTML += `<a class="" href="/components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_hf_nested_d.innerHTML += `<a class="" href="/components/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    hf_nested_d.innerHTML += `<a class="" href="/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_hf_nested_d.innerHTML += `<a class="" href="/product.html?name=health faucet&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   bath_accessories.forEach((item, index) => {
-    ba_nested_d.innerHTML += `<a  class=""href="/components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_ba_nested_d.innerHTML += `<a class="" href="/components/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    ba_nested_d.innerHTML += `<a  class=""href="/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_ba_nested_d.innerHTML += `<a class="" href="/product.html?name=bath accessories&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
   const faucets_part = durityProducts["faucet parts"]?.products;
   const fp_nested_d = document.getElementById("fp-nested-d");
   const md_fp_nested_d = document.getElementById("md-fp-nested-d");
   faucets_part?.forEach((item, index) => {
-    fp_nested_d.innerHTML += `<a class="" href="/components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
-    md_fp_nested_d.innerHTML += `<a  class="" href="/components/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    fp_nested_d.innerHTML += `<a class="" href="/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
+    md_fp_nested_d.innerHTML += `<a  class="" href="/product.html?name=faucet parts&category=${item?.name}&index=${index}">${item?.name?.charAt(0)?.toUpperCase() + item?.name?.slice(1)?.toLowerCase()}</a>`;
   });
 };
 setCategoryItems();
@@ -462,13 +462,13 @@ const getLocation_path = () => {
   };
   name = mapped[name];
   if (name === "Product") {
-    name = `/<a class='text-black' href="/components/service.html">Services</a>/<a class='text-black' href="/components/products.html?name=${queryObj['name']}">Categories</a>/Products/Product`;
+    name = `/<a class='text-black' href="/service.html">Services</a>/<a class='text-black' href="/products.html?name=${queryObj['name']}">Categories</a>/Products/Product`;
   }
   if (name === "Products") {
-    name = `/<a class='text-black' href="/components/service.html">Services</a>/<a class='text-black' href="/components/products.html?name=${queryObj['name']}">Categories</a>/Products/`;
+    name = `/<a class='text-black' href="/service.html">Services</a>/<a class='text-black' href="/products.html?name=${queryObj['name']}">Categories</a>/Products/`;
   }
   if (name === "Categories") {
-    name = `/<a class='text-black' href="/components/service.html">Services</a>/Categories/`;
+    name = `/<a class='text-black' href="/service.html">Services</a>/Categories/`;
   }
   if(path_container){
     path_container.innerHTML += name;
