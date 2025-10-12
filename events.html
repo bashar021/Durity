@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Cards</title>
   <link rel="stylesheet" href="/styles/navbar2.css">
-  <link rel="stylesheet" href="/styles/common.css">
-  <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/Responsive.css">
-
   <script src="/data/products.js"></script>
   <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
   <style>
@@ -18,10 +15,6 @@
       padding: 0px;
     }
 
-    #my-nav {
-      /* width: 96%; */
-      /* background-color: red; */
-    }
 
     #searchInput {
       /* background-color: red; */
@@ -451,6 +444,15 @@
       color: white;
     }
 
+    @media (max-width:480px){
+      .event-parallax-bg{
+        background-image: url('https://placehold.co/1080x1080');
+        /* aspect-ratio: 2 / 1; */
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+    }
     @media (max-width: 768px) {
       .event-header-title {
         font-size: 2.5rem;
@@ -700,7 +702,6 @@
     });
   </script>
   <script defer src="/scripts/navbar2.js"></script>
-  <script src="/scripts/catalogue.js"></script>
   <script src="/scripts/footer2.js"></script>
 
 

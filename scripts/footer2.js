@@ -86,7 +86,7 @@ const setFooter = () => {
             <a href="/about.html">About Us</a><span class='footer-nav-vertical-line'></span><a href="/carrerspage.html">Careers</a><span class='footer-nav-vertical-line'></span><a href="/termsAndConditions.html">Terms & Conditions</a><span class='footer-nav-vertical-line'></span><a href="/register.html">Register</a><span class='footer-nav-vertical-line'></span><a href="/events.html">Events</a>
        </div>
       <div class="footer-bottom text-steelblue footer-trademark">
-        <p class="text-steelblue x">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
+        <p class="text-steelblue x all-rights-reserved-footer-mark">&copy; 2025 LuxBath. All rights reserved. | Designed with ❤️ for luxury bathrooms</p>
       </div>
     </div>
     `;

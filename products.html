@@ -5,14 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="/styles/productspage.css">
-    <script src="/data/products.js"></script>
     <link rel="stylesheet" href="/styles/navbar2.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/common.css">
     <link rel="stylesheet" href="/styles/Responsive.css">
     <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
-
+    <script src="/data/products.js"></script>
     <script>
     </script>
     <style>
@@ -36,18 +32,204 @@
             padding-left: 10px;
             /* padding: 10px; */
         }
-        .category-card{
+
+        .category-card {
             max-width: 276px;
         }
-    #productContainer{
-    }
-    #productContainer a{
-        text-align: center;
-        /* background-color: red; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
+        #productContainer {}
+
+        #productContainer a {
+            text-align: center;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Animated Gradient Background */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        /* @keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+        /* Cover Section */
+        .cover {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .cover p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Parallax Scrolling Effect */
+        .parallax {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-grid {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: -100px;
+        }
+
+        .category-grid h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card-details-box {
+            /* background-color: red; */
+            /* background-color: blue; */
+            text-align: center;
+            padding: 0px;
+            padding-bottom: 5%;
+        }
+
+        .category-card-details-box h5 {
+            font-size: 18px;
+            text-align: center;
+            /* background-color: red; */
+            margin: 0px;
+        }
+
+        .category-card-details-box a {
+            text-decoration: none;
+            text-align: center;
+            color: rgba(154, 154, 154, 0.75);
+            /* background-color: red; */
+            margin: 0px;
+            /* margin-bottom: 5%; */
+        }
+
+        .category-card-details-box a:hover {
+            color: rgba(77, 76, 76, 0.89);
+            /* color: blue; */
+            /* color: green; */
+        }
+
+
+        @media (max-width: 768px) {
+            .cover h1 {
+                font-size: 2.5rem;
+            }
+
+            .cover p {
+                font-size: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover h1 {
+                font-size: 2rem;
+            }
+
+            .cover p {
+                font-size: 0.9rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -136,20 +318,19 @@
     <div class="animated-background"></div>
     <section id="herosection" class="cover parallax">
         <div class="cover-content" id="cover-content">
-           
+
         </div>
     </section>
-   
+
     <div class="category-grid">
         <div id="location-path-container" class="">
-            <img src="/public/icons/home.svg" width="10px" height="10px" alt="home"
-                class="pt-category-image">
+            <img src="/public/icons/home.svg" width="10px" height="10px" alt="home" class="pt-category-image">
         </div>
         <h2 id="category-heading" class="text-steelblue"></h2>
         <div id="productContainer" class="grid">
         </div>
     </div>
-    <div  id="customer-support"></div>
+    <div id="customer-support"></div>
     <footer class="footer" id="footer">
     </footer>
     <script defer src="/scripts/footer2.js"></script>
@@ -160,11 +341,11 @@
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
         const products = durityProducts[name].products
-        document.getElementById('cover-content').innerHTML +=`
+        document.getElementById('cover-content').innerHTML += `
          <h1>Explore Our ${name.charAt(0).toUpperCase() + name.slice(1)}</h1>
             <p>Discover the best products curated just for you.</p>
         `
-        document.getElementById('category-heading').innerText +=`
+        document.getElementById('category-heading').innerText += `
         ${name.toUpperCase()} COLLECTION
         `
         function createProductCards() {
@@ -207,7 +388,6 @@
 
     </script>
     <script defer src="/scripts/navbar2.js"></script>
-    <script src="/scripts/catalogue.js"></script>
     <script>
         const categoryCards = document.querySelectorAll('.category-card');
 
@@ -224,7 +404,7 @@
             const scrollPosition = window.scrollY;
             cover.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
         });
-       
+
 
 
     </script>
