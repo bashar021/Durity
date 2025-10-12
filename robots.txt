@@ -1,3 +1,25 @@
 User-agent: *
 Allow: /
+
+# Disallow admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.log$
+
+# Allow important pages
+Allow: /products.html
+Allow: /about.html
+Allow: /service.html
+Allow: /catalogue.html
+Allow: /events.html
+Allow: /carrerspage.html
+Allow: /register.html
+Allow: /privacy-policy.html
+Allow: /termsAndConditions.html
+
+# Sitemap location
 Sitemap: https://duritybath.com/sitemap.xml
+
+# Crawl delay for better server performance
+Crawl-delay: 1

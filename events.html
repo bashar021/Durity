@@ -1,602 +1,1213 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Cards</title>
-  <link rel="stylesheet" href="/styles/navbar2.css">
-  <link rel="stylesheet" href="/styles/Responsive.css">
-  <script src="/data/products.js"></script>
-  <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
-  <style>
-    body {
-      margin: 0px;
-      padding: 0px;
-    }
+    <!-- SEO Meta Tags -->
+    <title>
+      Durity Bath Events - Bathroom Accessories & Fixtures Trade Shows,
+      Exhibitions & Industry Events
+    </title>
+    <meta
+      name="description"
+      content="Join Durity Bath at leading bathroom accessories and fixtures trade shows, exhibitions, and industry events. Discover our latest bathroom fixtures innovations and connect with industry professionals."
+    />
+    <meta
+      name="keywords"
+      content="Durity Bath events, bathroom accessories trade shows, bathroom fixtures exhibitions, sanitaryware events, bathroom industry events, Durity Bath exhibitions, bathroom accessories shows, plumbing trade shows, bathroom fixtures events, industry conferences"
+    />
+    <meta name="author" content="Durity Bath" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://duritybath.com/events" />
 
-    #searchInput {
-      /* background-color: red; */
-      height: 40px;
-      max-height: 40px;
-      padding: 0px;
-      margin: 0px;
-      padding-left: 10px;
-      /* padding: 10px; */
-    }
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Durity Bath Events - Bathroom Accessories & Fixtures Trade Shows, Exhibitions & Industry Events"
+    />
+    <meta
+      property="og:description"
+      content="Join Durity Bath at leading bathroom accessories and fixtures trade shows, exhibitions, and industry events. Discover our latest bathroom fixtures innovations and connect with industry professionals."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://duritybath.com/events" />
+    <meta
+      property="og:image"
+      content="https://duritybath.com/public/events/main banner image/IMG_20250703_150049.jpg"
+    />
+    <meta property="og:site_name" content="Durity Bath" />
+    <meta property="og:locale" content="en_US" />
 
-    .event-parallax-header {
-      height: 60vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Durity Bath Events - Bathroom Accessories & Fixtures Trade Shows"
+    />
+    <meta
+      name="twitter:description"
+      content="Join Durity Bath at leading bathroom accessories and fixtures trade shows, exhibitions, and industry events. Discover our latest innovations."
+    />
+    <meta
+      name="twitter:image"
+      content="https://duritybath.com/public/events/main banner image/IMG_20250703_150049.jpg"
+    />
 
-    .event-parallax-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120%;
-      background-image: url('/public/events/main banner image/IMG_20250703_150049.jpg');
-      background-size: cover;
-      background-position: center;
-      transform: translateZ(-1px) scale(2);
-      z-index: -1;
-    }
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#007bff" />
+    <meta name="msapplication-TileColor" content="#007bff" />
+    <meta name="format-detection" content="telephone=no" />
 
-    .event-header-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.9));
-    }
+    <!-- Geo-location Meta Tags for Local SEO -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="geo.position" content="28.6139;77.2090" />
+    <meta name="ICBM" content="28.6139, 77.2090" />
 
-    .event-header-content {
-      text-align: center;
-      position: relative;
-      padding: 2rem;
-      max-width: 800px;
-    }
+    <!-- Article/Content Meta Tags -->
+    <meta name="article:author" content="Durity Bath" />
+    <meta name="article:published_time" content="2024-01-01T00:00:00Z" />
+    <meta name="article:modified_time" content="2024-12-19T00:00:00Z" />
+    <meta name="article:section" content="Events" />
+    <meta
+      name="article:tag"
+      content="events, trade shows, exhibitions, bathroom accessories, bathroom fixtures"
+    />
 
-    .event-header-title {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: event-fadeUp 0.8s ease forwards;
-    }
+    <!-- Additional SEO Meta Tags -->
+    <meta name="classification" content="Business" />
+    <meta name="category" content="Events and Trade Shows" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="target" content="all" />
+    <meta
+      name="audience"
+      content="Industry Professionals, Trade Show Visitors, Bathroom Accessories Buyers"
+    />
+    <meta name="expires" content="never" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
 
-    .event-header-subtitle {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.9);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: event-fadeUp 0.8s ease 0.2s forwards;
-    }
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/styles/navbar2.css" as="style" />
+    <link rel="preload" href="/scripts/navbar2.js" as="script" />
+    <link
+      rel="preload"
+      href="/public/events/main banner image/IMG_20250703_150049.jpg"
+      as="image"
+    />
+    <link rel="stylesheet" href="/styles/navbar2.css" />
+    <link rel="stylesheet" href="/styles/Responsive.css" />
+    <script src="/data/products.js"></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/public/icons/durity fav icon .png"
+    />
 
-    @keyframes event-fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Durity Bath Events - Bathroom Accessories & Fixtures Trade Shows, Exhibitions & Industry Events",
+        "description": "Join Durity Bath at leading bathroom accessories and fixtures trade shows, exhibitions, and industry events. Discover our latest bathroom fixtures innovations and connect with industry professionals.",
+        "url": "https://duritybath.com/events",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Durity Bath",
+          "alternateName": "Durity",
+          "url": "https://duritybath.com",
+          "logo": "https://duritybath.com/public/icons/durity logo.svg",
+          "description": "Premium bathroom accessories, fixtures, and fittings manufacturer specializing in modern bathroom solutions, faucets, shower heads, and bath accessories for contemporary homes.",
+          "foundingDate": "2010",
+          "industry": "Bathroom Accessories and Fixtures Manufacturing",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Events Department",
+            "availableLanguage": "English"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN",
+            "addressRegion": "Delhi",
+            "addressLocality": "New Delhi"
+          },
+          "sameAs": [
+            "https://www.instagram.com/duritybathfittings",
+            "https://www.facebook.com/duritybath",
+            "https://www.linkedin.com/company/durity-bath-fittings/",
+            "https://www.youtube.com/@Duritybath"
+          ]
+        }
       }
-    }
+    </script>
 
-    .event-events-section {
-      position: relative;
-      padding: 6rem 2rem;
-      background: #fff;
-      color: #0f172a;
-      border-radius: 40px 40px 0 0;
-      margin-top: -40px;
-    }
+    <!-- Event Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Durity Bath Trade Show Exhibition",
+        "description": "Join Durity Bath at leading bathroom accessories and fixtures trade shows to discover our latest innovations in bathroom fixtures, faucets, and bath accessories.",
+        "startDate": "2024-12-20T09:00:00+05:30",
+        "endDate": "2024-12-22T18:00:00+05:30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Trade Show Venue",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Durity Bath",
+          "url": "https://duritybath.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "INR"
+        }
+      }
+    </script>
 
-    .event-floating-circles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      pointer-events: none;
-    }
+    <!-- FAQ Structured Data for Events -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What events does Durity Bath participate in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Durity Bath participates in major bathroom accessories and fixtures trade shows, exhibitions, and industry events across India and internationally. We showcase our latest bathroom fixtures, faucets, and bath accessories at these events."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I find Durity Bath at trade shows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can find Durity Bath at our dedicated booth at major bathroom accessories trade shows. We display our complete range of bathroom fixtures, faucets, and bath accessories. Check our events page for specific booth numbers and locations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What products does Durity Bath showcase at events?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At trade shows and exhibitions, Durity Bath showcases our complete range of premium bathroom accessories including faucets, shower heads, bath accessories, bathroom fixtures, and modern bathroom solutions for contemporary homes."
+            }
+          }
+        ]
+      }
+    </script>
 
-    .event-circle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.1;
-      animation: event-float 20s infinite linear;
-    }
-
-    .event-circle:nth-child(1) {
-      width: 300px;
-      height: 300px;
-      background: #3b82f6;
-      top: 10%;
-      left: -150px;
-      animation-delay: 0s;
-    }
-
-    .event-circle:nth-child(2) {
-      width: 200px;
-      height: 200px;
-      background: #10b981;
-      top: 60%;
-      right: -100px;
-      animation-delay: -5s;
-    }
-
-    @keyframes event-float {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
       }
 
-      50% {
-        transform: translate(100px, 100px) rotate(180deg);
+      /* Breadcrumb Navigation Styles */
+      .breadcrumb-nav {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        border-bottom: 1px solid #e9ecef;
       }
 
-      100% {
-        transform: translate(0, 0) rotate(360deg);
+      .breadcrumb {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
       }
-    }
 
-    .event-events-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-      position: relative;
-      z-index: 1;
-    }
+      .breadcrumb li {
+        display: flex;
+        align-items: center;
+      }
 
-    .event-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
+      .breadcrumb li:not(:last-child)::after {
+        content: "›";
+        margin: 0 8px;
+        color: #6c757d;
+      }
 
-    .event-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* background: linear-gradient(45deg, #3b82f6, #10b981); */
-      background: linear-gradient(45deg, var(--steelblue-1),var(--steelblue-5));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-      border-radius: 20px;
-    }
+      .breadcrumb a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
 
-    .event-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
+      .breadcrumb a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
 
-    .event-card:hover::before {
-      opacity: 1;
-    }
+      .breadcrumb span {
+        color: #6c757d;
+      }
 
-    .event-image-container {
-      position: relative;
-      height: 240px;
-      overflow: hidden;
-    }
+      #searchInput {
+        /* background-color: red; */
+        height: 40px;
+        max-height: 40px;
+        padding: 0px;
+        margin: 0px;
+        padding-left: 10px;
+        /* padding: 10px; */
+      }
 
-    .event-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+      .event-parallax-header {
+        height: 60vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
 
-    .event-card:hover .event-image {
-      transform: scale(1.1);
-    }
-
-    .event-content {
-      padding: 1.5rem;
-      background: white;
-      position: relative;
-    }
-
-    .event-date {
-      display: inline-block;
-      /* background: linear-gradient(45deg, #3b82f6, #10b981); */
-      background: linear-gradient(45deg, var(--steelblue-1),var(--steelblue-5));
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-      transform: translateY(-50%);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    }
-
-    .event-title {
-      font-size: 1.25rem;
-      color: #0f172a;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-
-    .event-preview {
-      color: #64748b;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .event-view-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #3b82f6;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: transform 0.3s ease;
-    }
-
-    .event-card:hover .event-view-more {
-      transform: translateX(5px);
-    }
-
-    /* Carousel Styles */
-    .event-carousel-container {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 24px 24px 0 0;
-    }
-
-    .event-carousel {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .event-carousel img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .event-carousel-controls {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .event-carousel-control {
-      background: rgba(255, 255, 255, 0.7);
-      border: none;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .event-carousel-control.active {
-      background: white;
-    }
-
-    .event-carousel-control:hover {
-      background: white;
-    }
-
-    /* Modal Styles */
-    .event-modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(8px);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .event-modal-overlay.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .event-modal-container {
-      background: white;
-      border-radius: 24px;
-      width: 100%;
-      max-width: 800px;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      transform: translateY(20px) scale(0.95);
-      transition: all 0.3s ease;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-
-    .event-modal-overlay.active .event-modal-container {
-      transform: translateY(0) scale(1);
-    }
-
-    .event-modal-content {
-      padding: 2rem;
-    }
-
-    .event-modal-description {
-      color: #64748b;
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .event-modal-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      background: linear-gradient(to right, #f8fafc, #f1f5f9);
-      padding: 1.5rem;
-      border-radius: 16px;
-      margin-top: 1.5rem;
-    }
-
-    .event-info-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .event-info-label {
-      font-size: 0.875rem;
-      color: #64748b;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .event-info-value {
-      font-size: 1rem;
-      color: #0f172a;
-      font-weight: 500;
-    }
-
-    .event-close-modal {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
-      color: white;
-    }
-
-    .event-close-modal:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: rotate(90deg);
-    }
-
-    .event-modal-header {
-      position: relative;
-      height: fit-content;
-      overflow: hidden;
-    }
-
-    .event-modal-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .event-modal-image-overlay {
-      position: absolute;
-      top: 0px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 50%;
-      display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.191);
-      z-index: 0;
-      max-height: 235px;
-    }
-
-    .event-modal-title-section {
-      color: white;
-    }
-
-    @media (max-width:480px){
-      .event-parallax-bg{
-        background-image: url('https://placehold.co/1080x1080');
-        /* aspect-ratio: 2 / 1; */
+      .event-parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 120%;
+        background-image: url("/public/events/main banner image/IMG_20250703_150049.jpg");
         background-size: cover;
         background-position: center;
-      }
-    }
-    @media (max-width: 768px) {
-      .event-header-title {
-        font-size: 2.5rem;
+        transform: translateZ(-1px) scale(2);
+        z-index: -1;
       }
 
-      .event-events-grid {
-        grid-template-columns: 1fr;
+      .event-header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(15, 23, 42, 0.3),
+          rgba(15, 23, 42, 0.9)
+        );
+      }
+
+      .event-header-content {
+        text-align: center;
+        position: relative;
+        padding: 2rem;
+        max-width: 800px;
+      }
+
+      .event-header-title {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: event-fadeUp 0.8s ease forwards;
+      }
+
+      .event-header-subtitle {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.9);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: event-fadeUp 0.8s ease 0.2s forwards;
+      }
+
+      @keyframes event-fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .event-events-section {
-        padding: 4rem 1rem;
+        position: relative;
+        padding: 6rem 2rem;
+        background: #fff;
+        color: #0f172a;
+        border-radius: 40px 40px 0 0;
+        margin-top: -40px;
+      }
+
+      .event-floating-circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .event-circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.1;
+        animation: event-float 20s infinite linear;
+      }
+
+      .event-circle:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        background: #3b82f6;
+        top: 10%;
+        left: -150px;
+        animation-delay: 0s;
+      }
+
+      .event-circle:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        background: #10b981;
+        top: 60%;
+        right: -100px;
+        animation-delay: -5s;
+      }
+
+      @keyframes event-float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+          transform: translate(100px, 100px) rotate(180deg);
+        }
+
+        100% {
+          transform: translate(0, 0) rotate(360deg);
+        }
+      }
+
+      .event-events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .event-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .event-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(45deg, #3b82f6, #10b981); */
+        background: linear-gradient(
+          45deg,
+          var(--steelblue-1),
+          var(--steelblue-5)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+        border-radius: 20px;
+      }
+
+      .event-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .event-card:hover::before {
+        opacity: 1;
+      }
+
+      .event-image-container {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+      }
+
+      .event-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .event-card:hover .event-image {
+        transform: scale(1.1);
+      }
+
+      .event-content {
+        padding: 1.5rem;
+        background: white;
+        position: relative;
+      }
+
+      .event-date {
+        display: inline-block;
+        /* background: linear-gradient(45deg, #3b82f6, #10b981); */
+        background: linear-gradient(
+          45deg,
+          var(--steelblue-1),
+          var(--steelblue-5)
+        );
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        transform: translateY(-50%);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+      }
+
+      .event-title {
+        font-size: 1.25rem;
+        color: #0f172a;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+
+      .event-preview {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .event-view-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #3b82f6;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card:hover .event-view-more {
+        transform: translateX(5px);
+      }
+
+      /* Carousel Styles */
+      .event-carousel-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 24px 24px 0 0;
+      }
+
+      .event-carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .event-carousel img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .event-carousel-controls {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .event-carousel-control {
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .event-carousel-control.active {
+        background: white;
+      }
+
+      .event-carousel-control:hover {
+        background: white;
+      }
+
+      /* Modal Styles */
+      .event-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(8px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .event-modal-overlay.active {
+        display: flex;
+        opacity: 1;
       }
 
       .event-modal-container {
-        margin: 1rem;
+        background: white;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(20px) scale(0.95);
+        transition: all 0.3s ease;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
       }
-    }
-  </style>
-  <script src="/data/events.js"></script>
-</head>
 
-<body>
-  <div id="navbar">
-   
-  </div>
-  <header class="event-parallax-header">
-    <div class="event-parallax-bg"></div>
-    <div class="event-header-overlay"></div>
-    <div class="event-header-content">
-      <h1 class="event-header-title text-white">Our Events</h1>
-      <p class="event-header-subtitle">Discover our latest exhibitions, product launches, and design workshops</p>
-    </div>
-  </header>
-
-  <!-- Events Section -->
-  <section class="event-events-section">
-    <div class="event-floating-circles">
-      <div class="event-circle"></div>
-      <div class="event-circle"></div>
-    </div>
-    <div class="event-events-grid">
-      <!-- Event cards will be dynamically inserted here -->
-    </div>
-  </section>
-
-  <!-- Enhanced Modal with Carousel -->
-  <div class="event-modal-overlay">
-    <div class="event-modal-container">
-      <button class="event-close-modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <div class="event-carousel-container">
-        <div class="event-carousel">
-          <!-- Carousel images will be inserted here -->
-        </div>
-      </div>
-      <div class="event-modal-image-overlay">
-        <div class="event-modal-title-section">
-          <span class="event-modal-date"></span>
-          <h2 class="event-modal-title"></h2>
-        </div>
-        <div class="event-carousel-controls">
-          <!-- Carousel controls will be inserted here -->
-        </div>
-      </div>
-      <div class="event-modal-content">
-        <p class="event-modal-description"></p>
-        <div class="event-modal-info">
-          <!-- Event details will be inserted here -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="customer-support"></div>
-  
-  <footer class="footer" id="footer">
-  </footer>
-  <script>
-    // Parallax effect
-    window.addEventListener('scroll', () => {
-      const parallaxBg = document.querySelector('.event-parallax-bg');
-      const scrolled = window.pageYOffset;
-      parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
-    });
-
-    // Sample events data with multiple images
-    const durityEvents = [
-      {
-        id: 1,
-        images: [
-          "/public/events/1.jpg",
-          // "https://placehold.co/1024X768",
-          // "https://placehold.co/1024X768"
-        ],
-        date: "March 15-17, 2025",
-        title: "International Bathroom Expo 2025",
-        preview: "Join us at the largest bathroom accessories exhibition in Asia. Experience our latest collections and innovative designs.",
-        description: "The International Bathroom Expo is the premier event for bathroom innovations and design trends. This year, we're showcasing our revolutionary smart bathroom solutions and sustainable product lines.",
-        location: "Singapore Expo Center",
-        time: "10:00 AM - 6:00 PM",
-        registration: "Open",
-        booth: "Hall A, Booth 123"
-      },
-      {
-        id: 2,
-        images: [
-          "/public/events/2.jpg",
-          // "https://placehold.co/1024X768"
-        ],
-        date: "April 5, 2025",
-        title: "Smart Faucets Launch Event",
-        preview: "Witness the future of bathroom technology with our new line of smart .",
-        description: "Be among the first to experience our revolutionary smart faucets. The event will feature live demonstrations.",
-        location: "Grand Hyatt Hotel",
-        time: "2:00 PM - 5:00 PM",
-        registration: "By Invitation",
-        booth: "Main Ballroom"
-      },
-      {
-        id: 3,
-        images: [
-          "/public/events/3.jpg",
-          // "https:placehold.co/1024X768",
-          // "https://placehold.co/1024X768"
-        ],
-        date: "May 20-22, 2025",
-        title: "Sustainable Living Workshop",
-        preview: "Learn about water conservation and sustainable bathroom solutions in our interactive workshop series.",
-        description: "Join our experts for an immersive workshop on sustainable bathroom designs. Learn about water-saving technologies, eco-friendly materials, and smart water management systems.",
-        location: "Design Center",
-        time: "9:00 AM - 4:00 PM",
-        registration: "Limited Seats",
-        booth: "Workshop Room 2"
+      .event-modal-overlay.active .event-modal-container {
+        transform: translateY(0) scale(1);
       }
-    ];
 
-    // Function to create event cards
-    function createEventCard(event) {
-      const card = document.createElement('div');
-      card.classList.add('event-card');
-      card.innerHTML = `
+      .event-modal-content {
+        padding: 2rem;
+      }
+
+      .event-modal-description {
+        color: #64748b;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .event-modal-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        background: linear-gradient(to right, #f8fafc, #f1f5f9);
+        padding: 1.5rem;
+        border-radius: 16px;
+        margin-top: 1.5rem;
+      }
+
+      .event-info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .event-info-label {
+        font-size: 0.875rem;
+        color: #64748b;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .event-info-value {
+        font-size: 1rem;
+        color: #0f172a;
+        font-weight: 500;
+      }
+
+      .event-close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+        color: white;
+      }
+
+      .event-close-modal:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      .event-modal-header {
+        position: relative;
+        height: fit-content;
+        overflow: hidden;
+      }
+
+      .event-modal-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .event-modal-image-overlay {
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.191);
+        z-index: 0;
+        max-height: 235px;
+      }
+
+      .event-modal-title-section {
+        color: white;
+      }
+
+      @media (max-width: 480px) {
+        .event-parallax-bg {
+          background-image: url("https://placehold.co/1080x1080");
+          /* aspect-ratio: 2 / 1; */
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+      @media (max-width: 768px) {
+        .event-header-title {
+          font-size: 2.5rem;
+        }
+
+        .event-events-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .event-events-section {
+          padding: 4rem 1rem;
+        }
+
+        .event-modal-container {
+          margin: 1rem;
+        }
+      }
+
+      /* Upcoming Events Section Styles */
+      .upcoming-events-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        margin: 60px 0;
+      }
+
+      .upcoming-events-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .upcoming-events-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+
+      .upcoming-events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .upcoming-event-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .upcoming-event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .upcoming-event-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+      }
+
+      .upcoming-event-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .event-meta {
+        display: flex;
+        gap: 20px;
+        color: #007bff;
+        font-weight: 500;
+      }
+
+      /* FAQ Section Styles */
+      .events-faq-section {
+        background: white;
+        padding: 80px 0;
+        margin: 60px 0;
+      }
+
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .faq-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .faq-item {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        transition: transform 0.3s;
+      }
+
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-item h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .faq-item p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Event Benefits Section Styles */
+      .event-benefits-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        margin: 60px 0;
+      }
+
+      .benefits-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .benefits-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .benefit-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        text-align: center;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .benefit-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+      }
+
+      .benefit-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Responsive Design for New Sections */
+      @media (max-width: 768px) {
+        .upcoming-events-grid,
+        .faq-grid,
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .upcoming-event-card,
+        .faq-item,
+        .benefit-card {
+          padding: 20px;
+        }
+
+        .event-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+    <script src="/data/events.js"></script>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Breadcrumb Navigation for SEO -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol
+        class="breadcrumb"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+      >
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <a itemprop="item" href="https://duritybath.com">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">Events</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+
+    <header class="event-parallax-header">
+      <div class="event-parallax-bg"></div>
+      <div class="event-header-overlay"></div>
+      <div class="event-header-content">
+        <h1 class="event-header-title text-white">Durity Bath Events</h1>
+        <p class="event-header-subtitle">
+          Join us at leading bathroom accessories exhibitions, trade shows, and
+          industry events. Discover our latest bathroom fixtures innovations and
+          connect with industry professionals.
+        </p>
+      </div>
+    </header>
+
+    <!-- Events Section -->
+    <section class="event-events-section">
+      <div class="event-floating-circles">
+        <div class="event-circle"></div>
+        <div class="event-circle"></div>
+      </div>
+      <div class="event-events-grid">
+        <!-- Event cards will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <!-- Enhanced Modal with Carousel -->
+    <div class="event-modal-overlay">
+      <div class="event-modal-container">
+        <button class="event-close-modal">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="event-carousel-container">
+          <div class="event-carousel">
+            <!-- Carousel images will be inserted here -->
+          </div>
+        </div>
+        <div class="event-modal-image-overlay">
+          <div class="event-modal-title-section">
+            <span class="event-modal-date"></span>
+            <h2 class="event-modal-title"></h2>
+          </div>
+          <div class="event-carousel-controls">
+            <!-- Carousel controls will be inserted here -->
+          </div>
+        </div>
+        <div class="event-modal-content">
+          <p class="event-modal-description"></p>
+          <div class="event-modal-info">
+            <!-- Event details will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Events Section for SEO -->
+    <!-- <section class="upcoming-events-section">
+      <div class="upcoming-events-container">
+        <h2>Upcoming Bathroom Accessories & Fixtures Events</h2>
+        <div class="upcoming-events-grid">
+          <div class="upcoming-event-card">
+            <h3>Bathroom Accessories Trade Show 2025</h3>
+            <p>
+              Join Durity Bath at the premier bathroom accessories and fixtures
+              trade show. Discover our latest bathroom fixtures, faucets, and
+              bath accessories innovations.
+            </p>
+            <div class="event-meta">
+              <span class="event-date">March 15-17, 2025</span>
+              <span class="event-location">Delhi, India</span>
+            </div>
+          </div>
+          <div class="upcoming-event-card">
+            <h3>Bathroom Fixtures Exhibition</h3>
+            <p>
+              Experience our complete range of premium bathroom accessories and
+              fixtures. Connect with our team and explore modern bathroom
+              solutions for contemporary homes.
+            </p>
+            <div class="event-meta">
+              <span class="event-date">April 10-12, 2025</span>
+              <span class="event-location">Mumbai, India</span>
+            </div>
+          </div>
+          <div class="upcoming-event-card">
+            <h3>Sanitaryware Industry Conference</h3>
+            <p>
+              Participate in discussions about the future of bathroom
+              accessories and fixtures. Learn about industry trends and Durity
+              Bath's innovative approach to bathroom solutions.
+            </p>
+            <div class="event-meta">
+              <span class="event-date">May 5-7, 2025</span>
+              <span class="event-location">Bangalore, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- FAQ Section for SEO -->
+    <section class="events-faq-section">
+      <div class="faq-container">
+        <h2>Frequently Asked Questions About Durity Bath Events</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What events does Durity Bath participate in?</h3>
+            <p>
+              Durity Bath participates in major bathroom accessories and
+              fixtures trade shows, exhibitions, and industry events across
+              India and internationally. We showcase our latest bathroom
+              fixtures, faucets, and bath accessories at these events.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How can I find Durity Bath at trade shows?</h3>
+            <p>
+              You can find Durity Bath at our dedicated booth at major bathroom
+              accessories trade shows. We display our complete range of bathroom
+              fixtures, faucets, and bath accessories. Check our events page for
+              specific booth numbers and locations.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What products does Durity Bath showcase at events?</h3>
+            <p>
+              At trade shows and exhibitions, Durity Bath showcases our complete
+              range of premium bathroom accessories including faucets, shower
+              heads, bath accessories, bathroom fixtures, and modern bathroom
+              solutions for contemporary homes.
+            </p>
+          </div>
+          <!-- <div class="faq-item">
+            <h3>Can I schedule a meeting with Durity Bath at events?</h3>
+            <p>
+              Yes, you can schedule meetings with our team at trade shows and
+              exhibitions. Contact us in advance to arrange a meeting to discuss
+              your bathroom accessories and fixtures requirements.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Benefits Section for SEO -->
+    <section class="event-benefits-section">
+      <div class="benefits-container">
+        <h2>Why Attend Durity Bath Events?</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Latest Bathroom Accessories</h3>
+            <p>
+              Discover our newest bathroom fixtures, faucets, and bath
+              accessories before they hit the market. Get exclusive access to
+              innovative bathroom solutions.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <h3>Expert Consultation</h3>
+            <p>
+              Meet with our bathroom accessories experts and get personalized
+              advice on choosing the right bathroom fixtures for your projects.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <h3>Industry Networking</h3>
+            <p>
+              Connect with other professionals in the bathroom accessories and
+              fixtures industry. Build valuable relationships and partnerships.
+            </p>
+          </div>
+          <!-- <div class="benefit-card">
+            <h3>Exclusive Offers</h3>
+            <p>
+              Take advantage of special event-only pricing and exclusive deals
+              on our premium bathroom accessories and fixtures.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <div id="customer-support"></div>
+
+    <footer class="footer" id="footer"></footer>
+    <script>
+      // Parallax effect
+      window.addEventListener("scroll", () => {
+        const parallaxBg = document.querySelector(".event-parallax-bg");
+        const scrolled = window.pageYOffset;
+        parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+      });
+
+      // Sample events data with multiple images
+      const durityEvents = [
+        {
+          id: 1,
+          images: [
+            "/public/events/1.jpg",
+            // "https://placehold.co/1024X768",
+            // "https://placehold.co/1024X768"
+          ],
+          date: "March 15-17, 2025",
+          title: "International Bathroom Expo 2025",
+          preview:
+            "Join us at the largest bathroom accessories exhibition in Asia. Experience our latest collections and innovative designs.",
+          description:
+            "The International Bathroom Expo is the premier event for bathroom innovations and design trends. This year, we're showcasing our revolutionary smart bathroom solutions and sustainable product lines.",
+          location: "Singapore Expo Center",
+          time: "10:00 AM - 6:00 PM",
+          registration: "Open",
+          booth: "Hall A, Booth 123",
+        },
+        {
+          id: 2,
+          images: [
+            "/public/events/2.jpg",
+            // "https://placehold.co/1024X768"
+          ],
+          date: "April 5, 2025",
+          title: "Smart Faucets Launch Event",
+          preview:
+            "Witness the future of bathroom technology with our new line of smart .",
+          description:
+            "Be among the first to experience our revolutionary smart faucets. The event will feature live demonstrations.",
+          location: "Grand Hyatt Hotel",
+          time: "2:00 PM - 5:00 PM",
+          registration: "By Invitation",
+          booth: "Main Ballroom",
+        },
+        {
+          id: 3,
+          images: [
+            "/public/events/3.jpg",
+            // "https:placehold.co/1024X768",
+            // "https://placehold.co/1024X768"
+          ],
+          date: "May 20-22, 2025",
+          title: "Sustainable Living Workshop",
+          preview:
+            "Learn about water conservation and sustainable bathroom solutions in our interactive workshop series.",
+          description:
+            "Join our experts for an immersive workshop on sustainable bathroom designs. Learn about water-saving technologies, eco-friendly materials, and smart water management systems.",
+          location: "Design Center",
+          time: "9:00 AM - 4:00 PM",
+          registration: "Limited Seats",
+          booth: "Workshop Room 2",
+        },
+      ];
+
+      // Function to create event cards
+      function createEventCard(event) {
+        const card = document.createElement("div");
+        card.classList.add("event-card");
+        card.innerHTML = `
     <div class="event-image-container">
       <img class="event-image" src="${event.images[0]}" alt="${event.title}">
     </div>
@@ -607,44 +1218,48 @@
       <span class="event-view-more text-steelblue">View More →</span>
     </div>
   `;
-      card.addEventListener('click', () => openModal(event));
-      return card;
-    }
+        card.addEventListener("click", () => openModal(event));
+        return card;
+      }
 
-    // Function to open modal with event details and carousel
-    function openModal(event) {
-      const modalOverlay = document.querySelector('.event-modal-overlay');
-      const carousel = document.querySelector('.event-carousel');
-      const carouselControls = document.querySelector('.event-carousel-controls');
-      const modalDate = document.querySelector('.event-modal-date');
-      const modalTitle = document.querySelector('.event-modal-title');
-      const modalDescription = document.querySelector('.event-modal-description');
-      const modalInfo = document.querySelector('.event-modal-info');
+      // Function to open modal with event details and carousel
+      function openModal(event) {
+        const modalOverlay = document.querySelector(".event-modal-overlay");
+        const carousel = document.querySelector(".event-carousel");
+        const carouselControls = document.querySelector(
+          ".event-carousel-controls"
+        );
+        const modalDate = document.querySelector(".event-modal-date");
+        const modalTitle = document.querySelector(".event-modal-title");
+        const modalDescription = document.querySelector(
+          ".event-modal-description"
+        );
+        const modalInfo = document.querySelector(".event-modal-info");
 
-      // Clear existing carousel content
-      carousel.innerHTML = '';
-      carouselControls.innerHTML = '';
+        // Clear existing carousel content
+        carousel.innerHTML = "";
+        carouselControls.innerHTML = "";
 
-      // Add images to the carousel
-      event.images.forEach((image, index) => {
-        const img = document.createElement('img');
-        img.src = image;
-        img.alt = `${event.title} Image ${index + 1}`;
-        carousel.innerHTML += `<img src="${image}" alt="">`;
+        // Add images to the carousel
+        event.images.forEach((image, index) => {
+          const img = document.createElement("img");
+          img.src = image;
+          img.alt = `${event.title} Image ${index + 1}`;
+          carousel.innerHTML += `<img src="${image}" alt="">`;
 
-        const control = document.createElement('button');
-        control.classList.add('event-carousel-control');
-        if (index === 0) control.classList.add('active');
-        control.addEventListener('click', () => moveCarousel(index));
-        carouselControls.appendChild(control);
-      });
+          const control = document.createElement("button");
+          control.classList.add("event-carousel-control");
+          if (index === 0) control.classList.add("active");
+          control.addEventListener("click", () => moveCarousel(index));
+          carouselControls.appendChild(control);
+        });
 
-      // Set modal content
-      modalDate.textContent = event.date;
-      modalTitle.textContent = event.title;
-      modalDescription.textContent = event.description;
+        // Set modal content
+        modalDate.textContent = event.date;
+        modalTitle.textContent = event.title;
+        modalDescription.textContent = event.description;
 
-      modalInfo.innerHTML = `
+        modalInfo.innerHTML = `
     <div class="event-info-item">
       <span class="event-info-label">📍 Location</span>
       <span class="event-info-value">${event.location}</span>
@@ -663,48 +1278,48 @@
     </div>
   `;
 
-      // Show modal
-      modalOverlay.classList.add('active');
-    }
+        // Show modal
+        modalOverlay.classList.add("active");
+      }
 
-    // Function to move the carousel to a specific index
-    function moveCarousel(index) {
-      const carousel = document.querySelector('.event-carousel');
-      const controls = document.querySelectorAll('.event-carousel-control');
-      const offset = -index * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
+      // Function to move the carousel to a specific index
+      function moveCarousel(index) {
+        const carousel = document.querySelector(".event-carousel");
+        const controls = document.querySelectorAll(".event-carousel-control");
+        const offset = -index * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
 
-      // Update active control
-      controls.forEach((control, i) => {
-        if (i === index) control.classList.add('active');
-        else control.classList.remove('active');
+        // Update active control
+        controls.forEach((control, i) => {
+          if (i === index) control.classList.add("active");
+          else control.classList.remove("active");
+        });
+      }
+
+      // Function to close modal
+      function closeModal() {
+        const modalOverlay = document.querySelector(".event-modal-overlay");
+        modalOverlay.classList.remove("active");
+      }
+
+      // Event listener for closing modal
+      document
+        .querySelector(".event-close-modal")
+        .addEventListener("click", closeModal);
+      document
+        .querySelector(".event-modal-overlay")
+        .addEventListener("click", (e) => {
+          if (e.target === e.currentTarget) closeModal();
+        });
+
+      // Insert event cards into the DOM
+      const eventsGrid = document.querySelector(".event-events-grid");
+      durityEvents.forEach((event) => {
+        const card = createEventCard(event);
+        eventsGrid.appendChild(card);
       });
-    }
-
-    // Function to close modal
-    function closeModal() {
-      const modalOverlay = document.querySelector('.event-modal-overlay');
-      modalOverlay.classList.remove('active');
-    }
-
-    // Event listener for closing modal
-    document.querySelector('.event-close-modal').addEventListener('click', closeModal);
-    document.querySelector('.event-modal-overlay').addEventListener('click', (e) => {
-      if (e.target === e.currentTarget) closeModal();
-    });
-
-    // Insert event cards into the DOM
-    const eventsGrid = document.querySelector('.event-events-grid');
-    durityEvents.forEach(event => {
-      const card = createEventCard(event);
-      eventsGrid.appendChild(card);
-
-    });
-  </script>
-  <script defer src="/scripts/navbar2.js"></script>
-  <script src="/scripts/footer2.js"></script>
-
-
-</body>
-
+    </script>
+    <script defer src="/scripts/navbar2.js"></script>
+    <script src="/scripts/footer2.js"></script>
+  </body>
 </html>

@@ -1,312 +1,783 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Careers - Join Our Team</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/navbar2.css">
-  <link rel="stylesheet" href="/styles/Responsive.css">
-  <script src="/data/products.js"></script>
-  <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
+    <!-- SEO Meta Tags -->
+    <title>
+      Careers at Durity Bath - Join Our Team | Bathroom Accessories & Fixtures
+      Jobs
+    </title>
+    <meta
+      name="description"
+      content="Join Durity Bath's growing team! Explore career opportunities in bathroom accessories manufacturing, sales, design, and more. Be part of India's leading bathroom fixtures company."
+    />
+    <meta
+      name="keywords"
+      content="careers at Durity Bath, bathroom accessories jobs, bathroom fixtures careers, manufacturing jobs, sales careers, design jobs, bathroom industry careers, Durity Bath careers, job opportunities, employment"
+    />
+    <meta name="author" content="Durity Bath" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
 
-  <style>
-    body {
-      margin: 0px;
-      padding: 0px;
-    }
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://duritybath.com/careers" />
 
-    /* Hero Section */
-    #my-nav {
-      /* width: 96%; */
-      /* background-color: red; */
-    }
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Careers at Durity Bath - Join Our Team | Bathroom Accessories & Fixtures Jobs"
+    />
+    <meta
+      property="og:description"
+      content="Join Durity Bath's growing team! Explore career opportunities in bathroom accessories manufacturing, sales, design, and more. Be part of India's leading bathroom fixtures company."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://duritybath.com/careers" />
+    <meta
+      property="og:image"
+      content="https://duritybath.com/public/carreers/banner/career-mainbanner.jpg"
+    />
+    <meta property="og:site_name" content="Durity Bath" />
+    <meta property="og:locale" content="en_US" />
 
-    #searchInput {
-      /* background-color: red; */
-      height: 40px;
-      max-height: 40px;
-      padding: 0px;
-      margin: 0px;
-      padding-left: 10px;
-      /* padding: 10px; */
-    }
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Careers at Durity Bath - Join Our Team"
+    />
+    <meta
+      name="twitter:description"
+      content="Join Durity Bath's growing team! Explore career opportunities in bathroom accessories manufacturing, sales, design, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="https://duritybath.com/public/carreers/banner/career-mainbanner.jpg"
+    />
 
-    .careers-hero {
-      background-image: url('/public/carreers/banner/career-mainbanner.jpg');
-      position: relative;
-      background-size: cover;
-      /* display: flex; */
-      /* flex-direction: ; */
-      /* justify-content: center; */
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#007bff" />
+    <meta name="msapplication-TileColor" content="#007bff" />
+    <meta name="format-detection" content="telephone=no" />
 
+    <!-- Geo-location Meta Tags for Local SEO -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="geo.position" content="28.6139;77.2090" />
+    <meta name="ICBM" content="28.6139, 77.2090" />
 
+    <!-- Article/Content Meta Tags -->
+    <meta name="article:author" content="Durity Bath" />
+    <meta name="article:published_time" content="2024-01-01T00:00:00Z" />
+    <meta name="article:modified_time" content="2024-12-19T00:00:00Z" />
+    <meta name="article:section" content="Careers" />
+    <meta
+      name="article:tag"
+      content="careers, jobs, employment, bathroom accessories, bathroom fixtures"
+    />
 
-    }
+    <!-- Additional SEO Meta Tags -->
+    <meta name="classification" content="Business" />
+    <meta name="category" content="Careers and Employment" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="target" content="all" />
+    <meta name="audience" content="Job Seekers, Professionals" />
+    <meta name="expires" content="never" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
 
-    .careers-hero-content div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgb(5, 5, 5);
-      text-align: center;
-    }
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/styles/navbar2.css" as="style" />
+    <link rel="preload" href="/scripts/navbar2.js" as="script" />
+    <link
+      rel="preload"
+      href="/public/carreers/banner/career-mainbanner.jpg"
+      as="image"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/navbar2.css" />
+    <link rel="stylesheet" href="/styles/Responsive.css" />
+    <script src="/data/products.js"></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/public/icons/durity fav icon .png"
+    />
 
-    .careers-hero {
-      height: 60vh;
-      /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080'); */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Careers at Durity Bath - Join Our Team",
+        "description": "Join Durity Bath's growing team! Explore career opportunities in bathroom accessories manufacturing, sales, design, and more. Be part of India's leading bathroom fixtures company.",
+        "url": "https://duritybath.com/careers",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Durity Bath",
+          "alternateName": "Durity",
+          "url": "https://duritybath.com",
+          "logo": "https://duritybath.com/public/icons/durity logo.svg",
+          "description": "Premium bathroom accessories, fixtures, and fittings manufacturer specializing in modern bathroom solutions, faucets, shower heads, and bath accessories for contemporary homes.",
+          "foundingDate": "2010",
+          "industry": "Bathroom Accessories and Fixtures Manufacturing",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "HR Department",
+            "availableLanguage": "English"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN",
+            "addressRegion": "Delhi",
+            "addressLocality": "New Delhi"
+          },
+          "sameAs": [
+            "https://www.instagram.com/duritybathfittings",
+            "https://www.facebook.com/duritybath",
+            "https://www.linkedin.com/company/durity-bath-fittings/",
+            "https://www.youtube.com/@Duritybath"
+          ],
+          "hasJobPosting": [
+            {
+              "@type": "JobPosting",
+              "title": "Bathroom Accessories Sales Representative",
+              "description": "Join our sales team to promote premium bathroom accessories and fixtures to customers across India.",
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Durity Bath"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN"
+                }
+              }
+            },
+            {
+              "@type": "JobPosting",
+              "title": "Bathroom Fixtures Design Engineer",
+              "description": "Design innovative bathroom fixtures and accessories for modern homes. Work with our engineering team to create cutting-edge bathroom solutions.",
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Durity Bath"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN"
+                }
+              }
+            }
+          ]
+        }
+      }
+    </script>
 
-    .careers-hero-content {
-      max-width: 800px;
-      padding: 2rem;
-    }
+    <!-- FAQ Structured Data for Careers -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What career opportunities are available at Durity Bath?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Durity Bath offers various career opportunities including sales positions, design engineering roles, manufacturing jobs, marketing positions, and administrative roles in the bathroom accessories and fixtures industry."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What qualifications are required for jobs at Durity Bath?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Qualifications vary by position. Sales roles typically require communication skills and industry knowledge. Engineering positions require relevant technical degrees. We value experience in bathroom accessories, fixtures, or related industries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Durity Bath offer training for new employees?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Durity Bath provides comprehensive training programs for new employees, including product knowledge, industry insights, and company culture orientation to ensure success in bathroom accessories and fixtures roles."
+            }
+          }
+        ]
+      }
+    </script>
 
-    .careers-hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-    }
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
 
-    .careers-hero p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
+      /* Breadcrumb Navigation Styles */
+      .breadcrumb-nav {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        border-bottom: 1px solid #e9ecef;
+      }
 
-    /* Search Section */
-    .careers-search-section {
-      background: #f8f9fa;
-      padding: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+      .breadcrumb {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+      }
 
-    .careers-search-container {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
+      .breadcrumb li {
+        display: flex;
+        align-items: center;
+      }
 
-    .careers-search-input {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      border: 2px solid #e9ecef;
-      border-radius: 50px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
+      .breadcrumb li:not(:last-child)::after {
+        content: "›";
+        margin: 0 8px;
+        color: #6c757d;
+      }
 
-    .careers-search-input:focus {
-      outline: none;
-      border-color: #2c3e50;
-      box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
-    }
+      .breadcrumb a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
 
-    /* Jobs Section */
-    .careers-jobs-section {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-    }
+      .breadcrumb a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
 
-    .careers-jobs-list {
-      overflow-y: auto;
-      max-height: 800px;
-    }
+      .breadcrumb span {
+        color: #6c757d;
+      }
 
-    .careers-job-card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
+      /* Hero Section */
+      #my-nav {
+        /* width: 96%; */
+        /* background-color: red; */
+      }
 
-    .careers-job-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+      #searchInput {
+        /* background-color: red; */
+        height: 40px;
+        max-height: 40px;
+        padding: 0px;
+        margin: 0px;
+        padding-left: 10px;
+        /* padding: 10px; */
+      }
 
-    .careers-job-card.active {
-      border-color: #2c3e50;
-    }
-
-    .careers-job-card h3 {
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-    }
-
-    .careers-job-meta {
-      display: flex;
-      gap: 1rem;
-      color: #6c757d;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .careers-job-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    /* Job Details Section */
-    .careers-job-details {
-      background: white;
-      border-radius: 10px;
-      padding: 2rem;
-      position: sticky;
-      top: 100px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .careers-job-details h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
-
-    .careers-details-meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e9ecef;
-    }
-
-    .careers-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #6c757d;
-    }
-
-    .careers-job-description {
-      color: #495057;
-      line-height: 1.6;
-    }
-
-    .careers-job-description h3 {
-      color: #2c3e50;
-      margin: 1.5rem 0 0.5rem;
-    }
-
-    .careers-apply-btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: #2c3e50;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    .careers-apply-btn:hover {
-      background: #34495e;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 480px) {
       .careers-hero {
-        background-image: url('https://placehold.co/1080x1080');
-        aspect-ratio: 2 / 1;
-        width: 100%;
+        background-image: url("/public/carreers/banner/career-mainbanner.jpg");
+        position: relative;
         background-size: cover;
+        /* display: flex; */
+        /* flex-direction: ; */
+        /* justify-content: center; */
+      }
+
+      .careers-hero-content div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(5, 5, 5);
+        text-align: center;
+      }
+
+      .careers-hero {
+        height: 60vh;
+        /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080'); */
         background-position: center;
-        border-radius: 1rem;
-      
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
       }
-    }
 
-    @media (max-width: 968px) {
-      .careers-jobs-section {
-        grid-template-columns: 1fr;
-      }
-
-      .careers-job-details {
-        position: static;
-        margin-top: 2rem;
+      .careers-hero-content {
+        max-width: 800px;
+        padding: 2rem;
       }
 
       .careers-hero h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div id="navbar">
-  </div>
-  <!-- Hero Section -->
-  <section class="careers-hero">
-    <div class="careers-hero-content">
+      .careers-hero p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
 
-      <div>
-        <h1>Join Our Team</h1>
-        <p>Help us revolutionize the bathroom accessories industry with innovation and design excellence</p>
+      /* Search Section */
+      .careers-search-section {
+        background: #f8f9fa;
+        padding: 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .careers-search-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .careers-search-input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border: 2px solid #e9ecef;
+        border-radius: 50px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .careers-search-input:focus {
+        outline: none;
+        border-color: #2c3e50;
+        box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+      }
+
+      /* Jobs Section */
+      .careers-jobs-section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+      }
+
+      .careers-jobs-list {
+        overflow-y: auto;
+        max-height: 800px;
+      }
+
+      .careers-job-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .careers-job-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .careers-job-card.active {
+        border-color: #2c3e50;
+      }
+
+      .careers-job-card h3 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .careers-job-meta {
+        display: flex;
+        gap: 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .careers-job-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      /* Job Details Section */
+      .careers-job-details {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        position: sticky;
+        top: 100px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .careers-job-details h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .careers-details-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .careers-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #6c757d;
+      }
+
+      .careers-job-description {
+        color: #495057;
+        line-height: 1.6;
+      }
+
+      .careers-job-description h3 {
+        color: #2c3e50;
+        margin: 1.5rem 0 0.5rem;
+      }
+
+      .careers-apply-btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-top: 2rem;
+        width: 100%;
+      }
+
+      .careers-apply-btn:hover {
+        background: #34495e;
+      }
+
+      /* Company Culture Section Styles */
+      .company-culture-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        margin: 60px 0;
+      }
+
+      .culture-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .culture-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+
+      .culture-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .culture-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        text-align: center;
+      }
+
+      .culture-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .culture-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+      }
+
+      .culture-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* FAQ Section Styles */
+      .careers-faq-section {
+        background: white;
+        padding: 80px 0;
+        margin: 60px 0;
+      }
+
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .faq-container h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .faq-item {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        transition: transform 0.3s;
+      }
+
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-item h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .faq-item p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .culture-grid,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .culture-card,
+        .faq-item {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .careers-hero {
+          background-image: url("https://placehold.co/1080x1080");
+          aspect-ratio: 2 / 1;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+          border-radius: 1rem;
+        }
+      }
+
+      @media (max-width: 968px) {
+        .careers-jobs-section {
+          grid-template-columns: 1fr;
+        }
+
+        .careers-job-details {
+          position: static;
+          margin-top: 2rem;
+        }
+
+        .careers-hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Breadcrumb Navigation for SEO -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol
+        class="breadcrumb"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+      >
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <a itemprop="item" href="https://duritybath.com">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name">Careers</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="careers-hero">
+      <div class="careers-hero-content">
+        <div>
+          <h1>
+            Join Our Team at Durity Bath - Careers in Bathroom Accessories &
+            Fixtures
+          </h1>
+          <p>
+            Help us revolutionize the bathroom accessories industry with
+            innovation and design excellence. Join India's leading bathroom
+            fixtures company and build your career in premium bathroom
+            solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="careers-search-section">
+      <div class="careers-search-container">
+        <input
+          type="text"
+          id="careers-searchInput"
+          class="careers-search-input"
+          placeholder="Search for jobs by title, location, or department..."
+        />
+      </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="careers-jobs-section">
+      <!-- Jobs List -->
+      <div class="careers-jobs-list" id="careers-jobsList">
+        <!-- Job cards will be dynamically inserted here -->
       </div>
 
-    </div>
-  </section>
+      <!-- Job Details -->
+      <div class="careers-job-details" id="careers-jobDetails">
+        <!-- Job details will be dynamically inserted here -->
+      </div>
+    </section>
 
-  <!-- Search Section -->
-  <section class="careers-search-section">
-    <div class="careers-search-container">
-      <input type="text" id="careers-searchInput" class="careers-search-input"
-        placeholder="Search for jobs by title, location, or department...">
-    </div>
-  </section>
+    <!-- Company Culture Section for SEO -->
+    <section class="company-culture-section">
+      <div class="culture-container">
+        <h2>Why Work at Durity Bath?</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <h3>Innovation in Bathroom Accessories</h3>
+            <p>
+              Be part of a team that's revolutionizing the bathroom fixtures
+              industry with cutting-edge designs and premium bathroom
+              accessories that set industry standards.
+            </p>
+          </div>
+          <div class="culture-card">
+            <h3>Career Growth Opportunities</h3>
+            <p>
+              Join a growing company in the bathroom accessories sector with
+              opportunities for advancement in sales, design, manufacturing, and
+              leadership roles.
+            </p>
+          </div>
+          <div class="culture-card">
+            <h3>Industry Expertise</h3>
+            <p>
+              Work with experts in bathroom fixtures and accessories, gaining
+              valuable experience in one of India's fastest-growing home
+              improvement sectors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Jobs Section -->
-  <section class="careers-jobs-section">
-    <!-- Jobs List -->
-    <div class="careers-jobs-list" id="careers-jobsList">
-      <!-- Job cards will be dynamically inserted here -->
-    </div>
+    <!-- FAQ Section for SEO -->
+    <section class="careers-faq-section">
+      <div class="faq-container">
+        <h2>Frequently Asked Questions About Careers at Durity Bath</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What types of positions are available at Durity Bath?</h3>
+            <p>
+              We offer various career opportunities including sales
+              representatives for bathroom accessories, design engineers for
+              bathroom fixtures, manufacturing specialists, marketing
+              professionals, and administrative roles in the bathroom industry.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>
+              What qualifications are needed for bathroom accessories sales
+              roles?
+            </h3>
+            <p>
+              Sales positions typically require strong communication skills,
+              knowledge of bathroom fixtures and accessories, and experience in
+              B2B sales. We provide comprehensive training on our premium
+              bathroom accessories product line.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Durity Bath offer training for new employees?</h3>
+            <p>
+              Yes, we provide extensive training programs covering bathroom
+              accessories product knowledge, industry insights, sales
+              techniques, and company culture to ensure success in your role.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Job Details -->
-    <div class="careers-job-details" id="careers-jobDetails">
-      <!-- Job details will be dynamically inserted here -->
-    </div>
-  </section>
-  <div id="customer-support"></div>
-  <footer class="footer" id="footer">
-  </footer>
+    <div id="customer-support"></div>
+    <footer class="footer" id="footer"></footer>
 
-  <script>
-    // Sample jobs data
-    const jobs = [
-      {
-        id: 1,
-        title: "Regional Sales Manage",
-        location: "Delhi, Telangana, Maharashtra, Rajasthan, Tamil Nadu, Kerala",
-        department: "Sales & Marketing",
-        type: "Full-time",
-        experience: "Experience 5- 7 years",
-        salary: "Negotiable",
-        description: `<h3>About the Role</h3>
+    <script>
+      // Sample jobs data
+      const jobs = [
+        {
+          id: 1,
+          title: "Regional Sales Manage",
+          location:
+            "Delhi, Telangana, Maharashtra, Rajasthan, Tamil Nadu, Kerala",
+          department: "Sales & Marketing",
+          type: "Full-time",
+          experience: "Experience 5- 7 years",
+          salary: "Negotiable",
+          description: `<h3>About the Role</h3>
                 <p>We're looking for a talented Product Designer to join our team and help create innovative bathroom accessories that combine functionality with aesthetic appeal.</p>
                 <h3>Requirements</h3>
                 <ul>
@@ -321,17 +792,18 @@
                     <li>Collaborate with engineering team</li>
                     <li>Create product prototypes</li>
                     <li>Conduct user research</li>
-                </ul>`
-      },
-      {
-        id: 2,
-        title: "Sales Manager",
-        location: "Delhi, Pune, Mumbai, Kolhapur, Ernakulam, Chennai, Hyderabad, Nashik, Nagpur",
-        department: "Sales & Marketing",
-        type: "Full-time",
-        experience: "Experience 5- 7 years",
-        salary: "Negotiable",
-        description: `<h3>About the Role</h3>
+                </ul>`,
+        },
+        {
+          id: 2,
+          title: "Sales Manager",
+          location:
+            "Delhi, Pune, Mumbai, Kolhapur, Ernakulam, Chennai, Hyderabad, Nashik, Nagpur",
+          department: "Sales & Marketing",
+          type: "Full-time",
+          experience: "Experience 5- 7 years",
+          salary: "Negotiable",
+          description: `<h3>About the Role</h3>
                 <p>We're looking for a talented Product Designer to join our team and help create innovative bathroom accessories that combine functionality with aesthetic appeal.</p>
                 <h3>Requirements</h3>
                 <ul>
@@ -346,14 +818,13 @@
                     <li>Collaborate with engineering team</li>
                     <li>Create product prototypes</li>
                     <li>Conduct user research</li>
-                </ul>`
-      },
+                </ul>`,
+        },
+      ];
 
-    ];
-
-    // Function to create job card
-    function createJobCard(job) {
-      return `
+      // Function to create job card
+      function createJobCard(job) {
+        return `
                 <div class="careers-job-card" data-id="${job.id}">
                     <h3>${job.title}</h3>
                     <div class="careers-job-meta">
@@ -363,12 +834,12 @@
                     </div>
                 </div>
             `;
-    }
+      }
 
-    // Function to display job details
-    function displayJobDetails(job) {
-      const jobDetails = document.getElementById('careers-jobDetails');
-      jobDetails.innerHTML = `
+      // Function to display job details
+      function displayJobDetails(job) {
+        const jobDetails = document.getElementById("careers-jobDetails");
+        jobDetails.innerHTML = `
                 <h2>${job.title}</h2>
                 <div class="careers-details-meta">
                     <div class="careers-meta-item">
@@ -397,68 +868,74 @@
                 </div>
                 <button class="careers-apply-btn bg-steelblue">Apply Now</button>
             `;
-    }
-
-    // Initialize page
-    function initializePage() {
-      const jobsList = document.getElementById('careers-jobsList');
-      jobs.forEach(job => {
-        jobsList.innerHTML += createJobCard(job);
-      });
-
-      // Display first job by default
-      displayJobDetails(jobs[0]);
-      document.querySelector('.careers-job-card').classList.add('active');
-
-      // Add click listeners to job cards
-      document.querySelectorAll('.careers-job-card').forEach(card => {
-        card.addEventListener('click', () => {
-          document.querySelectorAll('.careers-job-card').forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          const job = jobs.find(j => j.id === parseInt(card.dataset.id));
-          displayJobDetails(job);
-        });
-      });
-    }
-
-    // Search functionality
-    document.getElementById('careers-searchInput').addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const jobsList = document.getElementById('careers-jobsList');
-      jobsList.innerHTML = '';
-
-      const filteredJobs = jobs.filter(job =>
-        job.title.toLowerCase().includes(searchTerm) ||
-        job.location.toLowerCase().includes(searchTerm) ||
-        job.department.toLowerCase().includes(searchTerm)
-      );
-
-      filteredJobs.forEach(job => {
-        jobsList.innerHTML += createJobCard(job);
-      });
-
-      // Reinitialize click listeners for filtered cards
-      document.querySelectorAll('.careers-job-card').forEach(card => {
-        card.addEventListener('click', () => {
-          document.querySelectorAll('.careers-job-card').forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          const job = jobs.find(j => j.id === parseInt(card.dataset.id));
-          displayJobDetails(job);
-        });
-      });
-
-      // Show first filtered job details if any exist
-      if (filteredJobs.length > 0) {
-        displayJobDetails(filteredJobs[0]);
-        document.querySelector('.careers-job-card').classList.add('active');
       }
-    });
 
-    // Initialize the page
-    initializePage();
-  </script>
-  <script defer src="/scripts/navbar2.js"></script>
-  <script defer src="/scripts/footer2.js"></script>
-</body>
+      // Initialize page
+      function initializePage() {
+        const jobsList = document.getElementById("careers-jobsList");
+        jobs.forEach((job) => {
+          jobsList.innerHTML += createJobCard(job);
+        });
 
+        // Display first job by default
+        displayJobDetails(jobs[0]);
+        document.querySelector(".careers-job-card").classList.add("active");
+
+        // Add click listeners to job cards
+        document.querySelectorAll(".careers-job-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            document
+              .querySelectorAll(".careers-job-card")
+              .forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
+            const job = jobs.find((j) => j.id === parseInt(card.dataset.id));
+            displayJobDetails(job);
+          });
+        });
+      }
+
+      // Search functionality
+      document
+        .getElementById("careers-searchInput")
+        .addEventListener("input", (e) => {
+          const searchTerm = e.target.value.toLowerCase();
+          const jobsList = document.getElementById("careers-jobsList");
+          jobsList.innerHTML = "";
+
+          const filteredJobs = jobs.filter(
+            (job) =>
+              job.title.toLowerCase().includes(searchTerm) ||
+              job.location.toLowerCase().includes(searchTerm) ||
+              job.department.toLowerCase().includes(searchTerm)
+          );
+
+          filteredJobs.forEach((job) => {
+            jobsList.innerHTML += createJobCard(job);
+          });
+
+          // Reinitialize click listeners for filtered cards
+          document.querySelectorAll(".careers-job-card").forEach((card) => {
+            card.addEventListener("click", () => {
+              document
+                .querySelectorAll(".careers-job-card")
+                .forEach((c) => c.classList.remove("active"));
+              card.classList.add("active");
+              const job = jobs.find((j) => j.id === parseInt(card.dataset.id));
+              displayJobDetails(job);
+            });
+          });
+
+          // Show first filtered job details if any exist
+          if (filteredJobs.length > 0) {
+            displayJobDetails(filteredJobs[0]);
+            document.querySelector(".careers-job-card").classList.add("active");
+          }
+        });
+
+      // Initialize the page
+      initializePage();
+    </script>
+    <script defer src="/scripts/navbar2.js"></script>
+    <script defer src="/scripts/footer2.js"></script>
+  </body>
 </html>
