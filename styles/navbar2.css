@@ -524,6 +524,9 @@
 .catalogue-download-form-box{
     overflow-y: auto;
 }
+.all-rights-reserved-footer-mark{
+    font-size: 15px !important;
+}
 @media (max-width: 968px) {
     .nav-links {
         display: none;

@@ -1,148 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Products</title>
-    <link rel="stylesheet" href="/styles/productPopUp.css">
-    <link rel="stylesheet" href="/styles/common.css">
+    <!-- SEO Meta Tags -->
+    <title id="page-title">
+      Durity Bath Products - Premium Bathroom Accessories & Fixtures Collection
+    </title>
+    <meta
+      name="description"
+      id="page-description"
+      content="Explore Durity's comprehensive collection of premium bathroom accessories and fixtures. Discover faucets, shower heads, bath accessories, and modern bathroom solutions for contemporary homes."
+    />
+    <meta
+      name="keywords"
+      content="bathroom accessories, bathroom fixtures, faucets, shower heads, bath accessories, bathroom fittings, modern bathroom, bathroom decor, bathroom hardware, bathroom solutions, Durity bath, premium bathroom accessories, bathroom renovation, sanitaryware, bathroom taps, bathroom showers"
+    />
+    <meta name="author" content="Durity Bath" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      id="canonical-url"
+      href="https://duritybath.com/products"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      id="og-title"
+      content="Durity Bath Products - Premium Bathroom Accessories & Fixtures Collection"
+    />
+    <meta
+      property="og:description"
+      id="og-description"
+      content="Explore Durity's comprehensive collection of premium bathroom accessories and fixtures. Discover faucets, shower heads, bath accessories, and modern bathroom solutions."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      id="og-url"
+      content="https://duritybath.com/products"
+    />
+    <meta
+      property="og:image"
+      content="https://duritybath.com/public/icons/durity logo.svg"
+    />
+    <meta property="og:site_name" content="Durity Bath" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      id="twitter-title"
+      content="Durity Bath Products - Premium Bathroom Accessories Collection"
+    />
+    <meta
+      name="twitter:description"
+      id="twitter-description"
+      content="Explore Durity's comprehensive collection of premium bathroom accessories and fixtures. Discover modern bathroom solutions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://duritybath.com/public/icons/durity logo.svg"
+    />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#007bff" />
+    <meta name="msapplication-TileColor" content="#007bff" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Geo-location Meta Tags for Local SEO -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="geo.position" content="28.6139;77.2090" />
+    <meta name="ICBM" content="28.6139, 77.2090" />
+
+    <!-- Article/Content Meta Tags -->
+    <meta name="article:author" content="Durity Bath" />
+    <meta name="article:published_time" content="2024-01-01T00:00:00Z" />
+    <meta name="article:modified_time" content="2024-12-19T00:00:00Z" />
+    <meta name="article:section" content="Products" />
+    <meta
+      name="article:tag"
+      content="bathroom accessories, bathroom fixtures, product collection, bathroom solutions"
+    />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="classification" content="Business" />
+    <meta name="category" content="Bathroom Accessories and Fixtures" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="target" content="all" />
+    <meta
+      name="audience"
+      content="Bathroom Professionals, Homeowners, Contractors, Bathroom Accessories Buyers"
+    />
+    <meta name="expires" content="never" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/styles/navbar2.css" as="style" />
+    <link rel="preload" href="/scripts/navbar2.js" as="script" />
+    <link rel="preload" href="/public/icons/durity logo.svg" as="image" />
+
+    <link rel="stylesheet" href="/styles/navbar2.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/Responsive.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/public/icons/durity fav icon .png"
+    />
     <script src="/data/products.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/styles/navbar2.css">
-    <link rel="stylesheet" href="/styles/recent2.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/Responsive.css">
-    <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
-
-    <script>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" id="page-structured-data">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Durity Bath Products - Premium Bathroom Accessories & Fixtures Collection",
+        "description": "Explore Durity's comprehensive collection of premium bathroom accessories and fixtures. Discover faucets, shower heads, bath accessories, and modern bathroom solutions for contemporary homes.",
+        "url": "https://duritybath.com/products",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Bathroom Accessories Collection",
+          "description": "Premium bathroom accessories and fixtures including faucets, shower heads, bath accessories, and modern bathroom solutions.",
+          "itemListElement": []
+        }
+      }
     </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Durity Bath",
+        "alternateName": "Durity",
+        "url": "https://duritybath.com",
+        "logo": "https://duritybath.com/public/icons/durity logo.svg",
+        "description": "Premium bathroom accessories, fixtures, and fittings manufacturer specializing in modern bathroom solutions, faucets, shower heads, and bath accessories for contemporary homes.",
+        "foundingDate": "2010",
+        "industry": "Bathroom Accessories and Fixtures Manufacturing",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "availableLanguage": "English"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN",
+          "addressRegion": "Delhi",
+          "addressLocality": "New Delhi"
+        },
+        "sameAs": [
+          "https://www.instagram.com/duritybathfittings",
+          "https://www.facebook.com/duritybath",
+          "https://www.linkedin.com/company/durity-bath-fittings/",
+          "https://www.youtube.com/@Duritybath"
+        ]
+      }
+    </script>
+
+    <!-- FAQ Structured Data for Products -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What types of bathroom accessories does Durity Bath offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Durity Bath offers a comprehensive range of premium bathroom accessories including faucets, shower heads, bath accessories, bathroom fixtures, and modern bathroom solutions for contemporary homes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Durity Bath bathroom accessories different?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Durity Bath bathroom accessories feature leak-proof performance, corrosion resistance, and smooth water flow. They are crafted using premium materials and advanced manufacturing techniques for superior quality and durability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Durity Bath products suitable for commercial use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Durity Bath products are designed for both residential and commercial use. Our bathroom accessories meet rigorous quality standards and are trusted by hotels, restaurants, and commercial establishments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I browse Durity Bath products?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can browse our complete product collection by category including faucets, shower heads, bath accessories, and bathroom fixtures. Each product includes detailed specifications, images, and features to help you make the right choice."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script></script>
     <style>
-        #my-nav {
-            /* width: 96%; */
-            /* background-color: red; */
-        }
+      #my-nav {
+        /* width: 96%; */
+        /* background-color: red; */
+      }
 
-        #searchInput {
-            /* background-color: red; */
-            height: 40px;
-            max-height: 40px;
-            padding: 0px;
-            margin: 0px;
-            padding-left: 10px;
-            /* padding: 10px; */
-        }
+      #searchInput {
+        /* background-color: red; */
+        height: 40px;
+        max-height: 40px;
+        padding: 0px;
+        margin: 0px;
+        padding-left: 10px;
+        /* padding: 10px; */
+      }
 
-        body {
-            margin: 0px;
-            padding: 0px;
-            /* background-color: red; */
-        }
+      body {
+        margin: 0px;
+        padding: 0px;
+        /* background-color: red; */
+      }
 
-       
+      .productCard {
+        flex: 0 0 250px;
+        border: 1px solid #e2e2e2;
+        border-radius: 8px;
+        padding: 15px;
+        max-width: 250px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        background: white;
+        text-decoration: none;
+        color: inherit;
+        /* background-color: green; */
+      }
 
-        .productCard {
-            flex: 0 0 250px;
-            border: 1px solid #e2e2e2;
-            border-radius: 8px;
-            padding: 15px;
-            max-width: 250px;
-            cursor: pointer;
-            transition: transform 0.2s;
-            background: white;
-            text-decoration: none;
-            color: inherit;
-            /* background-color: green; */
+      .productCard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
 
-        }
+      .productCard img {
+        width: 250px;
+        height: 250px;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        /* background-color: red; */
+        background-color: white;
+      }
 
-        .productCard:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .productCard img{
-            width: 250px;
-            height: 250px;
-            max-width: 100%;
-            object-fit:contain;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            /* background-color: red; */
-            background-color: white;
-        }
+      .hero-section {
+        background: url("https://placehold.co/1920x600") no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 150px 0;
+      }
 
-        .hero-section {
-            background: url('https://placehold.co/1920x600') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 150px 0;
-        }
+      .category-container {
+        display: flex;
+        overflow-x: auto;
+        column-gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+        /* background-color: red; */
+      }
 
-        .category-container {
-            display: flex;
-            overflow-x: auto;
-            column-gap: 20px;
-            padding: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            row-gap: 20px;
-            /* background-color: red; */
-        }
+      .category-title {
+        text-align: center;
+        font-size: 2rem;
+        margin: 20px 0;
+      }
 
-        .category-title {
-            text-align: center;
-            font-size: 2rem;
-            margin: 20px 0;
-        }
+      .category-item {
+        text-align: center;
+        margin: 0 10px;
+        flex: 0 0 auto;
+        width: 220px;
+        margin-bottom: 2.5%;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* background-color: rgba(239, 239, 239, 0.736); */
+        /* background-color: aqua; */
+        padding-bottom: 0.5%;
+      }
 
-        .category-item {
-            text-align: center;
-            margin: 0 10px;
-            flex: 0 0 auto;
-            width: 220px;
-            margin-bottom: 2.5%;
-            margin-left: 1%;
-            margin-right: 1%;
-            /* background-color: rgba(239, 239, 239, 0.736); */
-            /* background-color: aqua; */
-            padding-bottom: 0.5%
-        }
+      .category-item img {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+      }
 
-        .category-item img {
-            width: 100%;
-            height: auto;
-            min-height: 250px;
-        }
+      .category-item h5 {
+        margin-top: 15px;
+        font-size: 1.2rem;
+      }
 
-        .category-item h5 {
-            margin-top: 15px;
-            font-size: 1.2rem;
-        }
+      .category-item a {
+        color: #000;
+        text-decoration: none;
+        font-size: 1rem;
+      }
 
-        .category-item a {
-            color: #000;
-            text-decoration: none;
-            font-size: 1rem;
-        }
+      .category-item a i {
+        margin-left: 5px;
+      }
 
-        .category-item a i {
-            margin-left: 5px;
-        }
+      .rencentProductsBox {
+        /* background:red; */
+        width: 95%;
+        background-color: white;
+        margin: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
 
-        .rencentProductsBox {
-            /* background:red; */
-            width: 95%;
-            background-color: white;
-            margin: auto;
-            padding-left: 2%;
-            padding-right: 2%;
-
-        }
-
-        /* .detailsPopup {
+      /* .detailsPopup {
             width: 100vh;
             height: 100vh;
             position: fixed;
@@ -150,232 +348,244 @@
             z-index: 20;
         } */
 
-        .productCard {
-            /* background-color: red; */
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
+      .productCard {
+        /* background-color: red; */
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-container-details-footer {
+        background-color: rgb(237, 237, 237);
+        /* padding: 2%; */
+        /* padding-left: 2%; */
+        /* height:max-content; */
+        bottom: 0px;
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .product-name {
+        /* white-space:; */
+        /* word-wrap: break-word; */
+        /* background-color: red; */
+        /* width: 80%; */
+        /* margin-left: 2%;  */
+        /* margin-right: 2%; */
+        padding-left: 2%;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+
+      .product-code {
+        padding-left: 2%;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          overflow-x: hidden;
+          flex-wrap: wrap;
         }
 
-        .product-container-details-footer {
-            background-color: rgb(237, 237, 237);
-            /* padding: 2%; */
-            /* padding-left: 2%; */
-            /* height:max-content; */
-            bottom: 0px;
-            overflow: hidden;
-            flex: 1;
+        .hero-section {
+          background-position: center center;
+          /* Adjust positioning */
+          padding: 90px 0;
+          /* Adjust padding for smaller screens */
         }
 
-        .product-name {
-            /* white-space:; */
-            /* word-wrap: break-word; */
-            /* background-color: red; */
-            /* width: 80%; */
-            /* margin-left: 2%;  */
-            /* margin-right: 2%; */
-            padding-left: 2%;
-            white-space: normal;
-            word-wrap: break-word;
+        .category-item {
+          width: 60%;
+          margin-bottom: 10%;
         }
+      }
 
-        .product-code {
-            padding-left: 2%;
-        }
+      .carousel-inner {
+        /* background-color: blanchedalmond; */
+        /* height: 90%; */
+        /* background-color: red; */
+        display: block;
+      }
 
+      .carousel-item {
+        /* background-color: aqua; */
+        /* height: 90%; */
+        display: block;
+      }
 
+      .row {
+        height: 75%;
+      }
 
-
-        @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-                flex-wrap: wrap;
-            }
-
-            .hero-section {
-                background-position: center center;
-                /* Adjust positioning */
-                padding: 90px 0;
-                /* Adjust padding for smaller screens */
-            }
-
-            .category-item {
-                width: 60%;
-                margin-bottom: 10%;
-            }
-        }
-
-
-
-
-
-
-
-        .carousel-inner {
-            /* background-color: blanchedalmond; */
-            /* height: 90%; */
-            /* background-color: red; */
-
-
-        }
-
-        .carousel-item {
-            /* background-color: aqua; */
-            /* height: 90%; */
-        }
-
-        .row {
-            height: 75%;
-        }
-
-
-        .d-block {
-            /* width: 600px;
+      .d-block {
+        /* width: 600px;
             height: 500px; */
-            object-fit: cover;
+        object-fit: cover;
+      }
+
+      /* Extra Small Devices (Phones, less than 576px) */
+      @media (max-width: 575.98px) {
+        .category-container {
+          /* display: block; */
+          /* background-color: blue; */
+          padding: 0px;
+          padding-top: 5%;
         }
 
-
-
-
-        /* Extra Small Devices (Phones, less than 576px) */
-        @media (max-width: 575.98px) {
-            .category-container {
-                /* display: block; */
-                /* background-color: blue; */
-                padding: 0px;
-                padding-top: 5%;
-            }
-
-            #md-productCard {
-                /* background-color: red; */
-                /* width: 80%; */
-                /* width: 500px; */
-            }
-
-            .productCard {
-                /* width: 80%; */
-            }
-
+        #md-productCard {
+          /* background-color: red; */
+          /* width: 80%; */
+          /* width: 500px; */
+          display: block;
         }
 
+        .productCard {
+          /* width: 80%; */
+          display: block;
+        }
+      }
+
+      .pagination-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .pagination-button {
+        min-width: 40px;
+        height: 40px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        background: white;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.2s;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Touch device optimizations */
+      @media (hover: hover) {
+        .pagination-button:hover {
+          background: #f0f0f0;
+          transform: translateY(-1px);
+        }
+      }
+
+      .pagination-button.active {
+        background: #0066cc;
+        color: white;
+        border-color: #0066cc;
+      }
+
+      .pagination-button:disabled {
+        background: #f5f5f5;
+        color: #999;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      #pageNumbers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .pagination-info {
+        width: 100%;
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      /* Responsive breakpoints */
+      @media screen and (max-width: 480px) {
         .pagination-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px;
-            padding: 10px;
+          margin: 10px;
+          gap: 4px;
         }
 
         .pagination-button {
-            min-width: 40px;
-            height: 40px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            background: white;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            -webkit-tap-highlight-color: transparent;
+          min-width: 36px;
+          height: 36px;
+          padding: 6px;
+          font-size: 13px;
         }
 
-        /* Touch device optimizations */
-        @media (hover: hover) {
-            .pagination-button:hover {
-                background: #f0f0f0;
-                transform: translateY(-1px);
-            }
+        /* Hide some page numbers on very small screens */
+        .pagination-button.number:not(.active) {
+          display: none;
         }
 
-        .pagination-button.active {
-            background: #0066cc;
-            color: white;
-            border-color: #0066cc;
-        }
-
-        .pagination-button:disabled {
-            background: #f5f5f5;
-            color: #999;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        #pageNumbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
+        .pagination-button.number.active,
+        .pagination-button.number.adjacent {
+          display: flex;
         }
 
         .pagination-info {
-            width: 100%;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-            margin-top: 10px;
+          font-size: 12px;
         }
 
-        /* Responsive breakpoints */
-        @media screen and (max-width: 480px) {
-            .pagination-container {
-                margin: 10px;
-                gap: 4px;
-            }
-
-            .pagination-button {
-                min-width: 36px;
-                height: 36px;
-                padding: 6px;
-                font-size: 13px;
-            }
-
-            /* Hide some page numbers on very small screens */
-            .pagination-button.number:not(.active) {
-                display: none;
-            }
-
-            .pagination-button.number.active,
-            .pagination-button.number.adjacent {
-                display: flex;
-            }
-
-            .pagination-info {
-                font-size: 12px;
-            }
+        .category-container {
+          /* background-color: red; */
+          padding-left: 10px;
+          padding-right: 10px;
         }
 
-        /* Medium screens */
-        @media screen and (min-width: 481px) and (max-width: 768px) {
-            .pagination-container {
-                gap: 6px;
-            }
-
-            .pagination-button {
-                min-width: 38px;
-                height: 38px;
-            }
+        .category-container .productCard {
+          /* background-color: red; */
+          flex: 0 0 200px;
         }
 
-        /* Larger screens */
-        @media screen and (min-width: 769px) {
-            .pagination-container {
-                gap: 8px;
-            }
-
-            .pagination-button {
-                min-width: 40px;
-                height: 40px;
-            }
+        .category-container .productCard img {
+          width: 200px;
+          height: 200px;
         }
 
-        /* Dark mode support */
-        /* @media (prefers-color-scheme: dark) {
+        .hero-section {
+          /* padding-top: 200px !important; */
+          display: none;
+        }
+        #location-path-container {
+          padding-top: 100px;
+        }
+      }
+
+      /* Medium screens */
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        .pagination-container {
+          gap: 6px;
+        }
+
+        .pagination-button {
+          min-width: 38px;
+          height: 38px;
+        }
+      }
+
+      /* Larger screens */
+      @media screen and (min-width: 769px) {
+        .pagination-container {
+          gap: 8px;
+        }
+
+        .pagination-button {
+          min-width: 40px;
+          height: 40px;
+        }
+      }
+
+      /* Dark mode support */
+      /* @media (prefers-color-scheme: dark) {
            
 
             .pagination-button {
@@ -401,332 +611,705 @@
                 color: #999;
             }
         } */
-        @media(max-width: 575.98px) {
-            .productCard {
-                /* background-color: red; */
-                /* width: 100px; */
-                max-width: 38vw !important;
-            }
+      @media (max-width: 575.98px) {
+        .productCard {
+          /* background-color: red; */
+          /* width: 100px; */
+          max-width: 38vw !important;
         }
+      }
 
-        /* Small Devices (Tablets, 576px and up) */
-        @media (min-width: 576px) and (max-width: 767.98px) {}
+      /* Small Devices (Tablets, 576px and up) */
+      @media (min-width: 576px) and (max-width: 767.98px) {
+      }
 
-        /* Medium Devices (Desktops, 768px and up) */
-        @media (min-width: 768px) and (max-width: 991.98px) {}
-
-        /* Large Devices (Large Desktops, 992px and up) */
-        @media (min-width: 992px) and (max-width: 1199.98px) {}
-
-        /* Extra Large Devices (Extra Large Desktops, 1200px and up) */
-        @media (min-width: 1200px) {}
-
-        .product-container-details-footer {
-            /* background-color:var(--steelblue-1); */
-            /* background-color: rgb(236, 236, 236);
+      /* Medium Devices (Desktops, 768px and up) */
+    
+      .product-container-details-footer {
+        /* background-color:var(--steelblue-1); */
+        /* background-color: rgb(236, 236, 236);
             color:var(--steelblue-1); */
-        }
-    </style>
-</head>
+        display: block;
+      }
 
-<body>
+      .productDetailsPopup {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        /* width: fit-content; */
+        height: 99.8vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Dark semi-transparent background */
+        color: white;
+        display: none;
+        z-index: 1050;
+        /* Ensure it appears on top */
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        /* margin-bottom: ; */
+        /* background-color: red; */
+      }
+
+      .modalContainer {
+        background-color: white;
+        /* background-color: green; */
+        color: black;
+        border-radius: 8px;
+        padding: 20px;
+        /* width: 80%; */
+        /* height: 85%; */
+        height: fit-content;
+        width: fit-content;
+        max-width: 70%;
+        margin-bottom: 2%;
+      }
+
+      .modalHeader {
+        /* background-color:red; */
+        text-align: right;
+        font-size: 10px;
+      }
+
+      .modalHeader button {
+        font-size: 12px;
+        outline: none;
+      }
+
+      .product-popup-box {
+        display: flex;
+        /* background-color: aqua; */
+      }
+
+      .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: #004e9d; */
+        border-radius: 8px;
+        overflow: hidden;
+        width: 60%;
+        /* height: 100%; */
+      }
+
+      .carousel-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-details {
+        /* padding: 20px; */
+        color: rgb(101, 100, 100);
+        /* background-color: red; */
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        column-gap: 25px;
+        row-gap: 10px;
+        margin-left: 2%;
+      }
+
+      .product-details span {
+        /* color: red; */
+        color: black;
+      }
+
+      .product-details h2 {
+        margin-top: 0;
+        color: black;
+        font-size: 20px;
+      }
+
+      .product-popup-close-btn {
+        background-color: transparent;
+        border-style: none;
+        cursor: pointer;
+      }
+
+      /* Extra Small Devices (Phones, less than 576px) */
+      @media (max-width: 575.98px) {
+        .product-popup-box {
+          display: block;
+        }
+
+        .modalContainer {
+          max-width: 95%;
+        }
+
+        .product-details {
+          margin-top: 5%;
+        }
+      }
+
+      /* Small Devices (Tablets, 576px and up) */
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        .product-popup-box {
+          display: block;
+        }
+
+        .modalContainer {
+          max-width: 90%;
+        }
+
+        .product-details {
+          margin-top: 5%;
+        }
+      }
+
+      .product-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 20px 0;
+        /* background-color: red; */
+      }
+
+      .recent-view-scrollbtn-box {
+        position: relative;
+      }
+
+      .product-list {
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .product-code {
+        color: #666;
+        font-size: 14px;
+      }
+
+      /* For WebKit browsers (Chrome, Safari) */
+      .product-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .product-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+
+      .product-container::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+
+      .product-container::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      #recentProducts {
+        padding-top: 2%;
+        /* position: relative; */
+      }
+
+      /* Breadcrumb Navigation Styles */
+      .breadcrumb-nav {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .breadcrumb {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+      }
+
+      .breadcrumb li {
+        display: flex;
+        align-items: center;
+      }
+
+      .breadcrumb li:not(:last-child)::after {
+        content: "›";
+        margin: 0 8px;
+        color: #6c757d;
+      }
+
+      .breadcrumb a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .breadcrumb a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+
+      .breadcrumb span {
+        color: #6c757d;
+      }
+    </style>
+  </head>
+
+  <body>
     <!-- <div id="navbar"></div> -->
-    <div id="navbar">
-    </div>
+    <div id="navbar"></div>
+
+    <!-- Breadcrumb Navigation for SEO -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol
+        class="breadcrumb"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+      >
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <a itemprop="item" href="https://duritybath.com">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <a itemprop="item" href="https://duritybath.com/products">
+            <span itemprop="name">Products</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <span itemprop="name" id="breadcrumb-category"
+            >Product Collection</span
+          >
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
+    </nav>
 
     <div class="hero-section"></div>
     <div id="location-path-container" class="">
-        <img src="/public/icons/home.svg" width="10px" height="10px" alt="home" class="pt-category-image">
+      <img
+        src="/public/icons/home.svg"
+        width="10px"
+        height="10px"
+        alt="home"
+        class="pt-category-image"
+      />
     </div>
     <h1 id="products-heading" class="text-center text-steelblue text-h1"></h1>
-    <div id="productsBox" class="category-container product-page-category-container">
-
-    </div>
+    <div
+      id="productsBox"
+      class="category-container product-page-category-container"
+    ></div>
 
     <div id="detailsPopup" class="productDetailsPopup">
-        <div class="modalContainer">
-            <div class="modalHeader">
-                <button type="button" class="product-popup-close-btn" aria-label="Close"
-                    onclick="closePopup()">X</button>
-            </div>
-            <div class="product-popup-box">
-                <!-- Left Side - Image Carousel -->
-                <div id="detail-img-container" class="carousel-container">
-
-
-                </div>
-
-                <!-- Right Side - Product Details -->
-                <div id="details_box" class="product-details">
-
-                </div>
-            </div>
+      <div class="modalContainer">
+        <div class="modalHeader">
+          <button
+            type="button"
+            class="product-popup-close-btn"
+            aria-label="Close"
+            onclick="closePopup()"
+          >
+            X
+          </button>
         </div>
+        <div class="product-popup-box">
+          <!-- Left Side - Image Carousel -->
+          <div id="detail-img-container" class="carousel-container"></div>
+
+          <!-- Right Side - Product Details -->
+          <div id="details_box" class="product-details"></div>
+        </div>
+      </div>
     </div>
     <div class="pagination-container">
-        <button class="pagination-button" id="prevButton">Previous</button>
-        <div id="pageNumbers"></div>
-        <button class="pagination-button" id="nextButton">Next</button>
+      <button class="pagination-button" id="prevButton">Previous</button>
+      <div id="pageNumbers"></div>
+      <button class="pagination-button" id="nextButton">Next</button>
     </div>
     <div class="pagination-info" id="pageInfo"></div>
     <div id="customer-support"></div>
-    <footer class="footer" id="footer">
-    </footer>
+    <footer class="footer" id="footer"></footer>
     <script defer src="/scripts/footer2.js"></script>
-
-
-
 
     <!-- <div id="footer"></div> -->
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get('name');
-        const category = params.get('category')
-        const index = params.get('index')
-        const products = durityProducts[name].products[index]?.products // taking out master product data from the data file 
-        const data_length = products?.length
-        const productContainer = document.getElementById('productsBox')
-        const pageFromUrl = parseInt(params.get('page'), 10);
-        const page_size = 10 // items per page 
-        // console.log('total data length = ',data_length,' page size = ',page_size,' current page = ',pageFromUrl||1)
-        document.getElementById('products-heading').innerText = `${category?.toUpperCase()} ${name?.toUpperCase()}`
-        document.addEventListener('pageChange', (e) => {
-            productContainer.innerHTML = '';
-            createProductCards(e.detail?.currentPage, page_size)
-            // Here you can update your content based on the new page
-        });
-        createProductCards(pageFromUrl || 1, 8) // creating initial product cards when page open 
-        const code = params.get('code')
-        if (code) {
-            openPopup(code)
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+      const category = params.get("category");
+      const index = params.get("index");
+      const products = durityProducts[name].products[index]?.products; // taking out master product data from the data file
+      const data_length = products?.length;
+      const productContainer = document.getElementById("productsBox");
+      const pageFromUrl = parseInt(params.get("page"), 10);
+      const page_size = 10; // items per page
+      // console.log('total data length = ',data_length,' page size = ',page_size,' current page = ',pageFromUrl||1)
+      document.getElementById(
+        "products-heading"
+      ).innerText = `${category?.toUpperCase()} ${name?.toUpperCase()}`;
+
+      // Update SEO meta tags dynamically
+      function updateSEOMeta() {
+        const categoryName = name.charAt(0).toUpperCase() + name.slice(1);
+        const categoryDescription = `Explore Durity's ${categoryName} collection - Premium bathroom accessories and fixtures with modern designs and superior quality.`;
+
+        document.getElementById(
+          "page-title"
+        ).textContent = `${categoryName} Collection - Durity Premium Bathroom Accessories & Fixtures`;
+        document
+          .getElementById("page-description")
+          .setAttribute("content", categoryDescription);
+        document
+          .getElementById("og-title")
+          .setAttribute(
+            "content",
+            `${categoryName} Collection - Durity Premium Bathroom Accessories & Fixtures`
+          );
+        document
+          .getElementById("og-description")
+          .setAttribute("content", categoryDescription);
+        document
+          .getElementById("og-url")
+          .setAttribute(
+            "content",
+            `https://duritybath.com/products?name=${name}&category=${category}&index=${index}`
+          );
+        document
+          .getElementById("twitter-title")
+          .setAttribute(
+            "content",
+            `${categoryName} Collection - Durity Premium Bathroom Accessories`
+          );
+        document
+          .getElementById("twitter-description")
+          .setAttribute("content", categoryDescription);
+        document
+          .getElementById("canonical-url")
+          .setAttribute(
+            "href",
+            `https://duritybath.com/products?name=${name}&category=${category}&index=${index}`
+          );
+
+        // Update breadcrumb
+        document.getElementById(
+          "breadcrumb-category"
+        ).textContent = `${categoryName} Collection`;
+      }
+
+      // Update structured data dynamically
+      function updateStructuredData() {
+        const categoryName = name.charAt(0).toUpperCase() + name.slice(1);
+        const structuredData = {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: `${categoryName} Collection - Durity Premium Bathroom Accessories & Fixtures`,
+          description: `Explore Durity's ${categoryName} collection - Premium bathroom accessories and fixtures with modern designs and superior quality.`,
+          url: `https://duritybath.com/products?name=${name}&category=${category}&index=${index}`,
+          mainEntity: {
+            "@type": "ItemList",
+            name: `${categoryName} Product Collection`,
+            description: `Premium ${categoryName} bathroom accessories and fixtures with modern designs and superior quality.`,
+            itemListElement: products.map((product, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: product.name,
+              description:
+                product.details ||
+                `Premium ${categoryName} bathroom accessory with ${product.finish} finish.`,
+            })),
+          },
+        };
+        const script = document.getElementById("page-structured-data");
+        script.textContent = JSON.stringify(structuredData);
+      }
+
+      // Update SEO on page load
+      updateSEOMeta();
+      updateStructuredData();
+      document.addEventListener("pageChange", (e) => {
+        productContainer.innerHTML = "";
+        createProductCards(e.detail?.currentPage, page_size);
+        // Here you can update your content based on the new page
+      });
+      createProductCards(pageFromUrl || 1, 8); // creating initial product cards when page open
+      const code = params.get("code");
+      if (code) {
+        openPopup(code);
+      }
+
+      function createProductCards(currentPage) {
+        const total = products?.length; // total length of the data
+        const startIndex = (currentPage - 1) * page_size;
+        const endIndex = startIndex + page_size;
+        let off_set = 0;
+        if (currentPage > 1) {
+          off_set = currentPage * page_size;
         }
 
-        function createProductCards(currentPage) {
-            const total = products?.length // total length of the data 
-            const startIndex = (currentPage - 1) * page_size
-            const endIndex = startIndex + page_size
-            let off_set = 0
-            if (currentPage > 1) {
-                off_set = currentPage * page_size
-            }
-
-            let toShowProducts = products.slice(startIndex, endIndex)
-            toShowProducts.forEach((product, index) => {
-                let src = `${product?.imageSrc}${product?.code}.jpg`
-                const img = new Image();
-                img.src = src
-                let cardHTML = `
-                <div onclick="openPopup(${index + startIndex})"  class="productCard " id='md-productCard'>
-                    <img src="${product?.imageSrc}${product?.code}.jpg" alt="${product.name}"  class="product-image">
+        let toShowProducts = products.slice(startIndex, endIndex);
+        toShowProducts.forEach((product, index) => {
+          let src = `${product?.imageSrc}${product?.code}.jpg`;
+          const img = new Image();
+          img.src = src;
+          let cardHTML = `
+                <article onclick="openPopup(${
+                  index + startIndex
+                })"  class="productCard " id='md-productCard' itemscope itemtype="https://schema.org/Product">
+                    <img src="${product?.imageSrc}${product?.code}.jpg" alt="${
+            product.name
+          } - Premium Bathroom Accessory" class="product-image" itemprop="image" loading="lazy" width="250" height="250">
                     <div class='product-container-details-footer'>
-                          <div class="product-name">${product.name}</div>
-                          <div class="product-code">Code: ${product.code}</div>
+                          <h3 class="product-name" itemprop="name">${
+                            product.name
+                          }</h3>
+                          <div class="product-code" itemprop="sku">Code: ${
+                            product.code
+                          }</div>
+                          <meta itemprop="description" content="Premium ${
+                            product.brand || "Durity"
+                          } bathroom accessory with ${
+            product.finish || "premium"
+          } finish. ${product.area || "Bathroom"} installation area.">
                     </div>
                   
-                </div>
-            `
-                img.onload = () => {
-                    productContainer.innerHTML += cardHTML;
-                }
-                img.onerror = () => {
-                    productContainer.innerHTML += `
-                <div onclick="openPopup(${index})"  class="productCard" id='md-productCard'>
-                    <img src="/public/icons/brokenimage.svg" alt="${product.name}"  class="product-image">
+                </article>
+            `;
+          img.onload = () => {
+            productContainer.innerHTML += cardHTML;
+          };
+          img.onerror = () => {
+            productContainer.innerHTML += `
+                <article onclick="openPopup(${index})"  class="productCard" id='md-productCard' itemscope itemtype="https://schema.org/Product">
+                    <img src="/public/icons/brokenimage.svg" alt="${
+                      product.name
+                    } - Premium Bathroom Accessory" class="product-image" itemprop="image" loading="lazy" width="250" height="250">
                      <div class='product-container-details-footer'>
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-code">Code: ${product.code}</div>
+                    <h3 class="product-name" itemprop="name">${
+                      product.name
+                    }</h3>
+                    <div class="product-code" itemprop="sku">Code: ${
+                      product.code
+                    }</div>
+                    <meta itemprop="description" content="Premium ${
+                      product.brand || "Durity"
+                    } bathroom accessory with ${
+              product.finish || "premium"
+            } finish. ${product.area || "Bathroom"} installation area.">
                       </div>
-                </div>
-            `
-                }
-            })
-        }
-        function saveToLocalStorage(path) {
-            const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
-            let product_details = products[path]
-            product_details['openPath'] = productUrl
-            const now = new Date();
-            // const prevItems = localStorage.getItem('items')
-            const prevItems = sessionStorage?.getItem('items')
-            let allViewItems = [product_details]
-            if (prevItems) {
-                let value = JSON.parse(prevItems)
-                value = value?.value
-                const exists = value.some(item => item.code === product_details.code);
-                allViewItems = exists ? value : [...value, product_details];
-            }
-            const item = {
-                value: allViewItems,
-                expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
-            };
-            console.log(item)
-            // localStorage.setItem('items', JSON.stringify(item))
-            sessionStorage.setItem('items', JSON.stringify(item))
-        }
-        function openPopup(path) {
-
-
-            // return 0
-            saveToLocalStorage(path)
-            url = `/productitem.html?name=${name}&category=${category}&index=${index}&code=${path}`
-            window.location.href = url
-            // const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
-            // console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
-            // let product_details = products[path]
-            // // console.log(product_details)
-            // product_details['openPath'] = productUrl
-            // const now = new Date();
-            // const prevItems = localStorage.getItem('items')
-            // let allViewItems = [product_details]
-            // if (prevItems) {
-            //     let value = JSON.parse(prevItems)
-            //     value = value?.value
-            //     const exists = value.some(item => item.code === product_details.code);
-            //     allViewItems = exists ? value : [...value, product_details];
-            // }
-            // const item = {
-            //     value: allViewItems,
-            //     expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
-            // };
-            // localStorage.setItem('items', JSON.stringify(item))
-            // document.getElementById('detailsPopup').style.display = 'flex';
-            // const details_box = document.getElementById('details_box')
-            // details_box.innerHTML += `
-
-            //         <h2 class='text-black'>${product_details?.name}</h2>
-            //         <p>Product Code :<span> ${product_details?.code}</span></p>
-            //         <p>Range :<span> ${product_details?.brand}</span></p>
-            //         <p>Color Finish :<span> ${product_details?.finish}</span></p>
-            //         <p>Instalation Area :<span> ${product_details?.area}</span></p>
-            //         <p>Type Of Mounting :<span> ${product_details?.mounting}</span></p>
-            //         <p>Catridge MM :<span> ${product_details?.size}</span></p>
-            //         <p>Flow Rate :<span> ${product_details?.quantity}</span></p>
-            //         <p>Flow Type :<span> ${product_details?.flow}</span></p>
-            //         <p>State :<span> ${product_details?.state}</span></p>
-            // `
-            // const detailImgContainer = document.getElementById('detail-img-container')
-            // detailImgContainer.innerHTML = `
-            // <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='60%' height='70%' class="d-block w-100" alt="Product Image 1">
-            // `
-        }
-        const closePopup = () => {
-            document.getElementById('detailsPopup').style.display = 'none';
-            const details_box = document.getElementById('details_box')
-            details_box.innerHTML = ``
-        }
-    
-
-        class Pagination {
-            constructor(options) {
-                this.totalItems = options.totalItems || 0;
-                this.itemsPerPage = options.itemsPerPage || 10;
-                this.currentPage = 1;
-                this.maxPageNumbers = options.maxPageNumbers || 5;
-
-                this.prevButton = document.getElementById('prevButton');
-                this.nextButton = document.getElementById('nextButton');
-                this.pageNumbers = document.getElementById('pageNumbers');
-                this.pageInfo = document.getElementById('pageInfo');
-
-                this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-
-                // ✅ Read initial page from URL (default to 1 if invalid or missing)
-                const params = new URLSearchParams(window.location.search);
-                const pageFromUrl = parseInt(params.get('page'), 10);
-                this.currentPage = (!isNaN(pageFromUrl) && pageFromUrl >= 1 && pageFromUrl <= this.totalPages)
-                    ? pageFromUrl
-                    : 1;
-
-                this.init();
-            }
-
-            init() {
-                this.render();
-                this.addEventListeners();
-            }
-
-            addEventListeners() {
-                this.prevButton.addEventListener('click', () => this.goToPage(this.currentPage - 1));
-                this.nextButton.addEventListener('click', () => this.goToPage(this.currentPage + 1));
-            }
-
-            getPageRange() {
-                const halfWay = Math.floor(this.maxPageNumbers / 2);
-                let start = this.currentPage - halfWay;
-                let end = this.currentPage + halfWay;
-
-                if (start < 1) {
-                    end = Math.min(this.maxPageNumbers, this.totalPages);
-                    start = 1;
-                }
-
-                if (end > this.totalPages) {
-                    start = Math.max(1, this.totalPages - this.maxPageNumbers + 1);
-                    end = this.totalPages;
-                }
-
-                return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-            }
-
-            render() {
-                this.prevButton.disabled = this.currentPage === 1;
-                this.nextButton.disabled = this.currentPage === this.totalPages;
-
-                // Clear existing page numbers
-                this.pageNumbers.innerHTML = '';
-
-                // Dynamically create and append buttons
-                const pageRange = this.getPageRange();
-                pageRange.forEach(pageNum => {
-                    const btn = document.createElement('button');
-                    btn.textContent = pageNum;
-                    btn.className = `pagination-button ${pageNum === this.currentPage ? 'active' : ''}`;
-                    btn.addEventListener('click', () => this.goToPage(pageNum));
-                    this.pageNumbers.appendChild(btn);
-                });
-
-                const start = (this.currentPage - 1) * this.itemsPerPage + 1;
-                const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
-                this.pageInfo.textContent = `Showing ${start}-${end} of ${this.totalItems} items`;
-            }
-
-
-            goToPage(page) {
-
-                if (page < 1 || page > this.totalPages) return;
-                this.currentPage = page;
-                this.render();
-
-                // ✅ Update URL query param without reload
-                const url = new URL(window.location);
-                url.searchParams.set('page', this.currentPage);
-                window.history.pushState({}, '', url);
-
-                // Custom event for page change
-                const event = new CustomEvent('pageChange', {
-                    detail: {
-                        currentPage: this.currentPage,
-                        itemsPerPage: this.itemsPerPage,
-                        startIndex: (this.currentPage - 1) * this.itemsPerPage,
-                        endIndex: Math.min(this.currentPage * this.itemsPerPage, this.totalItems)
-                    }
-                });
-                document.dispatchEvent(event);
-            }
-        }
-        const pagination = new Pagination({
-            totalItems: data_length,
-            itemsPerPage: page_size,
-            // maxPageNumbers: 5
+                </article>
+            `;
+          };
         });
+      }
+      function saveToLocalStorage(path) {
+        const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`;
+        let product_details = products[path];
+        product_details["openPath"] = productUrl;
+        const now = new Date();
+        // const prevItems = localStorage.getItem('items')
+        const prevItems = sessionStorage?.getItem("items");
+        let allViewItems = [product_details];
+        if (prevItems) {
+          let value = JSON.parse(prevItems);
+          value = value?.value;
+          const exists = value.some(
+            (item) => item.code === product_details.code
+          );
+          allViewItems = exists ? value : [...value, product_details];
+        }
+        const item = {
+          value: allViewItems,
+          expiry: now.getTime() + 7 * 24 * 60 * 60 * 1000,
+        };
+        console.log(item);
+        // localStorage.setItem('items', JSON.stringify(item))
+        sessionStorage.setItem("items", JSON.stringify(item));
+      }
+      function openPopup(path) {
+        // return 0
+        saveToLocalStorage(path);
+        url = `/productitem.html?name=${name}&category=${category}&index=${index}&code=${path}`;
+        window.location.href = url;
+        // const productUrl = `${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`
+        // console.log(`${window.location.pathname}?name=${name}&category=${category}&index=${index}&code=${path}`)
+        // let product_details = products[path]
+        // // console.log(product_details)
+        // product_details['openPath'] = productUrl
+        // const now = new Date();
+        // const prevItems = localStorage.getItem('items')
+        // let allViewItems = [product_details]
+        // if (prevItems) {
+        //     let value = JSON.parse(prevItems)
+        //     value = value?.value
+        //     const exists = value.some(item => item.code === product_details.code);
+        //     allViewItems = exists ? value : [...value, product_details];
+        // }
+        // const item = {
+        //     value: allViewItems,
+        //     expiry: now.getTime() + (7 * 24 * 60 * 60 * 1000),
+        // };
+        // localStorage.setItem('items', JSON.stringify(item))
+        // document.getElementById('detailsPopup').style.display = 'flex';
+        // const details_box = document.getElementById('details_box')
+        // details_box.innerHTML += `
 
+        //         <h2 class='text-black'>${product_details?.name}</h2>
+        //         <p>Product Code :<span> ${product_details?.code}</span></p>
+        //         <p>Range :<span> ${product_details?.brand}</span></p>
+        //         <p>Color Finish :<span> ${product_details?.finish}</span></p>
+        //         <p>Instalation Area :<span> ${product_details?.area}</span></p>
+        //         <p>Type Of Mounting :<span> ${product_details?.mounting}</span></p>
+        //         <p>Catridge MM :<span> ${product_details?.size}</span></p>
+        //         <p>Flow Rate :<span> ${product_details?.quantity}</span></p>
+        //         <p>Flow Type :<span> ${product_details?.flow}</span></p>
+        //         <p>State :<span> ${product_details?.state}</span></p>
+        // `
+        // const detailImgContainer = document.getElementById('detail-img-container')
+        // detailImgContainer.innerHTML = `
+        // <img src="${product_details?.imageSrc}/${product_details?.code}.jpg" width='60%' height='70%' class="d-block w-100" alt="Product Image 1">
+        // `
+      }
+      const closePopup = () => {
+        document.getElementById("detailsPopup").style.display = "none";
+        const details_box = document.getElementById("details_box");
+        details_box.innerHTML = ``;
+      };
+
+      class Pagination {
+        constructor(options) {
+          this.totalItems = options.totalItems || 0;
+          this.itemsPerPage = options.itemsPerPage || 10;
+          this.currentPage = 1;
+          this.maxPageNumbers = options.maxPageNumbers || 5;
+
+          this.prevButton = document.getElementById("prevButton");
+          this.nextButton = document.getElementById("nextButton");
+          this.pageNumbers = document.getElementById("pageNumbers");
+          this.pageInfo = document.getElementById("pageInfo");
+
+          this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+
+          // ✅ Read initial page from URL (default to 1 if invalid or missing)
+          const params = new URLSearchParams(window.location.search);
+          const pageFromUrl = parseInt(params.get("page"), 10);
+          this.currentPage =
+            !isNaN(pageFromUrl) &&
+            pageFromUrl >= 1 &&
+            pageFromUrl <= this.totalPages
+              ? pageFromUrl
+              : 1;
+
+          this.init();
+        }
+
+        init() {
+          this.render();
+          this.addEventListeners();
+        }
+
+        addEventListeners() {
+          this.prevButton.addEventListener("click", () =>
+            this.goToPage(this.currentPage - 1)
+          );
+          this.nextButton.addEventListener("click", () =>
+            this.goToPage(this.currentPage + 1)
+          );
+        }
+
+        getPageRange() {
+          const halfWay = Math.floor(this.maxPageNumbers / 2);
+          let start = this.currentPage - halfWay;
+          let end = this.currentPage + halfWay;
+
+          if (start < 1) {
+            end = Math.min(this.maxPageNumbers, this.totalPages);
+            start = 1;
+          }
+
+          if (end > this.totalPages) {
+            start = Math.max(1, this.totalPages - this.maxPageNumbers + 1);
+            end = this.totalPages;
+          }
+
+          return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+        }
+
+        render() {
+          this.prevButton.disabled = this.currentPage === 1;
+          this.nextButton.disabled = this.currentPage === this.totalPages;
+
+          // Clear existing page numbers
+          this.pageNumbers.innerHTML = "";
+
+          // Dynamically create and append buttons
+          const pageRange = this.getPageRange();
+          pageRange.forEach((pageNum) => {
+            const btn = document.createElement("button");
+            btn.textContent = pageNum;
+            btn.className = `pagination-button ${
+              pageNum === this.currentPage ? "active" : ""
+            }`;
+            btn.addEventListener("click", () => this.goToPage(pageNum));
+            this.pageNumbers.appendChild(btn);
+          });
+
+          const start = (this.currentPage - 1) * this.itemsPerPage + 1;
+          const end = Math.min(
+            this.currentPage * this.itemsPerPage,
+            this.totalItems
+          );
+          this.pageInfo.textContent = `Showing ${start}-${end} of ${this.totalItems} items`;
+        }
+
+        goToPage(page) {
+          if (page < 1 || page > this.totalPages) return;
+          this.currentPage = page;
+          this.render();
+
+          // ✅ Update URL query param without reload
+          const url = new URL(window.location);
+          url.searchParams.set("page", this.currentPage);
+          window.history.pushState({}, "", url);
+
+          // Custom event for page change
+          const event = new CustomEvent("pageChange", {
+            detail: {
+              currentPage: this.currentPage,
+              itemsPerPage: this.itemsPerPage,
+              startIndex: (this.currentPage - 1) * this.itemsPerPage,
+              endIndex: Math.min(
+                this.currentPage * this.itemsPerPage,
+                this.totalItems
+              ),
+            },
+          });
+          document.dispatchEvent(event);
+        }
+      }
+      const pagination = new Pagination({
+        totalItems: data_length,
+        itemsPerPage: page_size,
+        // maxPageNumbers: 5
+      });
     </script>
     <script defer src="/scripts/navbar2.js"></script>
-    <script src="/scripts/catalogue.js"></script>
-    <script>
-
-    </script>
-</body>
-
+    <script></script>
+  </body>
 </html>

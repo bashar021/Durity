@@ -5,36 +5,84 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
+  <!-- Homepage - Highest Priority -->
   <url>
-    <loc>https://www.duritybath.com/</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+    <loc>https://duritybath.com/</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main Product Pages - High Priority -->
   <url>
-    <loc>https://www.duritybath.com/about.html</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+    <loc>https://duritybath.com/products.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Company Information Pages - High Priority -->
   <url>
-    <loc>https://www.duritybath.com/service.html</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+    <loc>https://duritybath.com/about.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-   <url>
-    <loc>https://www.duritybath.com/events.html</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+
+  <!-- Services and Solutions - High Priority -->
+  <url>
+    <loc>https://duritybath.com/service.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Career Opportunities - Medium Priority -->
+  <url>
+    <loc>https://duritybath.com/carrerspage.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-   <url>
-    <loc>https://www.duritybath.com/catalogue.html</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+
+  <!-- Events and Trade Shows - Medium Priority -->
+  <url>
+    <loc>https://duritybath.com/events.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product Catalogues - Medium Priority -->
+  <url>
+    <loc>https://duritybath.com/catalogue.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-    <url>
-    <loc>https://www.duritybath.com/register.html</loc>
-    <lastmod>2025-09-28T16:58:20+00:00</lastmod>
+
+  <!-- User Registration - Lower Priority -->
+  <url>
+    <loc>https://duritybath.com/register.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy - Medium Priority -->
+  <url>
+    <loc>https://duritybath.com/privacy-policy.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Terms and Conditions - Low Priority -->
+  <url>
+    <loc>https://duritybath.com/termsAndConditions.html</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

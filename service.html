@@ -1,383 +1,833 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link rel="stylesheet" href="/styles/navbar2.css">
-    <link rel="stylesheet" href="/styles/common.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/topproducts2.css">
-    <script src="/data/products.js"></script>
-    <link rel="icon" type="image/svg+xml" href="/public/icons/durity fav icon .png" />
+    <!-- SEO Meta Tags -->
+    <title>
+      Durity Services - Premium Bathroom Fixtures & Plumbing Solutions
+    </title>
+    <meta
+      name="description"
+      content="Explore Durity's comprehensive range of bathroom services including faucets, showers, PTMT, health faucets, faucet parts, and bath accessories. Premium quality plumbing solutions for modern homes."
+    />
+    <meta
+      name="keywords"
+      content="bathroom fixtures, faucets, showers, PTMT, health faucets, faucet parts, bath accessories, plumbing services, bathroom renovation, Durity"
+    />
+    <meta name="author" content="Durity" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://durity.com/services" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Durity Services - Premium Bathroom Fixtures & Plumbing Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Explore Durity's comprehensive range of bathroom services including faucets, showers, PTMT, health faucets, faucet parts, and bath accessories."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://durity.com/services" />
+    <meta
+      property="og:image"
+      content="https://durity.com/public/icons/durity logo.svg"
+    />
+    <meta property="og:site_name" content="Durity" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Durity Services - Premium Bathroom Fixtures & Plumbing Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Durity's comprehensive range of bathroom services including faucets, showers, PTMT, health faucets, faucet parts, and bath accessories."
+    />
+    <meta
+      name="twitter:image"
+      content="https://durity.com/public/icons/durity logo.svg"
+    />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#007bff" />
+    <meta name="msapplication-TileColor" content="#007bff" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/styles/navbar2.css" as="style" />
+    <link rel="preload" href="/scripts/navbar2.js" as="script" />
+
+    <link rel="stylesheet" href="/styles/navbar2.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/public/icons/durity fav icon .png"
+    />
     <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-        }
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
 
-        #my-nav {
-            /* width: 96%; */
-        }
+      #searchInput {
+        height: 40px;
+        max-height: 40px;
+        padding: 0px;
+        margin: 0px;
+        padding-left: 10px;
+      }
 
-        #searchInput {
-            height: 40px;
-            max-height: 40px;
-            padding: 0px;
-            margin: 0px;
-            padding-left: 10px;
-        }
+      .pt-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        /* background-color: red; */
+        padding-top: 7%;
+      }
 
+      .pt-heading {
+        text-align: center;
+        color: #333;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+      }
+
+      .pt-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .pt-category-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .pt-category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .pt-category-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .pt-category-content {
+        padding: 1.5rem;
+      }
+
+      .pt-category-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .pt-category-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .pt-view-more {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      .pt-view-more:hover {
+        background: #0056b3;
+      }
+
+      @media (max-width: 768px) {
         .pt-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            /* background-color: red; */
-            padding-top: 7%;
-        }
-
-        .pt-heading {
-            text-align: center;
-            color: #333;
-            margin-bottom: 3rem;
-            font-size: 2rem;
+          padding: 1rem;
+          padding-top: 10%;
         }
 
         .pt-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .top-products-section {
+        min-height: 100vh;
+        padding: 4rem 2rem;
+        position: relative;
+        overflow: hidden;
+        /* background-color: red; */
+        /* background:rgba(39, 186, 196, 0.122); */
+        /* background-color: rgba(0, 0, 0, 0.081); */
+        /* background-color: white; */
+        /* color: black; */
+      }
+
+      .background-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.1;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        /* background: linear-gradient(45deg, #60a5fa, #3b82f6); */
+        filter: blur(60px);
+      }
+
+      .shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -100px;
+        left: -100px;
+      }
+
+      .shape-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -50px;
+        right: -50px;
+        background: linear-gradient(45deg, #818cf8, #6366f1);
+      }
+
+      .section-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      /* 
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+} */
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        perspective: 1000px;
+      }
+
+      .product-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        /* border: 1px solid rgba(4, 4, 4, 0.1); */
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        /* color: black; */
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(14, 14, 14, 0.1),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .product-card:hover::before {
+        left: 100%;
+      }
+
+      .product-card:hover {
+        transform: translateZ(20px) rotateX(5deg);
+        border-color: rgba(3, 3, 3, 0.2);
+      }
+
+      .product-image-wrapper {
+        position: relative;
+        margin-bottom: 1.5rem;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .product-image {
+        width: 100%;
+        /* height: 400px; */
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.1);
+      }
+
+      .product-label {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        /* background: rgba(99, 102, 241, 0.9); */
+        /* background-color: rgb(99,110,113); */
+        background-color: rgb(220, 218, 218);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        backdrop-filter: blur(5px);
+      }
+
+      .product-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        /* color: #fff; */
+        color: black;
+      }
+
+      .product-description {
+        font-size: 0.9rem;
+        /* color: rgba(255, 255, 255, 0.7); */
+        color: black;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .product-features {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .feature i {
+        color: #818cf8;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        /* background: linear-gradient(45deg, #272727f4, #c0c1c1c2); */
+        /* background-color: liner; */
+        background: linear-gradient(
+          var(--steelblue-1),
+          var(--steelblue-1),
+          var(--steelblue-4),
+          var(--steelblue-5)
+        );
+
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* padding-top: 0px; */
+        margin-top: 0px;
+        text-decoration: none;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(129, 140, 248, 0.4);
+      }
+
+      @media (max-width: 1200px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .products-grid {
+          grid-template-columns: 1fr;
         }
 
-        .pt-category-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+        .section-title {
+          font-size: 2rem;
         }
+      }
 
-        .pt-category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
+      .product-rating {
+        display: flex;
+        gap: 0.2rem;
+        margin-top: 1rem;
+      }
 
-        .pt-category-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+      .star {
+        color: #fbbf24;
+      }
 
-        .pt-category-content {
-            padding: 1.5rem;
-        }
+      .product-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-        .pt-category-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
+      .price-amount {
+        background: linear-gradient(45deg, #60a5fa, #818cf8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        .pt-category-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
+      .price-currency {
+        font-size: 1rem;
+        opacity: 0.7;
+      }
 
-        .pt-view-more {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+      /* Breadcrumb Navigation Styles */
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+      }
 
-        .pt-view-more:hover {
-            background: #0056b3;
-        }
+      .breadcrumb-item {
+        display: flex;
+        align-items: center;
+      }
 
-        @media (max-width: 768px) {
-            .pt-container {
-                padding: 1rem;
-                padding-top: 10%;
-            }
+      .breadcrumb-item:not(:last-child)::after {
+        content: ">";
+        margin-left: 0.5rem;
+        color: #666;
+      }
 
-            .pt-categories {
-                grid-template-columns: 1fr;
-            }
-        }
+      .breadcrumb-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Screen Reader Only Content */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
     </style>
-</head>
+    <script src="/data/products.js"></script>
 
-<body>
-    <div id="navbar"></div>
-    <div class="pt-container">
-     
-        <h3  class="text-center text-bold text-black text-h1">Our Product Categories</h3>
-        <div id="location-path-container" class="">
-            <img src="/public/icons/home.svg" width="10px" height="10px" alt="home"
-                class="pt-category-image">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Durity",
+        "url": "https://durity.com",
+        "logo": "https://durity.com/public/icons/durity logo.svg",
+        "description": "Premium bathroom fixtures and plumbing solutions including faucets, showers, PTMT, health faucets, faucet parts, and bath accessories.",
+        "sameAs": [
+          "https://www.facebook.com/durity",
+          "https://www.instagram.com/durity",
+          "https://www.linkedin.com/company/durity"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Durity Services - Premium Bathroom Fixtures & Plumbing Solutions",
+        "description": "Explore Durity's comprehensive range of bathroom services including faucets, showers, PTMT, health faucets, faucet parts, and bath accessories.",
+        "url": "https://durity.com/services",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Bathroom Product Categories",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Faucets",
+              "description": "Premium shower heads, handles, and complete shower systems for a luxurious bathing experience."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "PTMT",
+              "description": "Stylish and durable towel storage solutions in various finishes to match your décor."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Showers",
+              "description": "Modern shower systems with advanced technology for optimal water flow and comfort."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Health Faucets",
+              "description": "Advanced health faucets with modern features and anti-fog technology."
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Faucet Parts",
+              "description": "High-quality replacement parts and components for all faucet systems."
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Bath Accessories",
+              "description": "Essential bathroom accessories including soap dispensers, tissue holders, and more."
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header id="navbar"></header>
+    <main>
+      <section class="pt-container">
+        <h1 class="text-center text-bold text-black text-h1">
+          Our Product Categories - Premium Bathroom Fixtures & Plumbing
+          Solutions
+        </h1>
+        <nav aria-label="Breadcrumb" id="location-path-container">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/" aria-label="Home">
+                <img
+                  src="/public/icons/home.svg"
+                  width="10px"
+                  height="10px"
+                  alt="Home"
+                  class="breadcrumb-icon"
+                />
+              </a>
+            </li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Services</li> -->
+          </ol>
+        </nav>
+        <!-- <div id="location-path-container" class="">
+          <img
+            src="/public/icons/home.svg"
+            width="10px"
+            height="10px"
+            alt="home"
+            class="pt-category-image"
+          />
+        </div> -->
+
+        <div class="pt-categories" role="list" aria-label="Product categories">
+          <!-- Faucets Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="Faucets category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/faucets/file_00000000e89061f9abb63a5d8f49c5b1.png"
+                alt="Premium bathroom faucets collection - Modern designs with superior quality and durability"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">Faucets</h2>
+            <p class="product-description">
+              Premium shower heads, handles, and complete shower systems for a
+              luxurious bathing experience. Our faucets combine modern design
+              with superior functionality.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=faucets')"
+              aria-label="Explore faucets collection"
+            >
+              Explore More
+            </button>
+          </article>
+          <!-- PTMT Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="PTMT category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/ptmt/file_00000000c12861f58a33833ae40fdc4a.png"
+                alt="PTMT bathroom accessories - Towel storage solutions in various finishes for modern bathrooms"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">PTMT</h2>
+            <p class="product-description">
+              Stylish and durable towel storage solutions in various finishes to
+              match your décor. Perfect for organizing your bathroom space with
+              elegance.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=ptmt')"
+              aria-label="Explore PTMT collection"
+            >
+              Explore More
+            </button>
+          </article>
+          <!-- Showers Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="Showers category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/showers/file_00000000295061f99994a646020982e7.png"
+                alt="Modern shower systems - Advanced shower heads and complete shower solutions for luxury bathrooms"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">Showers</h2>
+            <p class="product-description">
+              Modern shower systems with advanced technology for optimal water
+              flow and comfort. Experience luxury with our premium shower
+              collections designed for modern bathrooms.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=showers')"
+              aria-label="Explore showers collection"
+            >
+              Explore More
+            </button>
+          </article>
+          <!-- Health Faucets Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="Health Faucets category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/health faucets/file_00000000f9c461f582a706b11ace4d6b.png"
+                alt="Health faucets collection - Advanced faucets with modern features and anti-fog technology for hygienic bathrooms"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">Health Faucets</h2>
+            <p class="product-description">
+              Advanced health faucets with modern features and anti-fog
+              technology. Designed for hygiene and convenience in modern
+              bathroom environments.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=health%20faucet')"
+              aria-label="Explore health faucets collection"
+            >
+              Explore More
+            </button>
+          </article>
+          <!-- Faucet Parts Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="Faucet Parts category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/faucet parts/file_000000009d9861f9a9677e1231704813.png"
+                alt="Faucet parts and components - High-quality replacement parts for all faucet systems and bathroom fixtures"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">Faucet Parts</h2>
+            <p class="product-description">
+              High-quality replacement parts and components for all faucet
+              systems. Keep your bathroom fixtures in perfect working condition
+              with our premium parts.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=faucet%20parts')"
+              aria-label="Explore faucet parts collection"
+            >
+              Explore More
+            </button>
+          </article>
+          <!-- Bath Accessories Category -->
+          <article
+            class="product-card"
+            role="listitem"
+            tabindex="0"
+            aria-label="Bath Accessories category"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="/public/home page/products cover images/ bath acessories/file_000000008b6861f892499f23e260d5c9.png"
+                alt="Bath accessories collection - Essential bathroom accessories including soap dispensers, tissue holders, and storage solutions"
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <h2 class="product-title">Bath Accessories</h2>
+            <p class="product-description">
+              Essential bathroom accessories including soap dispensers, tissue
+              holders, and more. Complete your bathroom with our stylish and
+              functional accessory collection.
+            </p>
+            <div class="product-rating" aria-label="5 star rating">
+              <span class="sr-only">5 out of 5 stars</span>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+              <i class="fas fa-star star" aria-hidden="true"></i>
+            </div>
+            <button
+              class="cta-button"
+              onclick="navigateToCategory('/products.html?name=bath%20accessories')"
+              aria-label="Explore bath accessories collection"
+            >
+              Explore More
+            </button>
+          </article>
         </div>
-      
-        <div class="pt-categories">
-            <!-- Category 1 -->
-            <!-- <div class="pt-category-card" onclick="navigateToCategory('/products.html?name=faucets')">
-                <img src="/public/products images/faucets/CHERISH/CHE2WACC01.jpg" alt="Shower Fixtures"
-                    class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">Faucets</h2>
-                    <p class="pt-category-description">Premium shower heads, handles, and complete shower systems for a
-                        luxurious bathing experience.</p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-
-            <!-- Category 2 -->
-            <!-- <div class="pt-category-card" onclick="navigateToCategory('/products.html?name=ptmt')">
-                <img src="/public//products images/ptmt/ALFA BLUE COLLECTION/ALF2WACBLC01.jpg" alt="Towel Bars & Hooks"
-                    class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">PTMT</h2>
-                    <p class="pt-category-description">Stylish and durable towel storage solutions in various finishes
-                        to match your décor.</p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-
-            <!-- Category 3 -->
-            <!-- <div class="pt-category-card" onclick="navigateToCategory('/products.html?name=showers')">
-                <img src="/public//products images/showers/OVERHEAD SHOWER/BELL-SHO2C01.jpg" alt="Bathroom Mirrors"
-                    class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">Showers</h2>
-                    <p class="pt-category-description">Modern mirrors with LED lighting and anti-fog technology for
-                        clear reflection.</p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-
-            <!-- Category 4 -->
-            <!-- <div class="pt-category-card"
-                onclick="navigateToCategory('/products.html?name=health%20faucet')">
-                <img src="/public//products images/HEALTH FAUCETS/COLOUR/HFCO15C01.jpg" alt="Storage Solutions"
-                    class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">Health Faucets</h2>
-                    <p class="pt-category-description">Smart storage options including cabinets and shelves to keep your
-                        bathroom organized.</p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-
-            <!-- Category 5 -->
-            <!-- <div class="pt-category-card" onclick="navigateToCategory('/products.html?name=faucet%20parts')">
-                <img src="/public//products images/faucets/DIVINE/DIV2WACC01.jpg" alt="Faucets"
-                    class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">Faucets Parts</h2>
-                    <p class="pt-category-description">Water-efficient faucets with modern designs and durable finishes.
-                    </p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-
-            <!-- Category 6 -->
-            <!-- <div class="pt-category-card"
-                onclick="navigateToCategory('/products.html?name=bath%20accessories')">
-                <img src="/api/placeholder/400/320" alt="Bath Accessories" class="pt-category-image">
-                <div class="pt-category-content">
-                    <h2 class="pt-category-title">Bath Accessories</h2>
-                    <p class="pt-category-description">Essential bathroom accessories including soap dispensers, tissue
-                        holders, and more.</p>
-                    <a href="#" class="pt-view-more bg-steelblue">View Collection</a>
-                </div>
-            </div> -->
-            <!-- service 1  -->
-            <div onclick="navigateToCategory('/products.html?name=faucets')" class="product-card">
-                <div class="product-image-wrapper">
-                  <img  src="/public/home page/products cover images/faucets/file_00000000e89061f9abb63a5d8f49c5b1.png"
-                    alt="Faucets" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">Faucets</h3>
-                <p class="product-description">Premium shower heads, handles, and complete shower systems for a
-                    luxurious bathing experience.</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-            <!-- service 2 -->
-            <div onclick="navigateToCategory('/products.html?name=ptmt')" class="product-card">
-                <div class="product-image-wrapper">
-                  <img src="/public/home page/products cover images/ptmt/file_00000000c12861f58a33833ae40fdc4a.png"
-                    alt="PTMT" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">PTMT</h3>
-                <p class="product-description">Stylish and durable towel storage solutions in various finishes
-                    to match your décor</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-            <!-- service 3  -->
-            <div onclick="navigateToCategory('/products.html?name=showers')" class="product-card">
-                <div class="product-image-wrapper">
-                  <img src="/public/home page/products cover images/showers/file_00000000295061f99994a646020982e7.png"
-                    alt="Showers" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">Showers</h3>
-                <p class="product-description">Modern mirrors with LED lighting and anti-fog technology for
-                    clear reflection.</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-            <!-- service 4  -->
-            <div class="product-card" onclick="navigateToCategory('/products.html?name=health%20faucet')">
-                <div class="product-image-wrapper">
-                  <img src="/public/home page/products cover images/health faucets/file_00000000f9c461f582a706b11ace4d6b.png"
-                    alt="Health Faucets" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">Health Faucets</h3>
-                <p class="product-description">Modern mirrors with LED lighting and anti-fog technology for
-                    clear reflection.</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-            <!-- service 5  -->
-            <div onclick="navigateToCategory('/products.html?name=faucet%20parts')" class="product-card" onclick="navigateToCategory('/products.html?name=health%20faucet')">
-                <div class="product-image-wrapper">
-                  <img src="/public/home page/products cover images/faucet parts/file_000000009d9861f9a9677e1231704813.png"
-                    alt="Faucets Parts" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">Faucets Parts</h3>
-                <p class="product-description">Modern mirrors with LED lighting and anti-fog technology for
-                    clear reflection.</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-            <!-- service 6  -->
-            <div onclick="navigateToCategory('/products.html?name=bath accessories')" class="product-card" onclick="navigateToCategory('/products.html?name=health%20faucet')">
-                <div class="product-image-wrapper">
-                  <img src="/public/home page/products cover images/ bath acessories/file_000000008b6861f892499f23e260d5c9.png"
-                    alt="Bath Accessories" class="product-image">
-                  <!-- <span class="product-label">NEW</span> -->
-                </div>
-                <h3 class="product-title">Bath Accessories</h3>
-                <p class="product-description">Modern mirrors with LED lighting and anti-fog technology for
-                    clear reflection.</p>
-                <div class="product-rating">
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                  <i class="fas fa-star star"></i>
-                </div>
-                <!-- <div class="product-price">
-                            <span class="price-currency">$</span>
-                            <span class="price-amount">499</span>
-                        </div> -->
-                <button class="cta-button">
-                  <!-- <i class="fas fa-shopping-cart"></i> -->
-                  Explore More
-                </button>
-            </div>
-        </div>
-    </div>
+      </section>
+    </main>
     <div id="customer-support"></div>
-    <footer class="footer" id="footer">
-    </footer>
+    <footer class="footer" id="footer"></footer>
     <script defer src="/scripts/navbar2.js"></script>
     <script defer src="/scripts/footer2.js"></script>
     <script>
-        function navigateToCategory(url) {
-            // In a real implementation, this would navigate to the category page
-            window.location.href = `${url}`;
-        }
+      function navigateToCategory(url) {
+        // In a real implementation, this would navigate to the category page
+        window.location.href = `${url}`;
+      }
 
-        // Add smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+      // Add smooth scroll behavior
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
             });
+          }
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
