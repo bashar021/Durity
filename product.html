@@ -253,7 +253,7 @@
         background: white;
         text-decoration: none;
         color: inherit;
-        /* background-color: green; */
+       
       }
 
       .productCard:hover {
@@ -283,12 +283,13 @@
       .category-container {
         display: flex;
         overflow-x: auto;
-        column-gap: 20px;
-        padding: 20px;
+        column-gap: 10px;
+        padding: 10px;
         flex-wrap: wrap;
         justify-content: center;
         row-gap: 20px;
         /* background-color: red; */
+        padding-bottom: 5% !important;
       }
 
       .category-title {
@@ -422,8 +423,31 @@
             height: 500px; */
         object-fit: cover;
       }
+      /* For small screens (less than or equal to 410px) */
+    /* For screens up to 600px wide */
+      @media screen and (max-width: 600px) {
+        .productCard {
+          display: block;
+          /* background-color: green; */
+          min-width: 200px;
+          max-width: 99vw;
+        }
+      }
 
+      /* For screens up to 410px wide (smaller screens override 600px styles) */
+      @media screen and (max-width: 450px) {
+        .productCard {
+          display: block;
+          min-width: 320px;
+          /* background-color: yellow; */
+          text-align: center;
+        }
+        .productCard img{
+
+        }
+      }
       /* Extra Small Devices (Phones, less than 576px) */
+    
       @media (max-width: 575.98px) {
         .category-container {
           /* display: block; */
@@ -439,10 +463,7 @@
           display: block;
         }
 
-        .productCard {
-          /* width: 80%; */
-          display: block;
-        }
+       
       }
 
       .pagination-container {
@@ -861,7 +882,7 @@
     <!-- <div id="navbar"></div> -->
     <div id="navbar"></div>
 
-    <!-- Breadcrumb Navigation for SEO -->
+    Breadcrumb Navigation for SEO
     <nav aria-label="Breadcrumb" class="breadcrumb-nav">
       <ol
         class="breadcrumb"
