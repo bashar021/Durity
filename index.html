@@ -183,7 +183,7 @@
     }
 
     .recent-view-cards-container {
-      flex: 0 0 250px;
+      /* flex: 0 0 250px;
       border: 1px solid #e2e2e2;
       border-radius: 8px;
       padding: 15px;
@@ -192,12 +192,34 @@
       transition: transform 0.2s;
       background: white;
       text-decoration: none;
+      color: inherit; */
+
+       /* background-color: red; */
+       width: 240px;
+      max-width: 240px;
+      min-width: 240px;
+      text-align: center;
+      /* flex: 0 0 250px; */
+      /* border: 1px solid #e2e2e2; */
+      border-radius: 8px;
+      padding: 15px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      /* background: rgb(137, 15, 15); */
+      /* background-color: black; */
+      text-decoration: none;
       color: inherit;
+      /* max-height: 300px; */
+      /* height: 300px; */
     }
 
     .recent-view-cards-container img {
-      width: 250px;
-      height: 250px;
+      width: 100%;
+      height: 70%;
+      max-width: 100%;
       object-fit: contain;
       border-radius: 6px;
       margin-bottom: 15px;
@@ -212,15 +234,9 @@
 
     /* Small Mobile Responsive */
     @media (max-width: 480px) {
-      .recent-view-cards-container {
-        flex: 0 0 230px;
-      }
+     
 
-      .recent-view-cards-container img {
-        /* background-color: red; */
-        width: 230px;
-        height: 230px;
-      }
+     
     }
 
     .product-container {
@@ -286,6 +302,110 @@
       /* Set the width of the vertical scrollbar */
       height: 0px;
       /* Set the height of the horizontal scrollbar */
+    }
+   
+   
+    .products-grid {
+      /* display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      perspective: 1000px;
+      background-color: aqua; */
+      /* background-color: red; */
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .trending-products-productCard{
+      /* background-color: red; */
+      width: 240px;
+      max-width: 240px;
+      min-width: 240px;
+      text-align: center;
+      /* flex: 0 0 250px; */
+      /* border: 1px solid #e2e2e2; */
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      /* background: rgb(137, 15, 15); */
+      /* background-color: black; */
+      text-decoration: none;
+      color: inherit;
+      /* max-height: 300px; */
+      /* height: 300px; */
+    }
+    .trending-products-productCard:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .trending-products-productCard div{
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* background-color: red; */
+    }
+    @media screen and (max-width: 768px) {
+     
+    }
+    @media (max-width: 768px) {
+     
+    }
+     @media (max-width: 1200px) {
+     
+    }
+
+    @media (max-width: 480px) {
+      .trending-products-productCard{
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+        max-height: 250px;
+        height: 250px;
+        /* background-color: red; */
+      }
+      .trending-products-productCard img{
+        height: 80%;
+      }
+      .trending-products-productCard div{
+        max-height: 20%;
+        text-overflow:unset;
+        word-wrap: break-word;
+      }
+      .recent-view-cards-container{
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+        /* background-color: green; */
+      }
+      .recent-view-cards-container img{
+        height: 80%;
+      }
+      .product-card{
+        
+        width: 90%;
+        height: 450px;
+        margin: 4px;
+        text-align: center;
+        padding: 0px;
+        padding-bottom: 10px;
+        /* background-color: green; */
+        margin-bottom: 5%;
+      }
+      .product-image-wrapper{
+      /* background-color: red; */
+        width: 100%;
+        height: 85%;
+        margin-bottom: 3.5%;
+      }
+      .product-image-wrapper img{
+        width: 100%;
+        height: 100%;
+      }
+    
     }
   </style>
 </head>
@@ -466,42 +586,42 @@
             <img src="/public/home page/trending products images/VISTA COLLECTION.png"   alt="" class="product-image">
             <div class="product-name">Vista Collection </div>
           </a> -->
-          <a class="productCard" href="/product.html?name=faucets&category=GLORIA%20BLACK&index=0">
+          <a class="trending-products-productCard" href="/product.html?name=faucets&category=GLORIA%20BLACK&index=0">
             <img src="/public/home page/trending products images/Gloria Black Collection.jpg" alt=""
               class="product-image">
-            <div class="product-name">Gloria Black Collection</div>
+            <div >Gloria Black Collection</div>
 
           </a>
-          <a class="productCard" href="/product.html?name=faucets&category=Primo&index=4">
+          <a class="trending-products-productCard" href="/product.html?name=faucets&category=Primo&index=4">
             <img src="/public/home page/trending products images/Primo Collection.jpg" alt="" class="product-image">
-            <div class="product-name"> Primo Collection</div>
+            <div > Primo Collection</div>
           </a>
-          <a class="productCard" href="/product.html?name=faucets&category=Valentino&index=5">
+          <a class="trending-products-productCard" href="/product.html?name=faucets&category=Valentino&index=5">
             <img src="/public/home page/trending products images/Valentino Collection.jpg" alt="" class="product-image">
-            <div class="product-name">Valentino Collection</div>
+            <div >Valentino Collection</div>
           </a>
-          <a class="productCard" href="/product.html?name=faucets&category=Vista&index=13">
+          <a class="trending-products-productCard" href="/product.html?name=faucets&category=Vista&index=13">
             <img src="/public/home page/trending products images/VISTA COLLECTION.png" alt="" class="product-image">
-            <div class="product-name">Vista Collection</div>
+            <div >Vista Collection</div>
           </a>
-          <a class="productCard" href="/product.html?name=faucets&category=Trend&index=11">
+          <a class="trending-products-productCard" href="/product.html?name=faucets&category=Trend&index=11">
             <img src="/public/home page/trending products images/TREND COLLECTION.jpg" alt="" class="product-image">
-            <div class="product-name"> Trend Collection</div>
+            <div > Trend Collection</div>
           </a>
-          <a class="productCard" href="/product.html?name=health%20faucet&category=FUTURIX&index=0">
+          <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=FUTURIX&index=0">
             <img src="/public/home page/trending products images/futurix health faucet.png" alt=""
               class="product-image">
-            <div class="product-name"> Futurix Health Faucet
+            <div > Futurix Health Faucet
             </div>
           </a>
-          <a class="productCard" href="/product.html?name=health%20faucet&category=COLOUR&index=4">
+          <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=COLOUR&index=4">
             <img src="/public/home page/trending products images/COLOUR HEALTH FAUCET.png" alt="" class="product-image">
-            <div class="product-name">Colour Health Faucet
+            <div >Colour Health Faucet
             </div>
           </a>
-          <a class="productCard" href="/product.html?name=showers&category=FLOWER&index=4">
+          <a class="trending-products-productCard" href="/product.html?name=showers&category=FLOWER&index=4">
             <img src="/public/home page/trending products images/FLOWER SHOWER.png" alt="" class="product-image">
-            <div class="product-name">Flower Rain Shower
+            <div >Flower Rain Shower
             </div>
           </a>
         </div>
