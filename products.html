@@ -163,6 +163,18 @@
         justify-content: center;
         align-items: center;
       }
+      @media (max-width: 575.98px) {
+        #productContainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          column-gap: 10px;
+        }
+        #productContainer a {
+          max-width: 45% !important;
+        }
+      }
 
       /* Animated Gradient Background */
       .animated-background {
@@ -280,6 +292,14 @@
         font-size: 2rem;
         margin-bottom: 40px;
         color: var(--primary-color);
+      }
+      @media (max-width: 575.98px) {
+        .category-grid {
+          padding-left: 0px;
+          padding-right: 0px;
+          width: 100% !important;
+          /* background-color: red; */
+        }
       }
 
       .grid {
@@ -563,11 +583,9 @@
                         width="600" />
                     <div class="category-card-details-box">
                         <h5>
-                           ${product.name}
+                           ${product.name?.toUpperCase()}
                         </h5>
-                        <p>
-                          ${product.details}
-                        </p>
+                      
                       
                           
                        

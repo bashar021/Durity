@@ -98,7 +98,7 @@ document.getElementById("navbar").innerHTML = `
       <div class="nav-links" role="menubar">
         <a href="/" class="" title="Durity Bath Homepage - Premium Bathroom Accessories">Home</a>
         <div class="dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
-          <a href="#" role="menuitem" title="Browse Durity Bath Products">Products</a>
+          <a href="#" role="menuitem" class='md-arrow-icon-container' title="Browse Durity Bath Products">Products <img  class='arrow-icon ' src='/public/icons/downarrow.svg' alt="Expand products menu" /></a>
           <div class="dropdown-content" role="menu" aria-label="Product Categories">
             <!-- <a href="/products.html?name=faucets">Faucets</a> -->
             <div class="nested-dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
@@ -139,11 +139,25 @@ document.getElementById("navbar").innerHTML = `
             </div>
           </div>
         </div>
-        <a href="/about.html" title="About Durity Bath - Premium Bathroom Accessories Manufacturer">About Us</a>
-        <a href="/carrerspage.html" title="Join Durity Bath Team - Career Opportunities in Bathroom Accessories">Careers</a>
-        <a href="/events.html" title="Durity Bath Events and Trade Shows - Bathroom Accessories Exhibitions">Events</a>
+         <div class="dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          <a href="#" role="menuitem" class='md-arrow-icon-container' title="Browse Durity Bath Products">Company <img  class='arrow-icon ' src='/public/icons/downarrow.svg' alt="Expand products menu" /></a>
+          <div class="dropdown-content" role="menu" aria-label="Product Categories">
+            <div class="nested-dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              <a href="/about.htmls" class="product" title="About Durity Bath - Premium Bathroom Accessories Manufacturer" role="menuitem">About Us</a>
+            </div>
+            <div class="nested-dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              <a href="/carrerspage.html" class="products" title="Join Durity Bath Team - Career Opportunities in Bathroom Accessories" role="menuitem">Careers</a>
+            </div>
+             <div class="nested-dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              <a href="/events.html" class="products" title="Durity Bath Events and Trade Shows - Bathroom Accessories Exhibitions" role="menuitem">Events</a>
+            </div>
+             <div class="nested-dropdown" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              <a href="/register.html" class="products" title="Register with Durity Bath for Exclusive Access to Premium Products" role="menuitem">Register</a>
+            </div>
+          </div>
+        </div>
         <a href="/catalogue.html" title="Download Durity Bath E-Catalogue - Premium Bathroom Accessories Catalog">E-Catalogue</a>
-        <a href="/register.html" title="Register with Durity Bath for Exclusive Access to Premium Products">Register</a>
+       
       </div>
     </div>
   

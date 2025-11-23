@@ -83,13 +83,7 @@
     min-height: auto;
 
   }
-  .products-grid{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-
-  }
+ 
   .our-collection-card{
     /* background-color: red; */
     padding: 10px;
