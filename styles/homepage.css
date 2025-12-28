@@ -1012,7 +1012,8 @@ contact form  */
 app section  */
 
 .app-section {
-  padding: 100px 20px;
+  padding: 5px 20px;
+  padding-bottom: 20px;
   /* background: var(--bg-gradient); */
   min-height: 100vh;
   display: flex;
