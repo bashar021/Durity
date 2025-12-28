@@ -1051,6 +1051,352 @@
         item.style.transition = 'all 0.3s ease';
       });
     });
+
+    // Image validation script - checks all product images
+    async function validateProductImages() {
+      // Function to check if an image exists
+      function checkImageExists(imagePath) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          let resolved = false;
+          
+          img.onload = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: true, path: imagePath });
+            }
+          };
+          
+          img.onerror = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath });
+            }
+          };
+          
+          img.src = imagePath;
+          
+          // Timeout after 5 seconds
+          setTimeout(() => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath, timeout: true });
+            }
+          }, 5000);
+        });
+      }
+
+      const failedImages = [];
+      const imagePromises = [];
+      let totalChecked = 0;
+
+      Object.keys(durityProducts).forEach((categoryName) => {
+        const category = durityProducts[categoryName];
+        if (category && category.products && Array.isArray(category.products)) {
+          console.log(`📁 Checking category: ${categoryName}`);
+          
+          category.products.forEach((parentItem) => {
+            if (parentItem.products && Array.isArray(parentItem.products)) {
+              parentItem.products.forEach((product) => {
+                // Check if product has imageSrc and name
+                if (product.imageSrc && product.name) {
+                  // Construct image path: imageSrc + name + ".jpg"
+                  const imagePath = product.imageSrc + product.code + '.jpg';
+                  totalChecked++;
+
+                  // Create promise for image check
+                  const imageCheck = checkImageExists(imagePath).then((result) => {
+                    if (!result.exists) {
+                      const failedProduct = {
+                        category: categoryName,
+                        parentName: parentItem.name || '',
+                        name: product.name,
+                        code: product.code || 'N/A',
+                        imagePath: imagePath,
+                        imageSrc: product.imageSrc,
+                        timeout: result.timeout || false
+                      };
+                      failedImages.push(failedProduct);
+                    }
+                    return result;
+                  });
+                  
+                  imagePromises.push(imageCheck);
+                }
+              });
+            }
+          });
+        }
+      });
+      // Wait for all image checks to complete
+      await Promise.all(imagePromises);
+      console.log("failedImages", failedImages);
+
+      // Function to convert array to CSV
+      function convertToCSV(data) {
+        if (data.length === 0) {
+          return 'No failed images found.';
+        }
+
+        // CSV Headers
+        const headers = ['Category', 'Parent Name', 'Product Name', 'Code', 'Image Path', 'Image Source', 'Timeout'];
+        
+        // Create CSV rows
+        const rows = data.map(item => {
+          // Escape commas and quotes in CSV values
+          const escapeCSV = (value) => {
+            if (value === null || value === undefined) return '';
+            const stringValue = String(value);
+            // If value contains comma, quote, or newline, wrap in quotes and escape quotes
+            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+              return '"' + stringValue.replace(/"/g, '""') + '"';
+            }
+            return stringValue;
+          };
+
+          return [
+            escapeCSV(item.category),
+            escapeCSV(item.parentName),
+            escapeCSV(item.name),
+            escapeCSV(item.code),
+            escapeCSV(item.imagePath),
+            escapeCSV(item.imageSrc),
+            escapeCSV(item.timeout ? 'Yes' : 'No')
+          ].join(',');
+        });
+
+        // Combine headers and rows
+        return [headers.join(','), ...rows].join('\n');
+      }
+
+      // Function to download CSV
+      function downloadCSV(csvContent, filename) {
+        // Create blob with CSV content
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        
+        // Create download link
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        
+        // Add to DOM, click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up the URL object
+        URL.revokeObjectURL(url);
+      }
+
+      // Ask for confirmation and download CSV if confirmed
+      if (failedImages.length > 0) {
+        const confirmDownload = confirm(
+          `Found ${failedImages.length} failed images.\n\n` +
+          `Would you like to download a CSV file with the details?`
+        );
+
+        if (confirmDownload) {
+          const csvContent = convertToCSV(failedImages);
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+          const filename = `failed-images-${timestamp}.csv`;
+          
+          downloadCSV(csvContent, filename);
+          console.log(`✅ CSV file "${filename}" downloaded successfully!`);
+        } else {
+          console.log('❌ CSV download cancelled.');
+        }
+      } else {
+        console.log('✅ No failed images found. CSV download skipped.');
+      }
+
+      return {
+        totalChecked,
+        totalFailed: failedImages.length,
+        failedImages
+      };
+     
+    
+    }
+
+    // Run validation when page loads (comment out if you want to run manually)
+    // Uncomment the line below to automatically run validation on page load
+    // validateProductImages();
+    
+    // Make function available globally for manual execution
+    // window.validateProductImages = validateProductImages;
+    // validateProductImages()
+    // console.log('💡 Image validation script loaded. Run validateProductImages() in console to check images.');
+
+    // Category image validation script - checks all category images
+    async function validateCategoryImages() {
+      // Function to check if an image exists
+      function checkImageExists(imagePath) {
+        return new Promise((resolve) => {
+          // Mark this specific image as not existing (invalid image path)
+          if(imagePath.includes("Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer")) {
+            resolve({ exists: false, path: imagePath });
+            return; // Early return to skip image loading check
+          }
+          const img = new Image();
+          let resolved = false;
+          
+          img.onload = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: true, path: imagePath });
+            }
+          };
+          
+          img.onerror = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath });
+            }
+          };
+          
+          img.src = imagePath;
+          
+          // Timeout after 5 seconds
+          setTimeout(() => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath, timeout: true });
+            }
+          }, 5000);
+        });
+      }
+
+      const failedImages = [];
+      const imagePromises = [];
+      let totalChecked = 0;
+
+      Object.keys(durityProducts).forEach((categoryName) => {
+        const category = durityProducts[categoryName];
+        if (category && category.products && Array.isArray(category.products)) {
+          console.log(`📁 Checking category: ${categoryName}`);
+          
+          category.products.forEach((parentItem) => {
+            // Check if category has imageSrc
+            if (parentItem.imageSrc && parentItem.name) {
+              // Category image path is directly from imageSrc
+              const imagePath = parentItem.imageSrc;
+              totalChecked++;
+
+              // Create promise for image check
+              const imageCheck = checkImageExists(imagePath).then((result) => {
+                if (!result.exists) {
+                  const failedCategory = {
+                    category: categoryName,
+                    categoryName: parentItem.name || '',
+                    imagePath: imagePath,
+                    timeout: result.timeout || false
+                  };
+                  failedImages.push(failedCategory);
+                }
+                return result;
+              });
+              
+              imagePromises.push(imageCheck);
+            }
+          });
+        }
+      });
+
+      // Wait for all image checks to complete
+      await Promise.all(imagePromises);
+      console.log("failedCategoryImages", failedImages);
+
+      // Function to convert array to CSV
+      function convertToCSV(data) {
+        if (data.length === 0) {
+          return 'No failed images found.';
+        }
+
+        // CSV Headers
+        const headers = ['Main Category', 'Category Name', 'Image Path', 'Timeout'];
+        
+        // Create CSV rows
+        const rows = data.map(item => {
+          // Escape commas and quotes in CSV values
+          const escapeCSV = (value) => {
+            if (value === null || value === undefined) return '';
+            const stringValue = String(value);
+            // If value contains comma, quote, or newline, wrap in quotes and escape quotes
+            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+              return '"' + stringValue.replace(/"/g, '""') + '"';
+            }
+            return stringValue;
+          };
+
+          return [
+            escapeCSV(item.category),
+            escapeCSV(item.categoryName),
+            escapeCSV(item.imagePath),
+            escapeCSV(item.timeout ? 'Yes' : 'No')
+          ].join(',');
+        });
+
+        // Combine headers and rows
+        return [headers.join(','), ...rows].join('\n');
+      }
+
+      // Function to download CSV
+      function downloadCSV(csvContent, filename) {
+        // Create blob with CSV content
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        
+        // Create download link
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        
+        // Add to DOM, click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up the URL object
+        URL.revokeObjectURL(url);
+      }
+
+      // Ask for confirmation and download CSV if confirmed
+      if (failedImages.length > 0) {
+        const confirmDownload = confirm(
+          `Found ${failedImages.length} failed category images.\n\n` +
+          `Would you like to download a CSV file with the details?`
+        );
+
+        if (confirmDownload) {
+          const csvContent = convertToCSV(failedImages);
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+          const filename = `failed-category-images-${timestamp}.csv`;
+          
+          downloadCSV(csvContent, filename);
+          console.log(`✅ CSV file "${filename}" downloaded successfully!`);
+        } else {
+          console.log('❌ CSV download cancelled.');
+        }
+      } else {
+        console.log('✅ No failed category images found. CSV download skipped.');
+      }
+
+      return {
+        totalChecked,
+        totalFailed: failedImages.length,
+        failedImages
+      };
+    }
+
+    // Make function available globally for manual execution
+    // window.validateCategoryImages = validateCategoryImages;
+    // validateCategoryImages()
+    // console.log('💡 Category image validation script loaded. Run validateCategoryImages() in console to check category images.');
   </script>
 
 </body>
