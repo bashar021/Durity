@@ -339,14 +339,28 @@
       transform: translateY(-5px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    .trending-products-productCard div{
+    .trending-products-card-text {
+      margin-top: 4px;
+    }
+    .trending-products-card-title {
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      /* background-color: red; */
+    }
+    .trending-products-card-detail {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #5c5c5c;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     @media screen and (max-width: 768px) {
      
@@ -363,17 +377,31 @@
         width: 200px;
         max-width: 200px;
         min-width: 200px;
-        max-height: 250px;
-        height: 250px;
-        /* background-color: red; */
+        height: auto;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
       }
       .trending-products-productCard img{
-        height: 80%;
+        height: 170px;
+        width: 100%;
+        flex-shrink: 0;
+        object-fit: cover;
       }
-      .trending-products-productCard div{
-        max-height: 20%;
-        text-overflow:unset;
+      .trending-products-card-text {
+        flex-shrink: 0;
+        max-height: none;
+      }
+      .trending-products-card-title {
+        font-size: 15px;
+        white-space: normal;
+        text-overflow: unset;
         word-wrap: break-word;
+      }
+      .trending-products-card-detail {
+        font-size: 12px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
       }
       .recent-view-cards-container{
         width: 200px;
@@ -589,39 +617,59 @@
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=GLORIA%20BLACK&index=0">
             <img src="/public/home page/trending products images/Gloria Black Collection.jpg" alt=""
               class="product-image">
-            <div >Gloria Black Collection</div>
-
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Gloria Black Collection</div>
+              <p class="trending-products-card-detail">Basin &amp; kitchen faucets · Matte black finish</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Primo&index=4">
             <img src="/public/home page/trending products images/Primo Collection.jpg" alt="" class="product-image">
-            <div > Primo Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Primo Collection</div>
+              <p class="trending-products-card-detail">Single-lever mixers · Durable chrome plating</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Valentino&index=5">
             <img src="/public/home page/trending products images/Valentino Collection.jpg" alt="" class="product-image">
-            <div >Valentino Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Valentino Collection</div>
+              <p class="trending-products-card-detail">Designer faucets · Smooth water flow</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Vista&index=13">
             <img src="/public/home page/trending products images/VISTA COLLECTION.png" alt="" class="product-image">
-            <div >Vista Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Vista Collection</div>
+              <p class="trending-products-card-detail">Full faucet range · Multiple sizes &amp; finishes</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Trend&index=11">
             <img src="/public/home page/trending products images/TREND COLLECTION.jpg" alt="" class="product-image">
-            <div > Trend Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Trend Collection</div>
+              <p class="trending-products-card-detail">Modern profiles · Space-saving designs</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=FUTURIX&index=0">
             <img src="/public/home page/trending products images/futurix health faucet.png" alt=""
               class="product-image">
-            <div > Futurix Health Faucet
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Futurix Health Faucet</div>
+              <p class="trending-products-card-detail">Wall-mounted spray · Hygienic everyday use</p>
             </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=COLOUR&index=4">
             <img src="/public/home page/trending products images/COLOUR HEALTH FAUCET.png" alt="" class="product-image">
-            <div >Colour Health Faucet
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Colour Health Faucet</div>
+              <p class="trending-products-card-detail">Dual spray modes · Bold accent finishes</p>
             </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=showers&category=FLOWER&index=4">
             <img src="/public/home page/trending products images/FLOWER SHOWER.png" alt="" class="product-image">
-            <div >Flower Rain Shower
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Flower Rain Shower</div>
+              <p class="trending-products-card-detail">Overhead rain shower · Wide soft coverage</p>
             </div>
           </a>
         </div>
