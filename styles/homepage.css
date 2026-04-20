@@ -1507,6 +1507,71 @@ home page carausel  */
 /* 
 our collection section  */
 
+.top-products-section .section-content {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding-inline: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.top-products-section .products-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.75rem);
+  width: 100%;
+  box-sizing: border-box;
+  perspective: 1000px;
+}
+
+.top-products-section .products-grid > * {
+  min-width: 0;
+}
+
+/* Phone: 1 per row. Tablet and large (768–1279px): 2 per row. Extra-large: 4 per row. */
+@media (min-width: 768px) {
+  .top-products-section .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .top-products-section .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.top-products-section .our-collection-card {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  box-sizing: border-box;
+}
+
+.top-products-section .homepage-our-collection-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .top-products-section .our-collection-card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .top-products-section .product-image-wrapper {
+    height: auto;
+    max-height: none;
+  }
+
+  .top-products-section .product-image-wrapper .homepage-our-collection-img {
+    height: auto;
+    max-height: 220px;
+  }
+}
+
 .cta-button {
   display: inline-flex;
   align-items: center;

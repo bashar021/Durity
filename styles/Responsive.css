@@ -66,10 +66,10 @@
     font-size: 16px;
   }
   .homepage-our-collection-img{
-    /* height: 250px; */
-    height: 145px;
-    width: 170px;
-    /* width: 300px; */
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
   .section-content{
     /* background-color: red; */
@@ -87,8 +87,8 @@
   .our-collection-card{
     /* background-color: red; */
     padding: 10px;
-    /* width: fit-content; */
-    width: 40%;
+    width: 100%;
+    max-width: 100%;
     margin: 0px;
     text-align: center;
   }
