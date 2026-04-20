@@ -1551,6 +1551,12 @@ our collection section  */
   /* color: black; */
 }
 
+a.product-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .product-card::before {
   content: "";
   position: absolute;
