@@ -1507,18 +1507,25 @@ home page carausel  */
 /* 
 our collection section  */
 
+.top-products-section.bg-smoke {
+  box-sizing: border-box;
+  padding-block: clamp(1.25rem, 4.5vw, 3rem);
+  padding-inline: clamp(0.5rem, 2.5vw, 1.25rem);
+  margin-bottom: clamp(1.75rem, 5vw, 4rem);
+}
+
 .top-products-section .section-content {
   width: 100%;
   max-width: 1400px;
   margin-inline: auto;
   box-sizing: border-box;
-  padding-inline: clamp(0.75rem, 3vw, 1.5rem);
+  padding-inline: clamp(0.5rem, 2.5vw, 1.5rem);
 }
 
 .top-products-section .products-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1rem, 3vw, 1.75rem);
+  gap: clamp(0.75rem, 2.5vw, 1.75rem);
   width: 100%;
   box-sizing: border-box;
   perspective: 1000px;
@@ -1532,20 +1539,43 @@ our collection section  */
 @media (min-width: 768px) {
   .top-products-section .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.85rem, 2vw, 1.5rem);
   }
 }
 
 @media (min-width: 1280px) {
   .top-products-section .products-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 1.5vw, 1.75rem);
   }
 }
 
 .top-products-section .our-collection-card {
   width: 100%;
   max-width: none;
-  margin-inline: 0;
+  margin: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  padding: clamp(0.6rem, calc(0.2rem + 2.2vw), 1.85rem);
+  border-radius: clamp(12px, 1.8vw, 20px);
+  height: auto;
+  min-height: 0;
+}
+
+.top-products-section .product-image-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  height: auto;
+  max-height: none;
+  margin-bottom: clamp(0.5rem, 2vw, 1.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(160px, 50vw, 280px);
 }
 
 .top-products-section .homepage-our-collection-img {
@@ -1553,22 +1583,79 @@ our collection section  */
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  max-height: clamp(220px, 62vw, 360px);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .top-products-section .our-collection-card {
-    height: auto;
-    min-height: 0;
+    padding: clamp(0.75rem, 1.8vw, 1.5rem);
   }
 
   .top-products-section .product-image-wrapper {
-    height: auto;
-    max-height: none;
+    min-height: clamp(170px, 34vw, 280px);
+    margin-bottom: clamp(0.55rem, 1.6vw, 1.05rem);
   }
 
-  .top-products-section .product-image-wrapper .homepage-our-collection-img {
-    height: auto;
-    max-height: 220px;
+  .top-products-section .homepage-our-collection-img {
+    max-height: clamp(200px, 36vw, 320px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .top-products-section .our-collection-card {
+    padding: clamp(0.85rem, calc(0.5rem + 1.1vw), 1.75rem);
+  }
+
+  .top-products-section .product-image-wrapper {
+    min-height: clamp(150px, 16vw, 260px);
+    margin-bottom: clamp(0.5rem, 1.1vw, 1rem);
+  }
+
+  .top-products-section .homepage-our-collection-img {
+    max-height: clamp(180px, 15vw, 300px);
+  }
+}
+
+/* Small screens: compact CTA, visually smaller than the image block above */
+.top-products-section .our-collection-card .cta-button {
+  width: fit-content;
+  max-width: min(92%, 18rem);
+  align-self: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: clamp(0.3rem, 1.2vw, 0.6rem);
+  margin-inline: auto;
+  min-height: 2.125rem;
+  padding: clamp(0.4rem, 1.8vw, 0.55rem) clamp(0.65rem, 3.2vw, 0.95rem);
+  font-size: clamp(0.75rem, calc(0.3rem + 1.9vw), 0.84rem);
+  line-height: 1.25;
+  border-radius: clamp(12px, 2vw, 20px);
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@media (min-width: 768px) {
+  .top-products-section .our-collection-card .cta-button {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    min-height: 2.625rem;
+    padding: clamp(0.65rem, 1.6vw, 0.9rem) clamp(0.85rem, 2.2vw, 1.35rem);
+    font-size: clamp(0.85rem, calc(0.35rem + 1.4vw), 0.98rem);
+    border-radius: clamp(18px, 2.2vw, 25px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .top-products-section .our-collection-card .cta-button {
+    min-height: 2.5rem;
+    padding: clamp(0.6rem, 1vw, 0.8rem) clamp(0.75rem, 1.2vw, 1.15rem);
+    font-size: clamp(0.8rem, calc(0.4rem + 0.7vw), 0.92rem);
   }
 }
 
