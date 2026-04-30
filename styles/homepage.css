@@ -173,6 +173,14 @@
   position: relative;
 }
 
+#trending-products-container .trending-products-subheading {
+  max-width: 42rem;
+  margin: 0.35rem auto 0;
+  padding: 0 1rem 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 /* our inovation section  */
 
 .innovation-section {

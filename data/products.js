@@ -3370,7 +3370,7 @@ const durityProducts = {
           },
           {
             name: "NOZZLE COCK & WASHING BIB COCK WITH CP FLANGE",
-            code: "FLONBCC01/FLTWBCC01",
+            code: "FLONBCC01-FLTWBCC01",
             brand: "FLOREX",
             finish: "CHROME FINISH",
             area: "GARDEN AREA",
@@ -14815,7 +14815,7 @@ const durityProducts = {
         products: [
           {
             name: 'PVC CONNECTION 15MM 18"',
-            code: "PVCCON15C01",
+            code: "PVCCON18C01",
             brand: "PVC",
             finish: "CHROME FINISH",
             area: "N/A",
@@ -14824,13 +14824,14 @@ const durityProducts = {
             quantity: "N/A",
             flow: "N/A",
             state: "ALL STATE",
-            imageSrc: "/public/products images/faucets/PVC/",
+            imageSrc:
+              "public/products images/bath accessories /PVC CONNECTION/",
             details: "",
             imagesdata: [],
           },
           {
             name: 'PVC CONNECTION 15MM 24"',
-            code: "PVCCON15C01",
+            code: "PVCCON24C01",
             brand: "PVC",
             finish: "CHROME FINISH",
             area: "N/A",
@@ -14839,13 +14840,14 @@ const durityProducts = {
             quantity: "N/A",
             flow: "N/A",
             state: "ALL STATE",
-            imageSrc: "/public/products images/faucets/PVC/",
+            imageSrc:
+              "/public/products images/bath accessories /PVC CONNECTION/",
             details: "",
             imagesdata: [],
           },
           {
             name: 'PVC CONNECTION 15MM 36"',
-            code: "PVCCON15C01",
+            code: "PVCCON36C01",
             brand: "PVC",
             finish: "CHROME FINISH",
             area: "N/A",
@@ -14854,13 +14856,14 @@ const durityProducts = {
             quantity: "N/A",
             flow: "N/A",
             state: "ALL STATE",
-            imageSrc: "/public/products images/faucets/PVC/",
+            imageSrc:
+              "/public/products images/bath accessories /PVC CONNECTION/",
             details: "",
             imagesdata: [],
           },
           {
             name: 'PVC CONNECTION 15MM 48"',
-            code: "PVCCON15C01",
+            code: "PVCCON48C01",
             brand: "PVC",
             finish: "CHROME FINISH",
             area: "N/A",
@@ -14869,7 +14872,8 @@ const durityProducts = {
             quantity: "N/A",
             flow: "N/A",
             state: "ALL STATE",
-            imageSrc: "/public/products images/bath accessories /",
+            imageSrc:
+              "/public/products images/bath accessories /PVC CONNECTION/",
             details: "",
             imagesdata: [],
           },
