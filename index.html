@@ -339,14 +339,28 @@
       transform: translateY(-5px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    .trending-products-productCard div{
+    .trending-products-card-text {
+      margin-top: 4px;
+    }
+    .trending-products-card-title {
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      /* background-color: red; */
+    }
+    .trending-products-card-detail {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #5c5c5c;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     @media screen and (max-width: 768px) {
      
@@ -363,17 +377,31 @@
         width: 200px;
         max-width: 200px;
         min-width: 200px;
-        max-height: 250px;
-        height: 250px;
-        /* background-color: red; */
+        height: auto;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
       }
       .trending-products-productCard img{
-        height: 80%;
+        height: 170px;
+        width: 100%;
+        flex-shrink: 0;
+        object-fit: cover;
       }
-      .trending-products-productCard div{
-        max-height: 20%;
-        text-overflow:unset;
+      .trending-products-card-text {
+        flex-shrink: 0;
+        max-height: none;
+      }
+      .trending-products-card-title {
+        font-size: 15px;
+        white-space: normal;
+        text-overflow: unset;
         word-wrap: break-word;
+      }
+      .trending-products-card-detail {
+        font-size: 12px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
       }
       .recent-view-cards-container{
         width: 200px;
@@ -573,7 +601,9 @@
 
   <div id="trending-products-container">
     <!-- <p class="section-heading">Trending Accessories</p> -->
-    <h1 class="text-center text-bold text-black text-h1 home-page-titles">TRENDING PRODUCTS</h1>
+    <h1 class="text-center text-bold text-black text-h1 home-page-titles mb-0 pb-0">TRENDING PRODUCTS</h1>
+    <p class="text-center text-color-grey text-h4 trending-products-subheading">Best-selling faucet collections, showers,
+      and bath accessories — durable quality and finishes for modern bathrooms.</p>
     <div class="trending-products-sroll-button-box">
       <button id="scrollLeft" class="scroll-btn left-0">
         &#10094; <!-- ‹ symbol -->
@@ -589,39 +619,59 @@
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=GLORIA%20BLACK&index=0">
             <img src="/public/home page/trending products images/Gloria Black Collection.jpg" alt=""
               class="product-image">
-            <div >Gloria Black Collection</div>
-
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Gloria Black Collection</div>
+              <p class="trending-products-card-detail">Basin &amp; kitchen faucets · Matte black finish</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Primo&index=4">
             <img src="/public/home page/trending products images/Primo Collection.jpg" alt="" class="product-image">
-            <div > Primo Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Primo Collection</div>
+              <p class="trending-products-card-detail">Single-lever mixers · Durable chrome plating</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Valentino&index=5">
             <img src="/public/home page/trending products images/Valentino Collection.jpg" alt="" class="product-image">
-            <div >Valentino Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Valentino Collection</div>
+              <p class="trending-products-card-detail">Designer faucets · Smooth water flow</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Vista&index=13">
             <img src="/public/home page/trending products images/VISTA COLLECTION.png" alt="" class="product-image">
-            <div >Vista Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Vista Collection</div>
+              <p class="trending-products-card-detail">Full faucet range · Multiple sizes &amp; finishes</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=faucets&category=Trend&index=11">
             <img src="/public/home page/trending products images/TREND COLLECTION.jpg" alt="" class="product-image">
-            <div > Trend Collection</div>
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Trend Collection</div>
+              <p class="trending-products-card-detail">Modern profiles · Space-saving designs</p>
+            </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=FUTURIX&index=0">
             <img src="/public/home page/trending products images/futurix health faucet.png" alt=""
               class="product-image">
-            <div > Futurix Health Faucet
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Futurix Health Faucet</div>
+              <p class="trending-products-card-detail">Wall-mounted spray · Hygienic everyday use</p>
             </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=health%20faucet&category=COLOUR&index=4">
             <img src="/public/home page/trending products images/COLOUR HEALTH FAUCET.png" alt="" class="product-image">
-            <div >Colour Health Faucet
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Colour Health Faucet</div>
+              <p class="trending-products-card-detail">Dual spray modes · Bold accent finishes</p>
             </div>
           </a>
           <a class="trending-products-productCard" href="/product.html?name=showers&category=FLOWER&index=4">
             <img src="/public/home page/trending products images/FLOWER SHOWER.png" alt="" class="product-image">
-            <div >Flower Rain Shower
+            <div class="trending-products-card-text">
+              <div class="trending-products-card-title">Flower Rain Shower</div>
+              <p class="trending-products-card-detail">Overhead rain shower · Wide soft coverage</p>
             </div>
           </a>
         </div>
@@ -698,7 +748,7 @@
     <div class="section-content">
       <div class="products-grid">
         <!-- Product 1 -->
-        <div class="product-card our-collection-card">
+        <a href="/products.html?name=faucets" class="product-card our-collection-card">
           <div class="product-image-wrapper">
             <img src="/public/home page/home page our collection images/FAUCET.png" alt="Smart Shower System"
               class="product-image homepage-our-collection-img">
@@ -721,13 +771,13 @@
           <!-- <button class="cta-button">
             Explore Faucets
           </button> -->
-          <a href="/products.html?name=faucets" class="cta-button">
+          <span class="cta-button">
             Explore Faucets
-          </a>
-        </div>
+          </span>
+        </a>
 
         <!-- Product 2 -->
-        <div class="product-card our-collection-card">
+        <a href="/products.html?name=ptmt" class="product-card our-collection-card">
           <div class="product-image-wrapper">
             <img src="/public/home page/home page our collection images/PTMT.jpg" alt="Luxury Bathtub"
               class="product-image homepage-our-collection-img">
@@ -747,13 +797,13 @@
                       <span class="price-currency">$</span>
                       <span class="price-amount">299</span>
                   </div> -->
-          <a href="/products.html?name=ptmt" class="cta-button">
+          <span class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore PTMT
-          </a>
-        </div>
+          </span>
+        </a>
         <!-- Product 3 -->
-        <div class="product-card our-collection-card">
+        <a href="/products.html?name=showers" class="product-card our-collection-card">
           <div class="product-image-wrapper">
 
             <img src="/public/home page/home page our collection images/SHOWER.png" alt="Smart Mirror"
@@ -774,14 +824,14 @@
                       <span class="price-currency">$</span>
                       <span class="price-amount">399</span>
                   </div> -->
-          <a href="/products.html?name=showers" class="cta-button">
+          <span class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore Showers
-          </a>
-        </div>
+          </span>
+        </a>
 
         <!-- Product 4 -->
-        <div class="product-card our-collection-card ">
+        <a href="/products.html?name=health%20faucet" class="product-card our-collection-card">
           <div class="product-image-wrapper">
             <img src="/public/home page/home page our collection images/HEALTH FAUCET.png" alt="Storage Solution"
               class="product-image homepage-our-collection-img">
@@ -800,11 +850,11 @@
                       <span class="price-currency">$</span>
                       <span class="price-amount">349</span>
                   </div> -->
-          <a href="/products.html?name=health%20faucet" class="cta-button">
+          <span class="cta-button">
             <!-- <i class="fas fa-shopping-cart"></i> -->
             Explore Health Faucets
-          </a>
-        </div>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -827,7 +877,7 @@
         </div>
         <div class="cf-card">
           <h3>Timings</h3>
-          <p>Wednesday - Monday: 9:00 AM - 7:00 PM<br>
+          <p>Monday - Friday: 9:00 AM - 7:00 PM<br>
             Saturday - Sunday : By Appointment</p>
         </div>
       </div>
@@ -848,7 +898,7 @@
           </div>
           <div class="cf-form-group">
             <label for="phone">Phone Number</label>
-            <input type="number" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" maxlength="10" required>
             <div class="cf-error" id="phoneError">Please enter a valid phone number</div>
           </div>
           <div class="cf-form-group">
@@ -1051,6 +1101,352 @@
         item.style.transition = 'all 0.3s ease';
       });
     });
+
+    // Image validation script - checks all product images
+    async function validateProductImages() {
+      // Function to check if an image exists
+      function checkImageExists(imagePath) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          let resolved = false;
+          
+          img.onload = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: true, path: imagePath });
+            }
+          };
+          
+          img.onerror = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath });
+            }
+          };
+          
+          img.src = imagePath;
+          
+          // Timeout after 5 seconds
+          setTimeout(() => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath, timeout: true });
+            }
+          }, 5000);
+        });
+      }
+
+      const failedImages = [];
+      const imagePromises = [];
+      let totalChecked = 0;
+
+      Object.keys(durityProducts).forEach((categoryName) => {
+        const category = durityProducts[categoryName];
+        if (category && category.products && Array.isArray(category.products)) {
+          console.log(`📁 Checking category: ${categoryName}`);
+          
+          category.products.forEach((parentItem) => {
+            if (parentItem.products && Array.isArray(parentItem.products)) {
+              parentItem.products.forEach((product) => {
+                // Check if product has imageSrc and name
+                if (product.imageSrc && product.name) {
+                  // Construct image path: imageSrc + name + ".jpg"
+                  const imagePath = product.imageSrc + product.code + '.jpg';
+                  totalChecked++;
+
+                  // Create promise for image check
+                  const imageCheck = checkImageExists(imagePath).then((result) => {
+                    if (!result.exists) {
+                      const failedProduct = {
+                        category: categoryName,
+                        parentName: parentItem.name || '',
+                        name: product.name,
+                        code: product.code || 'N/A',
+                        imagePath: imagePath,
+                        imageSrc: product.imageSrc,
+                        timeout: result.timeout || false
+                      };
+                      failedImages.push(failedProduct);
+                    }
+                    return result;
+                  });
+                  
+                  imagePromises.push(imageCheck);
+                }
+              });
+            }
+          });
+        }
+      });
+      // Wait for all image checks to complete
+      await Promise.all(imagePromises);
+      console.log("failedImages", failedImages);
+
+      // Function to convert array to CSV
+      function convertToCSV(data) {
+        if (data.length === 0) {
+          return 'No failed images found.';
+        }
+
+        // CSV Headers
+        const headers = ['Category', 'Parent Name', 'Product Name', 'Code', 'Image Path', 'Image Source', 'Timeout'];
+        
+        // Create CSV rows
+        const rows = data.map(item => {
+          // Escape commas and quotes in CSV values
+          const escapeCSV = (value) => {
+            if (value === null || value === undefined) return '';
+            const stringValue = String(value);
+            // If value contains comma, quote, or newline, wrap in quotes and escape quotes
+            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+              return '"' + stringValue.replace(/"/g, '""') + '"';
+            }
+            return stringValue;
+          };
+
+          return [
+            escapeCSV(item.category),
+            escapeCSV(item.parentName),
+            escapeCSV(item.name),
+            escapeCSV(item.code),
+            escapeCSV(item.imagePath),
+            escapeCSV(item.imageSrc),
+            escapeCSV(item.timeout ? 'Yes' : 'No')
+          ].join(',');
+        });
+
+        // Combine headers and rows
+        return [headers.join(','), ...rows].join('\n');
+      }
+
+      // Function to download CSV
+      function downloadCSV(csvContent, filename) {
+        // Create blob with CSV content
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        
+        // Create download link
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        
+        // Add to DOM, click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up the URL object
+        URL.revokeObjectURL(url);
+      }
+
+      // Ask for confirmation and download CSV if confirmed
+      if (failedImages.length > 0) {
+        const confirmDownload = confirm(
+          `Found ${failedImages.length} failed images.\n\n` +
+          `Would you like to download a CSV file with the details?`
+        );
+
+        if (confirmDownload) {
+          const csvContent = convertToCSV(failedImages);
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+          const filename = `failed-images-${timestamp}.csv`;
+          
+          downloadCSV(csvContent, filename);
+          console.log(`✅ CSV file "${filename}" downloaded successfully!`);
+        } else {
+          console.log('❌ CSV download cancelled.');
+        }
+      } else {
+        console.log('✅ No failed images found. CSV download skipped.');
+      }
+
+      return {
+        totalChecked,
+        totalFailed: failedImages.length,
+        failedImages
+      };
+     
+    
+    }
+
+    // Run validation when page loads (comment out if you want to run manually)
+    // Uncomment the line below to automatically run validation on page load
+    // validateProductImages();
+    
+    // Make function available globally for manual execution
+    // window.validateProductImages = validateProductImages;
+    // validateProductImages()
+    // console.log('💡 Image validation script loaded. Run validateProductImages() in console to check images.');
+
+    // Category image validation script - checks all category images
+    async function validateCategoryImages() {
+      // Function to check if an image exists
+      function checkImageExists(imagePath) {
+        return new Promise((resolve) => {
+          // Mark this specific image as not existing (invalid image path)
+          if(imagePath.includes("Joerger-Valencia-Edelmessing-mit-weissem-Kristall-Unterputz-Hebelmischer")) {
+            resolve({ exists: false, path: imagePath });
+            return; // Early return to skip image loading check
+          }
+          const img = new Image();
+          let resolved = false;
+          
+          img.onload = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: true, path: imagePath });
+            }
+          };
+          
+          img.onerror = () => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath });
+            }
+          };
+          
+          img.src = imagePath;
+          
+          // Timeout after 5 seconds
+          setTimeout(() => {
+            if (!resolved) {
+              resolved = true;
+              resolve({ exists: false, path: imagePath, timeout: true });
+            }
+          }, 5000);
+        });
+      }
+
+      const failedImages = [];
+      const imagePromises = [];
+      let totalChecked = 0;
+
+      Object.keys(durityProducts).forEach((categoryName) => {
+        const category = durityProducts[categoryName];
+        if (category && category.products && Array.isArray(category.products)) {
+          console.log(`📁 Checking category: ${categoryName}`);
+          
+          category.products.forEach((parentItem) => {
+            // Check if category has imageSrc
+            if (parentItem.imageSrc && parentItem.name) {
+              // Category image path is directly from imageSrc
+              const imagePath = parentItem.imageSrc;
+              totalChecked++;
+
+              // Create promise for image check
+              const imageCheck = checkImageExists(imagePath).then((result) => {
+                if (!result.exists) {
+                  const failedCategory = {
+                    category: categoryName,
+                    categoryName: parentItem.name || '',
+                    imagePath: imagePath,
+                    timeout: result.timeout || false
+                  };
+                  failedImages.push(failedCategory);
+                }
+                return result;
+              });
+              
+              imagePromises.push(imageCheck);
+            }
+          });
+        }
+      });
+
+      // Wait for all image checks to complete
+      await Promise.all(imagePromises);
+      console.log("failedCategoryImages", failedImages);
+
+      // Function to convert array to CSV
+      function convertToCSV(data) {
+        if (data.length === 0) {
+          return 'No failed images found.';
+        }
+
+        // CSV Headers
+        const headers = ['Main Category', 'Category Name', 'Image Path', 'Timeout'];
+        
+        // Create CSV rows
+        const rows = data.map(item => {
+          // Escape commas and quotes in CSV values
+          const escapeCSV = (value) => {
+            if (value === null || value === undefined) return '';
+            const stringValue = String(value);
+            // If value contains comma, quote, or newline, wrap in quotes and escape quotes
+            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+              return '"' + stringValue.replace(/"/g, '""') + '"';
+            }
+            return stringValue;
+          };
+
+          return [
+            escapeCSV(item.category),
+            escapeCSV(item.categoryName),
+            escapeCSV(item.imagePath),
+            escapeCSV(item.timeout ? 'Yes' : 'No')
+          ].join(',');
+        });
+
+        // Combine headers and rows
+        return [headers.join(','), ...rows].join('\n');
+      }
+
+      // Function to download CSV
+      function downloadCSV(csvContent, filename) {
+        // Create blob with CSV content
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        
+        // Create download link
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        
+        // Add to DOM, click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up the URL object
+        URL.revokeObjectURL(url);
+      }
+
+      // Ask for confirmation and download CSV if confirmed
+      if (failedImages.length > 0) {
+        const confirmDownload = confirm(
+          `Found ${failedImages.length} failed category images.\n\n` +
+          `Would you like to download a CSV file with the details?`
+        );
+
+        if (confirmDownload) {
+          const csvContent = convertToCSV(failedImages);
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+          const filename = `failed-category-images-${timestamp}.csv`;
+          
+          downloadCSV(csvContent, filename);
+          console.log(`✅ CSV file "${filename}" downloaded successfully!`);
+        } else {
+          console.log('❌ CSV download cancelled.');
+        }
+      } else {
+        console.log('✅ No failed category images found. CSV download skipped.');
+      }
+
+      return {
+        totalChecked,
+        totalFailed: failedImages.length,
+        failedImages
+      };
+    }
+
+    // Make function available globally for manual execution
+    // window.validateCategoryImages = validateCategoryImages;
+    //  validateCategoryImages()
+    // console.log('💡 Category image validation script loaded. Run validateCategoryImages() in console to check category images.');
   </script>
 
 </body>

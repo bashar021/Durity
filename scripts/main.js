@@ -191,9 +191,17 @@ class BannerCarousel {
       });
       // Keyboard navigation
       document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowLeft") this.prevSlide();
-        if (e.key === "ArrowRight") this.nextSlide();
-        if (e.key === " ") {
+        // Check if user is typing in an input field, textarea, or contentEditable element
+        const activeElement = document.activeElement;
+        const isInputFocused =
+          activeElement &&
+          (activeElement.tagName === "INPUT" ||
+            activeElement.tagName === "TEXTAREA" ||
+            activeElement.contentEditable === "true");
+
+        if (e.key === "ArrowLeft" && !isInputFocused) this.prevSlide();
+        if (e.key === "ArrowRight" && !isInputFocused) this.nextSlide();
+        if (e.key === " " && !isInputFocused) {
           e.preventDefault();
           this.toggleAutoplay();
         }
@@ -258,7 +266,7 @@ const HomePageCarousel = new BannerCarousel();
 // ]);
 // Example of how to replace all images:
 
-if(window.innerWidth <= 768){
+if (window.innerWidth <= 768) {
   HomePageCarousel.setImages([
     // "/public/home page/home page main banner/1080x1920-ugd930ckdcujq44s.jpg",
     "https://placehold.co/1080x1920/667eea/white?text=1080x1920 9:16",
@@ -267,7 +275,7 @@ if(window.innerWidth <= 768){
     // "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
     // '/path/to/image3.jpg'
   ]);
-}else if (window.innerWidth <= 1024){
+} else if (window.innerWidth <= 1024) {
   HomePageCarousel.setImages([
     // "/public/home page/home page main banner/1080x1920-ugd930ckdcujq44s.jpg",
     "https://placehold.co/1536x2048/667eea/white?text=1536x2048 4:3",
@@ -276,8 +284,7 @@ if(window.innerWidth <= 768){
     // "/public/home page/home page main banner/DURITY WEB BANNER 2.jpg",
     // '/path/to/image3.jpg'
   ]);
-}
-else{
+} else {
   HomePageCarousel.setImages([
     "/public/home page/home page main banner/COVER 01.jpg",
     "/public/home page/home page main banner/COVER 2.jpg",
@@ -286,14 +293,14 @@ else{
     // '/path/to/image3.jpg'
   ]);
 }
-console.log(window.innerWidth,'adgajkhdhlasdhj',window.innerHeight)
+console.log(window.innerWidth, "adgajkhdhlasdhj", window.innerHeight);
 /* The `// recent view section` in the JavaScript code is responsible for managing the recent view
 products section on a webpage. It includes functionalities such as retrieving saved product lists
 from local storage, creating product cards for display, rendering the products on the webpage, and
 handling scrolling interactions within the recent view product carousel. */
 //  recent view section
 // const prevItems = localStorage.getItem("items");
-const prevItems = sessionStorage.getItem('items')
+const prevItems = sessionStorage.getItem("items");
 const recentViewContainer = document.getElementById("recentProducts");
 const productList = document.getElementById("recent-view-product-container");
 const scrollLeftBtn = document.getElementById("recentScrollLeft");
@@ -576,6 +583,17 @@ if (form) {
       hideError("email");
     }
 
+    const phone = document.getElementById("phone").value.trim();
+    if (!phone) {
+      showError("phone", "Please enter your phone number");
+      isValid = false;
+    } else if (!/^\d{10}$/.test(phone)) {
+      showError("phone", "Please enter a valid 10-digit phone number");
+      isValid = false;
+    } else {
+      hideError("phone");
+    }
+
     const message = document.getElementById("message").value.trim();
     if (message === "") {
       showError("message", "Please enter your message");
@@ -598,21 +616,21 @@ if (form) {
         .then((response) => {
           if (response.ok) {
             // successMessage.style.display = "block";
-            alert('Message send successfully')
+            alert("Message send successfully");
             form.reset();
           } else {
             response.json().then((data) => {
               //   document.getElementById("response").innerText =
               //     data.errors ? data.errors.map(e => e.message).join(", ") : "Oops! Something went wrong.";
               // successMessage.innerHTML = "Oops! Something went wrong.";
-              alert('oops! something wents wrong.')
+              alert("oops! something wents wrong.");
             });
           }
         })
         .catch((error) => {
           //   document.getElementById("response").innerText = "Error sending message.";
           // successMessage.innerHTML = "Error sending message.";
-          alert('Error sending message.')
+          alert("Error sending message.");
           // console.error("Error:", error);
         });
       // form.reset();
@@ -790,7 +808,7 @@ function handleSubmit(event) {
   if (isValid) {
     // const form = event.target;
     const formData = new FormData(form);
-    console.log(formData)
+    console.log(formData);
     document.getElementById("catalogue-dn-form").innerText = "Please wait..";
 
     fetch("https://formspree.io/f/mgvlrkjy", {
@@ -803,15 +821,16 @@ function handleSubmit(event) {
       .then((response) => {
         if (response.ok) {
           //   successMessage.style.display = "block";
-          alert('Message send successfully')
+          alert("Message send successfully");
           form.reset();
           window.open(
             "https://drive.google.com/file/d/13IMJyHvVRQcZ1x0dbf69iZV5O2_AE-BP/view",
             "_blank"
           );
-          document.getElementById("cataloguePopupOverlay").style.display = "none";
+          document.getElementById("cataloguePopupOverlay").style.display =
+            "none";
         } else {
-          alert('There was a problem with your submission.');
+          alert("There was a problem with your submission.");
         }
       })
       .catch((error) => {

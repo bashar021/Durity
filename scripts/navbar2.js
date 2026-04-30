@@ -240,7 +240,7 @@ if (catalogue_download_design_container) {
 
           <div class="form-group">
             <label for="mobile">Mobile Number</label>
-            <input type="tel" id="mobile" name="mobile" required>
+            <input type="tel" id="mobile" name="mobile" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" onkeypress="return /[0-9]/i.test(event.key)" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             <div class="error" id="mobileError">Please enter a valid mobile number</div>
           </div>
 
@@ -260,6 +260,47 @@ if (catalogue_download_design_container) {
       </div>
     </div>
  `;
+  // Add event listener to restrict mobile input to numbers only
+  const mobileInput = document.getElementById("mobile");
+  if (mobileInput) {
+    mobileInput.addEventListener("keypress", function (e) {
+      // Allow: backspace, delete, tab, escape, enter, and decimal point
+      if (
+        [46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 ||
+        // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+        (e.keyCode === 65 && e.ctrlKey === true) ||
+        (e.keyCode === 67 && e.ctrlKey === true) ||
+        (e.keyCode === 86 && e.ctrlKey === true) ||
+        (e.keyCode === 88 && e.ctrlKey === true) ||
+        // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)
+      ) {
+        return;
+      }
+      // Ensure that it is a number and stop the keypress
+      if (
+        (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
+        (e.keyCode < 96 || e.keyCode > 105)
+      ) {
+        e.preventDefault();
+      }
+    });
+
+    mobileInput.addEventListener("input", function (e) {
+      // Remove any non-numeric characters
+      this.value = this.value.replace(/[^0-9]/g, "");
+    });
+
+    mobileInput.addEventListener("paste", function (e) {
+      // Prevent paste and manually set the value after filtering
+      e.preventDefault();
+      const pastedText = (e.clipboardData || window.clipboardData).getData(
+        "text"
+      );
+      const numericOnly = pastedText.replace(/[^0-9]/g, "");
+      this.value = numericOnly.substring(0, 10); // Limit to 10 digits
+    });
+  }
 }
 
 const customer_support = document.getElementById("customer-support");

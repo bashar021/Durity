@@ -108,7 +108,7 @@ const setFooter = () => {
 };
 setFooter();
 let productCategories = {
-  faucets: [
+  Faucets: [
     "Freestanding Tubs",
     "Clawfoot Tubs",
     "Whirlpool Baths",
@@ -116,7 +116,7 @@ let productCategories = {
     "Bath Mats",
     "Bath Caddies",
   ],
-  ptmt: [
+  PTMT: [
     "Rain Showers",
     "Smart Showers",
     "Body Jets",
@@ -124,7 +124,7 @@ let productCategories = {
     "Shower Panels",
     "Shower Heads",
   ],
-  showers: [
+  Showers: [
     "Vanity Units",
     "Medicine Cabinets",
     "Wall Cabinets",
@@ -132,7 +132,7 @@ let productCategories = {
     "Towel Storage",
     "Bathroom Shelving",
   ],
-  "health faucet": [
+  "Health Faucet": [
     "Faucets",
     "Drains",
     "Grab Bars",
@@ -140,7 +140,7 @@ let productCategories = {
     "Robe Hooks",
     "Shower Door Hardware",
   ],
-  "bath accessories": [
+  "Bath Accessories": [
     "Towel Warmers",
     "Heated Floors",
     "Steam Systems",
@@ -148,7 +148,7 @@ let productCategories = {
     "Smart Mirrors",
     "Aromatherapy Diffusers",
   ],
-  "faucet parts": [
+  "Faucet Parts": [
     "Towel Warmers",
     "Heated Floors",
     "Steam Systems",
@@ -199,12 +199,12 @@ const setProductListInFooter = () => {
     );
     // return item?.name
   });
-  productCategories["ptmt"] = ptmt;
-  productCategories["faucets"] = faucets;
-  productCategories["showers"] = showers;
-  productCategories["faucet parts"] = faucet_parts;
-  productCategories["bath accessories"] = bath_accessories;
-  productCategories["health faucet"] = health_faucet;
+  productCategories["PTMT"] = ptmt;
+  productCategories["Faucets"] = faucets;
+  productCategories["Showers"] = showers;
+  productCategories["Faucet Parts"] = faucet_parts;
+  productCategories["Bath Accessories"] = bath_accessories;
+  productCategories["Health Faucet"] = health_faucet;
 };
 setProductListInFooter();
 
@@ -219,7 +219,8 @@ Object.entries(productCategories).forEach(([category, products]) => {
   categoryElement.setAttribute("itemtype", "https://schema.org/ItemList");
 
   // SEO-friendly category name
-  const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+  // const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+  const categoryName = category;
   const categoryDescription = `Premium ${categoryName} bathroom accessories and fixtures by Durity Bath`;
 
   categoryElement.innerHTML = `

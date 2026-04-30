@@ -65,51 +65,13 @@
 
     font-size: 16px;
   }
-  .homepage-our-collection-img{
-    /* height: 250px; */
-    height: 145px;
-    width: 170px;
-    /* width: 300px; */
-  }
   .section-content{
     /* background-color: red; */
     max-width: 100%;
     width: 100%;
   }
-  .top-products-section{
-    /* background-color: green; */
-    padding: 0px;
-    margin-bottom: 8%;
+  .top-products-section.bg-smoke {
     min-height: auto;
-
-  }
- 
-  .our-collection-card{
-    /* background-color: red; */
-    padding: 10px;
-    /* width: fit-content; */
-    width: 40%;
-    margin: 0px;
-    text-align: center;
-  }
-  .product-image-wrapper{
-   margin-bottom: 0px;
-  }
-  .cta-button{
-    font-size: 12px;
-    word-break:keep-all;
-    word-wrap:normal;
-    line-break: none;
-    /* padding: 0px; */
-    padding-left: 0px;
-    text-align: center;
-    padding-right: 0px;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
   }
   .about-visual{
     padding: 0px;

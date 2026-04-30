@@ -124,8 +124,10 @@
 }
 
 .homepage-our-collection-img {
-  height: 500px;
-  width: 600px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .scroll-btn {
